@@ -1,0 +1,24 @@
+# Local-only project notes for Claude Code (not for publication)
+CLAUDE.md
+
+# TouchDesigner components — kept locally for future use, not synced to GitHub
+toxes/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+
+# Max/MSP backups and temp files
+*.maxpat.bak
+*~.maxpat
+*.mxo.tmp
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+
+# OS junk
+Thumbs.db
