@@ -132,6 +132,7 @@ function stopBothVideoAndAudio() {
 const setRunningMode = async (running_mode) => {
   if (running_mode === runningMode) return
   canvas.clearRect(0, 0, overlay.width, overlay.height);
+  resetSubjectLock();
   switch(running_mode) {
     case "IMAGE":
       stopBothVideoAndAudio();
@@ -161,6 +162,169 @@ let lastVideoTime = -1;
 let results = undefined;
 const drawingUtils = new DrawingUtils(canvas);
 
+/* ---------------------------------------------------------------------------
+ * SINGLE-SUBJECT LOCK
+ * ---------------------------------------------------------------------------
+ * The Pose Landmarker returns up to `numPoses` skeletons per frame and exposes no
+ * persistent track ID: the ordering of results.landmarks is not guaranteed to be
+ * stable across frames, so reading results.landmarks[0] can silently swap from one
+ * body to another between consecutive frames. Downstream that reaches the DSP as a
+ * discontinuous jump of the wrist coordinates.
+ *
+ * This block elects a single subject - the person closest to the camera, i.e. the
+ * visitor standing at the installation - and keeps that identity across frames, so
+ * only one coherent body ever reaches Max.
+ *
+ * DEPTH CUE. The camera is fixed at chest height and aimed at the horizon, so the
+ * only usable depth discriminator is perspective scale: apparent torso size shrinks
+ * roughly as 1/distance. The two crossed shoulder-hip diagonals are averaged because
+ * that measure is insensitive to arm motion, unlike a full bounding box - and the
+ * visitor keeps his arms moving by definition. The landmarks' z field is NOT usable
+ * here: it is expressed relative to each subject's own hip midpoint, hence it is not
+ * comparable across different bodies.
+ *
+ * IDENTITY. Once elected, the subject is re-associated frame by frame by nearest hip
+ * centroid, with deliberately asymmetric hysteresis:
+ *   - a challenger takes over only after staying clearly larger for TAKEOVER_FRAMES,
+ *     so somebody crossing the field cannot steal the installation;
+ *   - a lost subject is released only after MAX_MISS frames, so the occasional
+ *     single-frame detection dropout does not reset the lock.
+ * While the lock is held but momentarily unmatched the dictionary is left untouched:
+ * Max holds its last value rather than receiving another person's coordinates.
+ * ------------------------------------------------------------------------- */
+
+// 33-point BlazePose topology (see js/pose-landmarks-index.js).
+const LM_SHOULDER_LEFT = 11;
+const LM_SHOULDER_RIGHT = 12;
+const LM_HIP_LEFT = 23;
+const LM_HIP_RIGHT = 24;
+
+// Largest hip-centroid displacement, as a fraction of frame width, still accepted as
+// "same person" between two consecutive frames. Generous at 30 fps.
+const SUBJECT_GATE_FRAC = 0.15;
+// A challenger must be at least this much larger than the locked subject...
+const SUBJECT_TAKEOVER_RATIO = 1.25;
+// ...and stay so for this many consecutive frames (~0.8 s at 30 fps).
+const SUBJECT_TAKEOVER_FRAMES = 25;
+// Failed associations tolerated before the lock is released (~0.3 s at 30 fps).
+const SUBJECT_MAX_MISS = 10;
+// Minimum torso size in pixels for a pose to be a candidate at all. 0 disables the
+// test; raise it on site to ignore people walking in the back when nobody is at the
+// installation. Tune by logging the torso value with a visitor in position.
+const SUBJECT_MIN_TORSO_PX = 0;
+
+let lockedHip = null;        // hip centroid of the locked subject, previous frame
+let subjectMissCount = 0;    // consecutive frames without a valid association
+let challengerHip = null;    // hip centroid of the pending challenger, previous frame
+let challengerFrames = 0;    // consecutive frames the challenger has been eligible
+
+const resetSubjectLock = () => {
+  lockedHip = null;
+  subjectMissCount = 0;
+  challengerHip = null;
+  challengerFrames = 0;
+};
+
+// Distance in pixel units. Landmarks are normalised to [0,1] independently on x and
+// y, so both axes are rescaled by the canvas size to keep the metric isotropic.
+const pixelDistance = (a, b) => {
+  const dx = (a.x - b.x) * overlay.width;
+  const dy = (a.y - b.y) * overlay.height;
+  return Math.sqrt(dx * dx + dy * dy);
+};
+
+// Apparent torso size and hip centroid of one skeleton; null if the torso is incomplete.
+const poseMetrics = (landmarks) => {
+  const shoulderL = landmarks[LM_SHOULDER_LEFT];
+  const shoulderR = landmarks[LM_SHOULDER_RIGHT];
+  const hipL = landmarks[LM_HIP_LEFT];
+  const hipR = landmarks[LM_HIP_RIGHT];
+  if (!shoulderL || !shoulderR || !hipL || !hipR) return null;
+  const torso = 0.5 * (pixelDistance(shoulderL, hipR) + pixelDistance(shoulderR, hipL));
+  if (!isFinite(torso) || torso <= 0) return null;
+  return { torso: torso, hip: { x: 0.5 * (hipL.x + hipR.x), y: 0.5 * (hipL.y + hipR.y) } };
+};
+
+/* Returns the index of the pose to forward to Max, or -1 when no subject is valid
+ * this frame (nobody detected, or lock momentarily unmatched). */
+const selectSubject = (poses) => {
+  const gate = SUBJECT_GATE_FRAC * overlay.width;
+
+  // Candidate metrics; skeletons with an incomplete torso are discarded up front.
+  const candidates = [];
+  for (let i = 0; i < poses.length; i++) {
+    const m = poseMetrics(poses[i]);
+    if (m && m.torso >= SUBJECT_MIN_TORSO_PX) {
+      candidates.push({ index: i, torso: m.torso, hip: m.hip });
+    }
+  }
+
+  if (!candidates.length) {
+    subjectMissCount++;
+    if (subjectMissCount > SUBJECT_MAX_MISS) resetSubjectLock();
+    return -1;
+  }
+
+  // Largest apparent torso = closest to the camera = the visitor.
+  let largest = candidates[0];
+  for (const c of candidates) {
+    if (c.torso > largest.torso) largest = c;
+  }
+
+  // First election, or election after a definitive loss.
+  const elect = (c) => {
+    lockedHip = c.hip;
+    subjectMissCount = 0;
+    challengerHip = null;
+    challengerFrames = 0;
+    return c.index;
+  };
+
+  if (!lockedHip) return elect(largest);
+
+  // Re-associate the locked subject: nearest hip centroid within the gating radius.
+  let tracked = null;
+  let bestDistance = Infinity;
+  for (const c of candidates) {
+    const d = pixelDistance(c.hip, lockedHip);
+    if (d < bestDistance) { bestDistance = d; tracked = c; }
+  }
+  if (bestDistance > gate) tracked = null;
+
+  if (!tracked) {
+    subjectMissCount++;
+    // Definitive loss: re-elect immediately on the closest body available.
+    if (subjectMissCount > SUBJECT_MAX_MISS) return elect(largest);
+    // Brief dropout: hold. Better a frozen value than somebody else's wrist.
+    return -1;
+  }
+
+  subjectMissCount = 0;
+
+  // Takeover test: the largest body that is clearly closer than the locked one.
+  let challenger = null;
+  for (const c of candidates) {
+    if (c === tracked) continue;
+    if (c.torso < tracked.torso * SUBJECT_TAKEOVER_RATIO) continue;
+    if (!challenger || c.torso > challenger.torso) challenger = c;
+  }
+  // The challenger counter only accumulates while it stays the same person, which is
+  // itself tested by hip-centroid continuity: this is what makes a fast pass-by unable
+  // to accumulate the frames it would need to take over.
+  if (challenger && challengerHip && pixelDistance(challenger.hip, challengerHip) <= gate) {
+    challengerFrames++;
+  } else {
+    challengerFrames = challenger ? 1 : 0;
+  }
+  challengerHip = challenger ? challenger.hip : null;
+
+  if (challenger && challengerFrames >= SUBJECT_TAKEOVER_FRAMES) return elect(challenger);
+
+  lockedHip = tracked.hip;
+  return tracked.index;
+};
+
+
 function onResultsPose(results) {
 
   canvas.save();
@@ -171,19 +335,25 @@ function onResultsPose(results) {
       results.image, 0, 0, overlay.width, overlay.height);
   }
 
-  if (results.landmarks.length) {
+  const subjectIndex = selectSubject(results.landmarks || []);
+
+  if (subjectIndex >= 0) {
+    const subject = results.landmarks[subjectIndex];
     const output = {
       "left":{},
       "right":{},
       "neutral":{}
     };
 
-    Object.values(POSE_LANDMARKS_LEFT).forEach(([landmark, index]) => { output["left"][landmark] = results.landmarks[0][index] });
-    Object.values(POSE_LANDMARKS_RIGHT).forEach(([landmark, index]) => { output["right"][landmark] = results.landmarks[0][index] });
-    Object.values(POSE_LANDMARKS_NEUTRAL).forEach(([landmark, index]) => { output["neutral"][landmark] = results.landmarks[0][index] });
+    Object.values(POSE_LANDMARKS_LEFT).forEach(([landmark, index]) => { output["left"][landmark] = subject[index] });
+    Object.values(POSE_LANDMARKS_RIGHT).forEach(([landmark, index]) => { output["right"][landmark] = subject[index] });
+    Object.values(POSE_LANDMARKS_NEUTRAL).forEach(([landmark, index]) => { output["neutral"][landmark] = subject[index] });
     setMaxDict(output);
   
-    for (const landmark of results.landmarks) {
+    // Only the locked subject is drawn, so the overlay shows exactly the one body
+    // that is driving the engine.
+    if (drawLandmarks || drawConnectors) {
+      const landmark = subject;
       if (drawLandmarks) {
         drawingUtils.drawLandmarks(landmark, {
           radius: (data) => DrawingUtils.lerp(data.from.z, -0.15, 0.1, 1, 0.5),
@@ -225,7 +395,10 @@ poseLandmarker = await PoseLandmarker.createFromOptions(vision, {
     modelAssetPath: `https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_lite/float16/1/pose_landmarker_lite.task`,
     delegate: "GPU"
   },
-  numPoses: 2,
+  // More than one pose is requested on purpose: the visitor must stay available
+  // in the result array even when bystanders are in frame, so that selectSubject()
+  // can pick him. Raise to 4-5 on site if the venue turns out to be crowded.
+  numPoses: 3,
   runningMode: runningMode
 })
 
