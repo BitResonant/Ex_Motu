@@ -16,6 +16,8 @@ let drawLandmarks = true;
 let drawConnectors = true;
 let runningMode = "VIDEO";
 let zColor = "#FF0066";
+// Development readout drawn on the overlay. SET TO false BEFORE THE EXHIBITION.
+let showTelemetry = true;
 
 function outputMax(mess) {
   window.max.outlet(mess);
@@ -48,6 +50,10 @@ window.max.bindInlet('draw_connectors', async function (enable) {
   if(runningMode === "IMAGE") {
     await detectImage();
   }
+});
+
+window.max.bindInlet('show_telemetry', function (enable) {
+  showTelemetry = enable;
 });
 
 window.max.bindInlet('set_image', async function (imageFile) {
@@ -107,7 +113,9 @@ const startVideo = () => {
         let nowInMs = Date.now();
         if (lastVideoTime !== video.currentTime) {
           lastVideoTime = video.currentTime;
+          const detectStart = performance.now();
           results = poseLandmarker.detectForVideo(video, nowInMs);
+          noteDetection(detectStart, performance.now());
           results.image = video;
           onResultsPose(results);
         }
@@ -325,6 +333,76 @@ const selectSubject = (poses) => {
 };
 
 
+/* ---------------------------------------------------------------------------
+ * TELEMETRY
+ * ---------------------------------------------------------------------------
+ * On-canvas readout used to tell apart the two possible causes of a frame rate
+ * drop, which call for opposite remedies:
+ *   - `detect` climbing towards the frame budget means the model is too expensive
+ *     (fall back to pose_landmarker_full -> lite, or lower numPoses);
+ *   - `detect` staying low while `frame` grows means the capture loop itself is
+ *     being throttled - camera_utils drives it from requestAnimationFrame, so a
+ *     lower display refresh rate or macOS power management on battery slows the
+ *     loop down while inference cost is unchanged. Nothing to fix in the code.
+ * Rendered last so it sits on top of the skeleton. Cost is a few fillText calls.
+ * ------------------------------------------------------------------------- */
+
+const TELEMETRY_WINDOW = 60;   // samples in the rolling mean (~2 s at 30 fps)
+
+const detectTimes = [];        // blocking cost of detectForVideo(), ms
+const frameIntervals = [];     // wall-clock interval between detections, ms
+let lastDetectStart = 0;
+let telemetryPoses = 0;        // poses returned this frame
+let telemetrySubject = -1;     // index forwarded to Max, -1 while the lock holds
+
+const pushSample = (buffer, value) => {
+  buffer.push(value);
+  if (buffer.length > TELEMETRY_WINDOW) buffer.shift();
+};
+
+const meanOf = (buffer) => {
+  if (!buffer.length) return 0;
+  let sum = 0;
+  for (const v of buffer) sum += v;
+  return sum / buffer.length;
+};
+
+/* Called from the capture loop around the detection call. Caveat: detectForVideo()
+ * returns synchronously but the GPU work behind it is not necessarily complete, so
+ * this measures the JS blocking cost - what actually competes for the frame budget -
+ * and not the true end-to-end inference latency. */
+const noteDetection = (startMs, endMs) => {
+  if (lastDetectStart) pushSample(frameIntervals, startMs - lastDetectStart);
+  lastDetectStart = startMs;
+  pushSample(detectTimes, endMs - startMs);
+};
+
+const drawTelemetry = () => {
+  const detectMs = meanOf(detectTimes);
+  const intervalMs = meanOf(frameIntervals);
+  const fps = intervalMs > 0 ? 1000 / intervalMs : 0;
+  const lines = [
+    "detect  " + detectMs.toFixed(1) + " ms",
+    "frame   " + intervalMs.toFixed(1) + " ms  (" + fps.toFixed(1) + " fps)",
+    "poses   " + telemetryPoses,
+    "subject " + (telemetrySubject >= 0 ? telemetrySubject : "HOLD")
+  ];
+
+  canvas.save();
+  canvas.globalAlpha = 1;
+  canvas.fillStyle = "rgba(0, 0, 0, 0.55)";
+  canvas.fillRect(6, 6, 186, 10 + lines.length * 15);
+  canvas.font = "12px Menlo, Monaco, monospace";
+  canvas.textBaseline = "top";
+  // Red as soon as inference eats more than 80% of the available frame budget.
+  canvas.fillStyle = (intervalMs > 0 && detectMs > intervalMs * 0.8) ? "#FF4444" : "#00FF88";
+  for (let i = 0; i < lines.length; i++) {
+    canvas.fillText(lines[i], 14, 13 + i * 15);
+  }
+  canvas.restore();
+};
+
+
 function onResultsPose(results) {
 
   canvas.save();
@@ -336,6 +414,8 @@ function onResultsPose(results) {
   }
 
   const subjectIndex = selectSubject(results.landmarks || []);
+  telemetryPoses = (results.landmarks || []).length;
+  telemetrySubject = subjectIndex;
 
   if (subjectIndex >= 0) {
     const subject = results.landmarks[subjectIndex];
@@ -384,6 +464,9 @@ function onResultsPose(results) {
   }
 
   outputMax("update");
+
+  if (showTelemetry) drawTelemetry();
+
   canvas.restore();
 }
 
@@ -392,7 +475,12 @@ const vision = await FilesetResolver.forVisionTasks(
 );
 poseLandmarker = await PoseLandmarker.createFromOptions(vision, {
   baseOptions: {
-    modelAssetPath: `https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_lite/float16/1/pose_landmarker_lite.task`,
+    // 'full' instead of 'lite': better landmark localisation when two bodies overlap
+    // in the same detector ROI. Cost is paid once per detected pose, so it scales with
+    // numPoses - time detectForVideo() with three people in frame before keeping it.
+    // Variants: pose_landmarker_lite | pose_landmarker_full | pose_landmarker_heavy.
+    // If this path 404s, swap the '/1/' version segment for '/latest/'.
+    modelAssetPath: `https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_full/float16/1/pose_landmarker_full.task`,
     delegate: "GPU"
   },
   // More than one pose is requested on purpose: the visitor must stay available
