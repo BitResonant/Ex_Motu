@@ -22,3 +22,6 @@ Icon?
 
 # OS junk
 Thumbs.db
+
+# Telemetry logs and local test tooling (development only)
+Log/

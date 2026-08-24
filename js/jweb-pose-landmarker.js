@@ -19,6 +19,18 @@ let zColor = "#FF0066";
 // Development readout drawn on the overlay. SET TO false BEFORE THE EXHIBITION.
 let showTelemetry = true;
 
+// 'full' instead of 'lite': better landmark localisation when two bodies overlap in
+// the same detector ROI. Cost is paid once per detected pose, so it scales with
+// NUM_POSES - time detectForVideo() with three people in frame before keeping it.
+// Variants: pose_landmarker_lite | pose_landmarker_full | pose_landmarker_heavy.
+// If this path 404s, swap the '/1/' version segment for '/latest/'.
+const POSE_MODEL_URL = `https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_full/float16/1/pose_landmarker_full.task`;
+
+// More than one pose is requested on purpose: the visitor must stay available in the
+// result array even when bystanders are in frame, so that selectSubject() can pick
+// him. Raise to 4-5 on site if the venue turns out to be crowded.
+const NUM_POSES = 3;
+
 function outputMax(mess) {
   window.max.outlet(mess);
 }
@@ -214,20 +226,26 @@ const SUBJECT_GATE_FRAC = 0.15;
 const SUBJECT_TAKEOVER_RATIO = 1.25;
 // ...and stay so for this many consecutive frames (~0.8 s at 30 fps).
 const SUBJECT_TAKEOVER_FRAMES = 25;
-// Failed associations tolerated before the lock is released (~0.3 s at 30 fps).
-const SUBJECT_MAX_MISS = 10;
+// Failed associations tolerated before the lock is released (~0.5 s at 30 fps).
+// Raised from 10 to 15 after tests 001/002 of 2026-08-24: no hold episode exceeded
+// 10 frames, but several landed on exactly 10, i.e. they recovered on the last frame
+// allowed. Releasing the lock while a bystander is still in frame risks re-electing
+// onto the wrong body, which is the failure this whole mechanism exists to prevent.
+const SUBJECT_MAX_MISS = 15;
 // Minimum torso size in pixels for a pose to be a candidate at all. 0 disables the
 // test; raise it on site to ignore people walking in the back when nobody is at the
 // installation. Tune by logging the torso value with a visitor in position.
 const SUBJECT_MIN_TORSO_PX = 0;
 
 let lockedHip = null;        // hip centroid of the locked subject, previous frame
+let lockedTorso = 0;         // its apparent torso size in px, kept for the log
 let subjectMissCount = 0;    // consecutive frames without a valid association
 let challengerHip = null;    // hip centroid of the pending challenger, previous frame
 let challengerFrames = 0;    // consecutive frames the challenger has been eligible
 
 const resetSubjectLock = () => {
   lockedHip = null;
+  lockedTorso = 0;
   subjectMissCount = 0;
   challengerHip = null;
   challengerFrames = 0;
@@ -282,6 +300,7 @@ const selectSubject = (poses) => {
   // First election, or election after a definitive loss.
   const elect = (c) => {
     lockedHip = c.hip;
+    lockedTorso = c.torso;
     subjectMissCount = 0;
     challengerHip = null;
     challengerFrames = 0;
@@ -329,6 +348,7 @@ const selectSubject = (poses) => {
   if (challenger && challengerFrames >= SUBJECT_TAKEOVER_FRAMES) return elect(challenger);
 
   lockedHip = tracked.hip;
+  lockedTorso = tracked.torso;
   return tracked.index;
 };
 
@@ -354,6 +374,8 @@ const frameIntervals = [];     // wall-clock interval between detections, ms
 let lastDetectStart = 0;
 let telemetryPoses = 0;        // poses returned this frame
 let telemetrySubject = -1;     // index forwarded to Max, -1 while the lock holds
+let lastDetectMs = 0;          // most recent raw sample, logged per frame
+let lastFrameMs = 0;
 
 const pushSample = (buffer, value) => {
   buffer.push(value);
@@ -372,9 +394,11 @@ const meanOf = (buffer) => {
  * this measures the JS blocking cost - what actually competes for the frame budget -
  * and not the true end-to-end inference latency. */
 const noteDetection = (startMs, endMs) => {
-  if (lastDetectStart) pushSample(frameIntervals, startMs - lastDetectStart);
+  lastFrameMs = lastDetectStart ? startMs - lastDetectStart : 0;
+  if (lastDetectStart) pushSample(frameIntervals, lastFrameMs);
   lastDetectStart = startMs;
-  pushSample(detectTimes, endMs - startMs);
+  lastDetectMs = endMs - startMs;
+  pushSample(detectTimes, lastDetectMs);
 };
 
 const drawTelemetry = () => {
@@ -403,6 +427,92 @@ const drawTelemetry = () => {
 };
 
 
+/* ---------------------------------------------------------------------------
+ * LOG CLIENT (development only)
+ * ---------------------------------------------------------------------------
+ * jweb cannot write to disk, so per-frame samples are posted to the local logging
+ * server in Log/log-server.js, which owns the files. Both the server and the Log
+ * folder are untracked; this client is the only part living in a tracked file.
+ *
+ * It is inert unless that server answers on startup: one probe, and if nothing is
+ * listening the flag stays false and no further network call is ever made. Leaving
+ * it in place during the exhibition therefore costs nothing.
+ *
+ * Samples are batched once a second rather than posted per frame, so the capture
+ * loop is never blocked on the network - which would corrupt the very timings the
+ * log is meant to measure.
+ * ------------------------------------------------------------------------- */
+
+const LOG_ENDPOINT = "http://127.0.0.1:8787";
+const LOG_FLUSH_MS = 1000;
+const LOG_MAX_FAILURES = 5;   // give up quietly if the server disappears mid-take
+
+let logEnabled = false;
+let logStartMs = 0;
+let logFailures = 0;
+const logQueue = [];
+
+const flushLog = async () => {
+  if (!logEnabled || !logQueue.length) return;
+  const payload = logQueue.join("\n");
+  logQueue.length = 0;
+  try {
+    await fetch(LOG_ENDPOINT + "/log", {
+      method: "POST",
+      headers: { "Content-Type": "text/plain" },
+      body: payload
+    });
+    logFailures = 0;
+  } catch (e) {
+    if (++logFailures >= LOG_MAX_FAILURES) {
+      logEnabled = false;
+      window.max.outlet("error", "log server unreachable, telemetry logging stopped");
+    }
+  }
+};
+
+const initLogging = async () => {
+  try {
+    const ping = await fetch(LOG_ENDPOINT + "/ping");
+    if (!ping.ok) return;
+    await fetch(LOG_ENDPOINT + "/start", {
+      method: "POST",
+      headers: { "Content-Type": "text/plain" },
+      body: JSON.stringify({
+        model: POSE_MODEL_URL.split("/").pop(),
+        numPoses: NUM_POSES,
+        width: overlay.width,
+        height: overlay.height
+      })
+    });
+    logStartMs = performance.now();
+    logEnabled = true;
+    setInterval(flushLog, LOG_FLUSH_MS);
+  } catch (e) {
+    // No server listening: this is the normal case in performance. Stay silent.
+  }
+};
+
+/* One CSV row per processed frame; the server appends the power state column.
+ * hip_x, hip_y and torso_px describe the LOCKED subject, so that identity continuity
+ * can be checked after the fact - the subject column alone cannot distinguish "same
+ * person, different array index" from an actual identity swap. During a hold these
+ * three carry the last known values, which is exactly what Max is still holding. */
+const queueLogSample = (poses, subject) => {
+  if (!logEnabled) return;
+  logQueue.push(
+    Math.round(performance.now() - logStartMs) + "," +
+    lastDetectMs.toFixed(2) + "," +
+    lastFrameMs.toFixed(2) + "," +
+    poses + "," +
+    subject + "," +
+    (lockedHip ? lockedHip.x.toFixed(4) : "") + "," +
+    (lockedHip ? lockedHip.y.toFixed(4) : "") + "," +
+    lockedTorso.toFixed(1)
+  );
+};
+
+
 function onResultsPose(results) {
 
   canvas.save();
@@ -416,6 +526,7 @@ function onResultsPose(results) {
   const subjectIndex = selectSubject(results.landmarks || []);
   telemetryPoses = (results.landmarks || []).length;
   telemetrySubject = subjectIndex;
+  queueLogSample(telemetryPoses, subjectIndex);
 
   if (subjectIndex >= 0) {
     const subject = results.landmarks[subjectIndex];
@@ -475,22 +586,15 @@ const vision = await FilesetResolver.forVisionTasks(
 );
 poseLandmarker = await PoseLandmarker.createFromOptions(vision, {
   baseOptions: {
-    // 'full' instead of 'lite': better landmark localisation when two bodies overlap
-    // in the same detector ROI. Cost is paid once per detected pose, so it scales with
-    // numPoses - time detectForVideo() with three people in frame before keeping it.
-    // Variants: pose_landmarker_lite | pose_landmarker_full | pose_landmarker_heavy.
-    // If this path 404s, swap the '/1/' version segment for '/latest/'.
-    modelAssetPath: `https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_full/float16/1/pose_landmarker_full.task`,
+    modelAssetPath: POSE_MODEL_URL,
     delegate: "GPU"
   },
-  // More than one pose is requested on purpose: the visitor must stay available
-  // in the result array even when bystanders are in frame, so that selectSubject()
-  // can pick him. Raise to 4-5 on site if the venue turns out to be crowded.
-  numPoses: 3,
+  numPoses: NUM_POSES,
   runningMode: runningMode
 })
 
 getVideoDevicesForMax();
+initLogging();
 startVideo();
 
 })(); // end IIF
