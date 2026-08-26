@@ -27,9 +27,14 @@ let showTelemetry = true;
 const POSE_MODEL_URL = `https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_full/float16/1/pose_landmarker_full.task`;
 
 // More than one pose is requested on purpose: the visitor must stay available in the
-// result array even when bystanders are in frame, so that selectSubject() can pick
-// him. Raise to 4-5 on site if the venue turns out to be crowded.
-const NUM_POSES = 3;
+// result array even when bystanders are in frame, so that selectSubject() can pick him.
+// Raised 3 -> 4 after test 003: the cap of 3 was reached on 3.7% of frames, and the
+// measured marginal cost of the third pose was only +0.4 ms (18.0 -> 18.4 ms median).
+// That near-flat increment suggests the detector stage dominates rather than the
+// per-pose landmark pass, so the fourth pose should be nearly free - but that is an
+// inference, not a measurement: re-check detect_ms in the next take, and revert here
+// if it climbs.
+const NUM_POSES = 4;
 
 function outputMax(mess) {
   window.max.outlet(mess);
@@ -218,6 +223,8 @@ const LM_SHOULDER_LEFT = 11;
 const LM_SHOULDER_RIGHT = 12;
 const LM_HIP_LEFT = 23;
 const LM_HIP_RIGHT = 24;
+const LM_WRIST_LEFT = 15;
+const LM_WRIST_RIGHT = 16;
 
 // Largest hip-centroid displacement, as a fraction of frame width, still accepted as
 // "same person" between two consecutive frames. Generous at 30 fps.
@@ -232,13 +239,35 @@ const SUBJECT_TAKEOVER_FRAMES = 25;
 // allowed. Releasing the lock while a bystander is still in frame risks re-electing
 // onto the wrong body, which is the failure this whole mechanism exists to prevent.
 const SUBJECT_MAX_MISS = 15;
-// Minimum torso size in pixels for a pose to be a candidate at all. 0 disables the
-// test; raise it on site to ignore people walking in the back when nobody is at the
-// installation. Tune by logging the torso value with a visitor in position.
-const SUBJECT_MIN_TORSO_PX = 0;
+/* Absolute plausibility band for the apparent torso, in pixels at 640x480. A pose
+ * outside it is not a candidate at all - it can neither be elected nor take the lock
+ * over. Enabled after test 003, where both ends were shown to matter:
+ *   - below: the lock sat on a background figure for 150 frames (1.25% of the take),
+ *     always with torso < 80 px, while the visitor measured 98 px at the 5th percentile
+ *     and 115 px at the median;
+ *   - above: every one of the five takeovers that actually fired was triggered by a
+ *     corrupted skeleton with an anatomically impossible torso (249 to 576 px, against
+ *     a legitimate 95th percentile of 162 px). Since the depth proxy reads "bigger =
+ *     closer", a corrupt detection always wins a takeover by construction. Capping the
+ *     band is what removes that failure, not tuning the takeover rule.
+ * Both ends are geometry-dependent: re-measure if the camera or the plinth distance
+ * changes. Set MIN to 0 to disable the lower test. */
+const SUBJECT_MIN_TORSO_PX = 75;
+const SUBJECT_MAX_TORSO_PX = 240;
+
+/* Scale continuity. Within the 96 px gating radius two people standing closer than
+ * roughly 35 cm can be swapped silently, because position alone cannot separate them.
+ * Apparent size can, when they differ: a real body does not change apparent size by
+ * this factor in 33 ms. Measured on test 003 the frame-to-frame ratio stays under 1.2
+ * at the 99th percentile and under 1.6 at the 99.9th, so 1.7 rejects only genuine
+ * discontinuities. The reference is an EMA rather than the previous frame, so a single
+ * corrupt frame cannot poison it. */
+const SUBJECT_SCALE_JUMP_MAX = 1.7;
+const SUBJECT_TORSO_EMA = 0.2;
 
 let lockedHip = null;        // hip centroid of the locked subject, previous frame
 let lockedTorso = 0;         // its apparent torso size in px, kept for the log
+let lockedTorsoRef = 0;      // EMA of the above, used as the scale-continuity reference
 let subjectMissCount = 0;    // consecutive frames without a valid association
 let challengerHip = null;    // hip centroid of the pending challenger, previous frame
 let challengerFrames = 0;    // consecutive frames the challenger has been eligible
@@ -246,6 +275,7 @@ let challengerFrames = 0;    // consecutive frames the challenger has been eligi
 const resetSubjectLock = () => {
   lockedHip = null;
   lockedTorso = 0;
+  lockedTorsoRef = 0;
   subjectMissCount = 0;
   challengerHip = null;
   challengerFrames = 0;
@@ -280,7 +310,7 @@ const selectSubject = (poses) => {
   const candidates = [];
   for (let i = 0; i < poses.length; i++) {
     const m = poseMetrics(poses[i]);
-    if (m && m.torso >= SUBJECT_MIN_TORSO_PX) {
+    if (m && m.torso >= SUBJECT_MIN_TORSO_PX && m.torso <= SUBJECT_MAX_TORSO_PX) {
       candidates.push({ index: i, torso: m.torso, hip: m.hip });
     }
   }
@@ -301,6 +331,7 @@ const selectSubject = (poses) => {
   const elect = (c) => {
     lockedHip = c.hip;
     lockedTorso = c.torso;
+    lockedTorsoRef = c.torso;   // a new subject restarts the scale reference
     subjectMissCount = 0;
     challengerHip = null;
     challengerFrames = 0;
@@ -317,6 +348,13 @@ const selectSubject = (poses) => {
     if (d < bestDistance) { bestDistance = d; tracked = c; }
   }
   if (bestDistance > gate) tracked = null;
+
+  // Position alone cannot tell two nearby bodies apart; apparent size can, when they
+  // differ. A candidate that is inside the gate but jumps scale is not the same person.
+  if (tracked && lockedTorsoRef > 0) {
+    const ratio = tracked.torso / lockedTorsoRef;
+    if (ratio > SUBJECT_SCALE_JUMP_MAX || ratio < 1 / SUBJECT_SCALE_JUMP_MAX) tracked = null;
+  }
 
   if (!tracked) {
     subjectMissCount++;
@@ -349,6 +387,9 @@ const selectSubject = (poses) => {
 
   lockedHip = tracked.hip;
   lockedTorso = tracked.torso;
+  lockedTorsoRef = lockedTorsoRef > 0
+    ? lockedTorsoRef + SUBJECT_TORSO_EMA * (tracked.torso - lockedTorsoRef)
+    : tracked.torso;
   return tracked.index;
 };
 
@@ -493,12 +534,47 @@ const initLogging = async () => {
   }
 };
 
+/* Arm observation, for calibrating a plausibility filter that is NOT yet in place.
+ * Test 003 showed the dominant error mode is not subject selection but limb attribution
+ * inside a single skeleton: in the phases where people crowded the visitor, the model
+ * returned ONE pose 98-99% of the time, so there was nothing to select between - the
+ * bodies had been merged. Filtering that requires thresholds, and thresholds picked
+ * blind would freeze the arm more often than the glitch they suppress. So the two
+ * candidate discriminants are measured here first and filtered later:
+ *   reach = |shoulder - wrist| / torso   - anatomy caps this around 1.15; a borrowed
+ *           arm, belonging to a body at another distance, breaks the ratio
+ *   vel   = |wrist(t) - wrist(t-1)| / torso  - an attribution swap teleports the wrist
+ * Both are normalised by torso size, so they are independent of the subject's distance
+ * from the camera. */
+let prevWristL = null;
+let prevWristR = null;
+
+const armMetrics = (subject) => {
+  if (!subject || !(lockedTorso > 0)) { prevWristL = prevWristR = null; return ",,,,,,,"; }
+  const out = [];
+  for (const [shoulderIdx, wristIdx, prev] of [
+    [LM_SHOULDER_LEFT, LM_WRIST_LEFT, prevWristL],
+    [LM_SHOULDER_RIGHT, LM_WRIST_RIGHT, prevWristR]
+  ]) {
+    const shoulder = subject[shoulderIdx];
+    const wrist = subject[wristIdx];
+    if (!shoulder || !wrist) { out.push("", "", "", ""); continue; }
+    const reach = pixelDistance(shoulder, wrist) / lockedTorso;
+    const vel = prev ? pixelDistance(wrist, prev) / lockedTorso : 0;
+    out.push(wrist.x.toFixed(4), wrist.y.toFixed(4), reach.toFixed(3), vel.toFixed(3));
+  }
+  prevWristL = subject[LM_WRIST_LEFT] || null;
+  prevWristR = subject[LM_WRIST_RIGHT] || null;
+  return out.join(",");
+};
+
 /* One CSV row per processed frame; the server appends the power state column.
  * hip_x, hip_y and torso_px describe the LOCKED subject, so that identity continuity
  * can be checked after the fact - the subject column alone cannot distinguish "same
  * person, different array index" from an actual identity swap. During a hold these
- * three carry the last known values, which is exactly what Max is still holding. */
-const queueLogSample = (poses, subject) => {
+ * three carry the last known values, which is exactly what Max is still holding, while
+ * the arm columns are left empty because no fresh skeleton was accepted. */
+const queueLogSample = (poses, subject, landmarks) => {
   if (!logEnabled) return;
   logQueue.push(
     Math.round(performance.now() - logStartMs) + "," +
@@ -508,7 +584,8 @@ const queueLogSample = (poses, subject) => {
     subject + "," +
     (lockedHip ? lockedHip.x.toFixed(4) : "") + "," +
     (lockedHip ? lockedHip.y.toFixed(4) : "") + "," +
-    lockedTorso.toFixed(1)
+    lockedTorso.toFixed(1) + "," +
+    armMetrics(landmarks)
   );
 };
 
@@ -526,7 +603,8 @@ function onResultsPose(results) {
   const subjectIndex = selectSubject(results.landmarks || []);
   telemetryPoses = (results.landmarks || []).length;
   telemetrySubject = subjectIndex;
-  queueLogSample(telemetryPoses, subjectIndex);
+  queueLogSample(telemetryPoses, subjectIndex,
+                 subjectIndex >= 0 ? results.landmarks[subjectIndex] : null);
 
   if (subjectIndex >= 0) {
     const subject = results.landmarks[subjectIndex];
