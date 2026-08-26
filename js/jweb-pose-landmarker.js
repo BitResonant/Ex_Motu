@@ -228,9 +228,29 @@ const LM_WRIST_RIGHT = 16;
 
 // Largest hip-centroid displacement, as a fraction of frame width, still accepted as
 // "same person" between two consecutive frames. Generous at 30 fps.
-const SUBJECT_GATE_FRAC = 0.15;
+/* Expressed in torso units rather than as a fraction of the frame, so it means the
+ * same physical displacement whatever the lens and wherever the subject stands. The
+ * previous form - 15% of frame width, 96 px at 640x480 - was silently tied to both the
+ * field of view and the subject's distance: a narrower lens or a subject stepping
+ * closer made the same real step a larger fraction of the frame. 0.65 reproduces the
+ * old 96 px at the 150 px torso the plinth is meant to produce, so nothing changes in
+ * the working configuration, and it now degrades correctly instead of arbitrarily.
+ * Measured margin: legitimate hip displacement reaches 0.086 torso at the 99th
+ * percentile and 0.305 at the 99.9th (test 004), so the gate sits about twice above
+ * the worst genuine motion. The pixel floor is a noise guard: landmark jitter does not
+ * shrink in proportion when the subject is small in frame. */
+const SUBJECT_GATE_TORSO = 0.65;
+const SUBJECT_GATE_MIN_PX = 40;
 // A challenger must be at least this much larger than the locked subject...
 const SUBJECT_TAKEOVER_RATIO = 1.25;
+/* ...and no more than this much larger. Raising the absolute ceiling to 380 px reopened
+ * the hole that the 240 px band had been closing by accident: a corrupted skeleton
+ * appears at three times the locked subject's size and, since the depth proxy reads
+ * "bigger is closer", walks off with the lock. Growing into a large torso is legitimate
+ * and continuous, and the scale-continuity test already guards that path; APPEARING at
+ * three times the size is not. A real handover between two people both standing at the
+ * plinth lands around 1.25-1.8, so 2.2 leaves the legitimate range untouched. */
+const SUBJECT_TAKEOVER_RATIO_MAX = 2.2;
 // ...and stay so for this many consecutive frames (~0.8 s at 30 fps).
 const SUBJECT_TAKEOVER_FRAMES = 25;
 // Failed associations tolerated before the lock is released (~0.5 s at 30 fps).
@@ -252,8 +272,28 @@ const SUBJECT_MAX_MISS = 15;
  *     band is what removes that failure, not tuning the takeover rule.
  * Both ends are geometry-dependent: re-measure if the camera or the plinth distance
  * changes. Set MIN to 0 to disable the lower test. */
-const SUBJECT_MIN_TORSO_PX = 75;
-const SUBJECT_MAX_TORSO_PX = 240;
+/* Lowered 75 -> 60 after test 006, which caught the floor doing exactly what the
+ * ceiling had done: the performer stepped a few metres back, MediaPipe kept detecting
+ * him in all 300 frames of that stretch, and the lock dropped him anyway because his
+ * torso had fallen to the threshold - 24.7% of those ten seconds spent holding, with
+ * the hold entered at a torso of exactly 75 px. 60 keeps development takes usable at
+ * any distance.
+ * ON SITE this should be raised again, once the plinth distance is fixed: measure the
+ * visitor's torso in position from a log and set the floor to roughly 0.7 of it. At a
+ * plinth torso around 150 px that puts the floor near 105, which excludes people at
+ * three metres (measured at 75-100 px here) without ever touching the visitor. Left low
+ * in the repository because a floor tuned for one geometry silently breaks every test
+ * recorded in another - which is the same mistake the 240 px ceiling made. */
+const SUBJECT_MIN_TORSO_PX = 60;
+/* Raised 240 -> 380 after tests 004/005. 240 was read off test 003, where the visitor
+ * stayed at the plinth; as soon as he worked the full range of distances his own torso
+ * hit the ceiling and the tracker simply stopped - a 19.2 s dead zone at the start of
+ * test 004 with nobody ever elected, plus multi-second holds at 5.8 s and 132.3 s of
+ * test 005, all entered with the torso pinned at 237-240 px. The absolute bound is only
+ * a backstop against values no camera geometry can produce; the discriminator that
+ * actually separates "someone walking up to the lens" (gradual) from "corrupted
+ * skeleton" (instantaneous) is the scale-continuity test below. */
+const SUBJECT_MAX_TORSO_PX = 380;
 
 /* Scale continuity. Within the 96 px gating radius two people standing closer than
  * roughly 35 cm can be swapped silently, because position alone cannot separate them.
@@ -268,6 +308,7 @@ const SUBJECT_TORSO_EMA = 0.2;
 let lockedHip = null;        // hip centroid of the locked subject, previous frame
 let lockedTorso = 0;         // its apparent torso size in px, kept for the log
 let lockedTorsoRef = 0;      // EMA of the above, used as the scale-continuity reference
+let lockedAsym = 0;          // torso diagonal asymmetry of the locked subject, logged only
 let subjectMissCount = 0;    // consecutive frames without a valid association
 let challengerHip = null;    // hip centroid of the pending challenger, previous frame
 let challengerFrames = 0;    // consecutive frames the challenger has been eligible
@@ -276,16 +317,47 @@ const resetSubjectLock = () => {
   lockedHip = null;
   lockedTorso = 0;
   lockedTorsoRef = 0;
+  lockedAsym = 0;
   subjectMissCount = 0;
   challengerHip = null;
   challengerFrames = 0;
 };
 
-// Distance in pixel units. Landmarks are normalised to [0,1] independently on x and
-// y, so both axes are rescaled by the canvas size to keep the metric isotropic.
+/* ---------------------------------------------------------------------------
+ * METRIC BASIS
+ * ---------------------------------------------------------------------------
+ * Landmarks are normalised to [0,1] independently on x and y, so turning them into a
+ * distance requires multiplying each axis by the real pixel extent of the SOURCE. The
+ * canvas is hard-coded to 640x480 and would silently make every measurement in this
+ * file anisotropic the day a camera that is not 4:3 is plugged in: a torso would
+ * measure differently depending on how the body is oriented, and reach and velocity
+ * would inherit the same distortion, all while looking perfectly normal on screen.
+ *
+ * The basis therefore follows the source's own aspect ratio, normalised to a fixed
+ * vertical scale so that every threshold in this file - which is calibrated in pixels
+ * at 640x480 - keeps its meaning. A 4:3 source reproduces exactly 640x480 and nothing
+ * changes; a 16:9 source becomes 853x480, isotropic and on the same vertical scale;
+ * a higher-resolution 4:3 camera also lands on 640x480 rather than rescaling every
+ * bound. Only the geometry uses this - drawing still uses the canvas dimensions.
+ * ------------------------------------------------------------------------- */
+
+const METRIC_HEIGHT = 480;   // reference vertical scale of every px threshold here
+let metricWidth = 640;
+let metricHeight = METRIC_HEIGHT;
+
+const updateMetricBasis = (source) => {
+  if (!source) return;
+  const w = source.videoWidth || source.naturalWidth || source.width;
+  const h = source.videoHeight || source.naturalHeight || source.height;
+  if (w > 0 && h > 0) {
+    metricHeight = METRIC_HEIGHT;
+    metricWidth = METRIC_HEIGHT * (w / h);
+  }
+};
+
 const pixelDistance = (a, b) => {
-  const dx = (a.x - b.x) * overlay.width;
-  const dy = (a.y - b.y) * overlay.height;
+  const dx = (a.x - b.x) * metricWidth;
+  const dy = (a.y - b.y) * metricHeight;
   return Math.sqrt(dx * dx + dy * dy);
 };
 
@@ -296,22 +368,31 @@ const poseMetrics = (landmarks) => {
   const hipL = landmarks[LM_HIP_LEFT];
   const hipR = landmarks[LM_HIP_RIGHT];
   if (!shoulderL || !shoulderR || !hipL || !hipR) return null;
-  const torso = 0.5 * (pixelDistance(shoulderL, hipR) + pixelDistance(shoulderR, hipL));
+  const diagA = pixelDistance(shoulderL, hipR);
+  const diagB = pixelDistance(shoulderR, hipL);
+  const torso = 0.5 * (diagA + diagB);
   if (!isFinite(torso) || torso <= 0) return null;
-  return { torso: torso, hip: { x: 0.5 * (hipL.x + hipR.x), y: 0.5 * (hipL.y + hipR.y) } };
+  /* The two crossed diagonals of a real torso stay close to each other at any viewing
+   * angle. A skeleton fused across two bodies - shoulders from one, hips from the
+   * other - has no reason to. Measured only for now, so the next take can say whether
+   * this is the geometric signature of corruption that torso size alone is not. */
+  const asym = Math.abs(diagA - diagB) / torso;
+  return { torso: torso, asym: asym,
+           hip: { x: 0.5 * (hipL.x + hipR.x), y: 0.5 * (hipL.y + hipR.y) } };
 };
 
 /* Returns the index of the pose to forward to Max, or -1 when no subject is valid
  * this frame (nobody detected, or lock momentarily unmatched). */
 const selectSubject = (poses) => {
-  const gate = SUBJECT_GATE_FRAC * overlay.width;
+  const gateReference = lockedTorsoRef > 0 ? lockedTorsoRef : lockedTorso;
+  const gate = Math.max(SUBJECT_GATE_MIN_PX, SUBJECT_GATE_TORSO * gateReference);
 
   // Candidate metrics; skeletons with an incomplete torso are discarded up front.
   const candidates = [];
   for (let i = 0; i < poses.length; i++) {
     const m = poseMetrics(poses[i]);
     if (m && m.torso >= SUBJECT_MIN_TORSO_PX && m.torso <= SUBJECT_MAX_TORSO_PX) {
-      candidates.push({ index: i, torso: m.torso, hip: m.hip });
+      candidates.push({ index: i, torso: m.torso, asym: m.asym, hip: m.hip });
     }
   }
 
@@ -331,6 +412,7 @@ const selectSubject = (poses) => {
   const elect = (c) => {
     lockedHip = c.hip;
     lockedTorso = c.torso;
+    lockedAsym = c.asym;
     lockedTorsoRef = c.torso;   // a new subject restarts the scale reference
     subjectMissCount = 0;
     challengerHip = null;
@@ -371,6 +453,7 @@ const selectSubject = (poses) => {
   for (const c of candidates) {
     if (c === tracked) continue;
     if (c.torso < tracked.torso * SUBJECT_TAKEOVER_RATIO) continue;
+    if (c.torso > tracked.torso * SUBJECT_TAKEOVER_RATIO_MAX) continue;
     if (!challenger || c.torso > challenger.torso) challenger = c;
   }
   // The challenger counter only accumulates while it stays the same person, which is
@@ -387,6 +470,7 @@ const selectSubject = (poses) => {
 
   lockedHip = tracked.hip;
   lockedTorso = tracked.torso;
+  lockedAsym = tracked.asym;
   lockedTorsoRef = lockedTorsoRef > 0
     ? lockedTorsoRef + SUBJECT_TORSO_EMA * (tracked.torso - lockedTorsoRef)
     : tracked.torso;
@@ -450,6 +534,8 @@ const drawTelemetry = () => {
     "detect  " + detectMs.toFixed(1) + " ms",
     "frame   " + intervalMs.toFixed(1) + " ms  (" + fps.toFixed(1) + " fps)",
     "poses   " + telemetryPoses,
+    "arms    " + (armFrozenMask ? ((armFrozenMask & 1 ? "HOLD-L " : "ok ") +
+                                   (armFrozenMask & 2 ? "HOLD-R" : "ok")) : "ok ok"),
     "subject " + (telemetrySubject >= 0 ? telemetrySubject : "HOLD")
   ];
 
@@ -522,8 +608,8 @@ const initLogging = async () => {
       body: JSON.stringify({
         model: POSE_MODEL_URL.split("/").pop(),
         numPoses: NUM_POSES,
-        width: overlay.width,
-        height: overlay.height
+        width: Math.round(metricWidth),
+        height: Math.round(metricHeight)
       })
     });
     logStartMs = performance.now();
@@ -534,37 +620,115 @@ const initLogging = async () => {
   }
 };
 
-/* Arm observation, for calibrating a plausibility filter that is NOT yet in place.
- * Test 003 showed the dominant error mode is not subject selection but limb attribution
- * inside a single skeleton: in the phases where people crowded the visitor, the model
- * returned ONE pose 98-99% of the time, so there was nothing to select between - the
- * bodies had been merged. Filtering that requires thresholds, and thresholds picked
- * blind would freeze the arm more often than the glitch they suppress. So the two
- * candidate discriminants are measured here first and filtered later:
- *   reach = |shoulder - wrist| / torso   - anatomy caps this around 1.15; a borrowed
- *           arm, belonging to a body at another distance, breaks the ratio
- *   vel   = |wrist(t) - wrist(t-1)| / torso  - an attribution swap teleports the wrist
- * Both are normalised by torso size, so they are independent of the subject's distance
- * from the camera. */
-let prevWristL = null;
-let prevWristR = null;
+/* ---------------------------------------------------------------------------
+ * ARM PLAUSIBILITY FILTER
+ * ---------------------------------------------------------------------------
+ * The dominant error mode is not subject selection but limb attribution inside a
+ * single skeleton: when people crowd the visitor the model merges the bodies into one
+ * pose, so there is nothing left to select between and the arm that reaches Max may
+ * belong to somebody else. Selection logic cannot see this; only the geometry can.
+ *
+ * Two discriminants, both normalised by torso size so they are independent of the
+ * subject's distance from the camera:
+ *   reach = |shoulder - wrist| / torso        anatomy bounds it
+ *   vel   = |wrist(t) - wrist(t-1)| / torso   an attribution swap teleports the wrist
+ *
+ * Thresholds come from test 004, a 191 s solo take recorded specifically to establish
+ * what this performer's own extremes look like - fastest swings, full lateral
+ * extension, arms toward the lens where foreshortening shortens the apparent reach:
+ *   reach  p99 1.33, p99.9 1.46, max 1.65   -> ARM_REACH_MAX 1.9
+ *   vel    p99 0.52, p99.5 0.65, p99.9 1.07 -> ARM_WRIST_VEL_MAX 0.9
+ * The velocity tail above ~0.9 torso per frame corresponds to roughly 9 m/s at the
+ * wrist, which is not a human gesture; those samples are glitches inside the solo take
+ * itself, which is why the threshold sits below the observed maximum rather than above
+ * it. At these values the filter touches 0.25% of the baseline frames and 0.67% of the
+ * adversarial take (test 005).
+ *
+ * When a side fails, its whole chain - elbow, wrist, pinky, index, thumb - is held at
+ * the last accepted values, so the arm stays anatomically coherent instead of being
+ * half fresh and half stale, and the velocity reference stays on the last accepted
+ * wrist so a sustained wrong arm cannot be re-admitted just by standing still. The
+ * freeze expires after ARM_FREEZE_MAX_FRAMES: under the installation brief a briefly
+ * wrong arm is a change of texture, while an arm stuck for seconds reads as the piece
+ * being broken. Once expired the side stays in pass-through until the geometry becomes
+ * plausible again - otherwise a persistently impossible reach, which is judged against
+ * the shoulder and so cannot be cured by accepting one frame, would produce a 2 Hz
+ * stutter of alternating held and fresh values, which is worse than either extreme. */
 
-const armMetrics = (subject) => {
-  if (!subject || !(lockedTorso > 0)) { prevWristL = prevWristR = null; return ",,,,,,,"; }
-  const out = [];
-  for (const [shoulderIdx, wristIdx, prev] of [
-    [LM_SHOULDER_LEFT, LM_WRIST_LEFT, prevWristL],
-    [LM_SHOULDER_RIGHT, LM_WRIST_RIGHT, prevWristR]
-  ]) {
+const ARM_CHAIN_LEFT = [13, LM_WRIST_LEFT, 17, 19, 21];   // elbow, wrist, pinky, index, thumb
+const ARM_CHAIN_RIGHT = [14, LM_WRIST_RIGHT, 18, 20, 22];
+const ARM_REACH_MAX = 1.9;
+const ARM_WRIST_VEL_MAX = 0.9;
+const ARM_FREEZE_MAX_FRAMES = 15;   // ~0.5 s at 30 fps, same budget as the lock
+
+const armState = {
+  left:  { chain: null, prevWrist: null, frozen: 0, expired: false, reach: null, vel: null },
+  right: { chain: null, prevWrist: null, frozen: 0, expired: false, reach: null, vel: null }
+};
+let armFrozenMask = 0;   // bit 0 = left held, bit 1 = right held; for the log and readout
+
+const resetArmFilter = () => {
+  for (const side of ["left", "right"]) {
+    armState[side].prevWrist = null;
+    armState[side].frozen = 0;
+    armState[side].expired = false;
+    armState[side].reach = null;
+    armState[side].vel = null;
+  }
+  armFrozenMask = 0;
+};
+
+/* Returns a copy of the subject's landmarks with implausible arms held at their last
+ * accepted values, or the subject unchanged when nothing is wrong. */
+const sanitizeArms = (subject) => {
+  armFrozenMask = 0;
+  if (!subject || !(lockedTorso > 0)) { resetArmFilter(); return subject; }
+
+  let sanitized = null;
+  const sides = [
+    ["left", LM_SHOULDER_LEFT, LM_WRIST_LEFT, ARM_CHAIN_LEFT, 1],
+    ["right", LM_SHOULDER_RIGHT, LM_WRIST_RIGHT, ARM_CHAIN_RIGHT, 2]
+  ];
+
+  for (const [side, shoulderIdx, wristIdx, chain, bit] of sides) {
+    const state = armState[side];
     const shoulder = subject[shoulderIdx];
     const wrist = subject[wristIdx];
-    if (!shoulder || !wrist) { out.push("", "", "", ""); continue; }
-    const reach = pixelDistance(shoulder, wrist) / lockedTorso;
-    const vel = prev ? pixelDistance(wrist, prev) / lockedTorso : 0;
-    out.push(wrist.x.toFixed(4), wrist.y.toFixed(4), reach.toFixed(3), vel.toFixed(3));
+    if (!shoulder || !wrist) { state.reach = state.vel = null; continue; }
+
+    state.reach = pixelDistance(shoulder, wrist) / lockedTorso;
+    state.vel = state.prevWrist ? pixelDistance(wrist, state.prevWrist) / lockedTorso : 0;
+    const implausible = state.reach > ARM_REACH_MAX || state.vel > ARM_WRIST_VEL_MAX;
+    if (!implausible) state.expired = false;
+
+    if (implausible && !state.expired && state.chain) {
+      state.frozen++;
+      if (state.frozen >= ARM_FREEZE_MAX_FRAMES) state.expired = true;
+      armFrozenMask |= bit;
+      if (!sanitized) sanitized = subject.slice();
+      for (let k = 0; k < chain.length; k++) sanitized[chain[k]] = state.chain[k];
+      // prevWrist deliberately left on the last ACCEPTED wrist, not the rejected one.
+    } else {
+      state.frozen = 0;
+      state.chain = chain.map((i) => subject[i]);
+      state.prevWrist = wrist;
+    }
   }
-  prevWristL = subject[LM_WRIST_LEFT] || null;
-  prevWristR = subject[LM_WRIST_RIGHT] || null;
+  return sanitized || subject;
+};
+
+// CSV fields describing the locked subject's arms, filter decision included.
+const armMetrics = (subject) => {
+  if (!subject || !(lockedTorso > 0)) return ",,,,,,,,";
+  const out = [];
+  for (const [side, wristIdx] of [["left", LM_WRIST_LEFT], ["right", LM_WRIST_RIGHT]]) {
+    const state = armState[side];
+    const wrist = subject[wristIdx];
+    if (!wrist || state.reach === null) { out.push("", "", "", ""); continue; }
+    out.push(wrist.x.toFixed(4), wrist.y.toFixed(4),
+             state.reach.toFixed(3), state.vel.toFixed(3));
+  }
+  out.push(armFrozenMask);
   return out.join(",");
 };
 
@@ -585,6 +749,7 @@ const queueLogSample = (poses, subject, landmarks) => {
     (lockedHip ? lockedHip.x.toFixed(4) : "") + "," +
     (lockedHip ? lockedHip.y.toFixed(4) : "") + "," +
     lockedTorso.toFixed(1) + "," +
+    lockedAsym.toFixed(3) + "," +
     armMetrics(landmarks)
   );
 };
@@ -600,14 +765,19 @@ function onResultsPose(results) {
       results.image, 0, 0, overlay.width, overlay.height);
   }
 
+  updateMetricBasis(results.image);
   const subjectIndex = selectSubject(results.landmarks || []);
   telemetryPoses = (results.landmarks || []).length;
   telemetrySubject = subjectIndex;
-  queueLogSample(telemetryPoses, subjectIndex,
-                 subjectIndex >= 0 ? results.landmarks[subjectIndex] : null);
+  const loggedSubject = subjectIndex >= 0
+    ? sanitizeArms(results.landmarks[subjectIndex])
+    : (resetArmFilter(), null);
+  queueLogSample(telemetryPoses, subjectIndex, loggedSubject);
 
   if (subjectIndex >= 0) {
-    const subject = results.landmarks[subjectIndex];
+    // What Max receives, and what the overlay shows, is the filtered skeleton
+    // computed once above.
+    const subject = loggedSubject;
     const output = {
       "left":{},
       "right":{},
