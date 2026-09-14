@@ -25,3 +25,9 @@ Thumbs.db
 
 # Telemetry logs and local test tooling (development only)
 Log/
+
+# Waveform_project — source material for the granulator's audio track, not synced to GitHub
+Waveform_project/
+
+# audio — the file the granulator loads at runtime; excluded for now, add explicitly (git add -f) once a final version is ready to commit
+audio/
