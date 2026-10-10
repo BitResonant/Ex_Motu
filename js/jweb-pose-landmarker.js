@@ -313,6 +313,28 @@ let subjectMissCount = 0;    // consecutive frames without a valid association
 let challengerHip = null;    // hip centroid of the pending challenger, previous frame
 let challengerFrames = 0;    // consecutive frames the challenger has been eligible
 
+/* Occupancy, i.e. "is anybody using the installation". MediaPipe exposes no usable
+ * presence flag: PoseLandmarkerResult carries no per-pose score, and a non-empty
+ * landmarks array is the wrong criterion here because the frame deliberately includes
+ * the circulation corridor, so passers-by would keep the piece "in use" indefinitely.
+ * The lock state is the right signal: occupied while a subject is locked, including
+ * the brief holds of up to SUBJECT_MAX_MISS frames, and released only when the lock
+ * is. Its meaning depends on SUBJECT_MIN_TORSO_PX being raised on site, otherwise a
+ * bystander at three metres is elected when the plinth is empty.
+ * Sent to Max as "occupied 0|1" on transitions only - an edge, not a 30 Hz stream.
+ * All timing and hysteresis (attack/release delays, gain ramps) is left to Max, in ms,
+ * so that it does not inherit the frame-rate dependency of the constants above.
+ * Starts as null so the first processed frame always reports the initial state. */
+let occupied = null;
+
+const reportOccupancy = () => {
+  const now = lockedHip !== null;
+  if (now !== occupied) {
+    occupied = now;
+    window.max.outlet("occupied", now ? 1 : 0);
+  }
+};
+
 const resetSubjectLock = () => {
   lockedHip = null;
   lockedTorso = 0;
@@ -767,6 +789,7 @@ function onResultsPose(results) {
 
   updateMetricBasis(results.image);
   const subjectIndex = selectSubject(results.landmarks || []);
+  reportOccupancy();
   telemetryPoses = (results.landmarks || []).length;
   telemetrySubject = subjectIndex;
   const loggedSubject = subjectIndex >= 0
