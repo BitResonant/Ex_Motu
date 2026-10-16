@@ -812,7 +812,6 @@
 						"classnamespace" : "box",
 						"rect" : [ 789.0, 95.0, 689.0, 787.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-34",
@@ -1036,7 +1035,7 @@
 ,
 																	"rnbo_serial" : 1,
 																	"rnbo_uniqueid" : "message_obj-8",
-																	"text" : "698.46"
+																	"text" : "783.99"
 																}
 
 															}
@@ -1055,7 +1054,7 @@
 ,
 																	"rnbo_serial" : 2,
 																	"rnbo_uniqueid" : "message_obj-7",
-																	"text" : "523.25"
+																	"text" : "622.25"
 																}
 
 															}
@@ -1074,7 +1073,7 @@
 ,
 																	"rnbo_serial" : 3,
 																	"rnbo_uniqueid" : "message_obj-6",
-																	"text" : "415.3"
+																	"text" : "466.16"
 																}
 
 															}
@@ -1093,7 +1092,7 @@
 ,
 																	"rnbo_serial" : 4,
 																	"rnbo_uniqueid" : "message_obj-5",
-																	"text" : "349.23"
+																	"text" : "392"
 																}
 
 															}
@@ -1112,7 +1111,7 @@
 ,
 																	"rnbo_serial" : 5,
 																	"rnbo_uniqueid" : "message_obj-4",
-																	"text" : "261.63"
+																	"text" : "311.13"
 																}
 
 															}
@@ -1131,7 +1130,7 @@
 ,
 																	"rnbo_serial" : 6,
 																	"rnbo_uniqueid" : "message_obj-3",
-																	"text" : "207.65"
+																	"text" : "233.08"
 																}
 
 															}
@@ -11494,7 +11493,7 @@
 ,
 																	"rnbo_serial" : 1,
 																	"rnbo_uniqueid" : "message_obj-8",
-																	"text" : "698.46"
+																	"text" : "783.99"
 																}
 
 															}
@@ -11513,7 +11512,7 @@
 ,
 																	"rnbo_serial" : 2,
 																	"rnbo_uniqueid" : "message_obj-7",
-																	"text" : "523.25"
+																	"text" : "622.25"
 																}
 
 															}
@@ -11532,7 +11531,7 @@
 ,
 																	"rnbo_serial" : 3,
 																	"rnbo_uniqueid" : "message_obj-6",
-																	"text" : "415.3"
+																	"text" : "466.16"
 																}
 
 															}
@@ -11551,7 +11550,7 @@
 ,
 																	"rnbo_serial" : 4,
 																	"rnbo_uniqueid" : "message_obj-5",
-																	"text" : "349.23"
+																	"text" : "392"
 																}
 
 															}
@@ -11570,7 +11569,7 @@
 ,
 																	"rnbo_serial" : 5,
 																	"rnbo_uniqueid" : "message_obj-4",
-																	"text" : "261.63"
+																	"text" : "311.13"
 																}
 
 															}
@@ -11589,7 +11588,7 @@
 ,
 																	"rnbo_serial" : 6,
 																	"rnbo_uniqueid" : "message_obj-3",
-																	"text" : "207.65"
+																	"text" : "233.08"
 																}
 
 															}
@@ -19490,9 +19489,23 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 95.0, 1444.0, 853.0 ],
+						"rect" : [ 246.0, 193.0, 1444.0, 787.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
+						"visible" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"format" : 6,
+									"id" : "obj-23",
+									"maxclass" : "flonum",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 764.0, 188.0, 50.0, 22.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-26",
 									"maxclass" : "newobj",
@@ -19560,18 +19573,6 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 671.0, 142.0, 70.0, 22.0 ],
 									"text" : "loadmess 1"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-19",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 854.940000000000055, 342.649999999999977, 135.0, 22.0 ],
-									"text" : "if $i1 == 32000 then 1.5"
 								}
 
 							}
@@ -19666,8 +19667,8 @@
 									"numinlets" : 5,
 									"numoutlets" : 4,
 									"outlettype" : [ "int", "", "", "int" ],
-									"patching_rect" : [ 671.0, 291.0, 105.0, 22.0 ],
-									"text" : "counter 2 0 32000"
+									"patching_rect" : [ 671.0, 291.0, 95.0, 22.0 ],
+									"text" : "counter 0 32000"
 								}
 
 							}
@@ -20306,13 +20307,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-46", 0 ],
-									"source" : [ "obj-19", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-112", 0 ],
 									"source" : [ "obj-191", 0 ]
 								}
@@ -20376,6 +20370,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-187", 0 ],
 									"source" : [ "obj-210", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-41", 1 ],
+									"source" : [ "obj-23", 0 ]
 								}
 
 							}
