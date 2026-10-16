@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 790.0, 96.0, 689.0, 787.0 ],
+		"rect" : [ 728.0, 95.0, 689.0, 787.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
@@ -1371,7 +1371,7 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-16",
-					"items" : [ "Fotocamera di MacBook Pro (0000:0001)", ",", "Fotocamera di iPhone di Matteo" ],
+					"items" : [ "Fotocamera di MacBook Pro (0000:0001)", ",", "OBSBOT Virtual Camera", ",", "Fotocamera di iPhone di Matteo" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,

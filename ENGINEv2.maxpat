@@ -812,6 +812,7 @@
 						"classnamespace" : "box",
 						"rect" : [ 789.0, 95.0, 689.0, 787.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-34",
@@ -1035,7 +1036,7 @@
 ,
 																	"rnbo_serial" : 1,
 																	"rnbo_uniqueid" : "message_obj-8",
-																	"text" : "783.99"
+																	"text" : "698.46"
 																}
 
 															}
@@ -1054,7 +1055,7 @@
 ,
 																	"rnbo_serial" : 2,
 																	"rnbo_uniqueid" : "message_obj-7",
-																	"text" : "622.25"
+																	"text" : "523.25"
 																}
 
 															}
@@ -1073,7 +1074,7 @@
 ,
 																	"rnbo_serial" : 3,
 																	"rnbo_uniqueid" : "message_obj-6",
-																	"text" : "466.16"
+																	"text" : "415.3"
 																}
 
 															}
@@ -1092,7 +1093,7 @@
 ,
 																	"rnbo_serial" : 4,
 																	"rnbo_uniqueid" : "message_obj-5",
-																	"text" : "392"
+																	"text" : "349.23"
 																}
 
 															}
@@ -1111,7 +1112,7 @@
 ,
 																	"rnbo_serial" : 5,
 																	"rnbo_uniqueid" : "message_obj-4",
-																	"text" : "311.13"
+																	"text" : "261.63"
 																}
 
 															}
@@ -1130,7 +1131,7 @@
 ,
 																	"rnbo_serial" : 6,
 																	"rnbo_uniqueid" : "message_obj-3",
-																	"text" : "233.08"
+																	"text" : "207.65"
 																}
 
 															}
@@ -11493,7 +11494,7 @@
 ,
 																	"rnbo_serial" : 1,
 																	"rnbo_uniqueid" : "message_obj-8",
-																	"text" : "783.99"
+																	"text" : "698.46"
 																}
 
 															}
@@ -11512,7 +11513,7 @@
 ,
 																	"rnbo_serial" : 2,
 																	"rnbo_uniqueid" : "message_obj-7",
-																	"text" : "622.25"
+																	"text" : "523.25"
 																}
 
 															}
@@ -11531,7 +11532,7 @@
 ,
 																	"rnbo_serial" : 3,
 																	"rnbo_uniqueid" : "message_obj-6",
-																	"text" : "466.16"
+																	"text" : "415.3"
 																}
 
 															}
@@ -11550,7 +11551,7 @@
 ,
 																	"rnbo_serial" : 4,
 																	"rnbo_uniqueid" : "message_obj-5",
-																	"text" : "392"
+																	"text" : "349.23"
 																}
 
 															}
@@ -11569,7 +11570,7 @@
 ,
 																	"rnbo_serial" : 5,
 																	"rnbo_uniqueid" : "message_obj-4",
-																	"text" : "311.13"
+																	"text" : "261.63"
 																}
 
 															}
@@ -11588,7 +11589,7 @@
 ,
 																	"rnbo_serial" : 6,
 																	"rnbo_uniqueid" : "message_obj-3",
-																	"text" : "233.08"
+																	"text" : "207.65"
 																}
 
 															}
