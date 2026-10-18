@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 33.0, 535.0, 688.0, 347.0 ],
+		"rect" : [ 34.0, 535.0, 688.0, 347.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
@@ -989,9 +989,8 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 790.0, 96.0, 688.0, 787.0 ],
+						"rect" : [ 790.0, 95.0, 688.0, 787.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"format" : 6,
@@ -3915,6 +3914,7 @@
 						"classnamespace" : "box",
 						"rect" : [ 775.0, 95.0, 689.0, 787.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-34",
@@ -4138,7 +4138,7 @@
 ,
 																	"rnbo_serial" : 1,
 																	"rnbo_uniqueid" : "message_obj-8",
-																	"text" : "698.46"
+																	"text" : "830.61"
 																}
 
 															}
@@ -4157,7 +4157,7 @@
 ,
 																	"rnbo_serial" : 2,
 																	"rnbo_uniqueid" : "message_obj-7",
-																	"text" : "622.25"
+																	"text" : "739.99"
 																}
 
 															}
@@ -4176,7 +4176,7 @@
 ,
 																	"rnbo_serial" : 3,
 																	"rnbo_uniqueid" : "message_obj-6",
-																	"text" : "466.16"
+																	"text" : "587.33"
 																}
 
 															}
@@ -4195,7 +4195,7 @@
 ,
 																	"rnbo_serial" : 4,
 																	"rnbo_uniqueid" : "message_obj-5",
-																	"text" : "349.23"
+																	"text" : "415.3"
 																}
 
 															}
@@ -4214,7 +4214,7 @@
 ,
 																	"rnbo_serial" : 5,
 																	"rnbo_uniqueid" : "message_obj-4",
-																	"text" : "311.13"
+																	"text" : "369.99"
 																}
 
 															}
@@ -4233,7 +4233,7 @@
 ,
 																	"rnbo_serial" : 6,
 																	"rnbo_uniqueid" : "message_obj-3",
-																	"text" : "233.08"
+																	"text" : "293.66"
 																}
 
 															}
@@ -4280,7 +4280,7 @@
 																		"safemath" : 1
 																	}
 ,
-																	"rnbo_serial" : 16,
+																	"rnbo_serial" : 1,
 																	"rnbo_uniqueid" : "codebox_obj-43",
 																	"rnboinfo" : 																	{
 																		"needsInstanceInfo" : 1,
@@ -5960,7 +5960,7 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 342.028988361358643, 980.985257387161255, 107.0, 23.0 ],
 													"rnbo_classname" : "scale",
-													"rnbo_serial" : 10,
+													"rnbo_serial" : 1,
 													"rnbo_uniqueid" : "scale_obj-73",
 													"text" : "scale 0. 1. 0. 0.024"
 												}
@@ -5984,7 +5984,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 5,
+													"rnbo_serial" : 3,
 													"rnbo_uniqueid" : "number_obj-72"
 												}
 
@@ -6013,7 +6013,7 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 740.586962580680847, 1393.811604857444763, 81.0, 23.0 ],
 													"rnbo_classname" : "loadmess",
-													"rnbo_serial" : 3,
+													"rnbo_serial" : 2,
 													"rnbo_uniqueid" : "loadmess_obj-14",
 													"rnboinfo" : 													{
 														"needsInstanceInfo" : 1,
@@ -6096,7 +6096,7 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 1457.971026659011841, 720.289861083030701, 67.0, 23.0 ],
 													"rnbo_classname" : "loadmess",
-													"rnbo_serial" : 4,
+													"rnbo_serial" : 3,
 													"rnbo_uniqueid" : "loadmess_obj-8",
 													"rnboinfo" : 													{
 														"needsInstanceInfo" : 1,
@@ -6188,7 +6188,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 6,
+													"rnbo_serial" : 4,
 													"rnbo_uniqueid" : "number_obj-5"
 												}
 
@@ -6241,7 +6241,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 7,
+													"rnbo_serial" : 5,
 													"rnbo_uniqueid" : "number_obj-147"
 												}
 
@@ -6264,7 +6264,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 8,
+													"rnbo_serial" : 6,
 													"rnbo_uniqueid" : "number_obj-148"
 												}
 
@@ -6617,7 +6617,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 9,
+													"rnbo_serial" : 7,
 													"rnbo_uniqueid" : "number_obj-112"
 												}
 
@@ -6640,7 +6640,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 10,
+													"rnbo_serial" : 8,
 													"rnbo_uniqueid" : "number_obj-113"
 												}
 
@@ -6993,7 +6993,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 11,
+													"rnbo_serial" : 9,
 													"rnbo_uniqueid" : "number_obj-119"
 												}
 
@@ -7016,7 +7016,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 12,
+													"rnbo_serial" : 10,
 													"rnbo_uniqueid" : "number_obj-120"
 												}
 
@@ -7369,7 +7369,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 13,
+													"rnbo_serial" : 11,
 													"rnbo_uniqueid" : "number_obj-104"
 												}
 
@@ -7392,7 +7392,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 14,
+													"rnbo_serial" : 12,
 													"rnbo_uniqueid" : "number_obj-105"
 												}
 
@@ -7745,7 +7745,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 15,
+													"rnbo_serial" : 13,
 													"rnbo_uniqueid" : "number_obj-100"
 												}
 
@@ -7768,7 +7768,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 16,
+													"rnbo_serial" : 14,
 													"rnbo_uniqueid" : "number_obj-98"
 												}
 
@@ -8488,7 +8488,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 17,
+													"rnbo_serial" : 15,
 													"rnbo_uniqueid" : "number_obj-32"
 												}
 
@@ -8511,7 +8511,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 18,
+													"rnbo_serial" : 16,
 													"rnbo_uniqueid" : "number_obj-33"
 												}
 
@@ -8862,7 +8862,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 19,
+													"rnbo_serial" : 17,
 													"rnbo_uniqueid" : "number_obj-38"
 												}
 
@@ -8885,7 +8885,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 20,
+													"rnbo_serial" : 18,
 													"rnbo_uniqueid" : "number_obj-39"
 												}
 
@@ -9236,7 +9236,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 21,
+													"rnbo_serial" : 19,
 													"rnbo_uniqueid" : "number_obj-44"
 												}
 
@@ -9259,7 +9259,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 22,
+													"rnbo_serial" : 20,
 													"rnbo_uniqueid" : "number_obj-45"
 												}
 
@@ -9610,7 +9610,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 23,
+													"rnbo_serial" : 21,
 													"rnbo_uniqueid" : "number_obj-24"
 												}
 
@@ -9633,7 +9633,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 24,
+													"rnbo_serial" : 22,
 													"rnbo_uniqueid" : "number_obj-25"
 												}
 
@@ -9984,7 +9984,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 25,
+													"rnbo_serial" : 23,
 													"rnbo_uniqueid" : "number_obj-18"
 												}
 
@@ -10007,7 +10007,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 26,
+													"rnbo_serial" : 24,
 													"rnbo_uniqueid" : "number_obj-19"
 												}
 
@@ -10358,7 +10358,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 27,
+													"rnbo_serial" : 25,
 													"rnbo_uniqueid" : "number_obj-7"
 												}
 
@@ -10381,7 +10381,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 28,
+													"rnbo_serial" : 26,
 													"rnbo_uniqueid" : "number_obj-6"
 												}
 
@@ -13302,8 +13302,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 905.4296875, 291.875, 39.0, 22.0 ],
-									"text" : "$1 30"
+									"patching_rect" : [ 905.4296875, 291.875, 45.0, 22.0 ],
+									"text" : "$1 200"
 								}
 
 							}
@@ -13759,7 +13759,7 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 342.028988361358643, 980.985257387161255, 107.0, 23.0 ],
 													"rnbo_classname" : "scale",
-													"rnbo_serial" : 10,
+													"rnbo_serial" : 1,
 													"rnbo_uniqueid" : "scale_obj-73",
 													"text" : "scale 0. 1. 0. 0.024"
 												}
@@ -14345,7 +14345,7 @@
 														}
 ,
 														"classnamespace" : "rnbo",
-														"rect" : [ 33.0, 537.0, 689.0, 346.0 ],
+														"rect" : [ 34.0, 536.0, 689.0, 346.0 ],
 														"default_fontname" : "Lato",
 														"gridsize" : [ 15.0, 15.0 ],
 														"title" : "note_changer",
@@ -14364,7 +14364,7 @@
 ,
 																	"rnbo_serial" : 1,
 																	"rnbo_uniqueid" : "message_obj-8",
-																	"text" : "698.46"
+																	"text" : "830.61"
 																}
 
 															}
@@ -14383,7 +14383,7 @@
 ,
 																	"rnbo_serial" : 2,
 																	"rnbo_uniqueid" : "message_obj-7",
-																	"text" : "622.25"
+																	"text" : "739.99"
 																}
 
 															}
@@ -14402,7 +14402,7 @@
 ,
 																	"rnbo_serial" : 3,
 																	"rnbo_uniqueid" : "message_obj-6",
-																	"text" : "466.16"
+																	"text" : "587.33"
 																}
 
 															}
@@ -14421,7 +14421,7 @@
 ,
 																	"rnbo_serial" : 4,
 																	"rnbo_uniqueid" : "message_obj-5",
-																	"text" : "349.23"
+																	"text" : "415.3"
 																}
 
 															}
@@ -14440,7 +14440,7 @@
 ,
 																	"rnbo_serial" : 5,
 																	"rnbo_uniqueid" : "message_obj-4",
-																	"text" : "311.13"
+																	"text" : "369.99"
 																}
 
 															}
@@ -14459,7 +14459,7 @@
 ,
 																	"rnbo_serial" : 6,
 																	"rnbo_uniqueid" : "message_obj-3",
-																	"text" : "233.08"
+																	"text" : "293.66"
 																}
 
 															}
@@ -14506,7 +14506,7 @@
 																		"safemath" : 1
 																	}
 ,
-																	"rnbo_serial" : 16,
+																	"rnbo_serial" : 1,
 																	"rnbo_uniqueid" : "codebox_obj-43",
 																	"rnboinfo" : 																	{
 																		"needsInstanceInfo" : 1,
@@ -15632,7 +15632,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 5,
+													"rnbo_serial" : 3,
 													"rnbo_uniqueid" : "number_obj-72"
 												}
 
@@ -15661,7 +15661,7 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 740.586962580680847, 1393.811604857444763, 81.0, 23.0 ],
 													"rnbo_classname" : "loadmess",
-													"rnbo_serial" : 3,
+													"rnbo_serial" : 2,
 													"rnbo_uniqueid" : "loadmess_obj-14",
 													"rnboinfo" : 													{
 														"needsInstanceInfo" : 1,
@@ -15744,7 +15744,7 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 1457.971026659011841, 720.289861083030701, 67.0, 23.0 ],
 													"rnbo_classname" : "loadmess",
-													"rnbo_serial" : 4,
+													"rnbo_serial" : 3,
 													"rnbo_uniqueid" : "loadmess_obj-8",
 													"rnboinfo" : 													{
 														"needsInstanceInfo" : 1,
@@ -15836,7 +15836,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 6,
+													"rnbo_serial" : 4,
 													"rnbo_uniqueid" : "number_obj-5"
 												}
 
@@ -15889,7 +15889,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 7,
+													"rnbo_serial" : 5,
 													"rnbo_uniqueid" : "number_obj-147"
 												}
 
@@ -15912,7 +15912,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 8,
+													"rnbo_serial" : 6,
 													"rnbo_uniqueid" : "number_obj-148"
 												}
 
@@ -16265,7 +16265,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 9,
+													"rnbo_serial" : 7,
 													"rnbo_uniqueid" : "number_obj-112"
 												}
 
@@ -16288,7 +16288,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 10,
+													"rnbo_serial" : 8,
 													"rnbo_uniqueid" : "number_obj-113"
 												}
 
@@ -16641,7 +16641,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 11,
+													"rnbo_serial" : 9,
 													"rnbo_uniqueid" : "number_obj-119"
 												}
 
@@ -16664,7 +16664,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 12,
+													"rnbo_serial" : 10,
 													"rnbo_uniqueid" : "number_obj-120"
 												}
 
@@ -17017,7 +17017,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 13,
+													"rnbo_serial" : 11,
 													"rnbo_uniqueid" : "number_obj-104"
 												}
 
@@ -17040,7 +17040,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 14,
+													"rnbo_serial" : 12,
 													"rnbo_uniqueid" : "number_obj-105"
 												}
 
@@ -17393,7 +17393,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 15,
+													"rnbo_serial" : 13,
 													"rnbo_uniqueid" : "number_obj-100"
 												}
 
@@ -17416,7 +17416,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 16,
+													"rnbo_serial" : 14,
 													"rnbo_uniqueid" : "number_obj-98"
 												}
 
@@ -18136,7 +18136,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 17,
+													"rnbo_serial" : 15,
 													"rnbo_uniqueid" : "number_obj-32"
 												}
 
@@ -18159,7 +18159,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 18,
+													"rnbo_serial" : 16,
 													"rnbo_uniqueid" : "number_obj-33"
 												}
 
@@ -18510,7 +18510,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 19,
+													"rnbo_serial" : 17,
 													"rnbo_uniqueid" : "number_obj-38"
 												}
 
@@ -18533,7 +18533,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 20,
+													"rnbo_serial" : 18,
 													"rnbo_uniqueid" : "number_obj-39"
 												}
 
@@ -18884,7 +18884,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 21,
+													"rnbo_serial" : 19,
 													"rnbo_uniqueid" : "number_obj-44"
 												}
 
@@ -18907,7 +18907,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 22,
+													"rnbo_serial" : 20,
 													"rnbo_uniqueid" : "number_obj-45"
 												}
 
@@ -19258,7 +19258,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 23,
+													"rnbo_serial" : 21,
 													"rnbo_uniqueid" : "number_obj-24"
 												}
 
@@ -19281,7 +19281,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 24,
+													"rnbo_serial" : 22,
 													"rnbo_uniqueid" : "number_obj-25"
 												}
 
@@ -19632,7 +19632,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 25,
+													"rnbo_serial" : 23,
 													"rnbo_uniqueid" : "number_obj-18"
 												}
 
@@ -19655,7 +19655,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 26,
+													"rnbo_serial" : 24,
 													"rnbo_uniqueid" : "number_obj-19"
 												}
 
@@ -20006,7 +20006,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 27,
+													"rnbo_serial" : 25,
 													"rnbo_uniqueid" : "number_obj-7"
 												}
 
@@ -20029,7 +20029,7 @@
 														"order" : ""
 													}
 ,
-													"rnbo_serial" : 28,
+													"rnbo_serial" : 26,
 													"rnbo_uniqueid" : "number_obj-6"
 												}
 
@@ -22097,7 +22097,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 33.0, 95.0, 689.0, 346.0 ],
+						"rect" : [ 34.0, 95.0, 689.0, 346.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"visible" : 1,
 						"boxes" : [ 							{
@@ -22168,7 +22168,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 530.0, 330.0, 50.0, 22.0 ],
-									"text" : "17543"
+									"text" : "29639"
 								}
 
 							}
