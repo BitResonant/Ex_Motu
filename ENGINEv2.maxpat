@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 535.0, 688.0, 347.0 ],
+		"rect" : [ 100.0, 135.0, 688.0, 347.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
@@ -994,6 +994,2496 @@
 						"gridsize" : [ 15.0, 15.0 ],
 						"visible" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-114",
+									"maxclass" : "newobj",
+									"numinlets" : 0,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patcher" : 									{
+										"fileversion" : 1,
+										"appversion" : 										{
+											"major" : 9,
+											"minor" : 0,
+											"revision" : 7,
+											"architecture" : "x64",
+											"modernui" : 1
+										}
+,
+										"classnamespace" : "box",
+										"rect" : [ -180.0, 185.0, 1000.0, 706.0 ],
+										"gridsize" : [ 15.0, 15.0 ],
+										"visible" : 1,
+										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-107",
+													"maxclass" : "newobj",
+													"numinlets" : 0,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 290.109904289245605, 729.670365333557129, 67.0, 22.0 ],
+													"text" : "r scifimetro"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-106",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 758.241795301437378, 370.769237160682678, 69.0, 22.0 ],
+													"text" : "s scifimetro"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-105",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "bang", "" ],
+													"patching_rect" : [ 317.582433104515076, 763.736301064491272, 34.0, 22.0 ],
+													"text" : "sel 0"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-104",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 762.637399911880493, 310.329673767089844, 66.0, 22.0 ],
+													"text" : "random 26"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-103",
+													"maxclass" : "toggle",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "int" ],
+													"parameter_enable" : 0,
+													"patching_rect" : [ 719.78025496006012, 238.901098847389221, 24.0, 24.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-100",
+													"maxclass" : "newobj",
+													"numinlets" : 6,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 782.417620658874512, 240.0, 110.0, 22.0 ],
+													"text" : "scale 0. 1. 100 500"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-99",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "bang" ],
+													"patching_rect" : [ 762.637399911880493, 272.967034578323364, 39.0, 22.0 ],
+													"text" : "metro"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-97",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "bang" ],
+													"patching_rect" : [ 317.582433104515076, 831.868172526359558, 47.0, 22.0 ],
+													"text" : "delay 5"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-96",
+													"maxclass" : "newobj",
+													"numinlets" : 6,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 448.351670265197754, 897.802241683006287, 110.0, 22.0 ],
+													"text" : "scale 0.5 1. 0.07 1."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-95",
+													"maxclass" : "button",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "bang" ],
+													"parameter_enable" : 0,
+													"patching_rect" : [ 317.582433104515076, 787.912126421928406, 24.0, 24.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-78",
+													"maxclass" : "newobj",
+													"numinlets" : 0,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 365.934083819389343, 546.153872847557068, 30.0, 22.0 ],
+													"text" : "r LY"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-79",
+													"maxclass" : "newobj",
+													"numinlets" : 0,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 468.131891012191772, 584.615413188934326, 32.0, 22.0 ],
+													"text" : "r RY"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-80",
+													"maxclass" : "newobj",
+													"numinlets" : 6,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 365.934083819389343, 584.615413188934326, 90.0, 22.0 ],
+													"text" : "scale 1. 0. 0. 1."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-81",
+													"maxclass" : "newobj",
+													"numinlets" : 6,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 468.131891012191772, 621.978052377700806, 90.0, 22.0 ],
+													"text" : "scale 1. 0. 0. 1."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-82",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "float", "int" ],
+													"patching_rect" : [ 365.934083819389343, 618.681348919868469, 74.0, 22.0 ],
+													"text" : "maximum 0."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-83",
+													"maxclass" : "newobj",
+													"numinlets" : 6,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 365.934083819389343, 659.340691566467285, 103.0, 22.0 ],
+													"text" : "scale 0. 1. 0.5 0.8"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-85",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 365.934083819389343, 695.604429602622986, 86.0, 22.0 ],
+													"text" : "random 10001"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-86",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "float" ],
+													"patching_rect" : [ 365.934083819389343, 729.670365333557129, 55.0, 22.0 ],
+													"text" : "/ 10000."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-87",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "float" ],
+													"patching_rect" : [ 365.934083819389343, 763.736301064491272, 36.0, 22.0 ],
+													"text" : "* 0.2"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-88",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "float" ],
+													"patching_rect" : [ 365.934083819389343, 797.802236795425415, 32.0, 22.0 ],
+													"text" : "+ 0."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"format" : 6,
+													"id" : "obj-89",
+													"maxclass" : "flonum",
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "bang" ],
+													"parameter_enable" : 0,
+													"patching_rect" : [ 365.934083819389343, 831.868172526359558, 62.0, 22.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"format" : 6,
+													"id" : "obj-65",
+													"maxclass" : "flonum",
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "bang" ],
+													"parameter_enable" : 0,
+													"patching_rect" : [ 782.417620658874512, 205.934064269065857, 50.0, 22.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-63",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "float", "int" ],
+													"patching_rect" : [ 782.417620658874512, 172.967029690742493, 74.0, 22.0 ],
+													"text" : "maximum 0."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-62",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "float" ],
+													"patching_rect" : [ 782.417620658874512, 89.450542092323303, 41.0, 22.0 ],
+													"text" : "abs 0."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-61",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "float" ],
+													"patching_rect" : [ 870.329712867736816, 89.450542092323303, 41.0, 22.0 ],
+													"text" : "abs 0."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"format" : 6,
+													"id" : "obj-60",
+													"maxclass" : "flonum",
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "bang" ],
+													"parameter_enable" : 0,
+													"patching_rect" : [ 870.329712867736816, 137.802192807197571, 50.0, 22.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-59",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "float" ],
+													"patching_rect" : [ 870.329712867736816, 59.780210971832275, 29.5, 22.0 ],
+													"text" : "- 0."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-58",
+													"maxclass" : "newobj",
+													"numinlets" : 0,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 912.087956666946411, 25.714275240898132, 32.0, 22.0 ],
+													"text" : "r RX"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-57",
+													"maxclass" : "newobj",
+													"numinlets" : 0,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 870.329712867736816, 25.714275240898132, 31.0, 22.0 ],
+													"text" : "r LX"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"format" : 6,
+													"id" : "obj-52",
+													"maxclass" : "flonum",
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "bang" ],
+													"parameter_enable" : 0,
+													"patching_rect" : [ 782.417620658874512, 137.802192807197571, 50.0, 22.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-50",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "float" ],
+													"patching_rect" : [ 783.516521811485291, 59.780210971832275, 29.5, 22.0 ],
+													"text" : "- 0."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-48",
+													"maxclass" : "newobj",
+													"numinlets" : 0,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 820.87916100025177, 25.714275240898132, 32.0, 22.0 ],
+													"text" : "r RY"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-49",
+													"maxclass" : "newobj",
+													"numinlets" : 0,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 783.516521811485291, 25.714275240898132, 30.0, 22.0 ],
+													"text" : "r LY"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"format" : 6,
+													"id" : "obj-27",
+													"maxclass" : "flonum",
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "bang" ],
+													"parameter_enable" : 0,
+													"patching_rect" : [ 420.879141449928284, 946.153892397880554, 50.0, 22.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-28",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "signal" ],
+													"patching_rect" : [ 354.945072293281555, 989.011037349700928, 29.5, 22.0 ],
+													"text" : "*~"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-29",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "signal" ],
+													"patching_rect" : [ 317.582433104515076, 989.011037349700928, 29.5, 22.0 ],
+													"text" : "*~"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"comment" : "",
+													"id" : "obj-26",
+													"index" : 2,
+													"maxclass" : "outlet",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 727.472563028335571, 1151.648407936096191, 30.0, 30.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"comment" : "",
+													"id" : "obj-24",
+													"index" : 1,
+													"maxclass" : "outlet",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 646.153877735137939, 1157.142913699150085, 30.0, 30.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-14",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 317.582433104515076, 871.428614020347595, 29.5, 22.0 ],
+													"text" : "1"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-10",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "signal" ],
+													"patching_rect" : [ 365.934083819389343, 871.428614020347595, 31.0, 22.0 ],
+													"text" : "sig~"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"format" : 6,
+													"id" : "obj-9",
+													"maxclass" : "flonum",
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "bang" ],
+													"parameter_enable" : 0,
+													"patching_rect" : [ 610.989040851593018, 1025.274775385856628, 50.0, 22.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-7",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "signal" ],
+													"patching_rect" : [ 516.48354172706604, 1085.714338779449463, 29.5, 22.0 ],
+													"text" : "*~"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-6",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "signal" ],
+													"patching_rect" : [ 317.582433104515076, 1085.714338779449463, 29.5, 22.0 ],
+													"text" : "*~"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-2",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 0,
+													"patching_rect" : [ 415.38463568687439, 1209.890169024467468, 55.0, 22.0 ],
+													"text" : "dac~ 1 2"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-1",
+													"maxclass" : "newobj",
+													"numinlets" : 3,
+													"numoutlets" : 3,
+													"outlettype" : [ "signal", "signal", "signal" ],
+													"patching_rect" : [ 317.582433104515076, 946.153892397880554, 93.0, 22.0 ],
+													"text" : "groove~ scifi0 2"
+												}
+
+											}
+ ],
+										"lines" : [ 											{
+												"patchline" : 												{
+													"destination" : [ "obj-28", 0 ],
+													"source" : [ "obj-1", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-29", 0 ],
+													"source" : [ "obj-1", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-1", 0 ],
+													"source" : [ "obj-10", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-99", 1 ],
+													"source" : [ "obj-100", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-99", 0 ],
+													"source" : [ "obj-103", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-106", 0 ],
+													"source" : [ "obj-104", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-95", 0 ],
+													"source" : [ "obj-105", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-105", 0 ],
+													"source" : [ "obj-107", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-1", 0 ],
+													"source" : [ "obj-14", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-28", 1 ],
+													"order" : 0,
+													"source" : [ "obj-27", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-29", 1 ],
+													"order" : 1,
+													"source" : [ "obj-27", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-7", 0 ],
+													"source" : [ "obj-28", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-6", 0 ],
+													"source" : [ "obj-29", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-50", 1 ],
+													"source" : [ "obj-48", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-50", 0 ],
+													"source" : [ "obj-49", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-62", 0 ],
+													"source" : [ "obj-50", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-63", 0 ],
+													"source" : [ "obj-52", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-59", 0 ],
+													"source" : [ "obj-57", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-59", 1 ],
+													"source" : [ "obj-58", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-61", 0 ],
+													"source" : [ "obj-59", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-2", 0 ],
+													"source" : [ "obj-6", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-63", 0 ],
+													"source" : [ "obj-60", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-60", 0 ],
+													"source" : [ "obj-61", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-52", 0 ],
+													"source" : [ "obj-62", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-65", 0 ],
+													"source" : [ "obj-63", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-100", 0 ],
+													"source" : [ "obj-65", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-2", 1 ],
+													"source" : [ "obj-7", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-80", 0 ],
+													"source" : [ "obj-78", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-81", 0 ],
+													"source" : [ "obj-79", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-82", 0 ],
+													"source" : [ "obj-80", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-82", 1 ],
+													"source" : [ "obj-81", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-83", 0 ],
+													"source" : [ "obj-82", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-88", 1 ],
+													"source" : [ "obj-83", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-86", 0 ],
+													"source" : [ "obj-85", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-87", 0 ],
+													"source" : [ "obj-86", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-88", 0 ],
+													"source" : [ "obj-87", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-89", 0 ],
+													"source" : [ "obj-88", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-10", 0 ],
+													"order" : 1,
+													"source" : [ "obj-89", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-96", 0 ],
+													"order" : 0,
+													"source" : [ "obj-89", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-6", 1 ],
+													"order" : 1,
+													"source" : [ "obj-9", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-7", 1 ],
+													"order" : 0,
+													"source" : [ "obj-9", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-85", 0 ],
+													"order" : 0,
+													"source" : [ "obj-95", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-97", 0 ],
+													"order" : 1,
+													"source" : [ "obj-95", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-27", 0 ],
+													"source" : [ "obj-96", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-14", 0 ],
+													"source" : [ "obj-97", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-104", 0 ],
+													"source" : [ "obj-99", 0 ]
+												}
+
+											}
+ ]
+									}
+,
+									"patching_rect" : [ 2322.900000000000091, 809.960000000000036, 79.0, 22.0 ],
+									"text" : "p scifi_maker"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1000",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 1423.63631272315979, 103.636359930038452, 65.0, 22.0 ],
+									"text" : "replace $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1001",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 1423.63631272315979, 10.909090518951416, 87.0, 22.0 ],
+									"text" : "loadmess path"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1002",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 1423.63631272315979, 69.090906620025635, 240.0, 22.0 ],
+									"text" : "combine path audio/scifimaker/scifi0.wav"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1003",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 1423.63631272315979, 39.999998569488525, 67.0, 22.0 ],
+									"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+									"text" : "thispatcher"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1004",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "float", "bang" ],
+									"patching_rect" : [ 1423.63631272315979, 141.818176746368408, 90.0, 22.0 ],
+									"text" : "buffer~ scifi0 2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1005",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 1683.636303424835205, 103.636359930038452, 65.0, 22.0 ],
+									"text" : "replace $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1006",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 1683.636303424835205, 10.909090518951416, 87.0, 22.0 ],
+									"text" : "loadmess path"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1007",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 1683.636303424835205, 69.090906620025635, 240.0, 22.0 ],
+									"text" : "combine path audio/scifimaker/scifi1.wav"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1008",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 1683.636303424835205, 39.999998569488525, 67.0, 22.0 ],
+									"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+									"text" : "thispatcher"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1009",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "float", "bang" ],
+									"patching_rect" : [ 1683.636303424835205, 141.818176746368408, 90.0, 22.0 ],
+									"text" : "buffer~ scifi1 2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1010",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 1943.63629412651062, 103.636359930038452, 65.0, 22.0 ],
+									"text" : "replace $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1011",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 1943.63629412651062, 10.909090518951416, 87.0, 22.0 ],
+									"text" : "loadmess path"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1012",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 1943.63629412651062, 69.090906620025635, 240.0, 22.0 ],
+									"text" : "combine path audio/scifimaker/scifi2.wav"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1013",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 1943.63629412651062, 39.999998569488525, 67.0, 22.0 ],
+									"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+									"text" : "thispatcher"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1014",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "float", "bang" ],
+									"patching_rect" : [ 1943.63629412651062, 141.818176746368408, 90.0, 22.0 ],
+									"text" : "buffer~ scifi2 2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1015",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 2203.636284828186035, 103.636359930038452, 65.0, 22.0 ],
+									"text" : "replace $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1016",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 2203.636284828186035, 10.909090518951416, 87.0, 22.0 ],
+									"text" : "loadmess path"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1017",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 2203.636284828186035, 69.090906620025635, 240.0, 22.0 ],
+									"text" : "combine path audio/scifimaker/scifi3.wav"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1018",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 2203.636284828186035, 39.999998569488525, 67.0, 22.0 ],
+									"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+									"text" : "thispatcher"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1019",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "float", "bang" ],
+									"patching_rect" : [ 2203.636284828186035, 141.818176746368408, 90.0, 22.0 ],
+									"text" : "buffer~ scifi3 2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1020",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 2463.63627552986145, 103.636359930038452, 65.0, 22.0 ],
+									"text" : "replace $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1021",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 2463.63627552986145, 10.909090518951416, 87.0, 22.0 ],
+									"text" : "loadmess path"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1022",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 2463.63627552986145, 69.090906620025635, 240.0, 22.0 ],
+									"text" : "combine path audio/scifimaker/scifi4.wav"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1023",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 2463.63627552986145, 39.999998569488525, 67.0, 22.0 ],
+									"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+									"text" : "thispatcher"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1024",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "float", "bang" ],
+									"patching_rect" : [ 2463.63627552986145, 141.818176746368408, 90.0, 22.0 ],
+									"text" : "buffer~ scifi4 2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1025",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 2723.636266231536865, 103.636359930038452, 65.0, 22.0 ],
+									"text" : "replace $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1026",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 2723.636266231536865, 10.909090518951416, 87.0, 22.0 ],
+									"text" : "loadmess path"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1027",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 2723.636266231536865, 69.090906620025635, 240.0, 22.0 ],
+									"text" : "combine path audio/scifimaker/scifi5.wav"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1028",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 2723.636266231536865, 39.999998569488525, 67.0, 22.0 ],
+									"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+									"text" : "thispatcher"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1029",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "float", "bang" ],
+									"patching_rect" : [ 2723.636266231536865, 141.818176746368408, 90.0, 22.0 ],
+									"text" : "buffer~ scifi5 2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1030",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 2983.63625693321228, 103.636359930038452, 65.0, 22.0 ],
+									"text" : "replace $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1031",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 2983.63625693321228, 10.909090518951416, 87.0, 22.0 ],
+									"text" : "loadmess path"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1032",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 2983.63625693321228, 69.090906620025635, 240.0, 22.0 ],
+									"text" : "combine path audio/scifimaker/scifi6.wav"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1033",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 2983.63625693321228, 39.999998569488525, 67.0, 22.0 ],
+									"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+									"text" : "thispatcher"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1034",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "float", "bang" ],
+									"patching_rect" : [ 2983.63625693321228, 141.818176746368408, 90.0, 22.0 ],
+									"text" : "buffer~ scifi6 2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1035",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 3243.636247634887695, 103.636359930038452, 65.0, 22.0 ],
+									"text" : "replace $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1036",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 3243.636247634887695, 10.909090518951416, 87.0, 22.0 ],
+									"text" : "loadmess path"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1037",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 3243.636247634887695, 69.090906620025635, 240.0, 22.0 ],
+									"text" : "combine path audio/scifimaker/scifi7.wav"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1038",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 3243.636247634887695, 39.999998569488525, 67.0, 22.0 ],
+									"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+									"text" : "thispatcher"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1039",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "float", "bang" ],
+									"patching_rect" : [ 3243.636247634887695, 141.818176746368408, 90.0, 22.0 ],
+									"text" : "buffer~ scifi7 2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1040",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 3503.63623833656311, 103.636359930038452, 65.0, 22.0 ],
+									"text" : "replace $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1041",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 3503.63623833656311, 10.909090518951416, 87.0, 22.0 ],
+									"text" : "loadmess path"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1042",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 3503.63623833656311, 69.090906620025635, 240.0, 22.0 ],
+									"text" : "combine path audio/scifimaker/scifi8.wav"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1043",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 3503.63623833656311, 39.999998569488525, 67.0, 22.0 ],
+									"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+									"text" : "thispatcher"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1044",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "float", "bang" ],
+									"patching_rect" : [ 3503.63623833656311, 141.818176746368408, 90.0, 22.0 ],
+									"text" : "buffer~ scifi8 2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1045",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 3763.636229038238525, 103.636359930038452, 65.0, 22.0 ],
+									"text" : "replace $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1046",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 3763.636229038238525, 10.909090518951416, 87.0, 22.0 ],
+									"text" : "loadmess path"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1047",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 3763.636229038238525, 69.090906620025635, 240.0, 22.0 ],
+									"text" : "combine path audio/scifimaker/scifi9.wav"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1048",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 3763.636229038238525, 39.999998569488525, 67.0, 22.0 ],
+									"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+									"text" : "thispatcher"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1049",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "float", "bang" ],
+									"patching_rect" : [ 3763.636229038238525, 141.818176746368408, 90.0, 22.0 ],
+									"text" : "buffer~ scifi9 2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1050",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 4023.63621973991394, 103.636359930038452, 65.0, 22.0 ],
+									"text" : "replace $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1051",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 4023.63621973991394, 10.909090518951416, 87.0, 22.0 ],
+									"text" : "loadmess path"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1052",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 4023.63621973991394, 69.090906620025635, 240.0, 22.0 ],
+									"text" : "combine path audio/scifimaker/scifi10.wav"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1053",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 4023.63621973991394, 39.999998569488525, 67.0, 22.0 ],
+									"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+									"text" : "thispatcher"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1054",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "float", "bang" ],
+									"patching_rect" : [ 4023.63621973991394, 141.818176746368408, 93.0, 22.0 ],
+									"text" : "buffer~ scifi10 2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1055",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 4283.636210441589355, 103.636359930038452, 65.0, 22.0 ],
+									"text" : "replace $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1056",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 4283.636210441589355, 10.909090518951416, 87.0, 22.0 ],
+									"text" : "loadmess path"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1057",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 4283.636210441589355, 69.090906620025635, 240.0, 22.0 ],
+									"text" : "combine path audio/scifimaker/scifi11.wav"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1058",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 4283.636210441589355, 39.999998569488525, 67.0, 22.0 ],
+									"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+									"text" : "thispatcher"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1059",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "float", "bang" ],
+									"patching_rect" : [ 4283.636210441589355, 141.818176746368408, 92.0, 22.0 ],
+									"text" : "buffer~ scifi11 2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1060",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 4543.636201143264771, 103.636359930038452, 65.0, 22.0 ],
+									"text" : "replace $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1061",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 4543.636201143264771, 10.909090518951416, 87.0, 22.0 ],
+									"text" : "loadmess path"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1062",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 4543.636201143264771, 69.090906620025635, 240.0, 22.0 ],
+									"text" : "combine path audio/scifimaker/scifi12.wav"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1063",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 4543.636201143264771, 39.999998569488525, 67.0, 22.0 ],
+									"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+									"text" : "thispatcher"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1064",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "float", "bang" ],
+									"patching_rect" : [ 4543.636201143264771, 141.818176746368408, 93.0, 22.0 ],
+									"text" : "buffer~ scifi12 2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1065",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 1423.63631272315979, 303.636352777481079, 65.0, 22.0 ],
+									"text" : "replace $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1066",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 1423.63631272315979, 210.909083366394043, 87.0, 22.0 ],
+									"text" : "loadmess path"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1067",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 1423.63631272315979, 269.090899467468262, 240.0, 22.0 ],
+									"text" : "combine path audio/scifimaker/scifi13.wav"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1068",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 1423.63631272315979, 239.999991416931152, 67.0, 22.0 ],
+									"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+									"text" : "thispatcher"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1069",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "float", "bang" ],
+									"patching_rect" : [ 1423.63631272315979, 341.818169593811035, 93.0, 22.0 ],
+									"text" : "buffer~ scifi13 2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1070",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 1683.636303424835205, 303.636352777481079, 65.0, 22.0 ],
+									"text" : "replace $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1071",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 1683.636303424835205, 210.909083366394043, 87.0, 22.0 ],
+									"text" : "loadmess path"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1072",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 1683.636303424835205, 269.090899467468262, 240.0, 22.0 ],
+									"text" : "combine path audio/scifimaker/scifi14.wav"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1073",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 1683.636303424835205, 239.999991416931152, 67.0, 22.0 ],
+									"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+									"text" : "thispatcher"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1074",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "float", "bang" ],
+									"patching_rect" : [ 1683.636303424835205, 341.818169593811035, 93.0, 22.0 ],
+									"text" : "buffer~ scifi14 2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1075",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 1943.63629412651062, 303.636352777481079, 65.0, 22.0 ],
+									"text" : "replace $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1076",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 1943.63629412651062, 210.909083366394043, 87.0, 22.0 ],
+									"text" : "loadmess path"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1077",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 1943.63629412651062, 269.090899467468262, 240.0, 22.0 ],
+									"text" : "combine path audio/scifimaker/scifi15.wav"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1078",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 1943.63629412651062, 239.999991416931152, 67.0, 22.0 ],
+									"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+									"text" : "thispatcher"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1079",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "float", "bang" ],
+									"patching_rect" : [ 1943.63629412651062, 341.818169593811035, 93.0, 22.0 ],
+									"text" : "buffer~ scifi15 2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1080",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 2203.636284828186035, 303.636352777481079, 65.0, 22.0 ],
+									"text" : "replace $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1081",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 2203.636284828186035, 210.909083366394043, 87.0, 22.0 ],
+									"text" : "loadmess path"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1082",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 2203.636284828186035, 269.090899467468262, 240.0, 22.0 ],
+									"text" : "combine path audio/scifimaker/scifi16.wav"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1083",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 2203.636284828186035, 239.999991416931152, 67.0, 22.0 ],
+									"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+									"text" : "thispatcher"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1084",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "float", "bang" ],
+									"patching_rect" : [ 2203.636284828186035, 341.818169593811035, 93.0, 22.0 ],
+									"text" : "buffer~ scifi16 2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1085",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 2463.63627552986145, 303.636352777481079, 65.0, 22.0 ],
+									"text" : "replace $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1086",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 2463.63627552986145, 210.909083366394043, 87.0, 22.0 ],
+									"text" : "loadmess path"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1087",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 2463.63627552986145, 269.090899467468262, 240.0, 22.0 ],
+									"text" : "combine path audio/scifimaker/scifi17.wav"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1088",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 2463.63627552986145, 239.999991416931152, 67.0, 22.0 ],
+									"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+									"text" : "thispatcher"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1089",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "float", "bang" ],
+									"patching_rect" : [ 2463.63627552986145, 341.818169593811035, 93.0, 22.0 ],
+									"text" : "buffer~ scifi17 2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1090",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 2723.636266231536865, 303.636352777481079, 65.0, 22.0 ],
+									"text" : "replace $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1091",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 2723.636266231536865, 210.909083366394043, 87.0, 22.0 ],
+									"text" : "loadmess path"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1092",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 2723.636266231536865, 269.090899467468262, 240.0, 22.0 ],
+									"text" : "combine path audio/scifimaker/scifi18.wav"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1093",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 2723.636266231536865, 239.999991416931152, 67.0, 22.0 ],
+									"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+									"text" : "thispatcher"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1094",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "float", "bang" ],
+									"patching_rect" : [ 2723.636266231536865, 341.818169593811035, 93.0, 22.0 ],
+									"text" : "buffer~ scifi18 2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1095",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 2983.63625693321228, 303.636352777481079, 65.0, 22.0 ],
+									"text" : "replace $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1096",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 2983.63625693321228, 210.909083366394043, 87.0, 22.0 ],
+									"text" : "loadmess path"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1097",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 2983.63625693321228, 269.090899467468262, 240.0, 22.0 ],
+									"text" : "combine path audio/scifimaker/scifi19.wav"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1098",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 2983.63625693321228, 239.999991416931152, 67.0, 22.0 ],
+									"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+									"text" : "thispatcher"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1099",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "float", "bang" ],
+									"patching_rect" : [ 2983.63625693321228, 341.818169593811035, 93.0, 22.0 ],
+									"text" : "buffer~ scifi19 2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1100",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 3243.636247634887695, 303.636352777481079, 65.0, 22.0 ],
+									"text" : "replace $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1101",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 3243.636247634887695, 210.909083366394043, 87.0, 22.0 ],
+									"text" : "loadmess path"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1102",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 3243.636247634887695, 269.090899467468262, 240.0, 22.0 ],
+									"text" : "combine path audio/scifimaker/scifi20.wav"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1103",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 3243.636247634887695, 239.999991416931152, 67.0, 22.0 ],
+									"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+									"text" : "thispatcher"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1104",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "float", "bang" ],
+									"patching_rect" : [ 3243.636247634887695, 341.818169593811035, 93.0, 22.0 ],
+									"text" : "buffer~ scifi20 2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1105",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 3503.63623833656311, 303.636352777481079, 65.0, 22.0 ],
+									"text" : "replace $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1106",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 3503.63623833656311, 210.909083366394043, 87.0, 22.0 ],
+									"text" : "loadmess path"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1107",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 3503.63623833656311, 269.090899467468262, 240.0, 22.0 ],
+									"text" : "combine path audio/scifimaker/scifi21.wav"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1108",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 3503.63623833656311, 239.999991416931152, 67.0, 22.0 ],
+									"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+									"text" : "thispatcher"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1109",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "float", "bang" ],
+									"patching_rect" : [ 3503.63623833656311, 341.818169593811035, 93.0, 22.0 ],
+									"text" : "buffer~ scifi21 2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1110",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 3763.636229038238525, 303.636352777481079, 65.0, 22.0 ],
+									"text" : "replace $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1111",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 3763.636229038238525, 210.909083366394043, 87.0, 22.0 ],
+									"text" : "loadmess path"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1112",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 3763.636229038238525, 269.090899467468262, 240.0, 22.0 ],
+									"text" : "combine path audio/scifimaker/scifi22.wav"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1113",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 3763.636229038238525, 239.999991416931152, 67.0, 22.0 ],
+									"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+									"text" : "thispatcher"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1114",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "float", "bang" ],
+									"patching_rect" : [ 3763.636229038238525, 341.818169593811035, 93.0, 22.0 ],
+									"text" : "buffer~ scifi22 2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1115",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 4023.63621973991394, 303.636352777481079, 65.0, 22.0 ],
+									"text" : "replace $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1116",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 4023.63621973991394, 210.909083366394043, 87.0, 22.0 ],
+									"text" : "loadmess path"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1117",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 4023.63621973991394, 269.090899467468262, 240.0, 22.0 ],
+									"text" : "combine path audio/scifimaker/scifi23.wav"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1118",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 4023.63621973991394, 239.999991416931152, 67.0, 22.0 ],
+									"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+									"text" : "thispatcher"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1119",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "float", "bang" ],
+									"patching_rect" : [ 4023.63621973991394, 341.818169593811035, 93.0, 22.0 ],
+									"text" : "buffer~ scifi23 2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1120",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 4283.636210441589355, 303.636352777481079, 65.0, 22.0 ],
+									"text" : "replace $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1121",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 4283.636210441589355, 210.909083366394043, 87.0, 22.0 ],
+									"text" : "loadmess path"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1122",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 4283.636210441589355, 269.090899467468262, 240.0, 22.0 ],
+									"text" : "combine path audio/scifimaker/scifi24.wav"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1123",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 4283.636210441589355, 239.999991416931152, 67.0, 22.0 ],
+									"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+									"text" : "thispatcher"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1124",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "float", "bang" ],
+									"patching_rect" : [ 4283.636210441589355, 341.818169593811035, 93.0, 22.0 ],
+									"text" : "buffer~ scifi24 2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1125",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 4543.636201143264771, 303.636352777481079, 65.0, 22.0 ],
+									"text" : "replace $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1126",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 4543.636201143264771, 210.909083366394043, 87.0, 22.0 ],
+									"text" : "loadmess path"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1127",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 4543.636201143264771, 269.090899467468262, 240.0, 22.0 ],
+									"text" : "combine path audio/scifimaker/scifi25.wav"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1128",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 4543.636201143264771, 239.999991416931152, 67.0, 22.0 ],
+									"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+									"text" : "thispatcher"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1129",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "float", "bang" ],
+									"patching_rect" : [ 4543.636201143264771, 341.818169593811035, 93.0, 22.0 ],
+									"text" : "buffer~ scifi25 2"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"format" : 6,
 									"id" : "obj-110",
@@ -2334,8 +4824,120 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-1004", 0 ],
+									"source" : [ "obj-1000", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1003", 0 ],
+									"source" : [ "obj-1001", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1000", 0 ],
+									"source" : [ "obj-1002", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1002", 0 ],
+									"source" : [ "obj-1003", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1009", 0 ],
+									"source" : [ "obj-1005", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1008", 0 ],
+									"source" : [ "obj-1006", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1005", 0 ],
+									"source" : [ "obj-1007", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1007", 0 ],
+									"source" : [ "obj-1008", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-8", 0 ],
 									"source" : [ "obj-101", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1014", 0 ],
+									"source" : [ "obj-1010", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1013", 0 ],
+									"source" : [ "obj-1011", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1010", 0 ],
+									"source" : [ "obj-1012", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1012", 0 ],
+									"source" : [ "obj-1013", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1019", 0 ],
+									"source" : [ "obj-1015", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1018", 0 ],
+									"source" : [ "obj-1016", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1015", 0 ],
+									"source" : [ "obj-1017", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1017", 0 ],
+									"source" : [ "obj-1018", 1 ]
 								}
 
 							}
@@ -2348,8 +4950,120 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-1024", 0 ],
+									"source" : [ "obj-1020", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1023", 0 ],
+									"source" : [ "obj-1021", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1020", 0 ],
+									"source" : [ "obj-1022", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1022", 0 ],
+									"source" : [ "obj-1023", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1029", 0 ],
+									"source" : [ "obj-1025", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1028", 0 ],
+									"source" : [ "obj-1026", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1025", 0 ],
+									"source" : [ "obj-1027", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1027", 0 ],
+									"source" : [ "obj-1028", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-108", 0 ],
 									"source" : [ "obj-103", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1034", 0 ],
+									"source" : [ "obj-1030", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1033", 0 ],
+									"source" : [ "obj-1031", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1030", 0 ],
+									"source" : [ "obj-1032", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1032", 0 ],
+									"source" : [ "obj-1033", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1039", 0 ],
+									"source" : [ "obj-1035", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1038", 0 ],
+									"source" : [ "obj-1036", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1035", 0 ],
+									"source" : [ "obj-1037", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1037", 0 ],
+									"source" : [ "obj-1038", 1 ]
 								}
 
 							}
@@ -2362,8 +5076,120 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-1044", 0 ],
+									"source" : [ "obj-1040", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1043", 0 ],
+									"source" : [ "obj-1041", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1040", 0 ],
+									"source" : [ "obj-1042", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1042", 0 ],
+									"source" : [ "obj-1043", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1049", 0 ],
+									"source" : [ "obj-1045", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1048", 0 ],
+									"source" : [ "obj-1046", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1045", 0 ],
+									"source" : [ "obj-1047", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1047", 0 ],
+									"source" : [ "obj-1048", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-106", 0 ],
 									"source" : [ "obj-105", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1054", 0 ],
+									"source" : [ "obj-1050", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1053", 0 ],
+									"source" : [ "obj-1051", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1050", 0 ],
+									"source" : [ "obj-1052", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1052", 0 ],
+									"source" : [ "obj-1053", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1059", 0 ],
+									"source" : [ "obj-1055", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1058", 0 ],
+									"source" : [ "obj-1056", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1055", 0 ],
+									"source" : [ "obj-1057", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1057", 0 ],
+									"source" : [ "obj-1058", 1 ]
 								}
 
 							}
@@ -2376,8 +5202,120 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-1064", 0 ],
+									"source" : [ "obj-1060", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1063", 0 ],
+									"source" : [ "obj-1061", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1060", 0 ],
+									"source" : [ "obj-1062", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1062", 0 ],
+									"source" : [ "obj-1063", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1069", 0 ],
+									"source" : [ "obj-1065", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1068", 0 ],
+									"source" : [ "obj-1066", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1065", 0 ],
+									"source" : [ "obj-1067", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1067", 0 ],
+									"source" : [ "obj-1068", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-103", 0 ],
 									"source" : [ "obj-107", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1074", 0 ],
+									"source" : [ "obj-1070", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1073", 0 ],
+									"source" : [ "obj-1071", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1070", 0 ],
+									"source" : [ "obj-1072", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1072", 0 ],
+									"source" : [ "obj-1073", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1079", 0 ],
+									"source" : [ "obj-1075", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1078", 0 ],
+									"source" : [ "obj-1076", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1075", 0 ],
+									"source" : [ "obj-1077", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1077", 0 ],
+									"source" : [ "obj-1078", 1 ]
 								}
 
 							}
@@ -2407,8 +5345,288 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-1084", 0 ],
+									"source" : [ "obj-1080", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1083", 0 ],
+									"source" : [ "obj-1081", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1080", 0 ],
+									"source" : [ "obj-1082", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1082", 0 ],
+									"source" : [ "obj-1083", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1089", 0 ],
+									"source" : [ "obj-1085", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1088", 0 ],
+									"source" : [ "obj-1086", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1085", 0 ],
+									"source" : [ "obj-1087", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1087", 0 ],
+									"source" : [ "obj-1088", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1094", 0 ],
+									"source" : [ "obj-1090", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1093", 0 ],
+									"source" : [ "obj-1091", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1090", 0 ],
+									"source" : [ "obj-1092", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1092", 0 ],
+									"source" : [ "obj-1093", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1099", 0 ],
+									"source" : [ "obj-1095", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1098", 0 ],
+									"source" : [ "obj-1096", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1095", 0 ],
+									"source" : [ "obj-1097", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1097", 0 ],
+									"source" : [ "obj-1098", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-6", 0 ],
 									"source" : [ "obj-11", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1104", 0 ],
+									"source" : [ "obj-1100", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1103", 0 ],
+									"source" : [ "obj-1101", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1100", 0 ],
+									"source" : [ "obj-1102", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1102", 0 ],
+									"source" : [ "obj-1103", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1109", 0 ],
+									"source" : [ "obj-1105", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1108", 0 ],
+									"source" : [ "obj-1106", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1105", 0 ],
+									"source" : [ "obj-1107", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1107", 0 ],
+									"source" : [ "obj-1108", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1114", 0 ],
+									"source" : [ "obj-1110", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1113", 0 ],
+									"source" : [ "obj-1111", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1110", 0 ],
+									"source" : [ "obj-1112", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1112", 0 ],
+									"source" : [ "obj-1113", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1119", 0 ],
+									"source" : [ "obj-1115", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1118", 0 ],
+									"source" : [ "obj-1116", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1115", 0 ],
+									"source" : [ "obj-1117", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1117", 0 ],
+									"source" : [ "obj-1118", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1124", 0 ],
+									"source" : [ "obj-1120", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1123", 0 ],
+									"source" : [ "obj-1121", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1120", 0 ],
+									"source" : [ "obj-1122", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1122", 0 ],
+									"source" : [ "obj-1123", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1129", 0 ],
+									"source" : [ "obj-1125", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1128", 0 ],
+									"source" : [ "obj-1126", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1125", 0 ],
+									"source" : [ "obj-1127", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1127", 0 ],
+									"source" : [ "obj-1128", 1 ]
 								}
 
 							}
@@ -4158,7 +7376,7 @@
 ,
 																	"rnbo_serial" : 2,
 																	"rnbo_uniqueid" : "message_obj-7",
-																	"text" : "554.37"
+																	"text" : "587.33"
 																}
 
 															}
@@ -4177,7 +7395,7 @@
 ,
 																	"rnbo_serial" : 3,
 																	"rnbo_uniqueid" : "message_obj-6",
-																	"text" : "415.3"
+																	"text" : "466.16"
 																}
 
 															}
@@ -4215,7 +7433,7 @@
 ,
 																	"rnbo_serial" : 5,
 																	"rnbo_uniqueid" : "message_obj-4",
-																	"text" : "277.18"
+																	"text" : "293.66"
 																}
 
 															}
@@ -4234,7 +7452,7 @@
 ,
 																	"rnbo_serial" : 6,
 																	"rnbo_uniqueid" : "message_obj-3",
-																	"text" : "207.65"
+																	"text" : "233.08"
 																}
 
 															}
@@ -14384,7 +17602,7 @@
 ,
 																	"rnbo_serial" : 2,
 																	"rnbo_uniqueid" : "message_obj-7",
-																	"text" : "554.37"
+																	"text" : "587.33"
 																}
 
 															}
@@ -14403,7 +17621,7 @@
 ,
 																	"rnbo_serial" : 3,
 																	"rnbo_uniqueid" : "message_obj-6",
-																	"text" : "415.3"
+																	"text" : "466.16"
 																}
 
 															}
@@ -14441,7 +17659,7 @@
 ,
 																	"rnbo_serial" : 5,
 																	"rnbo_uniqueid" : "message_obj-4",
-																	"text" : "277.18"
+																	"text" : "293.66"
 																}
 
 															}
@@ -14460,7 +17678,7 @@
 ,
 																	"rnbo_serial" : 6,
 																	"rnbo_uniqueid" : "message_obj-3",
-																	"text" : "207.65"
+																	"text" : "233.08"
 																}
 
 															}
@@ -22168,7 +25386,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 530.0, 330.0, 50.0, 22.0 ],
-									"text" : "12126"
+									"text" : "6363"
 								}
 
 							}
