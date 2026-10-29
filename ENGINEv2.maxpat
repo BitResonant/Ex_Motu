@@ -14,6 +14,451 @@
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-46",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 753.736870527267456, 1027.0, 98.0, 22.0 ],
+					"text" : "r master_volume"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-30",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1305.0, 1298.0, 100.0, 22.0 ],
+					"text" : "s master_volume"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-122",
+					"maxclass" : "number",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 2026.470549583435059, 1323.17646598815918, 50.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -152.631577491760254, 214.035085678100586, 56.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-121",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1146.0, 492.647049427032471, 106.0, 22.0 ],
+					"text" : "r volume_samples"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble_outlinecolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 0.0 ],
+					"fontsize" : 16.0,
+					"id" : "obj-96",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1910.294081211090088, 1086.411764621734619, 162.0, 24.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -152.631577491760254, -50.877192497253418, 161.0, 24.0 ],
+					"text" : "MASTER SAMPLES",
+					"textcolor" : [ 0.164705882352941, 0.980392156862745, 0.525490196078431, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-97",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1910.531448822021503, 1323.17646598815918, 108.0, 22.0 ],
+					"text" : "s volume_samples"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-98",
+					"knobcolor" : [ 0.619607843137255, 0.952941176470588, 0.682352941176471, 1.0 ],
+					"maxclass" : "slider",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1910.531448822021503, 1167.294116020202637, 20.0, 140.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -152.631577491760254, 21.052631378173828, 29.0, 181.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-99",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1910.531448822021503, 1121.705881595611572, 77.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -152.631577491760254, -19.298245429992676, 83.0, 22.0 ],
+					"text" : "loadmess 65"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble_outlinecolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 0.0 ],
+					"id" : "obj-111",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1745.825569610595721, 1082.0, 77.474735221862829, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 129.824560165405273, -19.298245429992676, 63.0, 20.0 ],
+					"text" : "LOOPS",
+					"textcolor" : [ 0.368627450980392, 0.647058823529412, 1.0, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble_outlinecolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 0.0 ],
+					"id" : "obj-112",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1538.472632389068622, 1082.0, 77.474735221862829, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 26.315789222717285, -19.298245429992676, 71.0, 20.0 ],
+					"text" : "CRASH",
+					"textcolor" : [ 0.368627450980392, 0.647058823529412, 1.0, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-113",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1745.825569610595721, 1320.235289573669434, 92.0, 22.0 ],
+					"text" : "s volume_loops"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-114",
+					"maxclass" : "slider",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1745.825569610595721, 1164.352939605712891, 20.0, 140.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 129.824560165405273, 56.140350341796875, 20.0, 140.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-115",
+					"maxclass" : "number",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1837.00203845977785, 1321.705877780914307, 50.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 129.824560165405273, 212.280699729919434, 50.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-116",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1745.825569610595721, 1118.764705181121826, 87.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 129.824560165405273, 12.280701637268066, 97.0, 22.0 ],
+					"text" : "loadmess 63.5"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-117",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1538.472632389068622, 1320.235289573669434, 93.0, 22.0 ],
+					"text" : "s volume_crash"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-118",
+					"maxclass" : "slider",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1538.472632389068622, 1164.352939605712891, 20.0, 140.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 26.315789222717285, 56.140350341796875, 20.0, 140.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-119",
+					"maxclass" : "number",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1655.882321357727051, 1320.235289573669434, 44.117646217346191, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 26.315789222717285, 212.280699729919434, 50.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-120",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1538.472632389068622, 1118.764705181121826, 87.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 26.315789222717285, 12.280701637268066, 90.0, 22.0 ],
+					"text" : "loadmess 63.5"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble_outlinecolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 0.0 ],
+					"id" : "obj-84",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1910.169402718544006, 740.677931666374207, 77.474735221862829, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 236.842103004455566, -19.298245429992676, 60.0, 20.0 ],
+					"text" : "SCIFI",
+					"textcolor" : [ 0.368627450980392, 0.647058823529412, 1.0, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-85",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1910.169402718544006, 977.966056227684021, 84.0, 22.0 ],
+					"text" : "s volume_scifi"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-86",
+					"maxclass" : "slider",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1910.169402718544006, 822.033860087394714, 20.0, 140.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 236.842103004455566, 56.140350341796875, 20.0, 140.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-90",
+					"maxclass" : "number",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1999.99990701675415, 979.660971403121948, 50.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 236.842103004455566, 212.280699729919434, 50.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-95",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1910.169402718544006, 776.271150350570679, 82.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 236.842103004455566, 12.280701637268066, 88.0, 22.0 ],
+					"text" : "loadmess 114"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble_outlinecolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 0.0 ],
+					"fontsize" : 16.0,
+					"id" : "obj-58",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1745.217298526763898, 737.0, 98.0, 24.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -21.052631378173828, -343.859645843505859, 56.0, 24.0 ],
+					"text" : "LEAD",
+					"textcolor" : [ 0.164705882352941, 0.980392156862745, 0.525490196078431, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble_outlinecolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 0.0 ],
+					"fontsize" : 16.0,
+					"id" : "obj-50",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1538.235264778137207, 737.0, 101.0, 24.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -152.631577491760254, -343.859645843505859, 104.0, 24.0 ],
+					"text" : "GRANULAR",
+					"textcolor" : [ 0.164705882352941, 0.980392156862745, 0.525490196078431, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-44",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 624.0, 834.84854257106781, 84.0, 22.0 ],
+					"text" : "r volume_lead"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-35",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1745.454666137695312, 974.242491602897644, 86.0, 22.0 ],
+					"text" : "s volume_lead"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-37",
+					"knobcolor" : [ 0.619607843137255, 0.952941176470588, 0.682352941176471, 1.0 ],
+					"maxclass" : "slider",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1745.454666137695312, 818.181874752044678, 20.0, 140.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -21.052631378173828, -275.438593864440918, 29.0, 181.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-41",
+					"maxclass" : "number",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1836.363763332366943, 976.0, 50.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -21.052631378173828, -87.719297409057617, 56.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-42",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1745.454666137695312, 772.727326154708862, 77.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -21.052631378173828, -307.01754093170166, 83.0, 22.0 ],
+					"text" : "loadmess 65"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-34",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 192.424255728721619, 787.878842353820801, 105.0, 22.0 ],
+					"text" : "r volume_granular"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-33",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1538.710000000000036, 974.07000000000005, 107.0, 22.0 ],
+					"text" : "s volume_granular"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-32",
+					"knobcolor" : [ 0.619607843137255, 0.952941176470588, 0.682352941176471, 1.0 ],
+					"maxclass" : "slider",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1538.710000000000036, 819.0, 20.0, 140.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -152.631577491760254, -275.438593864440918, 29.0, 181.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-110",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -925,30 +1370,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-80",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 1146.0, 343.0, 77.0, 22.0 ],
-					"text" : "loadmess 65"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-81",
-					"maxclass" : "number",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 1198.0, 535.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-82",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
@@ -956,18 +1377,6 @@
 					"outlettype" : [ "float" ],
 					"patching_rect" : [ 1146.0, 535.0, 39.0, 22.0 ],
 					"text" : "/ 127."
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-83",
-					"maxclass" : "slider",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 1146.0, 383.0, 20.0, 140.0 ]
 				}
 
 			}
@@ -991,16 +1400,172 @@
 						"classnamespace" : "box",
 						"rect" : [ 789.0, 95.0, 689.0, 787.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
-						"visible" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"format" : 6,
+									"id" : "obj-115",
+									"maxclass" : "flonum",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 491.463426351547241, 983.0, 50.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-136",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 421.56097674369812, 918.0, 34.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-137",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 374.0, 918.0, 34.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-138",
+									"maxclass" : "newobj",
+									"numinlets" : 6,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 491.463426351547241, 918.0, 97.0, 22.0 ],
+									"text" : "scale 0 127 0. 2."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-140",
+									"maxclass" : "newobj",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 491.463426351547241, 847.560995817184448, 90.0, 22.0 ],
+									"text" : "r volume_loops"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-134",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 67.241381406784058, 918.0, 34.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-135",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 17.241380214691162, 918.0, 34.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-133",
+									"maxclass" : "newobj",
+									"numinlets" : 6,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 152.439028024673462, 912.195143699645996, 97.0, 22.0 ],
+									"text" : "scale 0 127 0. 2."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-117",
+									"maxclass" : "newobj",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 152.439028024673462, 840.243922472000122, 91.0, 22.0 ],
+									"text" : "r volume_crash"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-123",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 900.000021457672119, 1093.902465105056763, 34.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-124",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 852.439044713973999, 1093.902465105056763, 34.0, 22.0 ],
+									"text" : "*~ 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-122",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "float" ],
+									"patching_rect" : [ 1129.268319606781006, 969.146342277526855, 39.0, 22.0 ],
+									"text" : "/ 127."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-121",
+									"maxclass" : "newobj",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 1129.268319606781006, 935.0, 82.0, 22.0 ],
+									"text" : "r volume_scifi"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-111",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 994.0, 995.0, 40.0, 22.0 ],
-									"text" : "*~ 0.9"
+									"patching_rect" : [ 994.0, 995.0, 29.5, 22.0 ],
+									"text" : "*~"
 								}
 
 							}
@@ -1011,8 +1576,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 949.0, 995.0, 40.0, 22.0 ],
-									"text" : "*~ 0.9"
+									"patching_rect" : [ 949.0, 995.0, 29.5, 22.0 ],
+									"text" : "*~"
 								}
 
 							}
@@ -1284,8 +1849,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 1,
@@ -1307,8 +1872,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 2,
@@ -1497,8 +2062,8 @@
 													"rnbo_classname" : "codebox~",
 													"rnbo_extra_attributes" : 													{
 														"code" : "// =====================================================================\n// RNBOscript — Riverbero Stereo Schroeder-Moorer (4 comb || + 2 allpass serie)\n// Topologia: comb filter decorrelati L/R con damping LPF nel loop di\n// feedback + sezione diffusiva allpass in cascata (Schroeder 1962,\n// Moorer 1979; ref. derivazione RT60->g in Smith, \"Physical Audio\n// Signal Processing\", CCRMA — stessa fonte già impiegata nel modulo\n// Karplus-Strong del progetto).\n//\n// I/O:\n//   in1  = audio L (dry)\n//   in2  = audio R (dry)\n//   in3  = RT60        [s]    PARAMETRO CHIAVE — durata di decadimento -60dB\n//   in4  = damping      [0..1] assorbimento HF nel loop (0=metallico, 1=cupo)\n//   in5  = predelay     [ms]   ritardo iniziale prima dell'ingresso in rete\n//   in6  = wet/dry mix  [0..1] \n//\n//   out1 = L (wet+dry secondo mix)\n//   out2 = R (wet+dry secondo mix)\n//\n// MODIFICA PARAMETRI: tutte le costanti strutturali (lunghezze comb/AP in\n// campioni, coefficienti allpass) sono raccolte nel blocco \"STRUCTURAL\n// PARAMETERS\" qui sotto. Sono valori in samples a 48kHz nativi: se il\n// samplerate del progetto differisce, vengono riscalati automaticamente\n// via sr/48000 per preservare i rapporti temporali e l'assenza di\n// coloriture comb correlate.\n//\n// DISCLOSURE: i delay times (combL/R, apL/R) seguono i rapporti\n// storicamente impiegati nell'implementazione Schroeder/Moorer-derived\n// (Dattorro 1997, \"Effect Design Part 1\", JAES vol.45) — non sono\n// arbitrari ma scelti coprimi tra loro per massimizzare la densità\n// dell'eco senza periodicità udibile. Variarli è sicuro PURCHÉ si\n// mantenga: (a) coprimalità reciproca approssimata, (b) AP gain in\n// [0.5, 0.7] per garanzia di stabilità allpass (|g|<1 condizione\n// necessaria, range scelto per densità senza colorazione metallica).\n// =====================================================================\n\n// ---- STRUCTURAL PARAMETERS (samples @ 48kHz, auto-riscalati su sr) ----\nconst REF_SR = 48000.0;\nlet sr = samplerate();\nlet srScale = sr / REF_SR;\n\n// 4 comb filters, lunghezze decorrelate L/R (Dattorro-derived, coprime)\nconst COMB1_L = 1687; const COMB1_R = 1601;\nconst COMB2_L = 1601; const COMB2_R = 1493;\nconst COMB3_L = 2053; const COMB3_R = 1973;\nconst COMB4_L = 2251; const COMB4_R = 2161;\n\n// 2 allpass diffusori in serie, coefficiente fisso entro range di stabilità\nconst AP1_L = 347;  const AP1_R = 313;\nconst AP2_L = 113;  const AP2_R = 97;\nconst AP_GAIN = 0.6;\n\n// Dimensionamento buffer con margine per predelay massimo (500ms) + srScale\nconst MAXCOMB: Int = 4096;\nconst MAXAP: Int = 512;\nconst MAXPRE: Int = 24000; // 500ms @ 48kHz, riscalato a runtime\n\n// ---- STATE: comb filter buffers (L) ----\n@state cbuf1_L = new FixedSampleArray(MAXCOMB);\n@state cbuf2_L = new FixedSampleArray(MAXCOMB);\n@state cbuf3_L = new FixedSampleArray(MAXCOMB);\n@state cbuf4_L = new FixedSampleArray(MAXCOMB);\n@state cidx1_L: Int = 0; @state cidx2_L: Int = 0;\n@state cidx3_L: Int = 0; @state cidx4_L: Int = 0;\n@state clp1_L = 0.0; @state clp2_L = 0.0; @state clp3_L = 0.0; @state clp4_L = 0.0;\n\n// ---- STATE: comb filter buffers (R) ----\n@state cbuf1_R = new FixedSampleArray(MAXCOMB);\n@state cbuf2_R = new FixedSampleArray(MAXCOMB);\n@state cbuf3_R = new FixedSampleArray(MAXCOMB);\n@state cbuf4_R = new FixedSampleArray(MAXCOMB);\n@state cidx1_R: Int = 0; @state cidx2_R: Int = 0;\n@state cidx3_R: Int = 0; @state cidx4_R: Int = 0;\n@state clp1_R = 0.0; @state clp2_R = 0.0; @state clp3_R = 0.0; @state clp4_R = 0.0;\n\n// ---- STATE: allpass diffusori (L/R) ----\n@state apbuf1_L = new FixedSampleArray(MAXAP);\n@state apbuf2_L = new FixedSampleArray(MAXAP);\n@state apidx1_L: Int = 0; @state apidx2_L: Int = 0;\n\n@state apbuf1_R = new FixedSampleArray(MAXAP);\n@state apbuf2_R = new FixedSampleArray(MAXAP);\n@state apidx1_R: Int = 0; @state apidx2_R: Int = 0;\n\n// ---- STATE: predelay line (condivisa, poi splittata L/R) ----\n@state prebuf_L = new FixedSampleArray(MAXPRE);\n@state prebuf_R = new FixedSampleArray(MAXPRE);\n@state preidx_L: Int = 0; @state preidx_R: Int = 0;\n\n// ---- STATE: smoothing parametri (one-pole, tau=10ms — evita zipper\n// noise su update discreti di RT60/damping/predelay/mix da UI/automazione)\n@state rt60_sm = 1.5;\n@state damping_sm = 0.3;\n@state predelay_sm = 0.0;\n@state mix_sm = 0.3;\n\nconst smooth_tau = 0.010;\nlet smooth_g = exp(-1.0 / (smooth_tau * sr));\n\n// ---- INPUT READ + SAFETY CLAMP ----\n// RT60 <= 0 produrrebbe g>=1 (instabilità/divergenza esponenziale) o\n// divisione per zero nella formula di Schroeder: clampato a un minimo\n// fisicamente sensato (50ms, ambiente estremamente smorzato/anecoico).\nlet rt60_in = in3;\nlet damping_in = in4;\nlet predelay_in = in5;\nlet mix_in = in6;\n\nconst RT60_MIN = 0.05;\nconst RT60_MAX = 30.0;\nif (rt60_in < RT60_MIN) rt60_in = RT60_MIN;\nif (rt60_in > RT60_MAX) rt60_in = RT60_MAX;\n\nif (damping_in < 0.0) damping_in = 0.0;\nif (damping_in > 1.0) damping_in = 1.0;\n\nconst PREDELAY_MAX_MS = 500.0;\nif (predelay_in < 0.0) predelay_in = 0.0;\nif (predelay_in > PREDELAY_MAX_MS) predelay_in = PREDELAY_MAX_MS;\n\nif (mix_in < 0.0) mix_in = 0.0;\nif (mix_in > 1.0) mix_in = 1.0;\n\nrt60_sm = rt60_sm * smooth_g + rt60_in * (1.0 - smooth_g);\ndamping_sm = damping_sm * smooth_g + damping_in * (1.0 - smooth_g);\npredelay_sm = predelay_sm * smooth_g + predelay_in * (1.0 - smooth_g);\nmix_sm = mix_sm * smooth_g + mix_in * (1.0 - smooth_g);\n\n// ---- PREDELAY: lunghezza in campioni, ricalcolata per-sample per\n// seguire eventuale automazione (overhead trascurabile: solo Int cast +\n// moltiplicazione) ----\nlet preSamples: Int = floor((predelay_sm * 0.001) * sr);\nif (preSamples < 0) preSamples = 0;\nif (preSamples > (MAXPRE - 1)) preSamples = MAXPRE - 1;\n\nlet preReadIdx_L: Int = preidx_L - preSamples;\nif (preReadIdx_L < 0) preReadIdx_L = preReadIdx_L + MAXPRE;\nlet preReadIdx_R: Int = preidx_R - preSamples;\nif (preReadIdx_R < 0) preReadIdx_R = preReadIdx_R + MAXPRE;\n\nprebuf_L[preidx_L] = in1;\nprebuf_R[preidx_R] = in2;\nlet predelayed_L = prebuf_L[preReadIdx_L];\nlet predelayed_R = prebuf_R[preReadIdx_R];\npreidx_L = preidx_L + 1; if (preidx_L >= MAXPRE) preidx_L = 0;\npreidx_R = preidx_R + 1; if (preidx_R >= MAXPRE) preidx_R = 0;\n\n// =====================================================================\n// COMB BANK — canale L\n// Formula RT60 (Schroeder 1962): g = 10^(-3*d / (RT60*sr))\n// d = delay length in samples, garantisce -60dB esattamente a t=RT60.\n// One-pole LPF nel loop (damping_sm) per assorbimento HF realistico\n// (materiali fonoassorbenti reali attenuano le alte frequenze più\n// rapidamente — coerente con risposta impulsiva di sale reali, Kuttruff\n// \"Room Acoustics\").\n// =====================================================================\n\nlet d1_L: Int = floor(COMB1_L * srScale);\nlet d2_L: Int = floor(COMB2_L * srScale);\nlet d3_L: Int = floor(COMB3_L * srScale);\nlet d4_L: Int = floor(COMB4_L * srScale);\nif (d1_L < 1) d1_L = 1; if (d1_L > (MAXCOMB-1)) d1_L = MAXCOMB-1;\nif (d2_L < 1) d2_L = 1; if (d2_L > (MAXCOMB-1)) d2_L = MAXCOMB-1;\nif (d3_L < 1) d3_L = 1; if (d3_L > (MAXCOMB-1)) d3_L = MAXCOMB-1;\nif (d4_L < 1) d4_L = 1; if (d4_L > (MAXCOMB-1)) d4_L = MAXCOMB-1;\n\nlet g1_L = pow(10.0, (-3.0 * d1_L) / (rt60_sm * sr));\nlet g2_L = pow(10.0, (-3.0 * d2_L) / (rt60_sm * sr));\nlet g3_L = pow(10.0, (-3.0 * d3_L) / (rt60_sm * sr));\nlet g4_L = pow(10.0, (-3.0 * d4_L) / (rt60_sm * sr));\n\n// Damping coefficient one-pole: range [0, 0.7] mappato da damping_sm,\n// 0.7 = forte assorbimento HF senza collassare il loop in DC puro\nlet dampCoeff = damping_sm * 0.7;\n\nlet rIdx1_L: Int = cidx1_L - d1_L; if (rIdx1_L < 0) rIdx1_L = rIdx1_L + MAXCOMB;\nlet c1_out_L = cbuf1_L[rIdx1_L];\nclp1_L = c1_out_L * (1.0 - dampCoeff) + clp1_L * dampCoeff;\ncbuf1_L[cidx1_L] = predelayed_L + clp1_L * g1_L;\ncidx1_L = cidx1_L + 1; if (cidx1_L >= MAXCOMB) cidx1_L = 0;\n\nlet rIdx2_L: Int = cidx2_L - d2_L; if (rIdx2_L < 0) rIdx2_L = rIdx2_L + MAXCOMB;\nlet c2_out_L = cbuf2_L[rIdx2_L];\nclp2_L = c2_out_L * (1.0 - dampCoeff) + clp2_L * dampCoeff;\ncbuf2_L[cidx2_L] = predelayed_L + clp2_L * g2_L;\ncidx2_L = cidx2_L + 1; if (cidx2_L >= MAXCOMB) cidx2_L = 0;\n\nlet rIdx3_L: Int = cidx3_L - d3_L; if (rIdx3_L < 0) rIdx3_L = rIdx3_L + MAXCOMB;\nlet c3_out_L = cbuf3_L[rIdx3_L];\nclp3_L = c3_out_L * (1.0 - dampCoeff) + clp3_L * dampCoeff;\ncbuf3_L[cidx3_L] = predelayed_L + clp3_L * g3_L;\ncidx3_L = cidx3_L + 1; if (cidx3_L >= MAXCOMB) cidx3_L = 0;\n\nlet rIdx4_L: Int = cidx4_L - d4_L; if (rIdx4_L < 0) rIdx4_L = rIdx4_L + MAXCOMB;\nlet c4_out_L = cbuf4_L[rIdx4_L];\nclp4_L = c4_out_L * (1.0 - dampCoeff) + clp4_L * dampCoeff;\ncbuf4_L[cidx4_L] = predelayed_L + clp4_L * g4_L;\ncidx4_L = cidx4_L + 1; if (cidx4_L >= MAXCOMB) cidx4_L = 0;\n\n// Somma comb bank, normalizzata 1/4 per evitare accumulo di gain con\n// 4 rami paralleli sommati (preserva unity-gain approssimativo in banda)\nlet combSum_L = (c1_out_L + c2_out_L + c3_out_L + c4_out_L) * 0.25;\n\n// =====================================================================\n// COMB BANK — canale R (analogo, lunghezze decorrelate)\n// =====================================================================\n\nlet d1_R: Int = floor(COMB1_R * srScale);\nlet d2_R: Int = floor(COMB2_R * srScale);\nlet d3_R: Int = floor(COMB3_R * srScale);\nlet d4_R: Int = floor(COMB4_R * srScale);\nif (d1_R < 1) d1_R = 1; if (d1_R > (MAXCOMB-1)) d1_R = MAXCOMB-1;\nif (d2_R < 1) d2_R = 1; if (d2_R > (MAXCOMB-1)) d2_R = MAXCOMB-1;\nif (d3_R < 1) d3_R = 1; if (d3_R > (MAXCOMB-1)) d3_R = MAXCOMB-1;\nif (d4_R < 1) d4_R = 1; if (d4_R > (MAXCOMB-1)) d4_R = MAXCOMB-1;\n\nlet g1_R = pow(10.0, (-3.0 * d1_R) / (rt60_sm * sr));\nlet g2_R = pow(10.0, (-3.0 * d2_R) / (rt60_sm * sr));\nlet g3_R = pow(10.0, (-3.0 * d3_R) / (rt60_sm * sr));\nlet g4_R = pow(10.0, (-3.0 * d4_R) / (rt60_sm * sr));\n\nlet rIdx1_R: Int = cidx1_R - d1_R; if (rIdx1_R < 0) rIdx1_R = rIdx1_R + MAXCOMB;\nlet c1_out_R = cbuf1_R[rIdx1_R];\nclp1_R = c1_out_R * (1.0 - dampCoeff) + clp1_R * dampCoeff;\ncbuf1_R[cidx1_R] = predelayed_R + clp1_R * g1_R;\ncidx1_R = cidx1_R + 1; if (cidx1_R >= MAXCOMB) cidx1_R = 0;\n\nlet rIdx2_R: Int = cidx2_R - d2_R; if (rIdx2_R < 0) rIdx2_R = rIdx2_R + MAXCOMB;\nlet c2_out_R = cbuf2_R[rIdx2_R];\nclp2_R = c2_out_R * (1.0 - dampCoeff) + clp2_R * dampCoeff;\ncbuf2_R[cidx2_R] = predelayed_R + clp2_R * g2_R;\ncidx2_R = cidx2_R + 1; if (cidx2_R >= MAXCOMB) cidx2_R = 0;\n\nlet rIdx3_R: Int = cidx3_R - d3_R; if (rIdx3_R < 0) rIdx3_R = rIdx3_R + MAXCOMB;\nlet c3_out_R = cbuf3_R[rIdx3_R];\nclp3_R = c3_out_R * (1.0 - dampCoeff) + clp3_R * dampCoeff;\ncbuf3_R[cidx3_R] = predelayed_R + clp3_R * g3_R;\ncidx3_R = cidx3_R + 1; if (cidx3_R >= MAXCOMB) cidx3_R = 0;\n\nlet rIdx4_R: Int = cidx4_R - d4_R; if (rIdx4_R < 0) rIdx4_R = rIdx4_R + MAXCOMB;\nlet c4_out_R = cbuf4_R[rIdx4_R];\nclp4_R = c4_out_R * (1.0 - dampCoeff) + clp4_R * dampCoeff;\ncbuf4_R[cidx4_R] = predelayed_R + clp4_R * g4_R;\ncidx4_R = cidx4_R + 1; if (cidx4_R >= MAXCOMB) cidx4_R = 0;\n\nlet combSum_R = (c1_out_R + c2_out_R + c3_out_R + c4_out_R) * 0.25;\n\n// =====================================================================\n// SEZIONE DIFFUSIVA — 2 allpass in serie per canale (Schroeder allpass:\n// y[n] = -g*x[n] + x[n-d] + g*y[n-d]). AP_GAIN=0.6 entro [0.5,0.7] per\n// stabilità garantita e densità di eco senza colorazione metallica\n// percepibile (soglia psicoacustica di fusione transienti ~50-80ms\n// densità di riflessioni, qui ottenuta in <20ms di catena AP).\n// =====================================================================\n\nlet dap1_L: Int = floor(AP1_L * srScale);\nlet dap2_L: Int = floor(AP2_L * srScale);\nif (dap1_L < 1) dap1_L = 1; if (dap1_L > (MAXAP-1)) dap1_L = MAXAP-1;\nif (dap2_L < 1) dap2_L = 1; if (dap2_L > (MAXAP-1)) dap2_L = MAXAP-1;\n\nlet apr1_L: Int = apidx1_L - dap1_L; if (apr1_L < 0) apr1_L = apr1_L + MAXAP;\nlet apDelayed1_L = apbuf1_L[apr1_L];\nlet apOut1_L = -AP_GAIN * combSum_L + apDelayed1_L;\napbuf1_L[apidx1_L] = combSum_L + AP_GAIN * apOut1_L;\napidx1_L = apidx1_L + 1; if (apidx1_L >= MAXAP) apidx1_L = 0;\n\nlet apr2_L: Int = apidx2_L - dap2_L; if (apr2_L < 0) apr2_L = apr2_L + MAXAP;\nlet apDelayed2_L = apbuf2_L[apr2_L];\nlet apOut2_L = -AP_GAIN * apOut1_L + apDelayed2_L;\napbuf2_L[apidx2_L] = apOut1_L + AP_GAIN * apOut2_L;\napidx2_L = apidx2_L + 1; if (apidx2_L >= MAXAP) apidx2_L = 0;\n\nlet dap1_R: Int = floor(AP1_R * srScale);\nlet dap2_R: Int = floor(AP2_R * srScale);\nif (dap1_R < 1) dap1_R = 1; if (dap1_R > (MAXAP-1)) dap1_R = MAXAP-1;\nif (dap2_R < 1) dap2_R = 1; if (dap2_R > (MAXAP-1)) dap2_R = MAXAP-1;\n\nlet apr1_R: Int = apidx1_R - dap1_R; if (apr1_R < 0) apr1_R = apr1_R + MAXAP;\nlet apDelayed1_R = apbuf1_R[apr1_R];\nlet apOut1_R = -AP_GAIN * combSum_R + apDelayed1_R;\napbuf1_R[apidx1_R] = combSum_R + AP_GAIN * apOut1_R;\napidx1_R = apidx1_R + 1; if (apidx1_R >= MAXAP) apidx1_R = 0;\n\nlet apr2_R: Int = apidx2_R - dap2_R; if (apr2_R < 0) apr2_R = apr2_R + MAXAP;\nlet apDelayed2_R = apbuf2_R[apr2_R];\nlet apOut2_R = -AP_GAIN * apOut1_R + apDelayed2_R;\napbuf2_R[apidx2_R] = apOut1_R + AP_GAIN * apOut2_R;\napidx2_R = apidx2_R + 1; if (apidx2_R >= MAXAP) apidx2_R = 0;\n\n// ---- WET/DRY MIX + OUTPUT ----\n// Equal-power-ish lineare semplice (mix_sm controlla wet, dry resta a\n// (1-mix_sm)): per crossfade percettivamente costante in potenza\n// servirebbe sqrt(mix)/sqrt(1-mix), omesso qui perché il riverbero è\n// additivo (non sostitutivo) e la somma di energia decorrelata dry+wet\n// non genera il dip di loudness tipico del crossfade tra segnali\n// correlati — quindi mix lineare è la scelta corretta, non un'omissione.\nout1 = in1 * (1.0 - mix_sm) + apOut2_L * mix_sm;\nout2 = in2 * (1.0 - mix_sm) + apOut2_R * mix_sm;",
-														"expr" : "",
-														"safemath" : 1
+														"safemath" : 1,
+														"expr" : ""
 													}
 ,
 													"rnbo_serial" : 1,
@@ -2255,7 +2820,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 789.0, 95.0, 689.0, 787.0 ],
+										"rect" : [ 34.0, 95.0, 1444.0, 853.0 ],
 										"gridsize" : [ 15.0, 15.0 ],
 										"boxes" : [ 											{
 												"box" : 												{
@@ -16243,7 +16808,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 585.0, 874.0, 34.0, 22.0 ],
+									"patching_rect" : [ 421.56097674369812, 850.000020265579224, 34.0, 22.0 ],
 									"text" : "*~ 1."
 								}
 
@@ -16255,7 +16820,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 537.0, 874.0, 34.0, 22.0 ],
+									"patching_rect" : [ 374.0, 850.000020265579224, 34.0, 22.0 ],
 									"text" : "*~ 1."
 								}
 
@@ -16521,8 +17086,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 1863.0, 801.0, 40.0, 22.0 ],
-									"text" : "*~ 0.6"
+									"patching_rect" : [ 1863.0, 801.0, 47.0, 22.0 ],
+									"text" : "*~ 0.45"
 								}
 
 							}
@@ -16533,8 +17098,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 1815.0, 801.0, 40.0, 22.0 ],
-									"text" : "*~ 0.6"
+									"patching_rect" : [ 1815.0, 801.0, 47.0, 22.0 ],
+									"text" : "*~ 0.45"
 								}
 
 							}
@@ -17381,7 +17946,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 365.517260551452637, 1194.827648878097534, 30.0, 30.0 ]
+									"patching_rect" : [ 459.756108522415161, 1279.268323183059692, 30.0, 30.0 ]
 								}
 
 							}
@@ -17393,7 +17958,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 237.931046962738037, 1194.827648878097534, 30.0, 30.0 ]
+									"patching_rect" : [ 332.926837205886841, 1279.268323183059692, 30.0, 30.0 ]
 								}
 
 							}
@@ -17562,7 +18127,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-8", 0 ],
+									"destination" : [ "obj-136", 0 ],
 									"source" : [ "obj-101", 0 ]
 								}
 
@@ -17625,7 +18190,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-6", 0 ],
+									"destination" : [ "obj-137", 0 ],
 									"source" : [ "obj-102", 0 ]
 								}
 
@@ -18004,7 +18569,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-101", 1 ],
-									"order" : 1,
+									"order" : 3,
 									"source" : [ "obj-108", 0 ]
 								}
 
@@ -18012,7 +18577,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-102", 1 ],
-									"order" : 2,
+									"order" : 4,
 									"source" : [ "obj-108", 0 ]
 								}
 
@@ -18020,7 +18585,23 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-110", 0 ],
+									"order" : 2,
+									"source" : [ "obj-108", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-123", 1 ],
 									"order" : 0,
+									"source" : [ "obj-108", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-124", 1 ],
+									"order" : 1,
 									"source" : [ "obj-108", 0 ]
 								}
 
@@ -18139,7 +18720,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-6", 0 ],
+									"destination" : [ "obj-135", 0 ],
 									"source" : [ "obj-11", 0 ]
 								}
 
@@ -18202,7 +18783,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-101", 0 ],
+									"destination" : [ "obj-123", 0 ],
 									"source" : [ "obj-111", 0 ]
 								}
 
@@ -18265,7 +18846,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-102", 0 ],
+									"destination" : [ "obj-124", 0 ],
 									"source" : [ "obj-112", 0 ]
 								}
 
@@ -18342,8 +18923,120 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-133", 0 ],
+									"source" : [ "obj-117", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-122", 0 ],
+									"source" : [ "obj-121", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-111", 1 ],
+									"order" : 0,
+									"source" : [ "obj-122", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-112", 1 ],
+									"order" : 1,
+									"source" : [ "obj-122", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-8", 0 ],
+									"source" : [ "obj-123", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-6", 0 ],
+									"source" : [ "obj-124", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-134", 0 ],
 									"source" : [ "obj-13", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-134", 1 ],
+									"order" : 0,
+									"source" : [ "obj-133", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-135", 1 ],
+									"order" : 1,
+									"source" : [ "obj-133", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-8", 0 ],
+									"source" : [ "obj-134", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-6", 0 ],
+									"source" : [ "obj-135", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-8", 0 ],
+									"source" : [ "obj-136", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-6", 0 ],
+									"source" : [ "obj-137", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-115", 0 ],
+									"order" : 0,
+									"source" : [ "obj-138", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-136", 1 ],
+									"order" : 1,
+									"source" : [ "obj-138", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-137", 1 ],
+									"order" : 2,
+									"source" : [ "obj-138", 0 ]
 								}
 
 							}
@@ -18358,6 +19051,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-16", 0 ],
 									"source" : [ "obj-14", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-138", 0 ],
+									"source" : [ "obj-140", 0 ]
 								}
 
 							}
@@ -19290,7 +19990,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 562.0, 743.0, 34.0, 22.0 ],
+					"patching_rect" : [ 562.727281212806702, 596.969738245010376, 34.0, 22.0 ],
 					"text" : "*~ 2."
 				}
 
@@ -19302,32 +20002,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 440.0, 743.0, 34.0, 22.0 ],
+					"patching_rect" : [ 440.0, 596.969738245010376, 34.0, 22.0 ],
 					"text" : "*~ 2."
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-173",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 624.0, 692.0, 77.0, 22.0 ],
-					"text" : "loadmess 65"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-170",
-					"maxclass" : "number",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 671.0, 875.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -19340,18 +20016,6 @@
 					"outlettype" : [ "float" ],
 					"patching_rect" : [ 624.0, 875.0, 39.0, 22.0 ],
 					"text" : "/ 127."
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-172",
-					"maxclass" : "slider",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 624.0, 723.0, 20.0, 140.0 ]
 				}
 
 			}
@@ -19608,12 +20272,18 @@
 			}
 , 			{
 				"box" : 				{
+					"bubble_bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
+					"bubble_outlinecolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 0.0 ],
+					"fontsize" : 16.0,
 					"id" : "obj-75",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 753.736870527267456, 853.0, 150.0, 20.0 ],
-					"text" : "master volume"
+					"patching_rect" : [ 1305.0, 1078.0, 157.0, 24.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 119.298244476318359, -308.771926879882812, 160.0, 24.0 ],
+					"text" : "MASTER VOLUME",
+					"textcolor" : [ 0.701960784313725, 0.145098039215686, 0.145098039215686, 1.0 ]
 				}
 
 			}
@@ -19624,7 +20294,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 753.736870527267456, 884.0, 77.0, 22.0 ],
+					"patching_rect" : [ 1305.0, 1109.0, 77.0, 22.0 ],
 					"text" : "loadmess 65"
 				}
 
@@ -19645,12 +20315,15 @@
 				"box" : 				{
 					"floatoutput" : 1,
 					"id" : "obj-70",
+					"knobcolor" : [ 0.611764705882353, 0.231372549019608, 0.231372549019608, 1.0 ],
 					"maxclass" : "slider",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 753.736870527267456, 917.0, 20.0, 140.0 ]
+					"patching_rect" : [ 1305.0, 1138.0, 20.0, 140.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 119.298244476318359, -271.929821968078613, 33.0, 190.0 ]
 				}
 
 			}
@@ -19734,7 +20407,9 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 318.0, 802.0, 50.0, 22.0 ]
+					"patching_rect" : [ 1656.060720562934875, 974.070000000000164, 50.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -152.631577491760254, -87.719297409057617, 56.0, 22.0 ]
 				}
 
 			}
@@ -19745,7 +20420,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 271.0, 620.0, 77.0, 22.0 ],
+					"patching_rect" : [ 1538.710000000000036, 772.727326154708862, 77.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -152.631577491760254, -312.280698776245117, 83.0, 22.0 ],
 					"text" : "loadmess 60"
 				}
 
@@ -19783,20 +20460,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "float" ],
-					"patching_rect" : [ 271.0, 802.0, 39.0, 22.0 ],
+					"patching_rect" : [ 192.424255728721619, 846.969755530357361, 39.0, 22.0 ],
 					"text" : "/ 127."
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-30",
-					"maxclass" : "slider",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 271.0, 650.0, 20.0, 140.0 ]
 				}
 
 			}
@@ -19842,9 +20507,8 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 790.0, 95.0, 688.0, 787.0 ],
+						"rect" : [ 34.0, 95.0, 1444.0, 853.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"code" : "// gen~ codebox: in1 = L, in2 = R, in3 = pan data (0. = left, 1. = right)\n// out1 = L', out2 = R'\n\nParam smooth_ms(20, min=1, max=500);   // smoothing time constant\n\nHistory p(0.5);                        // smoothed pan position\n\n// One-pole smoothing of the pan POSITION (anti-zipper), coefficient from\n// time constant: a = 1 - exp(-1/(tau*sr)), with tau in seconds.\n// clip() guards against out-of-range data on in3\na  = 1 - exp(-1000 / (smooth_ms * samplerate));\nps = p + a * (clip(in3, 0, 1) - p);\np  = ps;\n\n// Equal-power law with unity at centre (0 dB) and +3 dB at the edges:\n// sqrt(2)*cos(pi/4) = 1 at p = 0.5. 1.57079633 = pi/2, 1.41421356 = sqrt(2)\nth = ps * 1.57079633;\ngl = 1.41421356 * cos(th);\ngr = 1.41421356 * sin(th);\n\nout1 = in1 * gl;\nout2 = in2 * gr;",
@@ -20186,7 +20850,7 @@
 ,
 																	"rnbo_serial" : 3,
 																	"rnbo_uniqueid" : "message_obj-6",
-																	"text" : "523.25"
+																	"text" : "466.16"
 																}
 
 															}
@@ -20243,7 +20907,7 @@
 ,
 																	"rnbo_serial" : 6,
 																	"rnbo_uniqueid" : "message_obj-3",
-																	"text" : "261.63"
+																	"text" : "233.08"
 																}
 
 															}
@@ -20262,8 +20926,8 @@
 																		"maximum" : "<none>",
 																		"minimum" : "<none>",
 																		"preset" : 0,
-																		"initialFormat" : "integer",
-																		"order" : ""
+																		"order" : "",
+																		"initialFormat" : "integer"
 																	}
 ,
 																	"rnbo_serial" : 1,
@@ -20286,8 +20950,8 @@
 																	"rnbo_classname" : "codebox",
 																	"rnbo_extra_attributes" : 																	{
 																		"code" : "// in1  : counter value in ms (loop length 32000)\n// out1..out6 : frequencies in Hz -> [s note1] ... [s note6]\n// 16 chords = 4 sections x 4 chords, change times measured by hand\n// (non-uniform: 1929..2102 ms per chord)\n\n// Persistent across calls; -1 forces emission on the first message\n// after load or recompile (replaces the old [change -1]).\n@state lastChord = -1;\n\nlet loopLen = 32000;  // counter loop length in ms\nlet lead = 0;         // global anticipation in ms (>0 = chords change earlier)\n\n// Shifted time, wrapped into [0, loopLen) so any lead stays valid\nlet t = in1 + lead;\nt = t - loopLen * floor(t / loopLen);\n\n// Chord index from the measured change times: later thresholds\n// override earlier ones, so the last one satisfied wins.\n// To retune a change, edit only the number in its line.\nlet chord = 0;\nif (t >= 1900)  chord = 1;\nif (t >= 3821)  chord = 2;\nif (t >= 5813)  chord = 3;\nif (t >= 7800)  chord = 4;\nif (t >= 9780)  chord = 5;\nif (t >= 11820) chord = 6;\nif (t >= 13780) chord = 7;\nif (t >= 15900) chord = 8;\nif (t >= 17750) chord = 9;\nif (t >= 19750) chord = 10;\nif (t >= 21870) chord = 11;\nif (t >= 23750) chord = 12;\nif (t >= 25850) chord = 13;\nif (t >= 27820) chord = 14;\nif (t >= 29800) chord = 15;\n\n// Emit only on chord change (edge), not on every tick\nif (chord != lastChord) {\n    lastChord = chord;\n\n    // ---- Section 1 ----\n    if (chord == 0) {            // Ab/C\n        out1 = 261.63; out2 = 311.13; out3 = 415.30;\n        out4 = 523.25; out5 = 622.25; out6 = 830.61;\n    } else if (chord == 1) {     // Cm\n        out1 = 261.63; out2 = 311.13; out3 = 392.00;\n        out4 = 523.25; out5 = 622.25; out6 = 783.99;\n    } else if (chord == 2) {     // Eb/Bb\n        out1 = 233.08; out2 = 311.13; out3 = 392.00;\n        out4 = 466.16; out5 = 622.25; out6 = 783.99;\n    } else if (chord == 3) {     // Bb\n        out1 = 233.08; out2 = 293.66; out3 = 349.23;\n        out4 = 466.16; out5 = 587.33; out6 = 698.46;\n\n    // ---- Section 2 ----\n    } else if (chord == 4) {     // Bbm\n        out1 = 233.08; out2 = 277.18; out3 = 349.23;\n        out4 = 466.16; out5 = 554.37; out6 = 698.46;\n    } else if (chord == 5) {     // Fm\n        out1 = 207.65; out2 = 261.63; out3 = 349.23;\n        out4 = 415.30; out5 = 523.25; out6 = 698.46;\n    } else if (chord == 6) {     // Db\n        out1 = 207.65; out2 = 277.18; out3 = 349.23;\n        out4 = 415.30; out5 = 554.37; out6 = 698.46;\n    } else if (chord == 7) {     // Eb\n        out1 = 233.08; out2 = 311.13; out3 = 392.00;\n        out4 = 466.16; out5 = 622.25; out6 = 783.99;\n\n    // ---- Section 3 ----\n    } else if (chord == 8) {     // Ebsus2\n        out1 = 233.08; out2 = 311.13; out3 = 349.23;\n        out4 = 466.16; out5 = 622.25; out6 = 698.46;\n    } else if (chord == 9) {     // Cm7 (no root)\n        out1 = 233.08; out2 = 311.13; out3 = 392.00;\n        out4 = 466.16; out5 = 622.25; out6 = 783.99;\n    } else if (chord == 10) {    // Bbsus2\n        out1 = 261.63; out2 = 349.23; out3 = 466.16;\n        out4 = 523.25; out5 = 698.46; out6 = 932.33;\n    } else if (chord == 11) {    // Fsus2\n        out1 = 261.63; out2 = 349.23; out3 = 392.00;\n        out4 = 523.25; out5 = 698.46; out6 = 783.99;\n\n    // ---- Section 4 ----\n    } else if (chord == 12) {    // C7b5 (no Bb)\n        out1 = 261.63; out2 = 329.63; out3 = 369.99;\n        out4 = 523.25; out5 = 659.26; out6 = 739.99;\n    } else if (chord == 13) {    // E7b5 (no Bb)\n        out1 = 293.66; out2 = 329.63; out3 = 415.30;\n        out4 = 587.33; out5 = 659.26; out6 = 830.61;\n    } else if (chord == 14) {    // D7b5 (no C)\n        out1 = 293.66; out2 = 369.99; out3 = 415.30;\n        out4 = 587.33; out5 = 739.99; out6 = 830.61;\n    } else {                     // chord 15: Caug\n        out1 = 261.63; out2 = 329.63; out3 = 415.30;\n        out4 = 523.25; out5 = 659.26; out6 = 830.61;\n    }\n}",
-																		"hot" : 0,
-																		"safemath" : 1
+																		"safemath" : 1,
+																		"hot" : 0
 																	}
 ,
 																	"rnbo_serial" : 1,
@@ -20522,8 +21186,8 @@
 																		"maximum" : "<none>",
 																		"minimum" : "<none>",
 																		"preset" : 0,
-																		"initialFormat" : "integer",
-																		"order" : ""
+																		"order" : "",
+																		"initialFormat" : "integer"
 																	}
 ,
 																	"rnbo_serial" : 2,
@@ -20836,11 +21500,11 @@
 													"patching_rect" : [ 958.0, 1620.0, 90.0, 23.0 ],
 													"rnbo_classname" : "p",
 													"rnbo_extra_attributes" : 													{
-														"polyphony" : -1.0,
 														"args" : [  ],
 														"receivemode" : "local",
-														"notecontroller" : 0,
+														"polyphony" : -1.0,
 														"voicecontrol" : "simple",
+														"notecontroller" : 0,
 														"exposevoiceparams" : 0
 													}
 ,
@@ -21295,8 +21959,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 1,
@@ -21318,8 +21982,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 2,
@@ -21453,8 +22117,8 @@
 													"rnbo_classname" : "codebox~",
 													"rnbo_extra_attributes" : 													{
 														"code" : "// =====================================================================\n// RNBOscript -- 4-operator FM pad, single mono noise excitation.\n// Topology: 2 serial 2-op chains, L = Op2(mod)->Op1(carrier),\n// R = Op4(mod)->Op3(carrier). fc:fm = 1:1 on both chains -> fully\n// harmonic spectrum (Chowning 1973). Chains share the same noise\n// input but are detuned in Hz for stereo width via slow beating.\n//\n// Excitation is 100% external: in1 drives an amplitude envelope\n// (feeds output amplitude) and, through a second slower-filtered\n// path, the FM modulation index. Output is not noise itself -- the\n// noise only feeds the envelope and the feedback tail, which decays\n// on its own once noise stops (Karplus-Strong-like tail behavior).\n//\n// Two separate one-pole envelope stages on purpose: ENV_TAU (15ms)\n// drives amplitude reactively; MODIDX_TAU (40ms) is a second, slower\n// stage feeding only the modulation index, to avoid audible PM index\n// jitter (phase modulation at a rate inside the roughness/flutter\n// band, Zwicker & Fastl ch.6) that a single fast envelope caused when\n// used directly for both amplitude and mod index.\n//\n// INLETS:\n//   in1 = noise excitation (mono, shared L/R)\n//   in2 = f0 in Hz\n//   in3 = feedback/decay [0..1]\n//   in4 = detune [0..1] -> 0..3 Hz split between carrier L/R\n// OUTLETS:\n//   out1 = L, out2 = R\n//\n// No oversampling here; mod index is clamped to stay well below the\n// Nyquist-adjacent foldover region at fc:fm=1:1 (see MOD_INDEX_*).\n// =====================================================================\n\nconst twopi = 6.283185307179586;\n\nconst RATIO_MOD_L = 1.0;\nconst RATIO_CAR_L = 1.0;\nconst RATIO_MOD_R = 1.0;\nconst RATIO_CAR_R = 1.0;\n\n// Mod index range tuned for a \"warm bell\" spectrum at fc:fm=1:1\n// (Chowning): too low = thin, too high (>~4-5) = dense buzz.\nconst MOD_INDEX_FLOOR = 0.35;\nconst MOD_INDEX_RANGE = 2.2;\n\nconst ENV_TAU = 0.015;\nconst MODIDX_TAU = 0.040;\n\n// 0-3 Hz detune: chorus-like beating, not perceived as mistuning.\nconst DETUNE_MAX_HZ = 3.0;\n\nconst DECAY_MIN = 0.0;\nconst DECAY_MAX = 0.998;\n\nconst F0_MIN = 20.0;\nconst F0_MAX = 5000.0;\n\n@state phase_op1 = 0.0;\n@state phase_op2 = 0.0;\n@state phase_op3 = 0.0;\n@state phase_op4 = 0.0;\n\n@state env_noise = 0.0;\n@state modidx_env = 0.0;\n\n@state fb_L = 0.0;\n@state fb_R = 0.0;\n\n// Control smoothing (anti zipper-noise), tau=5ms\n@state f0_sm = 220.0;\n@state decay_sm = 0.0;\n@state detune_sm = 0.0;\n\nlet sr = samplerate();\nconst smooth_tau = 0.005;\nlet smooth_g = exp(-1.0 / (smooth_tau * sr));\n\nf0_sm = f0_sm * smooth_g + in2 * (1.0 - smooth_g);\ndecay_sm = decay_sm * smooth_g + in3 * (1.0 - smooth_g);\ndetune_sm = detune_sm * smooth_g + in4 * (1.0 - smooth_g);\n\nif (f0_sm < F0_MIN) f0_sm = F0_MIN;\nif (f0_sm > F0_MAX) f0_sm = F0_MAX;\nif (decay_sm < 0.0) decay_sm = 0.0;\nif (decay_sm > 1.0) decay_sm = 1.0;\nif (detune_sm < 0.0) detune_sm = 0.0;\nif (detune_sm > 1.0) detune_sm = 1.0;\n\nlet feedback_coeff = DECAY_MIN + decay_sm * (DECAY_MAX - DECAY_MIN);\n\nlet detune_hz = detune_sm * DETUNE_MAX_HZ;\nlet f0_L = f0_sm + (detune_hz * 0.5);\nlet f0_R = f0_sm - (detune_hz * 0.5);\n\n// Envelope follower on the single noise input, one-pole full-wave.\nlet env_g = exp(-1.0 / (ENV_TAU * sr));\nlet abs_in = (in1 < 0.0) ? -in1 : in1;\nenv_noise = env_noise * env_g + abs_in * (1.0 - env_g);\n\n// Second, slower stage feeding only the modulation index.\nlet modidx_g = exp(-1.0 / (MODIDX_TAU * sr));\nmodidx_env = modidx_env * modidx_g + env_noise * (1.0 - modidx_g);\n\nlet modIndex = MOD_INDEX_FLOOR + (modidx_env * MOD_INDEX_RANGE);\nlet modIndexCeil = MOD_INDEX_FLOOR + MOD_INDEX_RANGE;\nif (modIndex > modIndexCeil) modIndex = modIndexCeil;\n\n// ---- Chain L: Op2 (mod) -> Op1 (carrier) ----\nlet phaseInc_op2 = (f0_L * RATIO_MOD_L) / sr;\nphase_op2 = phase_op2 + phaseInc_op2;\nif (phase_op2 >= 1.0) phase_op2 = phase_op2 - floor(phase_op2);\nlet mod_op2 = sin(phase_op2 * twopi);\n\nlet phaseInc_op1 = (f0_L * RATIO_CAR_L) / sr;\nphase_op1 = phase_op1 + phaseInc_op1;\nif (phase_op1 >= 1.0) phase_op1 = phase_op1 - floor(phase_op1);\nlet fm_phase_L = phase_op1 * twopi + (modIndex * mod_op2);\nlet carrier_L = sin(fm_phase_L);\n\n// ---- Chain R: Op4 (mod) -> Op3 (carrier) ----\nlet phaseInc_op4 = (f0_R * RATIO_MOD_R) / sr;\nphase_op4 = phase_op4 + phaseInc_op4;\nif (phase_op4 >= 1.0) phase_op4 = phase_op4 - floor(phase_op4);\nlet mod_op4 = sin(phase_op4 * twopi);\n\nlet phaseInc_op3 = (f0_R * RATIO_CAR_R) / sr;\nphase_op3 = phase_op3 + phaseInc_op3;\nif (phase_op3 >= 1.0) phase_op3 = phase_op3 - floor(phase_op3);\nlet fm_phase_R = phase_op3 * twopi + (modIndex * mod_op4);\nlet carrier_R = sin(fm_phase_R);\n\n// ---- Amplitude + feedback tail (Karplus-Strong-like decay) ----\nlet driven_L = carrier_L * env_noise;\nlet driven_R = carrier_R * env_noise;\n\nfb_L = (fb_L * feedback_coeff) + (driven_L * (1.0 - feedback_coeff));\nfb_R = (fb_R * feedback_coeff) + (driven_R * (1.0 - feedback_coeff));\n\nout1 = fb_L;\nout2 = fb_R;",
-														"expr" : "",
-														"safemath" : 1
+														"safemath" : 1,
+														"expr" : ""
 													}
 ,
 													"rnbo_serial" : 1,
@@ -21916,9 +22580,9 @@
 													"patching_rect" : [ 269.565219640731812, 1482.608708024024963, 20.0, 140.0 ],
 													"rnbo_classname" : "slider",
 													"rnbo_extra_attributes" : 													{
+														"floatoutput" : 1,
 														"mult" : 1.0,
 														"size" : 128.0,
-														"floatoutput" : 1,
 														"min" : 0.0,
 														"preset" : 0,
 														"value" : 0.0,
@@ -21990,8 +22654,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 3,
@@ -22194,8 +22858,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 4,
@@ -22247,8 +22911,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 5,
@@ -22270,8 +22934,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 6,
@@ -22405,8 +23069,8 @@
 													"rnbo_classname" : "codebox~",
 													"rnbo_extra_attributes" : 													{
 														"code" : "// =====================================================================\n// RNBOscript -- 4-operator FM pad, single mono noise excitation.\n// Topology: 2 serial 2-op chains, L = Op2(mod)->Op1(carrier),\n// R = Op4(mod)->Op3(carrier). fc:fm = 1:1 on both chains -> fully\n// harmonic spectrum (Chowning 1973). Chains share the same noise\n// input but are detuned in Hz for stereo width via slow beating.\n//\n// Excitation is 100% external: in1 drives an amplitude envelope\n// (feeds output amplitude) and, through a second slower-filtered\n// path, the FM modulation index. Output is not noise itself -- the\n// noise only feeds the envelope and the feedback tail, which decays\n// on its own once noise stops (Karplus-Strong-like tail behavior).\n//\n// Two separate one-pole envelope stages on purpose: ENV_TAU (15ms)\n// drives amplitude reactively; MODIDX_TAU (40ms) is a second, slower\n// stage feeding only the modulation index, to avoid audible PM index\n// jitter (phase modulation at a rate inside the roughness/flutter\n// band, Zwicker & Fastl ch.6) that a single fast envelope caused when\n// used directly for both amplitude and mod index.\n//\n// INLETS:\n//   in1 = noise excitation (mono, shared L/R)\n//   in2 = f0 in Hz\n//   in3 = feedback/decay [0..1]\n//   in4 = detune [0..1] -> 0..3 Hz split between carrier L/R\n// OUTLETS:\n//   out1 = L, out2 = R\n//\n// No oversampling here; mod index is clamped to stay well below the\n// Nyquist-adjacent foldover region at fc:fm=1:1 (see MOD_INDEX_*).\n// =====================================================================\n\nconst twopi = 6.283185307179586;\n\nconst RATIO_MOD_L = 1.0;\nconst RATIO_CAR_L = 1.0;\nconst RATIO_MOD_R = 1.0;\nconst RATIO_CAR_R = 1.0;\n\n// Mod index range tuned for a \"warm bell\" spectrum at fc:fm=1:1\n// (Chowning): too low = thin, too high (>~4-5) = dense buzz.\nconst MOD_INDEX_FLOOR = 0.35;\nconst MOD_INDEX_RANGE = 2.2;\n\nconst ENV_TAU = 0.015;\nconst MODIDX_TAU = 0.040;\n\n// 0-3 Hz detune: chorus-like beating, not perceived as mistuning.\nconst DETUNE_MAX_HZ = 3.0;\n\nconst DECAY_MIN = 0.0;\nconst DECAY_MAX = 0.998;\n\nconst F0_MIN = 20.0;\nconst F0_MAX = 5000.0;\n\n@state phase_op1 = 0.0;\n@state phase_op2 = 0.0;\n@state phase_op3 = 0.0;\n@state phase_op4 = 0.0;\n\n@state env_noise = 0.0;\n@state modidx_env = 0.0;\n\n@state fb_L = 0.0;\n@state fb_R = 0.0;\n\n// Control smoothing (anti zipper-noise), tau=5ms\n@state f0_sm = 220.0;\n@state decay_sm = 0.0;\n@state detune_sm = 0.0;\n\nlet sr = samplerate();\nconst smooth_tau = 0.005;\nlet smooth_g = exp(-1.0 / (smooth_tau * sr));\n\nf0_sm = f0_sm * smooth_g + in2 * (1.0 - smooth_g);\ndecay_sm = decay_sm * smooth_g + in3 * (1.0 - smooth_g);\ndetune_sm = detune_sm * smooth_g + in4 * (1.0 - smooth_g);\n\nif (f0_sm < F0_MIN) f0_sm = F0_MIN;\nif (f0_sm > F0_MAX) f0_sm = F0_MAX;\nif (decay_sm < 0.0) decay_sm = 0.0;\nif (decay_sm > 1.0) decay_sm = 1.0;\nif (detune_sm < 0.0) detune_sm = 0.0;\nif (detune_sm > 1.0) detune_sm = 1.0;\n\nlet feedback_coeff = DECAY_MIN + decay_sm * (DECAY_MAX - DECAY_MIN);\n\nlet detune_hz = detune_sm * DETUNE_MAX_HZ;\nlet f0_L = f0_sm + (detune_hz * 0.5);\nlet f0_R = f0_sm - (detune_hz * 0.5);\n\n// Envelope follower on the single noise input, one-pole full-wave.\nlet env_g = exp(-1.0 / (ENV_TAU * sr));\nlet abs_in = (in1 < 0.0) ? -in1 : in1;\nenv_noise = env_noise * env_g + abs_in * (1.0 - env_g);\n\n// Second, slower stage feeding only the modulation index.\nlet modidx_g = exp(-1.0 / (MODIDX_TAU * sr));\nmodidx_env = modidx_env * modidx_g + env_noise * (1.0 - modidx_g);\n\nlet modIndex = MOD_INDEX_FLOOR + (modidx_env * MOD_INDEX_RANGE);\nlet modIndexCeil = MOD_INDEX_FLOOR + MOD_INDEX_RANGE;\nif (modIndex > modIndexCeil) modIndex = modIndexCeil;\n\n// ---- Chain L: Op2 (mod) -> Op1 (carrier) ----\nlet phaseInc_op2 = (f0_L * RATIO_MOD_L) / sr;\nphase_op2 = phase_op2 + phaseInc_op2;\nif (phase_op2 >= 1.0) phase_op2 = phase_op2 - floor(phase_op2);\nlet mod_op2 = sin(phase_op2 * twopi);\n\nlet phaseInc_op1 = (f0_L * RATIO_CAR_L) / sr;\nphase_op1 = phase_op1 + phaseInc_op1;\nif (phase_op1 >= 1.0) phase_op1 = phase_op1 - floor(phase_op1);\nlet fm_phase_L = phase_op1 * twopi + (modIndex * mod_op2);\nlet carrier_L = sin(fm_phase_L);\n\n// ---- Chain R: Op4 (mod) -> Op3 (carrier) ----\nlet phaseInc_op4 = (f0_R * RATIO_MOD_R) / sr;\nphase_op4 = phase_op4 + phaseInc_op4;\nif (phase_op4 >= 1.0) phase_op4 = phase_op4 - floor(phase_op4);\nlet mod_op4 = sin(phase_op4 * twopi);\n\nlet phaseInc_op3 = (f0_R * RATIO_CAR_R) / sr;\nphase_op3 = phase_op3 + phaseInc_op3;\nif (phase_op3 >= 1.0) phase_op3 = phase_op3 - floor(phase_op3);\nlet fm_phase_R = phase_op3 * twopi + (modIndex * mod_op4);\nlet carrier_R = sin(fm_phase_R);\n\n// ---- Amplitude + feedback tail (Karplus-Strong-like decay) ----\nlet driven_L = carrier_L * env_noise;\nlet driven_R = carrier_R * env_noise;\n\nfb_L = (fb_L * feedback_coeff) + (driven_L * (1.0 - feedback_coeff));\nfb_R = (fb_R * feedback_coeff) + (driven_R * (1.0 - feedback_coeff));\n\nout1 = fb_L;\nout2 = fb_R;",
-														"expr" : "",
-														"safemath" : 1
+														"safemath" : 1,
+														"expr" : ""
 													}
 ,
 													"rnbo_serial" : 2,
@@ -22623,8 +23287,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 7,
@@ -22646,8 +23310,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 8,
@@ -22781,8 +23445,8 @@
 													"rnbo_classname" : "codebox~",
 													"rnbo_extra_attributes" : 													{
 														"code" : "// =====================================================================\n// RNBOscript -- 4-operator FM pad, single mono noise excitation.\n// Topology: 2 serial 2-op chains, L = Op2(mod)->Op1(carrier),\n// R = Op4(mod)->Op3(carrier). fc:fm = 1:1 on both chains -> fully\n// harmonic spectrum (Chowning 1973). Chains share the same noise\n// input but are detuned in Hz for stereo width via slow beating.\n//\n// Excitation is 100% external: in1 drives an amplitude envelope\n// (feeds output amplitude) and, through a second slower-filtered\n// path, the FM modulation index. Output is not noise itself -- the\n// noise only feeds the envelope and the feedback tail, which decays\n// on its own once noise stops (Karplus-Strong-like tail behavior).\n//\n// Two separate one-pole envelope stages on purpose: ENV_TAU (15ms)\n// drives amplitude reactively; MODIDX_TAU (40ms) is a second, slower\n// stage feeding only the modulation index, to avoid audible PM index\n// jitter (phase modulation at a rate inside the roughness/flutter\n// band, Zwicker & Fastl ch.6) that a single fast envelope caused when\n// used directly for both amplitude and mod index.\n//\n// INLETS:\n//   in1 = noise excitation (mono, shared L/R)\n//   in2 = f0 in Hz\n//   in3 = feedback/decay [0..1]\n//   in4 = detune [0..1] -> 0..3 Hz split between carrier L/R\n// OUTLETS:\n//   out1 = L, out2 = R\n//\n// No oversampling here; mod index is clamped to stay well below the\n// Nyquist-adjacent foldover region at fc:fm=1:1 (see MOD_INDEX_*).\n// =====================================================================\n\nconst twopi = 6.283185307179586;\n\nconst RATIO_MOD_L = 1.0;\nconst RATIO_CAR_L = 1.0;\nconst RATIO_MOD_R = 1.0;\nconst RATIO_CAR_R = 1.0;\n\n// Mod index range tuned for a \"warm bell\" spectrum at fc:fm=1:1\n// (Chowning): too low = thin, too high (>~4-5) = dense buzz.\nconst MOD_INDEX_FLOOR = 0.35;\nconst MOD_INDEX_RANGE = 2.2;\n\nconst ENV_TAU = 0.015;\nconst MODIDX_TAU = 0.040;\n\n// 0-3 Hz detune: chorus-like beating, not perceived as mistuning.\nconst DETUNE_MAX_HZ = 3.0;\n\nconst DECAY_MIN = 0.0;\nconst DECAY_MAX = 0.998;\n\nconst F0_MIN = 20.0;\nconst F0_MAX = 5000.0;\n\n@state phase_op1 = 0.0;\n@state phase_op2 = 0.0;\n@state phase_op3 = 0.0;\n@state phase_op4 = 0.0;\n\n@state env_noise = 0.0;\n@state modidx_env = 0.0;\n\n@state fb_L = 0.0;\n@state fb_R = 0.0;\n\n// Control smoothing (anti zipper-noise), tau=5ms\n@state f0_sm = 220.0;\n@state decay_sm = 0.0;\n@state detune_sm = 0.0;\n\nlet sr = samplerate();\nconst smooth_tau = 0.005;\nlet smooth_g = exp(-1.0 / (smooth_tau * sr));\n\nf0_sm = f0_sm * smooth_g + in2 * (1.0 - smooth_g);\ndecay_sm = decay_sm * smooth_g + in3 * (1.0 - smooth_g);\ndetune_sm = detune_sm * smooth_g + in4 * (1.0 - smooth_g);\n\nif (f0_sm < F0_MIN) f0_sm = F0_MIN;\nif (f0_sm > F0_MAX) f0_sm = F0_MAX;\nif (decay_sm < 0.0) decay_sm = 0.0;\nif (decay_sm > 1.0) decay_sm = 1.0;\nif (detune_sm < 0.0) detune_sm = 0.0;\nif (detune_sm > 1.0) detune_sm = 1.0;\n\nlet feedback_coeff = DECAY_MIN + decay_sm * (DECAY_MAX - DECAY_MIN);\n\nlet detune_hz = detune_sm * DETUNE_MAX_HZ;\nlet f0_L = f0_sm + (detune_hz * 0.5);\nlet f0_R = f0_sm - (detune_hz * 0.5);\n\n// Envelope follower on the single noise input, one-pole full-wave.\nlet env_g = exp(-1.0 / (ENV_TAU * sr));\nlet abs_in = (in1 < 0.0) ? -in1 : in1;\nenv_noise = env_noise * env_g + abs_in * (1.0 - env_g);\n\n// Second, slower stage feeding only the modulation index.\nlet modidx_g = exp(-1.0 / (MODIDX_TAU * sr));\nmodidx_env = modidx_env * modidx_g + env_noise * (1.0 - modidx_g);\n\nlet modIndex = MOD_INDEX_FLOOR + (modidx_env * MOD_INDEX_RANGE);\nlet modIndexCeil = MOD_INDEX_FLOOR + MOD_INDEX_RANGE;\nif (modIndex > modIndexCeil) modIndex = modIndexCeil;\n\n// ---- Chain L: Op2 (mod) -> Op1 (carrier) ----\nlet phaseInc_op2 = (f0_L * RATIO_MOD_L) / sr;\nphase_op2 = phase_op2 + phaseInc_op2;\nif (phase_op2 >= 1.0) phase_op2 = phase_op2 - floor(phase_op2);\nlet mod_op2 = sin(phase_op2 * twopi);\n\nlet phaseInc_op1 = (f0_L * RATIO_CAR_L) / sr;\nphase_op1 = phase_op1 + phaseInc_op1;\nif (phase_op1 >= 1.0) phase_op1 = phase_op1 - floor(phase_op1);\nlet fm_phase_L = phase_op1 * twopi + (modIndex * mod_op2);\nlet carrier_L = sin(fm_phase_L);\n\n// ---- Chain R: Op4 (mod) -> Op3 (carrier) ----\nlet phaseInc_op4 = (f0_R * RATIO_MOD_R) / sr;\nphase_op4 = phase_op4 + phaseInc_op4;\nif (phase_op4 >= 1.0) phase_op4 = phase_op4 - floor(phase_op4);\nlet mod_op4 = sin(phase_op4 * twopi);\n\nlet phaseInc_op3 = (f0_R * RATIO_CAR_R) / sr;\nphase_op3 = phase_op3 + phaseInc_op3;\nif (phase_op3 >= 1.0) phase_op3 = phase_op3 - floor(phase_op3);\nlet fm_phase_R = phase_op3 * twopi + (modIndex * mod_op4);\nlet carrier_R = sin(fm_phase_R);\n\n// ---- Amplitude + feedback tail (Karplus-Strong-like decay) ----\nlet driven_L = carrier_L * env_noise;\nlet driven_R = carrier_R * env_noise;\n\nfb_L = (fb_L * feedback_coeff) + (driven_L * (1.0 - feedback_coeff));\nfb_R = (fb_R * feedback_coeff) + (driven_R * (1.0 - feedback_coeff));\n\nout1 = fb_L;\nout2 = fb_R;",
-														"expr" : "",
-														"safemath" : 1
+														"safemath" : 1,
+														"expr" : ""
 													}
 ,
 													"rnbo_serial" : 3,
@@ -22999,8 +23663,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 9,
@@ -23022,8 +23686,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 10,
@@ -23157,8 +23821,8 @@
 													"rnbo_classname" : "codebox~",
 													"rnbo_extra_attributes" : 													{
 														"code" : "// =====================================================================\n// RNBOscript -- 4-operator FM pad, single mono noise excitation.\n// Topology: 2 serial 2-op chains, L = Op2(mod)->Op1(carrier),\n// R = Op4(mod)->Op3(carrier). fc:fm = 1:1 on both chains -> fully\n// harmonic spectrum (Chowning 1973). Chains share the same noise\n// input but are detuned in Hz for stereo width via slow beating.\n//\n// Excitation is 100% external: in1 drives an amplitude envelope\n// (feeds output amplitude) and, through a second slower-filtered\n// path, the FM modulation index. Output is not noise itself -- the\n// noise only feeds the envelope and the feedback tail, which decays\n// on its own once noise stops (Karplus-Strong-like tail behavior).\n//\n// Two separate one-pole envelope stages on purpose: ENV_TAU (15ms)\n// drives amplitude reactively; MODIDX_TAU (40ms) is a second, slower\n// stage feeding only the modulation index, to avoid audible PM index\n// jitter (phase modulation at a rate inside the roughness/flutter\n// band, Zwicker & Fastl ch.6) that a single fast envelope caused when\n// used directly for both amplitude and mod index.\n//\n// INLETS:\n//   in1 = noise excitation (mono, shared L/R)\n//   in2 = f0 in Hz\n//   in3 = feedback/decay [0..1]\n//   in4 = detune [0..1] -> 0..3 Hz split between carrier L/R\n// OUTLETS:\n//   out1 = L, out2 = R\n//\n// No oversampling here; mod index is clamped to stay well below the\n// Nyquist-adjacent foldover region at fc:fm=1:1 (see MOD_INDEX_*).\n// =====================================================================\n\nconst twopi = 6.283185307179586;\n\nconst RATIO_MOD_L = 1.0;\nconst RATIO_CAR_L = 1.0;\nconst RATIO_MOD_R = 1.0;\nconst RATIO_CAR_R = 1.0;\n\n// Mod index range tuned for a \"warm bell\" spectrum at fc:fm=1:1\n// (Chowning): too low = thin, too high (>~4-5) = dense buzz.\nconst MOD_INDEX_FLOOR = 0.35;\nconst MOD_INDEX_RANGE = 2.2;\n\nconst ENV_TAU = 0.015;\nconst MODIDX_TAU = 0.040;\n\n// 0-3 Hz detune: chorus-like beating, not perceived as mistuning.\nconst DETUNE_MAX_HZ = 3.0;\n\nconst DECAY_MIN = 0.0;\nconst DECAY_MAX = 0.998;\n\nconst F0_MIN = 20.0;\nconst F0_MAX = 5000.0;\n\n@state phase_op1 = 0.0;\n@state phase_op2 = 0.0;\n@state phase_op3 = 0.0;\n@state phase_op4 = 0.0;\n\n@state env_noise = 0.0;\n@state modidx_env = 0.0;\n\n@state fb_L = 0.0;\n@state fb_R = 0.0;\n\n// Control smoothing (anti zipper-noise), tau=5ms\n@state f0_sm = 220.0;\n@state decay_sm = 0.0;\n@state detune_sm = 0.0;\n\nlet sr = samplerate();\nconst smooth_tau = 0.005;\nlet smooth_g = exp(-1.0 / (smooth_tau * sr));\n\nf0_sm = f0_sm * smooth_g + in2 * (1.0 - smooth_g);\ndecay_sm = decay_sm * smooth_g + in3 * (1.0 - smooth_g);\ndetune_sm = detune_sm * smooth_g + in4 * (1.0 - smooth_g);\n\nif (f0_sm < F0_MIN) f0_sm = F0_MIN;\nif (f0_sm > F0_MAX) f0_sm = F0_MAX;\nif (decay_sm < 0.0) decay_sm = 0.0;\nif (decay_sm > 1.0) decay_sm = 1.0;\nif (detune_sm < 0.0) detune_sm = 0.0;\nif (detune_sm > 1.0) detune_sm = 1.0;\n\nlet feedback_coeff = DECAY_MIN + decay_sm * (DECAY_MAX - DECAY_MIN);\n\nlet detune_hz = detune_sm * DETUNE_MAX_HZ;\nlet f0_L = f0_sm + (detune_hz * 0.5);\nlet f0_R = f0_sm - (detune_hz * 0.5);\n\n// Envelope follower on the single noise input, one-pole full-wave.\nlet env_g = exp(-1.0 / (ENV_TAU * sr));\nlet abs_in = (in1 < 0.0) ? -in1 : in1;\nenv_noise = env_noise * env_g + abs_in * (1.0 - env_g);\n\n// Second, slower stage feeding only the modulation index.\nlet modidx_g = exp(-1.0 / (MODIDX_TAU * sr));\nmodidx_env = modidx_env * modidx_g + env_noise * (1.0 - modidx_g);\n\nlet modIndex = MOD_INDEX_FLOOR + (modidx_env * MOD_INDEX_RANGE);\nlet modIndexCeil = MOD_INDEX_FLOOR + MOD_INDEX_RANGE;\nif (modIndex > modIndexCeil) modIndex = modIndexCeil;\n\n// ---- Chain L: Op2 (mod) -> Op1 (carrier) ----\nlet phaseInc_op2 = (f0_L * RATIO_MOD_L) / sr;\nphase_op2 = phase_op2 + phaseInc_op2;\nif (phase_op2 >= 1.0) phase_op2 = phase_op2 - floor(phase_op2);\nlet mod_op2 = sin(phase_op2 * twopi);\n\nlet phaseInc_op1 = (f0_L * RATIO_CAR_L) / sr;\nphase_op1 = phase_op1 + phaseInc_op1;\nif (phase_op1 >= 1.0) phase_op1 = phase_op1 - floor(phase_op1);\nlet fm_phase_L = phase_op1 * twopi + (modIndex * mod_op2);\nlet carrier_L = sin(fm_phase_L);\n\n// ---- Chain R: Op4 (mod) -> Op3 (carrier) ----\nlet phaseInc_op4 = (f0_R * RATIO_MOD_R) / sr;\nphase_op4 = phase_op4 + phaseInc_op4;\nif (phase_op4 >= 1.0) phase_op4 = phase_op4 - floor(phase_op4);\nlet mod_op4 = sin(phase_op4 * twopi);\n\nlet phaseInc_op3 = (f0_R * RATIO_CAR_R) / sr;\nphase_op3 = phase_op3 + phaseInc_op3;\nif (phase_op3 >= 1.0) phase_op3 = phase_op3 - floor(phase_op3);\nlet fm_phase_R = phase_op3 * twopi + (modIndex * mod_op4);\nlet carrier_R = sin(fm_phase_R);\n\n// ---- Amplitude + feedback tail (Karplus-Strong-like decay) ----\nlet driven_L = carrier_L * env_noise;\nlet driven_R = carrier_R * env_noise;\n\nfb_L = (fb_L * feedback_coeff) + (driven_L * (1.0 - feedback_coeff));\nfb_R = (fb_R * feedback_coeff) + (driven_R * (1.0 - feedback_coeff));\n\nout1 = fb_L;\nout2 = fb_R;",
-														"expr" : "",
-														"safemath" : 1
+														"safemath" : 1,
+														"expr" : ""
 													}
 ,
 													"rnbo_serial" : 4,
@@ -23375,8 +24039,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 11,
@@ -23398,8 +24062,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 12,
@@ -23533,8 +24197,8 @@
 													"rnbo_classname" : "codebox~",
 													"rnbo_extra_attributes" : 													{
 														"code" : "// =====================================================================\n// RNBOscript -- 4-operator FM pad, single mono noise excitation.\n// Topology: 2 serial 2-op chains, L = Op2(mod)->Op1(carrier),\n// R = Op4(mod)->Op3(carrier). fc:fm = 1:1 on both chains -> fully\n// harmonic spectrum (Chowning 1973). Chains share the same noise\n// input but are detuned in Hz for stereo width via slow beating.\n//\n// Excitation is 100% external: in1 drives an amplitude envelope\n// (feeds output amplitude) and, through a second slower-filtered\n// path, the FM modulation index. Output is not noise itself -- the\n// noise only feeds the envelope and the feedback tail, which decays\n// on its own once noise stops (Karplus-Strong-like tail behavior).\n//\n// Two separate one-pole envelope stages on purpose: ENV_TAU (15ms)\n// drives amplitude reactively; MODIDX_TAU (40ms) is a second, slower\n// stage feeding only the modulation index, to avoid audible PM index\n// jitter (phase modulation at a rate inside the roughness/flutter\n// band, Zwicker & Fastl ch.6) that a single fast envelope caused when\n// used directly for both amplitude and mod index.\n//\n// INLETS:\n//   in1 = noise excitation (mono, shared L/R)\n//   in2 = f0 in Hz\n//   in3 = feedback/decay [0..1]\n//   in4 = detune [0..1] -> 0..3 Hz split between carrier L/R\n// OUTLETS:\n//   out1 = L, out2 = R\n//\n// No oversampling here; mod index is clamped to stay well below the\n// Nyquist-adjacent foldover region at fc:fm=1:1 (see MOD_INDEX_*).\n// =====================================================================\n\nconst twopi = 6.283185307179586;\n\nconst RATIO_MOD_L = 1.0;\nconst RATIO_CAR_L = 1.0;\nconst RATIO_MOD_R = 1.0;\nconst RATIO_CAR_R = 1.0;\n\n// Mod index range tuned for a \"warm bell\" spectrum at fc:fm=1:1\n// (Chowning): too low = thin, too high (>~4-5) = dense buzz.\nconst MOD_INDEX_FLOOR = 0.35;\nconst MOD_INDEX_RANGE = 2.2;\n\nconst ENV_TAU = 0.015;\nconst MODIDX_TAU = 0.040;\n\n// 0-3 Hz detune: chorus-like beating, not perceived as mistuning.\nconst DETUNE_MAX_HZ = 3.0;\n\nconst DECAY_MIN = 0.0;\nconst DECAY_MAX = 0.998;\n\nconst F0_MIN = 20.0;\nconst F0_MAX = 5000.0;\n\n@state phase_op1 = 0.0;\n@state phase_op2 = 0.0;\n@state phase_op3 = 0.0;\n@state phase_op4 = 0.0;\n\n@state env_noise = 0.0;\n@state modidx_env = 0.0;\n\n@state fb_L = 0.0;\n@state fb_R = 0.0;\n\n// Control smoothing (anti zipper-noise), tau=5ms\n@state f0_sm = 220.0;\n@state decay_sm = 0.0;\n@state detune_sm = 0.0;\n\nlet sr = samplerate();\nconst smooth_tau = 0.005;\nlet smooth_g = exp(-1.0 / (smooth_tau * sr));\n\nf0_sm = f0_sm * smooth_g + in2 * (1.0 - smooth_g);\ndecay_sm = decay_sm * smooth_g + in3 * (1.0 - smooth_g);\ndetune_sm = detune_sm * smooth_g + in4 * (1.0 - smooth_g);\n\nif (f0_sm < F0_MIN) f0_sm = F0_MIN;\nif (f0_sm > F0_MAX) f0_sm = F0_MAX;\nif (decay_sm < 0.0) decay_sm = 0.0;\nif (decay_sm > 1.0) decay_sm = 1.0;\nif (detune_sm < 0.0) detune_sm = 0.0;\nif (detune_sm > 1.0) detune_sm = 1.0;\n\nlet feedback_coeff = DECAY_MIN + decay_sm * (DECAY_MAX - DECAY_MIN);\n\nlet detune_hz = detune_sm * DETUNE_MAX_HZ;\nlet f0_L = f0_sm + (detune_hz * 0.5);\nlet f0_R = f0_sm - (detune_hz * 0.5);\n\n// Envelope follower on the single noise input, one-pole full-wave.\nlet env_g = exp(-1.0 / (ENV_TAU * sr));\nlet abs_in = (in1 < 0.0) ? -in1 : in1;\nenv_noise = env_noise * env_g + abs_in * (1.0 - env_g);\n\n// Second, slower stage feeding only the modulation index.\nlet modidx_g = exp(-1.0 / (MODIDX_TAU * sr));\nmodidx_env = modidx_env * modidx_g + env_noise * (1.0 - modidx_g);\n\nlet modIndex = MOD_INDEX_FLOOR + (modidx_env * MOD_INDEX_RANGE);\nlet modIndexCeil = MOD_INDEX_FLOOR + MOD_INDEX_RANGE;\nif (modIndex > modIndexCeil) modIndex = modIndexCeil;\n\n// ---- Chain L: Op2 (mod) -> Op1 (carrier) ----\nlet phaseInc_op2 = (f0_L * RATIO_MOD_L) / sr;\nphase_op2 = phase_op2 + phaseInc_op2;\nif (phase_op2 >= 1.0) phase_op2 = phase_op2 - floor(phase_op2);\nlet mod_op2 = sin(phase_op2 * twopi);\n\nlet phaseInc_op1 = (f0_L * RATIO_CAR_L) / sr;\nphase_op1 = phase_op1 + phaseInc_op1;\nif (phase_op1 >= 1.0) phase_op1 = phase_op1 - floor(phase_op1);\nlet fm_phase_L = phase_op1 * twopi + (modIndex * mod_op2);\nlet carrier_L = sin(fm_phase_L);\n\n// ---- Chain R: Op4 (mod) -> Op3 (carrier) ----\nlet phaseInc_op4 = (f0_R * RATIO_MOD_R) / sr;\nphase_op4 = phase_op4 + phaseInc_op4;\nif (phase_op4 >= 1.0) phase_op4 = phase_op4 - floor(phase_op4);\nlet mod_op4 = sin(phase_op4 * twopi);\n\nlet phaseInc_op3 = (f0_R * RATIO_CAR_R) / sr;\nphase_op3 = phase_op3 + phaseInc_op3;\nif (phase_op3 >= 1.0) phase_op3 = phase_op3 - floor(phase_op3);\nlet fm_phase_R = phase_op3 * twopi + (modIndex * mod_op4);\nlet carrier_R = sin(fm_phase_R);\n\n// ---- Amplitude + feedback tail (Karplus-Strong-like decay) ----\nlet driven_L = carrier_L * env_noise;\nlet driven_R = carrier_R * env_noise;\n\nfb_L = (fb_L * feedback_coeff) + (driven_L * (1.0 - feedback_coeff));\nfb_R = (fb_R * feedback_coeff) + (driven_R * (1.0 - feedback_coeff));\n\nout1 = fb_L;\nout2 = fb_R;",
-														"expr" : "",
-														"safemath" : 1
+														"safemath" : 1,
+														"expr" : ""
 													}
 ,
 													"rnbo_serial" : 5,
@@ -23751,8 +24415,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 13,
@@ -23774,8 +24438,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 14,
@@ -23909,8 +24573,8 @@
 													"rnbo_classname" : "codebox~",
 													"rnbo_extra_attributes" : 													{
 														"code" : "// =====================================================================\n// RNBOscript -- 4-operator FM pad, single mono noise excitation.\n// Topology: 2 serial 2-op chains, L = Op2(mod)->Op1(carrier),\n// R = Op4(mod)->Op3(carrier). fc:fm = 1:1 on both chains -> fully\n// harmonic spectrum (Chowning 1973). Chains share the same noise\n// input but are detuned in Hz for stereo width via slow beating.\n//\n// Excitation is 100% external: in1 drives an amplitude envelope\n// (feeds output amplitude) and, through a second slower-filtered\n// path, the FM modulation index. Output is not noise itself -- the\n// noise only feeds the envelope and the feedback tail, which decays\n// on its own once noise stops (Karplus-Strong-like tail behavior).\n//\n// Two separate one-pole envelope stages on purpose: ENV_TAU (15ms)\n// drives amplitude reactively; MODIDX_TAU (40ms) is a second, slower\n// stage feeding only the modulation index, to avoid audible PM index\n// jitter (phase modulation at a rate inside the roughness/flutter\n// band, Zwicker & Fastl ch.6) that a single fast envelope caused when\n// used directly for both amplitude and mod index.\n//\n// INLETS:\n//   in1 = noise excitation (mono, shared L/R)\n//   in2 = f0 in Hz\n//   in3 = feedback/decay [0..1]\n//   in4 = detune [0..1] -> 0..3 Hz split between carrier L/R\n// OUTLETS:\n//   out1 = L, out2 = R\n//\n// No oversampling here; mod index is clamped to stay well below the\n// Nyquist-adjacent foldover region at fc:fm=1:1 (see MOD_INDEX_*).\n// =====================================================================\n\nconst twopi = 6.283185307179586;\n\nconst RATIO_MOD_L = 1.0;\nconst RATIO_CAR_L = 1.0;\nconst RATIO_MOD_R = 1.0;\nconst RATIO_CAR_R = 1.0;\n\n// Mod index range tuned for a \"warm bell\" spectrum at fc:fm=1:1\n// (Chowning): too low = thin, too high (>~4-5) = dense buzz.\nconst MOD_INDEX_FLOOR = 0.35;\nconst MOD_INDEX_RANGE = 2.2;\n\nconst ENV_TAU = 0.015;\nconst MODIDX_TAU = 0.040;\n\n// 0-3 Hz detune: chorus-like beating, not perceived as mistuning.\nconst DETUNE_MAX_HZ = 3.0;\n\nconst DECAY_MIN = 0.0;\nconst DECAY_MAX = 0.998;\n\nconst F0_MIN = 20.0;\nconst F0_MAX = 5000.0;\n\n@state phase_op1 = 0.0;\n@state phase_op2 = 0.0;\n@state phase_op3 = 0.0;\n@state phase_op4 = 0.0;\n\n@state env_noise = 0.0;\n@state modidx_env = 0.0;\n\n@state fb_L = 0.0;\n@state fb_R = 0.0;\n\n// Control smoothing (anti zipper-noise), tau=5ms\n@state f0_sm = 220.0;\n@state decay_sm = 0.0;\n@state detune_sm = 0.0;\n\nlet sr = samplerate();\nconst smooth_tau = 0.005;\nlet smooth_g = exp(-1.0 / (smooth_tau * sr));\n\nf0_sm = f0_sm * smooth_g + in2 * (1.0 - smooth_g);\ndecay_sm = decay_sm * smooth_g + in3 * (1.0 - smooth_g);\ndetune_sm = detune_sm * smooth_g + in4 * (1.0 - smooth_g);\n\nif (f0_sm < F0_MIN) f0_sm = F0_MIN;\nif (f0_sm > F0_MAX) f0_sm = F0_MAX;\nif (decay_sm < 0.0) decay_sm = 0.0;\nif (decay_sm > 1.0) decay_sm = 1.0;\nif (detune_sm < 0.0) detune_sm = 0.0;\nif (detune_sm > 1.0) detune_sm = 1.0;\n\nlet feedback_coeff = DECAY_MIN + decay_sm * (DECAY_MAX - DECAY_MIN);\n\nlet detune_hz = detune_sm * DETUNE_MAX_HZ;\nlet f0_L = f0_sm + (detune_hz * 0.5);\nlet f0_R = f0_sm - (detune_hz * 0.5);\n\n// Envelope follower on the single noise input, one-pole full-wave.\nlet env_g = exp(-1.0 / (ENV_TAU * sr));\nlet abs_in = (in1 < 0.0) ? -in1 : in1;\nenv_noise = env_noise * env_g + abs_in * (1.0 - env_g);\n\n// Second, slower stage feeding only the modulation index.\nlet modidx_g = exp(-1.0 / (MODIDX_TAU * sr));\nmodidx_env = modidx_env * modidx_g + env_noise * (1.0 - modidx_g);\n\nlet modIndex = MOD_INDEX_FLOOR + (modidx_env * MOD_INDEX_RANGE);\nlet modIndexCeil = MOD_INDEX_FLOOR + MOD_INDEX_RANGE;\nif (modIndex > modIndexCeil) modIndex = modIndexCeil;\n\n// ---- Chain L: Op2 (mod) -> Op1 (carrier) ----\nlet phaseInc_op2 = (f0_L * RATIO_MOD_L) / sr;\nphase_op2 = phase_op2 + phaseInc_op2;\nif (phase_op2 >= 1.0) phase_op2 = phase_op2 - floor(phase_op2);\nlet mod_op2 = sin(phase_op2 * twopi);\n\nlet phaseInc_op1 = (f0_L * RATIO_CAR_L) / sr;\nphase_op1 = phase_op1 + phaseInc_op1;\nif (phase_op1 >= 1.0) phase_op1 = phase_op1 - floor(phase_op1);\nlet fm_phase_L = phase_op1 * twopi + (modIndex * mod_op2);\nlet carrier_L = sin(fm_phase_L);\n\n// ---- Chain R: Op4 (mod) -> Op3 (carrier) ----\nlet phaseInc_op4 = (f0_R * RATIO_MOD_R) / sr;\nphase_op4 = phase_op4 + phaseInc_op4;\nif (phase_op4 >= 1.0) phase_op4 = phase_op4 - floor(phase_op4);\nlet mod_op4 = sin(phase_op4 * twopi);\n\nlet phaseInc_op3 = (f0_R * RATIO_CAR_R) / sr;\nphase_op3 = phase_op3 + phaseInc_op3;\nif (phase_op3 >= 1.0) phase_op3 = phase_op3 - floor(phase_op3);\nlet fm_phase_R = phase_op3 * twopi + (modIndex * mod_op4);\nlet carrier_R = sin(fm_phase_R);\n\n// ---- Amplitude + feedback tail (Karplus-Strong-like decay) ----\nlet driven_L = carrier_L * env_noise;\nlet driven_R = carrier_R * env_noise;\n\nfb_L = (fb_L * feedback_coeff) + (driven_L * (1.0 - feedback_coeff));\nfb_R = (fb_R * feedback_coeff) + (driven_R * (1.0 - feedback_coeff));\n\nout1 = fb_L;\nout2 = fb_R;",
-														"expr" : "",
-														"safemath" : 1
+														"safemath" : 1,
+														"expr" : ""
 													}
 ,
 													"rnbo_serial" : 6,
@@ -24116,9 +24780,9 @@
 													"patching_rect" : [ 740.586962580680847, 1440.188416838645935, 20.0, 140.0 ],
 													"rnbo_classname" : "slider",
 													"rnbo_extra_attributes" : 													{
+														"floatoutput" : 1,
 														"mult" : 1.0,
 														"size" : 128.0,
-														"floatoutput" : 1,
 														"min" : 0.0,
 														"preset" : 0,
 														"value" : 0.0,
@@ -24494,8 +25158,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 15,
@@ -24517,8 +25181,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 16,
@@ -24541,8 +25205,8 @@
 													"rnbo_classname" : "codebox~",
 													"rnbo_extra_attributes" : 													{
 														"code" : "// SIGNAL FLOW:\n//   in1  = excitation (audio-rate noise)\n//   in2  = detune, [0,1], real-time controllable\n//   in3  = brightness, [0,1], real-time controllable\n//   in4  = f0 in Hz, real-time controllable\n//   out1 = L, out2 = R\n//\n// PARAMS (per instance, set once):\n//   damping -- [0,1], loop filter cutoff / feedback gain\n\nconst MAX_DELAY_SAMPS = 4096;\nconst DETUNE_MAX_HZ = 3.0;\nconst DC_R = 0.995;\n\n@param({ min: 0, max: 1 }) damping = 0.5;\n\n@state buf_L = new FixedSampleArray(MAX_DELAY_SAMPS);\n@state buf_R = new FixedSampleArray(MAX_DELAY_SAMPS);\n@state writeIdx: Int = 0;\n\n@state thiran_a1_L = 0.0;\n@state thiran_x1_L = 0.0;\n@state thiran_y1_L = 0.0;\n@state thiran_a1_R = 0.0;\n@state thiran_x1_R = 0.0;\n@state thiran_y1_R = 0.0;\n\n@state loop_y1_L = 0.0;\n@state loop_y1_R = 0.0;\n\n@state dc_x1_L = 0.0;\n@state dc_y1_L = 0.0;\n@state dc_x1_R = 0.0;\n@state dc_y1_R = 0.0;\n\n@state exc_y1 = 0.0;\n\n@state delaySamps_int_L: Int = 100;\n@state delaySamps_int_R: Int = 100;\n@state cached_f0 = -1.0;\n@state cached_detune = -1.0;\n\nconst FB_MIN = 0.90;\nconst FB_MAX = 0.999;\n\nfunction init() {\n  for (let i = 0; i < MAX_DELAY_SAMPS; i++) {\n    buf_L[i] = 0.0;\n    buf_R[i] = 0.0;\n  }\n}\n\nlet sr = samplerate();\n\n// ---- Recompute delay params only when f0 (in4) or detune (in2) changes ----\nif (in4 != cached_f0 || in2 != cached_detune) {\n  cached_f0 = in4;\n  cached_detune = in2;\n\n  let f0_c = in4;\n  if (f0_c < 20.0) f0_c = 20.0;\n  if (f0_c > 2000.0) f0_c = 2000.0;\n\n  let detune_c = in2;\n  if (detune_c < 0.0) detune_c = 0.0;\n  if (detune_c > 1.0) detune_c = 1.0;\n\n  let detune_hz = detune_c * DETUNE_MAX_HZ;\n  let f0_L = f0_c + (detune_hz * 0.5);\n  let f0_R = f0_c - (detune_hz * 0.5);\n\n  let totalDelay_L = (sr / f0_L) - 1.0;\n  let totalDelay_R = (sr / f0_R) - 1.0;\n  if (totalDelay_L < 2.0) totalDelay_L = 2.0;\n  if (totalDelay_R < 2.0) totalDelay_R = 2.0;\n  if (totalDelay_L > MAX_DELAY_SAMPS - 2) totalDelay_L = MAX_DELAY_SAMPS - 2;\n  if (totalDelay_R > MAX_DELAY_SAMPS - 2) totalDelay_R = MAX_DELAY_SAMPS - 2;\n\n  let dInt_L = floor(totalDelay_L);\n  let dInt_R = floor(totalDelay_R);\n  delaySamps_int_L = dInt_L;\n  delaySamps_int_R = dInt_R;\n\n  let frac_L = totalDelay_L - dInt_L;\n  let frac_R = totalDelay_R - dInt_R;\n\n  thiran_a1_L = (1.0 - frac_L) / (1.0 + frac_L);\n  thiran_a1_R = (1.0 - frac_R) / (1.0 + frac_R);\n}\n\n// ---- Damping -> loop filter coefficient and feedback gain ----\nlet damping_c = damping;\nif (damping_c < 0.0) damping_c = 0.0;\nif (damping_c > 1.0) damping_c = 1.0;\n\nlet fb_gain = FB_MIN + damping_c * (FB_MAX - FB_MIN);\nlet filt_g = 0.05 + damping_c * 0.90;\n\n// ---- Excitation pre-filter, brightness from in3 ----\nlet bright_c = in3;\nif (bright_c < 0.0) bright_c = 0.0;\nif (bright_c > 1.0) bright_c = 1.0;\n\nlet exc_g = 0.95 - bright_c * 0.85;\nexc_y1 = (1.0 - exc_g) * in1 + exc_g * exc_y1;\nlet excite = exc_y1;\n\n// ================= LEFT CHANNEL =================\nlet readIdx_L: Int = writeIdx - delaySamps_int_L;\nif (readIdx_L < 0) readIdx_L = readIdx_L + MAX_DELAY_SAMPS;\nlet delayed_L = buf_L[readIdx_L];\n\nlet ap_out_L = thiran_a1_L * delayed_L + thiran_x1_L - thiran_a1_L * thiran_y1_L;\nthiran_x1_L = delayed_L;\nthiran_y1_L = ap_out_L;\n\nloop_y1_L = (1.0 - filt_g) * ap_out_L + filt_g * loop_y1_L;\n\nlet dcOut_L = loop_y1_L - dc_x1_L + DC_R * dc_y1_L;\ndc_x1_L = loop_y1_L;\ndc_y1_L = dcOut_L;\n\nlet fed_back_L = dcOut_L * fb_gain;\nbuf_L[writeIdx] = fed_back_L + excite;\n\n// ================= RIGHT CHANNEL =================\nlet readIdx_R: Int = writeIdx - delaySamps_int_R;\nif (readIdx_R < 0) readIdx_R = readIdx_R + MAX_DELAY_SAMPS;\nlet delayed_R = buf_R[readIdx_R];\n\nlet ap_out_R = thiran_a1_R * delayed_R + thiran_x1_R - thiran_a1_R * thiran_y1_R;\nthiran_x1_R = delayed_R;\nthiran_y1_R = ap_out_R;\n\nloop_y1_R = (1.0 - filt_g) * ap_out_R + filt_g * loop_y1_R;\n\nlet dcOut_R = loop_y1_R - dc_x1_R + DC_R * dc_y1_R;\ndc_x1_R = loop_y1_R;\ndc_y1_R = dcOut_R;\n\nlet fed_back_R = dcOut_R * fb_gain;\nbuf_R[writeIdx] = fed_back_R + excite;\n\n// ---- Advance shared write pointer ----\nwriteIdx = writeIdx + 1;\nif (writeIdx >= MAX_DELAY_SAMPS) writeIdx = 0;\n\nout1 = dcOut_L;\nout2 = dcOut_R;",
-														"expr" : "",
-														"safemath" : 1
+														"safemath" : 1,
+														"expr" : ""
 													}
 ,
 													"rnbo_serial" : 7,
@@ -24868,8 +25532,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 17,
@@ -24891,8 +25555,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 18,
@@ -24915,8 +25579,8 @@
 													"rnbo_classname" : "codebox~",
 													"rnbo_extra_attributes" : 													{
 														"code" : "// SIGNAL FLOW:\n//   in1  = excitation (audio-rate noise)\n//   in2  = detune, [0,1], real-time controllable\n//   in3  = brightness, [0,1], real-time controllable\n//   in4  = f0 in Hz, real-time controllable\n//   out1 = L, out2 = R\n//\n// PARAMS (per instance, set once):\n//   damping -- [0,1], loop filter cutoff / feedback gain\n\nconst MAX_DELAY_SAMPS = 4096;\nconst DETUNE_MAX_HZ = 3.0;\nconst DC_R = 0.995;\n\n@param({ min: 0, max: 1 }) damping = 0.5;\n\n@state buf_L = new FixedSampleArray(MAX_DELAY_SAMPS);\n@state buf_R = new FixedSampleArray(MAX_DELAY_SAMPS);\n@state writeIdx: Int = 0;\n\n@state thiran_a1_L = 0.0;\n@state thiran_x1_L = 0.0;\n@state thiran_y1_L = 0.0;\n@state thiran_a1_R = 0.0;\n@state thiran_x1_R = 0.0;\n@state thiran_y1_R = 0.0;\n\n@state loop_y1_L = 0.0;\n@state loop_y1_R = 0.0;\n\n@state dc_x1_L = 0.0;\n@state dc_y1_L = 0.0;\n@state dc_x1_R = 0.0;\n@state dc_y1_R = 0.0;\n\n@state exc_y1 = 0.0;\n\n@state delaySamps_int_L: Int = 100;\n@state delaySamps_int_R: Int = 100;\n@state cached_f0 = -1.0;\n@state cached_detune = -1.0;\n\nconst FB_MIN = 0.90;\nconst FB_MAX = 0.999;\n\nfunction init() {\n  for (let i = 0; i < MAX_DELAY_SAMPS; i++) {\n    buf_L[i] = 0.0;\n    buf_R[i] = 0.0;\n  }\n}\n\nlet sr = samplerate();\n\n// ---- Recompute delay params only when f0 (in4) or detune (in2) changes ----\nif (in4 != cached_f0 || in2 != cached_detune) {\n  cached_f0 = in4;\n  cached_detune = in2;\n\n  let f0_c = in4;\n  if (f0_c < 20.0) f0_c = 20.0;\n  if (f0_c > 2000.0) f0_c = 2000.0;\n\n  let detune_c = in2;\n  if (detune_c < 0.0) detune_c = 0.0;\n  if (detune_c > 1.0) detune_c = 1.0;\n\n  let detune_hz = detune_c * DETUNE_MAX_HZ;\n  let f0_L = f0_c + (detune_hz * 0.5);\n  let f0_R = f0_c - (detune_hz * 0.5);\n\n  let totalDelay_L = (sr / f0_L) - 1.0;\n  let totalDelay_R = (sr / f0_R) - 1.0;\n  if (totalDelay_L < 2.0) totalDelay_L = 2.0;\n  if (totalDelay_R < 2.0) totalDelay_R = 2.0;\n  if (totalDelay_L > MAX_DELAY_SAMPS - 2) totalDelay_L = MAX_DELAY_SAMPS - 2;\n  if (totalDelay_R > MAX_DELAY_SAMPS - 2) totalDelay_R = MAX_DELAY_SAMPS - 2;\n\n  let dInt_L = floor(totalDelay_L);\n  let dInt_R = floor(totalDelay_R);\n  delaySamps_int_L = dInt_L;\n  delaySamps_int_R = dInt_R;\n\n  let frac_L = totalDelay_L - dInt_L;\n  let frac_R = totalDelay_R - dInt_R;\n\n  thiran_a1_L = (1.0 - frac_L) / (1.0 + frac_L);\n  thiran_a1_R = (1.0 - frac_R) / (1.0 + frac_R);\n}\n\n// ---- Damping -> loop filter coefficient and feedback gain ----\nlet damping_c = damping;\nif (damping_c < 0.0) damping_c = 0.0;\nif (damping_c > 1.0) damping_c = 1.0;\n\nlet fb_gain = FB_MIN + damping_c * (FB_MAX - FB_MIN);\nlet filt_g = 0.05 + damping_c * 0.90;\n\n// ---- Excitation pre-filter, brightness from in3 ----\nlet bright_c = in3;\nif (bright_c < 0.0) bright_c = 0.0;\nif (bright_c > 1.0) bright_c = 1.0;\n\nlet exc_g = 0.95 - bright_c * 0.85;\nexc_y1 = (1.0 - exc_g) * in1 + exc_g * exc_y1;\nlet excite = exc_y1;\n\n// ================= LEFT CHANNEL =================\nlet readIdx_L: Int = writeIdx - delaySamps_int_L;\nif (readIdx_L < 0) readIdx_L = readIdx_L + MAX_DELAY_SAMPS;\nlet delayed_L = buf_L[readIdx_L];\n\nlet ap_out_L = thiran_a1_L * delayed_L + thiran_x1_L - thiran_a1_L * thiran_y1_L;\nthiran_x1_L = delayed_L;\nthiran_y1_L = ap_out_L;\n\nloop_y1_L = (1.0 - filt_g) * ap_out_L + filt_g * loop_y1_L;\n\nlet dcOut_L = loop_y1_L - dc_x1_L + DC_R * dc_y1_L;\ndc_x1_L = loop_y1_L;\ndc_y1_L = dcOut_L;\n\nlet fed_back_L = dcOut_L * fb_gain;\nbuf_L[writeIdx] = fed_back_L + excite;\n\n// ================= RIGHT CHANNEL =================\nlet readIdx_R: Int = writeIdx - delaySamps_int_R;\nif (readIdx_R < 0) readIdx_R = readIdx_R + MAX_DELAY_SAMPS;\nlet delayed_R = buf_R[readIdx_R];\n\nlet ap_out_R = thiran_a1_R * delayed_R + thiran_x1_R - thiran_a1_R * thiran_y1_R;\nthiran_x1_R = delayed_R;\nthiran_y1_R = ap_out_R;\n\nloop_y1_R = (1.0 - filt_g) * ap_out_R + filt_g * loop_y1_R;\n\nlet dcOut_R = loop_y1_R - dc_x1_R + DC_R * dc_y1_R;\ndc_x1_R = loop_y1_R;\ndc_y1_R = dcOut_R;\n\nlet fed_back_R = dcOut_R * fb_gain;\nbuf_R[writeIdx] = fed_back_R + excite;\n\n// ---- Advance shared write pointer ----\nwriteIdx = writeIdx + 1;\nif (writeIdx >= MAX_DELAY_SAMPS) writeIdx = 0;\n\nout1 = dcOut_L;\nout2 = dcOut_R;",
-														"expr" : "",
-														"safemath" : 1
+														"safemath" : 1,
+														"expr" : ""
 													}
 ,
 													"rnbo_serial" : 8,
@@ -25242,8 +25906,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 19,
@@ -25265,8 +25929,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 20,
@@ -25289,8 +25953,8 @@
 													"rnbo_classname" : "codebox~",
 													"rnbo_extra_attributes" : 													{
 														"code" : "// SIGNAL FLOW:\n//   in1  = excitation (audio-rate noise)\n//   in2  = detune, [0,1], real-time controllable\n//   in3  = brightness, [0,1], real-time controllable\n//   in4  = f0 in Hz, real-time controllable\n//   out1 = L, out2 = R\n//\n// PARAMS (per instance, set once):\n//   damping -- [0,1], loop filter cutoff / feedback gain\n\nconst MAX_DELAY_SAMPS = 4096;\nconst DETUNE_MAX_HZ = 3.0;\nconst DC_R = 0.995;\n\n@param({ min: 0, max: 1 }) damping = 0.5;\n\n@state buf_L = new FixedSampleArray(MAX_DELAY_SAMPS);\n@state buf_R = new FixedSampleArray(MAX_DELAY_SAMPS);\n@state writeIdx: Int = 0;\n\n@state thiran_a1_L = 0.0;\n@state thiran_x1_L = 0.0;\n@state thiran_y1_L = 0.0;\n@state thiran_a1_R = 0.0;\n@state thiran_x1_R = 0.0;\n@state thiran_y1_R = 0.0;\n\n@state loop_y1_L = 0.0;\n@state loop_y1_R = 0.0;\n\n@state dc_x1_L = 0.0;\n@state dc_y1_L = 0.0;\n@state dc_x1_R = 0.0;\n@state dc_y1_R = 0.0;\n\n@state exc_y1 = 0.0;\n\n@state delaySamps_int_L: Int = 100;\n@state delaySamps_int_R: Int = 100;\n@state cached_f0 = -1.0;\n@state cached_detune = -1.0;\n\nconst FB_MIN = 0.90;\nconst FB_MAX = 0.999;\n\nfunction init() {\n  for (let i = 0; i < MAX_DELAY_SAMPS; i++) {\n    buf_L[i] = 0.0;\n    buf_R[i] = 0.0;\n  }\n}\n\nlet sr = samplerate();\n\n// ---- Recompute delay params only when f0 (in4) or detune (in2) changes ----\nif (in4 != cached_f0 || in2 != cached_detune) {\n  cached_f0 = in4;\n  cached_detune = in2;\n\n  let f0_c = in4;\n  if (f0_c < 20.0) f0_c = 20.0;\n  if (f0_c > 2000.0) f0_c = 2000.0;\n\n  let detune_c = in2;\n  if (detune_c < 0.0) detune_c = 0.0;\n  if (detune_c > 1.0) detune_c = 1.0;\n\n  let detune_hz = detune_c * DETUNE_MAX_HZ;\n  let f0_L = f0_c + (detune_hz * 0.5);\n  let f0_R = f0_c - (detune_hz * 0.5);\n\n  let totalDelay_L = (sr / f0_L) - 1.0;\n  let totalDelay_R = (sr / f0_R) - 1.0;\n  if (totalDelay_L < 2.0) totalDelay_L = 2.0;\n  if (totalDelay_R < 2.0) totalDelay_R = 2.0;\n  if (totalDelay_L > MAX_DELAY_SAMPS - 2) totalDelay_L = MAX_DELAY_SAMPS - 2;\n  if (totalDelay_R > MAX_DELAY_SAMPS - 2) totalDelay_R = MAX_DELAY_SAMPS - 2;\n\n  let dInt_L = floor(totalDelay_L);\n  let dInt_R = floor(totalDelay_R);\n  delaySamps_int_L = dInt_L;\n  delaySamps_int_R = dInt_R;\n\n  let frac_L = totalDelay_L - dInt_L;\n  let frac_R = totalDelay_R - dInt_R;\n\n  thiran_a1_L = (1.0 - frac_L) / (1.0 + frac_L);\n  thiran_a1_R = (1.0 - frac_R) / (1.0 + frac_R);\n}\n\n// ---- Damping -> loop filter coefficient and feedback gain ----\nlet damping_c = damping;\nif (damping_c < 0.0) damping_c = 0.0;\nif (damping_c > 1.0) damping_c = 1.0;\n\nlet fb_gain = FB_MIN + damping_c * (FB_MAX - FB_MIN);\nlet filt_g = 0.05 + damping_c * 0.90;\n\n// ---- Excitation pre-filter, brightness from in3 ----\nlet bright_c = in3;\nif (bright_c < 0.0) bright_c = 0.0;\nif (bright_c > 1.0) bright_c = 1.0;\n\nlet exc_g = 0.95 - bright_c * 0.85;\nexc_y1 = (1.0 - exc_g) * in1 + exc_g * exc_y1;\nlet excite = exc_y1;\n\n// ================= LEFT CHANNEL =================\nlet readIdx_L: Int = writeIdx - delaySamps_int_L;\nif (readIdx_L < 0) readIdx_L = readIdx_L + MAX_DELAY_SAMPS;\nlet delayed_L = buf_L[readIdx_L];\n\nlet ap_out_L = thiran_a1_L * delayed_L + thiran_x1_L - thiran_a1_L * thiran_y1_L;\nthiran_x1_L = delayed_L;\nthiran_y1_L = ap_out_L;\n\nloop_y1_L = (1.0 - filt_g) * ap_out_L + filt_g * loop_y1_L;\n\nlet dcOut_L = loop_y1_L - dc_x1_L + DC_R * dc_y1_L;\ndc_x1_L = loop_y1_L;\ndc_y1_L = dcOut_L;\n\nlet fed_back_L = dcOut_L * fb_gain;\nbuf_L[writeIdx] = fed_back_L + excite;\n\n// ================= RIGHT CHANNEL =================\nlet readIdx_R: Int = writeIdx - delaySamps_int_R;\nif (readIdx_R < 0) readIdx_R = readIdx_R + MAX_DELAY_SAMPS;\nlet delayed_R = buf_R[readIdx_R];\n\nlet ap_out_R = thiran_a1_R * delayed_R + thiran_x1_R - thiran_a1_R * thiran_y1_R;\nthiran_x1_R = delayed_R;\nthiran_y1_R = ap_out_R;\n\nloop_y1_R = (1.0 - filt_g) * ap_out_R + filt_g * loop_y1_R;\n\nlet dcOut_R = loop_y1_R - dc_x1_R + DC_R * dc_y1_R;\ndc_x1_R = loop_y1_R;\ndc_y1_R = dcOut_R;\n\nlet fed_back_R = dcOut_R * fb_gain;\nbuf_R[writeIdx] = fed_back_R + excite;\n\n// ---- Advance shared write pointer ----\nwriteIdx = writeIdx + 1;\nif (writeIdx >= MAX_DELAY_SAMPS) writeIdx = 0;\n\nout1 = dcOut_L;\nout2 = dcOut_R;",
-														"expr" : "",
-														"safemath" : 1
+														"safemath" : 1,
+														"expr" : ""
 													}
 ,
 													"rnbo_serial" : 9,
@@ -25616,8 +26280,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 21,
@@ -25639,8 +26303,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 22,
@@ -25663,8 +26327,8 @@
 													"rnbo_classname" : "codebox~",
 													"rnbo_extra_attributes" : 													{
 														"code" : "// SIGNAL FLOW:\n//   in1  = excitation (audio-rate noise)\n//   in2  = detune, [0,1], real-time controllable\n//   in3  = brightness, [0,1], real-time controllable\n//   in4  = f0 in Hz, real-time controllable\n//   out1 = L, out2 = R\n//\n// PARAMS (per instance, set once):\n//   damping -- [0,1], loop filter cutoff / feedback gain\n\nconst MAX_DELAY_SAMPS = 4096;\nconst DETUNE_MAX_HZ = 3.0;\nconst DC_R = 0.995;\n\n@param({ min: 0, max: 1 }) damping = 0.5;\n\n@state buf_L = new FixedSampleArray(MAX_DELAY_SAMPS);\n@state buf_R = new FixedSampleArray(MAX_DELAY_SAMPS);\n@state writeIdx: Int = 0;\n\n@state thiran_a1_L = 0.0;\n@state thiran_x1_L = 0.0;\n@state thiran_y1_L = 0.0;\n@state thiran_a1_R = 0.0;\n@state thiran_x1_R = 0.0;\n@state thiran_y1_R = 0.0;\n\n@state loop_y1_L = 0.0;\n@state loop_y1_R = 0.0;\n\n@state dc_x1_L = 0.0;\n@state dc_y1_L = 0.0;\n@state dc_x1_R = 0.0;\n@state dc_y1_R = 0.0;\n\n@state exc_y1 = 0.0;\n\n@state delaySamps_int_L: Int = 100;\n@state delaySamps_int_R: Int = 100;\n@state cached_f0 = -1.0;\n@state cached_detune = -1.0;\n\nconst FB_MIN = 0.90;\nconst FB_MAX = 0.999;\n\nfunction init() {\n  for (let i = 0; i < MAX_DELAY_SAMPS; i++) {\n    buf_L[i] = 0.0;\n    buf_R[i] = 0.0;\n  }\n}\n\nlet sr = samplerate();\n\n// ---- Recompute delay params only when f0 (in4) or detune (in2) changes ----\nif (in4 != cached_f0 || in2 != cached_detune) {\n  cached_f0 = in4;\n  cached_detune = in2;\n\n  let f0_c = in4;\n  if (f0_c < 20.0) f0_c = 20.0;\n  if (f0_c > 2000.0) f0_c = 2000.0;\n\n  let detune_c = in2;\n  if (detune_c < 0.0) detune_c = 0.0;\n  if (detune_c > 1.0) detune_c = 1.0;\n\n  let detune_hz = detune_c * DETUNE_MAX_HZ;\n  let f0_L = f0_c + (detune_hz * 0.5);\n  let f0_R = f0_c - (detune_hz * 0.5);\n\n  let totalDelay_L = (sr / f0_L) - 1.0;\n  let totalDelay_R = (sr / f0_R) - 1.0;\n  if (totalDelay_L < 2.0) totalDelay_L = 2.0;\n  if (totalDelay_R < 2.0) totalDelay_R = 2.0;\n  if (totalDelay_L > MAX_DELAY_SAMPS - 2) totalDelay_L = MAX_DELAY_SAMPS - 2;\n  if (totalDelay_R > MAX_DELAY_SAMPS - 2) totalDelay_R = MAX_DELAY_SAMPS - 2;\n\n  let dInt_L = floor(totalDelay_L);\n  let dInt_R = floor(totalDelay_R);\n  delaySamps_int_L = dInt_L;\n  delaySamps_int_R = dInt_R;\n\n  let frac_L = totalDelay_L - dInt_L;\n  let frac_R = totalDelay_R - dInt_R;\n\n  thiran_a1_L = (1.0 - frac_L) / (1.0 + frac_L);\n  thiran_a1_R = (1.0 - frac_R) / (1.0 + frac_R);\n}\n\n// ---- Damping -> loop filter coefficient and feedback gain ----\nlet damping_c = damping;\nif (damping_c < 0.0) damping_c = 0.0;\nif (damping_c > 1.0) damping_c = 1.0;\n\nlet fb_gain = FB_MIN + damping_c * (FB_MAX - FB_MIN);\nlet filt_g = 0.05 + damping_c * 0.90;\n\n// ---- Excitation pre-filter, brightness from in3 ----\nlet bright_c = in3;\nif (bright_c < 0.0) bright_c = 0.0;\nif (bright_c > 1.0) bright_c = 1.0;\n\nlet exc_g = 0.95 - bright_c * 0.85;\nexc_y1 = (1.0 - exc_g) * in1 + exc_g * exc_y1;\nlet excite = exc_y1;\n\n// ================= LEFT CHANNEL =================\nlet readIdx_L: Int = writeIdx - delaySamps_int_L;\nif (readIdx_L < 0) readIdx_L = readIdx_L + MAX_DELAY_SAMPS;\nlet delayed_L = buf_L[readIdx_L];\n\nlet ap_out_L = thiran_a1_L * delayed_L + thiran_x1_L - thiran_a1_L * thiran_y1_L;\nthiran_x1_L = delayed_L;\nthiran_y1_L = ap_out_L;\n\nloop_y1_L = (1.0 - filt_g) * ap_out_L + filt_g * loop_y1_L;\n\nlet dcOut_L = loop_y1_L - dc_x1_L + DC_R * dc_y1_L;\ndc_x1_L = loop_y1_L;\ndc_y1_L = dcOut_L;\n\nlet fed_back_L = dcOut_L * fb_gain;\nbuf_L[writeIdx] = fed_back_L + excite;\n\n// ================= RIGHT CHANNEL =================\nlet readIdx_R: Int = writeIdx - delaySamps_int_R;\nif (readIdx_R < 0) readIdx_R = readIdx_R + MAX_DELAY_SAMPS;\nlet delayed_R = buf_R[readIdx_R];\n\nlet ap_out_R = thiran_a1_R * delayed_R + thiran_x1_R - thiran_a1_R * thiran_y1_R;\nthiran_x1_R = delayed_R;\nthiran_y1_R = ap_out_R;\n\nloop_y1_R = (1.0 - filt_g) * ap_out_R + filt_g * loop_y1_R;\n\nlet dcOut_R = loop_y1_R - dc_x1_R + DC_R * dc_y1_R;\ndc_x1_R = loop_y1_R;\ndc_y1_R = dcOut_R;\n\nlet fed_back_R = dcOut_R * fb_gain;\nbuf_R[writeIdx] = fed_back_R + excite;\n\n// ---- Advance shared write pointer ----\nwriteIdx = writeIdx + 1;\nif (writeIdx >= MAX_DELAY_SAMPS) writeIdx = 0;\n\nout1 = dcOut_L;\nout2 = dcOut_R;",
-														"expr" : "",
-														"safemath" : 1
+														"safemath" : 1,
+														"expr" : ""
 													}
 ,
 													"rnbo_serial" : 10,
@@ -25990,8 +26654,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 23,
@@ -26013,8 +26677,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 24,
@@ -26037,8 +26701,8 @@
 													"rnbo_classname" : "codebox~",
 													"rnbo_extra_attributes" : 													{
 														"code" : "// SIGNAL FLOW:\n//   in1  = excitation (audio-rate noise)\n//   in2  = detune, [0,1], real-time controllable\n//   in3  = brightness, [0,1], real-time controllable\n//   in4  = f0 in Hz, real-time controllable\n//   out1 = L, out2 = R\n//\n// PARAMS (per instance, set once):\n//   damping -- [0,1], loop filter cutoff / feedback gain\n\nconst MAX_DELAY_SAMPS = 4096;\nconst DETUNE_MAX_HZ = 3.0;\nconst DC_R = 0.995;\n\n@param({ min: 0, max: 1 }) damping = 0.5;\n\n@state buf_L = new FixedSampleArray(MAX_DELAY_SAMPS);\n@state buf_R = new FixedSampleArray(MAX_DELAY_SAMPS);\n@state writeIdx: Int = 0;\n\n@state thiran_a1_L = 0.0;\n@state thiran_x1_L = 0.0;\n@state thiran_y1_L = 0.0;\n@state thiran_a1_R = 0.0;\n@state thiran_x1_R = 0.0;\n@state thiran_y1_R = 0.0;\n\n@state loop_y1_L = 0.0;\n@state loop_y1_R = 0.0;\n\n@state dc_x1_L = 0.0;\n@state dc_y1_L = 0.0;\n@state dc_x1_R = 0.0;\n@state dc_y1_R = 0.0;\n\n@state exc_y1 = 0.0;\n\n@state delaySamps_int_L: Int = 100;\n@state delaySamps_int_R: Int = 100;\n@state cached_f0 = -1.0;\n@state cached_detune = -1.0;\n\nconst FB_MIN = 0.90;\nconst FB_MAX = 0.999;\n\nfunction init() {\n  for (let i = 0; i < MAX_DELAY_SAMPS; i++) {\n    buf_L[i] = 0.0;\n    buf_R[i] = 0.0;\n  }\n}\n\nlet sr = samplerate();\n\n// ---- Recompute delay params only when f0 (in4) or detune (in2) changes ----\nif (in4 != cached_f0 || in2 != cached_detune) {\n  cached_f0 = in4;\n  cached_detune = in2;\n\n  let f0_c = in4;\n  if (f0_c < 20.0) f0_c = 20.0;\n  if (f0_c > 2000.0) f0_c = 2000.0;\n\n  let detune_c = in2;\n  if (detune_c < 0.0) detune_c = 0.0;\n  if (detune_c > 1.0) detune_c = 1.0;\n\n  let detune_hz = detune_c * DETUNE_MAX_HZ;\n  let f0_L = f0_c + (detune_hz * 0.5);\n  let f0_R = f0_c - (detune_hz * 0.5);\n\n  let totalDelay_L = (sr / f0_L) - 1.0;\n  let totalDelay_R = (sr / f0_R) - 1.0;\n  if (totalDelay_L < 2.0) totalDelay_L = 2.0;\n  if (totalDelay_R < 2.0) totalDelay_R = 2.0;\n  if (totalDelay_L > MAX_DELAY_SAMPS - 2) totalDelay_L = MAX_DELAY_SAMPS - 2;\n  if (totalDelay_R > MAX_DELAY_SAMPS - 2) totalDelay_R = MAX_DELAY_SAMPS - 2;\n\n  let dInt_L = floor(totalDelay_L);\n  let dInt_R = floor(totalDelay_R);\n  delaySamps_int_L = dInt_L;\n  delaySamps_int_R = dInt_R;\n\n  let frac_L = totalDelay_L - dInt_L;\n  let frac_R = totalDelay_R - dInt_R;\n\n  thiran_a1_L = (1.0 - frac_L) / (1.0 + frac_L);\n  thiran_a1_R = (1.0 - frac_R) / (1.0 + frac_R);\n}\n\n// ---- Damping -> loop filter coefficient and feedback gain ----\nlet damping_c = damping;\nif (damping_c < 0.0) damping_c = 0.0;\nif (damping_c > 1.0) damping_c = 1.0;\n\nlet fb_gain = FB_MIN + damping_c * (FB_MAX - FB_MIN);\nlet filt_g = 0.05 + damping_c * 0.90;\n\n// ---- Excitation pre-filter, brightness from in3 ----\nlet bright_c = in3;\nif (bright_c < 0.0) bright_c = 0.0;\nif (bright_c > 1.0) bright_c = 1.0;\n\nlet exc_g = 0.95 - bright_c * 0.85;\nexc_y1 = (1.0 - exc_g) * in1 + exc_g * exc_y1;\nlet excite = exc_y1;\n\n// ================= LEFT CHANNEL =================\nlet readIdx_L: Int = writeIdx - delaySamps_int_L;\nif (readIdx_L < 0) readIdx_L = readIdx_L + MAX_DELAY_SAMPS;\nlet delayed_L = buf_L[readIdx_L];\n\nlet ap_out_L = thiran_a1_L * delayed_L + thiran_x1_L - thiran_a1_L * thiran_y1_L;\nthiran_x1_L = delayed_L;\nthiran_y1_L = ap_out_L;\n\nloop_y1_L = (1.0 - filt_g) * ap_out_L + filt_g * loop_y1_L;\n\nlet dcOut_L = loop_y1_L - dc_x1_L + DC_R * dc_y1_L;\ndc_x1_L = loop_y1_L;\ndc_y1_L = dcOut_L;\n\nlet fed_back_L = dcOut_L * fb_gain;\nbuf_L[writeIdx] = fed_back_L + excite;\n\n// ================= RIGHT CHANNEL =================\nlet readIdx_R: Int = writeIdx - delaySamps_int_R;\nif (readIdx_R < 0) readIdx_R = readIdx_R + MAX_DELAY_SAMPS;\nlet delayed_R = buf_R[readIdx_R];\n\nlet ap_out_R = thiran_a1_R * delayed_R + thiran_x1_R - thiran_a1_R * thiran_y1_R;\nthiran_x1_R = delayed_R;\nthiran_y1_R = ap_out_R;\n\nloop_y1_R = (1.0 - filt_g) * ap_out_R + filt_g * loop_y1_R;\n\nlet dcOut_R = loop_y1_R - dc_x1_R + DC_R * dc_y1_R;\ndc_x1_R = loop_y1_R;\ndc_y1_R = dcOut_R;\n\nlet fed_back_R = dcOut_R * fb_gain;\nbuf_R[writeIdx] = fed_back_R + excite;\n\n// ---- Advance shared write pointer ----\nwriteIdx = writeIdx + 1;\nif (writeIdx >= MAX_DELAY_SAMPS) writeIdx = 0;\n\nout1 = dcOut_L;\nout2 = dcOut_R;",
-														"expr" : "",
-														"safemath" : 1
+														"safemath" : 1,
+														"expr" : ""
 													}
 ,
 													"rnbo_serial" : 11,
@@ -26364,8 +27028,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 25,
@@ -26387,8 +27051,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 26,
@@ -26426,8 +27090,8 @@
 													"rnbo_classname" : "codebox~",
 													"rnbo_extra_attributes" : 													{
 														"code" : "// SIGNAL FLOW:\n//   in1  = excitation (audio-rate noise)\n//   in2  = detune, [0,1], real-time controllable\n//   in3  = brightness, [0,1], real-time controllable\n//   in4  = f0 in Hz, real-time controllable\n//   out1 = L, out2 = R\n//\n// PARAMS (per instance, set once):\n//   damping -- [0,1], loop filter cutoff / feedback gain\n\nconst MAX_DELAY_SAMPS = 4096;\nconst DETUNE_MAX_HZ = 3.0;\nconst DC_R = 0.995;\n\n@param({ min: 0, max: 1 }) damping = 0.5;\n\n@state buf_L = new FixedSampleArray(MAX_DELAY_SAMPS);\n@state buf_R = new FixedSampleArray(MAX_DELAY_SAMPS);\n@state writeIdx: Int = 0;\n\n@state thiran_a1_L = 0.0;\n@state thiran_x1_L = 0.0;\n@state thiran_y1_L = 0.0;\n@state thiran_a1_R = 0.0;\n@state thiran_x1_R = 0.0;\n@state thiran_y1_R = 0.0;\n\n@state loop_y1_L = 0.0;\n@state loop_y1_R = 0.0;\n\n@state dc_x1_L = 0.0;\n@state dc_y1_L = 0.0;\n@state dc_x1_R = 0.0;\n@state dc_y1_R = 0.0;\n\n@state exc_y1 = 0.0;\n\n@state delaySamps_int_L: Int = 100;\n@state delaySamps_int_R: Int = 100;\n@state cached_f0 = -1.0;\n@state cached_detune = -1.0;\n\nconst FB_MIN = 0.90;\nconst FB_MAX = 0.999;\n\nfunction init() {\n  for (let i = 0; i < MAX_DELAY_SAMPS; i++) {\n    buf_L[i] = 0.0;\n    buf_R[i] = 0.0;\n  }\n}\n\nlet sr = samplerate();\n\n// ---- Recompute delay params only when f0 (in4) or detune (in2) changes ----\nif (in4 != cached_f0 || in2 != cached_detune) {\n  cached_f0 = in4;\n  cached_detune = in2;\n\n  let f0_c = in4;\n  if (f0_c < 20.0) f0_c = 20.0;\n  if (f0_c > 2000.0) f0_c = 2000.0;\n\n  let detune_c = in2;\n  if (detune_c < 0.0) detune_c = 0.0;\n  if (detune_c > 1.0) detune_c = 1.0;\n\n  let detune_hz = detune_c * DETUNE_MAX_HZ;\n  let f0_L = f0_c + (detune_hz * 0.5);\n  let f0_R = f0_c - (detune_hz * 0.5);\n\n  let totalDelay_L = (sr / f0_L) - 1.0;\n  let totalDelay_R = (sr / f0_R) - 1.0;\n  if (totalDelay_L < 2.0) totalDelay_L = 2.0;\n  if (totalDelay_R < 2.0) totalDelay_R = 2.0;\n  if (totalDelay_L > MAX_DELAY_SAMPS - 2) totalDelay_L = MAX_DELAY_SAMPS - 2;\n  if (totalDelay_R > MAX_DELAY_SAMPS - 2) totalDelay_R = MAX_DELAY_SAMPS - 2;\n\n  let dInt_L = floor(totalDelay_L);\n  let dInt_R = floor(totalDelay_R);\n  delaySamps_int_L = dInt_L;\n  delaySamps_int_R = dInt_R;\n\n  let frac_L = totalDelay_L - dInt_L;\n  let frac_R = totalDelay_R - dInt_R;\n\n  thiran_a1_L = (1.0 - frac_L) / (1.0 + frac_L);\n  thiran_a1_R = (1.0 - frac_R) / (1.0 + frac_R);\n}\n\n// ---- Damping -> loop filter coefficient and feedback gain ----\nlet damping_c = damping;\nif (damping_c < 0.0) damping_c = 0.0;\nif (damping_c > 1.0) damping_c = 1.0;\n\nlet fb_gain = FB_MIN + damping_c * (FB_MAX - FB_MIN);\nlet filt_g = 0.05 + damping_c * 0.90;\n\n// ---- Excitation pre-filter, brightness from in3 ----\nlet bright_c = in3;\nif (bright_c < 0.0) bright_c = 0.0;\nif (bright_c > 1.0) bright_c = 1.0;\n\nlet exc_g = 0.95 - bright_c * 0.85;\nexc_y1 = (1.0 - exc_g) * in1 + exc_g * exc_y1;\nlet excite = exc_y1;\n\n// ================= LEFT CHANNEL =================\nlet readIdx_L: Int = writeIdx - delaySamps_int_L;\nif (readIdx_L < 0) readIdx_L = readIdx_L + MAX_DELAY_SAMPS;\nlet delayed_L = buf_L[readIdx_L];\n\nlet ap_out_L = thiran_a1_L * delayed_L + thiran_x1_L - thiran_a1_L * thiran_y1_L;\nthiran_x1_L = delayed_L;\nthiran_y1_L = ap_out_L;\n\nloop_y1_L = (1.0 - filt_g) * ap_out_L + filt_g * loop_y1_L;\n\nlet dcOut_L = loop_y1_L - dc_x1_L + DC_R * dc_y1_L;\ndc_x1_L = loop_y1_L;\ndc_y1_L = dcOut_L;\n\nlet fed_back_L = dcOut_L * fb_gain;\nbuf_L[writeIdx] = fed_back_L + excite;\n\n// ================= RIGHT CHANNEL =================\nlet readIdx_R: Int = writeIdx - delaySamps_int_R;\nif (readIdx_R < 0) readIdx_R = readIdx_R + MAX_DELAY_SAMPS;\nlet delayed_R = buf_R[readIdx_R];\n\nlet ap_out_R = thiran_a1_R * delayed_R + thiran_x1_R - thiran_a1_R * thiran_y1_R;\nthiran_x1_R = delayed_R;\nthiran_y1_R = ap_out_R;\n\nloop_y1_R = (1.0 - filt_g) * ap_out_R + filt_g * loop_y1_R;\n\nlet dcOut_R = loop_y1_R - dc_x1_R + DC_R * dc_y1_R;\ndc_x1_R = loop_y1_R;\ndc_y1_R = dcOut_R;\n\nlet fed_back_R = dcOut_R * fb_gain;\nbuf_R[writeIdx] = fed_back_R + excite;\n\n// ---- Advance shared write pointer ----\nwriteIdx = writeIdx + 1;\nif (writeIdx >= MAX_DELAY_SAMPS) writeIdx = 0;\n\nout1 = dcOut_L;\nout2 = dcOut_R;",
-														"expr" : "",
-														"safemath" : 1
+														"safemath" : 1,
+														"expr" : ""
 													}
 ,
 													"rnbo_serial" : 12,
@@ -28202,7 +28866,7 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 505.0, 317.0, 70.0, 23.0 ],
 													"rnbo_classname" : "loadmess",
-													"rnbo_serial" : 5,
+													"rnbo_serial" : 2,
 													"rnbo_uniqueid" : "loadmess_obj-1",
 													"rnboinfo" : 													{
 														"needsInstanceInfo" : 1,
@@ -28301,8 +28965,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 1,
@@ -28324,8 +28988,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 2,
@@ -28514,8 +29178,8 @@
 													"rnbo_classname" : "codebox~",
 													"rnbo_extra_attributes" : 													{
 														"code" : "// =====================================================================\n// RNBOscript — Riverbero Stereo Schroeder-Moorer (4 comb || + 2 allpass serie)\n// Topologia: comb filter decorrelati L/R con damping LPF nel loop di\n// feedback + sezione diffusiva allpass in cascata (Schroeder 1962,\n// Moorer 1979; ref. derivazione RT60->g in Smith, \"Physical Audio\n// Signal Processing\", CCRMA — stessa fonte già impiegata nel modulo\n// Karplus-Strong del progetto).\n//\n// I/O:\n//   in1  = audio L (dry)\n//   in2  = audio R (dry)\n//   in3  = RT60        [s]    PARAMETRO CHIAVE — durata di decadimento -60dB\n//   in4  = damping      [0..1] assorbimento HF nel loop (0=metallico, 1=cupo)\n//   in5  = predelay     [ms]   ritardo iniziale prima dell'ingresso in rete\n//   in6  = wet/dry mix  [0..1] \n//\n//   out1 = L (wet+dry secondo mix)\n//   out2 = R (wet+dry secondo mix)\n//\n// MODIFICA PARAMETRI: tutte le costanti strutturali (lunghezze comb/AP in\n// campioni, coefficienti allpass) sono raccolte nel blocco \"STRUCTURAL\n// PARAMETERS\" qui sotto. Sono valori in samples a 48kHz nativi: se il\n// samplerate del progetto differisce, vengono riscalati automaticamente\n// via sr/48000 per preservare i rapporti temporali e l'assenza di\n// coloriture comb correlate.\n//\n// DISCLOSURE: i delay times (combL/R, apL/R) seguono i rapporti\n// storicamente impiegati nell'implementazione Schroeder/Moorer-derived\n// (Dattorro 1997, \"Effect Design Part 1\", JAES vol.45) — non sono\n// arbitrari ma scelti coprimi tra loro per massimizzare la densità\n// dell'eco senza periodicità udibile. Variarli è sicuro PURCHÉ si\n// mantenga: (a) coprimalità reciproca approssimata, (b) AP gain in\n// [0.5, 0.7] per garanzia di stabilità allpass (|g|<1 condizione\n// necessaria, range scelto per densità senza colorazione metallica).\n// =====================================================================\n\n// ---- STRUCTURAL PARAMETERS (samples @ 48kHz, auto-riscalati su sr) ----\nconst REF_SR = 48000.0;\nlet sr = samplerate();\nlet srScale = sr / REF_SR;\n\n// 4 comb filters, lunghezze decorrelate L/R (Dattorro-derived, coprime)\nconst COMB1_L = 1687; const COMB1_R = 1601;\nconst COMB2_L = 1601; const COMB2_R = 1493;\nconst COMB3_L = 2053; const COMB3_R = 1973;\nconst COMB4_L = 2251; const COMB4_R = 2161;\n\n// 2 allpass diffusori in serie, coefficiente fisso entro range di stabilità\nconst AP1_L = 347;  const AP1_R = 313;\nconst AP2_L = 113;  const AP2_R = 97;\nconst AP_GAIN = 0.6;\n\n// Dimensionamento buffer con margine per predelay massimo (500ms) + srScale\nconst MAXCOMB: Int = 4096;\nconst MAXAP: Int = 512;\nconst MAXPRE: Int = 24000; // 500ms @ 48kHz, riscalato a runtime\n\n// ---- STATE: comb filter buffers (L) ----\n@state cbuf1_L = new FixedSampleArray(MAXCOMB);\n@state cbuf2_L = new FixedSampleArray(MAXCOMB);\n@state cbuf3_L = new FixedSampleArray(MAXCOMB);\n@state cbuf4_L = new FixedSampleArray(MAXCOMB);\n@state cidx1_L: Int = 0; @state cidx2_L: Int = 0;\n@state cidx3_L: Int = 0; @state cidx4_L: Int = 0;\n@state clp1_L = 0.0; @state clp2_L = 0.0; @state clp3_L = 0.0; @state clp4_L = 0.0;\n\n// ---- STATE: comb filter buffers (R) ----\n@state cbuf1_R = new FixedSampleArray(MAXCOMB);\n@state cbuf2_R = new FixedSampleArray(MAXCOMB);\n@state cbuf3_R = new FixedSampleArray(MAXCOMB);\n@state cbuf4_R = new FixedSampleArray(MAXCOMB);\n@state cidx1_R: Int = 0; @state cidx2_R: Int = 0;\n@state cidx3_R: Int = 0; @state cidx4_R: Int = 0;\n@state clp1_R = 0.0; @state clp2_R = 0.0; @state clp3_R = 0.0; @state clp4_R = 0.0;\n\n// ---- STATE: allpass diffusori (L/R) ----\n@state apbuf1_L = new FixedSampleArray(MAXAP);\n@state apbuf2_L = new FixedSampleArray(MAXAP);\n@state apidx1_L: Int = 0; @state apidx2_L: Int = 0;\n\n@state apbuf1_R = new FixedSampleArray(MAXAP);\n@state apbuf2_R = new FixedSampleArray(MAXAP);\n@state apidx1_R: Int = 0; @state apidx2_R: Int = 0;\n\n// ---- STATE: predelay line (condivisa, poi splittata L/R) ----\n@state prebuf_L = new FixedSampleArray(MAXPRE);\n@state prebuf_R = new FixedSampleArray(MAXPRE);\n@state preidx_L: Int = 0; @state preidx_R: Int = 0;\n\n// ---- STATE: smoothing parametri (one-pole, tau=10ms — evita zipper\n// noise su update discreti di RT60/damping/predelay/mix da UI/automazione)\n@state rt60_sm = 1.5;\n@state damping_sm = 0.3;\n@state predelay_sm = 0.0;\n@state mix_sm = 0.3;\n\nconst smooth_tau = 0.010;\nlet smooth_g = exp(-1.0 / (smooth_tau * sr));\n\n// ---- INPUT READ + SAFETY CLAMP ----\n// RT60 <= 0 produrrebbe g>=1 (instabilità/divergenza esponenziale) o\n// divisione per zero nella formula di Schroeder: clampato a un minimo\n// fisicamente sensato (50ms, ambiente estremamente smorzato/anecoico).\nlet rt60_in = in3;\nlet damping_in = in4;\nlet predelay_in = in5;\nlet mix_in = in6;\n\nconst RT60_MIN = 0.05;\nconst RT60_MAX = 30.0;\nif (rt60_in < RT60_MIN) rt60_in = RT60_MIN;\nif (rt60_in > RT60_MAX) rt60_in = RT60_MAX;\n\nif (damping_in < 0.0) damping_in = 0.0;\nif (damping_in > 1.0) damping_in = 1.0;\n\nconst PREDELAY_MAX_MS = 500.0;\nif (predelay_in < 0.0) predelay_in = 0.0;\nif (predelay_in > PREDELAY_MAX_MS) predelay_in = PREDELAY_MAX_MS;\n\nif (mix_in < 0.0) mix_in = 0.0;\nif (mix_in > 1.0) mix_in = 1.0;\n\nrt60_sm = rt60_sm * smooth_g + rt60_in * (1.0 - smooth_g);\ndamping_sm = damping_sm * smooth_g + damping_in * (1.0 - smooth_g);\npredelay_sm = predelay_sm * smooth_g + predelay_in * (1.0 - smooth_g);\nmix_sm = mix_sm * smooth_g + mix_in * (1.0 - smooth_g);\n\n// ---- PREDELAY: lunghezza in campioni, ricalcolata per-sample per\n// seguire eventuale automazione (overhead trascurabile: solo Int cast +\n// moltiplicazione) ----\nlet preSamples: Int = floor((predelay_sm * 0.001) * sr);\nif (preSamples < 0) preSamples = 0;\nif (preSamples > (MAXPRE - 1)) preSamples = MAXPRE - 1;\n\nlet preReadIdx_L: Int = preidx_L - preSamples;\nif (preReadIdx_L < 0) preReadIdx_L = preReadIdx_L + MAXPRE;\nlet preReadIdx_R: Int = preidx_R - preSamples;\nif (preReadIdx_R < 0) preReadIdx_R = preReadIdx_R + MAXPRE;\n\nprebuf_L[preidx_L] = in1;\nprebuf_R[preidx_R] = in2;\nlet predelayed_L = prebuf_L[preReadIdx_L];\nlet predelayed_R = prebuf_R[preReadIdx_R];\npreidx_L = preidx_L + 1; if (preidx_L >= MAXPRE) preidx_L = 0;\npreidx_R = preidx_R + 1; if (preidx_R >= MAXPRE) preidx_R = 0;\n\n// =====================================================================\n// COMB BANK — canale L\n// Formula RT60 (Schroeder 1962): g = 10^(-3*d / (RT60*sr))\n// d = delay length in samples, garantisce -60dB esattamente a t=RT60.\n// One-pole LPF nel loop (damping_sm) per assorbimento HF realistico\n// (materiali fonoassorbenti reali attenuano le alte frequenze più\n// rapidamente — coerente con risposta impulsiva di sale reali, Kuttruff\n// \"Room Acoustics\").\n// =====================================================================\n\nlet d1_L: Int = floor(COMB1_L * srScale);\nlet d2_L: Int = floor(COMB2_L * srScale);\nlet d3_L: Int = floor(COMB3_L * srScale);\nlet d4_L: Int = floor(COMB4_L * srScale);\nif (d1_L < 1) d1_L = 1; if (d1_L > (MAXCOMB-1)) d1_L = MAXCOMB-1;\nif (d2_L < 1) d2_L = 1; if (d2_L > (MAXCOMB-1)) d2_L = MAXCOMB-1;\nif (d3_L < 1) d3_L = 1; if (d3_L > (MAXCOMB-1)) d3_L = MAXCOMB-1;\nif (d4_L < 1) d4_L = 1; if (d4_L > (MAXCOMB-1)) d4_L = MAXCOMB-1;\n\nlet g1_L = pow(10.0, (-3.0 * d1_L) / (rt60_sm * sr));\nlet g2_L = pow(10.0, (-3.0 * d2_L) / (rt60_sm * sr));\nlet g3_L = pow(10.0, (-3.0 * d3_L) / (rt60_sm * sr));\nlet g4_L = pow(10.0, (-3.0 * d4_L) / (rt60_sm * sr));\n\n// Damping coefficient one-pole: range [0, 0.7] mappato da damping_sm,\n// 0.7 = forte assorbimento HF senza collassare il loop in DC puro\nlet dampCoeff = damping_sm * 0.7;\n\nlet rIdx1_L: Int = cidx1_L - d1_L; if (rIdx1_L < 0) rIdx1_L = rIdx1_L + MAXCOMB;\nlet c1_out_L = cbuf1_L[rIdx1_L];\nclp1_L = c1_out_L * (1.0 - dampCoeff) + clp1_L * dampCoeff;\ncbuf1_L[cidx1_L] = predelayed_L + clp1_L * g1_L;\ncidx1_L = cidx1_L + 1; if (cidx1_L >= MAXCOMB) cidx1_L = 0;\n\nlet rIdx2_L: Int = cidx2_L - d2_L; if (rIdx2_L < 0) rIdx2_L = rIdx2_L + MAXCOMB;\nlet c2_out_L = cbuf2_L[rIdx2_L];\nclp2_L = c2_out_L * (1.0 - dampCoeff) + clp2_L * dampCoeff;\ncbuf2_L[cidx2_L] = predelayed_L + clp2_L * g2_L;\ncidx2_L = cidx2_L + 1; if (cidx2_L >= MAXCOMB) cidx2_L = 0;\n\nlet rIdx3_L: Int = cidx3_L - d3_L; if (rIdx3_L < 0) rIdx3_L = rIdx3_L + MAXCOMB;\nlet c3_out_L = cbuf3_L[rIdx3_L];\nclp3_L = c3_out_L * (1.0 - dampCoeff) + clp3_L * dampCoeff;\ncbuf3_L[cidx3_L] = predelayed_L + clp3_L * g3_L;\ncidx3_L = cidx3_L + 1; if (cidx3_L >= MAXCOMB) cidx3_L = 0;\n\nlet rIdx4_L: Int = cidx4_L - d4_L; if (rIdx4_L < 0) rIdx4_L = rIdx4_L + MAXCOMB;\nlet c4_out_L = cbuf4_L[rIdx4_L];\nclp4_L = c4_out_L * (1.0 - dampCoeff) + clp4_L * dampCoeff;\ncbuf4_L[cidx4_L] = predelayed_L + clp4_L * g4_L;\ncidx4_L = cidx4_L + 1; if (cidx4_L >= MAXCOMB) cidx4_L = 0;\n\n// Somma comb bank, normalizzata 1/4 per evitare accumulo di gain con\n// 4 rami paralleli sommati (preserva unity-gain approssimativo in banda)\nlet combSum_L = (c1_out_L + c2_out_L + c3_out_L + c4_out_L) * 0.25;\n\n// =====================================================================\n// COMB BANK — canale R (analogo, lunghezze decorrelate)\n// =====================================================================\n\nlet d1_R: Int = floor(COMB1_R * srScale);\nlet d2_R: Int = floor(COMB2_R * srScale);\nlet d3_R: Int = floor(COMB3_R * srScale);\nlet d4_R: Int = floor(COMB4_R * srScale);\nif (d1_R < 1) d1_R = 1; if (d1_R > (MAXCOMB-1)) d1_R = MAXCOMB-1;\nif (d2_R < 1) d2_R = 1; if (d2_R > (MAXCOMB-1)) d2_R = MAXCOMB-1;\nif (d3_R < 1) d3_R = 1; if (d3_R > (MAXCOMB-1)) d3_R = MAXCOMB-1;\nif (d4_R < 1) d4_R = 1; if (d4_R > (MAXCOMB-1)) d4_R = MAXCOMB-1;\n\nlet g1_R = pow(10.0, (-3.0 * d1_R) / (rt60_sm * sr));\nlet g2_R = pow(10.0, (-3.0 * d2_R) / (rt60_sm * sr));\nlet g3_R = pow(10.0, (-3.0 * d3_R) / (rt60_sm * sr));\nlet g4_R = pow(10.0, (-3.0 * d4_R) / (rt60_sm * sr));\n\nlet rIdx1_R: Int = cidx1_R - d1_R; if (rIdx1_R < 0) rIdx1_R = rIdx1_R + MAXCOMB;\nlet c1_out_R = cbuf1_R[rIdx1_R];\nclp1_R = c1_out_R * (1.0 - dampCoeff) + clp1_R * dampCoeff;\ncbuf1_R[cidx1_R] = predelayed_R + clp1_R * g1_R;\ncidx1_R = cidx1_R + 1; if (cidx1_R >= MAXCOMB) cidx1_R = 0;\n\nlet rIdx2_R: Int = cidx2_R - d2_R; if (rIdx2_R < 0) rIdx2_R = rIdx2_R + MAXCOMB;\nlet c2_out_R = cbuf2_R[rIdx2_R];\nclp2_R = c2_out_R * (1.0 - dampCoeff) + clp2_R * dampCoeff;\ncbuf2_R[cidx2_R] = predelayed_R + clp2_R * g2_R;\ncidx2_R = cidx2_R + 1; if (cidx2_R >= MAXCOMB) cidx2_R = 0;\n\nlet rIdx3_R: Int = cidx3_R - d3_R; if (rIdx3_R < 0) rIdx3_R = rIdx3_R + MAXCOMB;\nlet c3_out_R = cbuf3_R[rIdx3_R];\nclp3_R = c3_out_R * (1.0 - dampCoeff) + clp3_R * dampCoeff;\ncbuf3_R[cidx3_R] = predelayed_R + clp3_R * g3_R;\ncidx3_R = cidx3_R + 1; if (cidx3_R >= MAXCOMB) cidx3_R = 0;\n\nlet rIdx4_R: Int = cidx4_R - d4_R; if (rIdx4_R < 0) rIdx4_R = rIdx4_R + MAXCOMB;\nlet c4_out_R = cbuf4_R[rIdx4_R];\nclp4_R = c4_out_R * (1.0 - dampCoeff) + clp4_R * dampCoeff;\ncbuf4_R[cidx4_R] = predelayed_R + clp4_R * g4_R;\ncidx4_R = cidx4_R + 1; if (cidx4_R >= MAXCOMB) cidx4_R = 0;\n\nlet combSum_R = (c1_out_R + c2_out_R + c3_out_R + c4_out_R) * 0.25;\n\n// =====================================================================\n// SEZIONE DIFFUSIVA — 2 allpass in serie per canale (Schroeder allpass:\n// y[n] = -g*x[n] + x[n-d] + g*y[n-d]). AP_GAIN=0.6 entro [0.5,0.7] per\n// stabilità garantita e densità di eco senza colorazione metallica\n// percepibile (soglia psicoacustica di fusione transienti ~50-80ms\n// densità di riflessioni, qui ottenuta in <20ms di catena AP).\n// =====================================================================\n\nlet dap1_L: Int = floor(AP1_L * srScale);\nlet dap2_L: Int = floor(AP2_L * srScale);\nif (dap1_L < 1) dap1_L = 1; if (dap1_L > (MAXAP-1)) dap1_L = MAXAP-1;\nif (dap2_L < 1) dap2_L = 1; if (dap2_L > (MAXAP-1)) dap2_L = MAXAP-1;\n\nlet apr1_L: Int = apidx1_L - dap1_L; if (apr1_L < 0) apr1_L = apr1_L + MAXAP;\nlet apDelayed1_L = apbuf1_L[apr1_L];\nlet apOut1_L = -AP_GAIN * combSum_L + apDelayed1_L;\napbuf1_L[apidx1_L] = combSum_L + AP_GAIN * apOut1_L;\napidx1_L = apidx1_L + 1; if (apidx1_L >= MAXAP) apidx1_L = 0;\n\nlet apr2_L: Int = apidx2_L - dap2_L; if (apr2_L < 0) apr2_L = apr2_L + MAXAP;\nlet apDelayed2_L = apbuf2_L[apr2_L];\nlet apOut2_L = -AP_GAIN * apOut1_L + apDelayed2_L;\napbuf2_L[apidx2_L] = apOut1_L + AP_GAIN * apOut2_L;\napidx2_L = apidx2_L + 1; if (apidx2_L >= MAXAP) apidx2_L = 0;\n\nlet dap1_R: Int = floor(AP1_R * srScale);\nlet dap2_R: Int = floor(AP2_R * srScale);\nif (dap1_R < 1) dap1_R = 1; if (dap1_R > (MAXAP-1)) dap1_R = MAXAP-1;\nif (dap2_R < 1) dap2_R = 1; if (dap2_R > (MAXAP-1)) dap2_R = MAXAP-1;\n\nlet apr1_R: Int = apidx1_R - dap1_R; if (apr1_R < 0) apr1_R = apr1_R + MAXAP;\nlet apDelayed1_R = apbuf1_R[apr1_R];\nlet apOut1_R = -AP_GAIN * combSum_R + apDelayed1_R;\napbuf1_R[apidx1_R] = combSum_R + AP_GAIN * apOut1_R;\napidx1_R = apidx1_R + 1; if (apidx1_R >= MAXAP) apidx1_R = 0;\n\nlet apr2_R: Int = apidx2_R - dap2_R; if (apr2_R < 0) apr2_R = apr2_R + MAXAP;\nlet apDelayed2_R = apbuf2_R[apr2_R];\nlet apOut2_R = -AP_GAIN * apOut1_R + apDelayed2_R;\napbuf2_R[apidx2_R] = apOut1_R + AP_GAIN * apOut2_R;\napidx2_R = apidx2_R + 1; if (apidx2_R >= MAXAP) apidx2_R = 0;\n\n// ---- WET/DRY MIX + OUTPUT ----\n// Equal-power-ish lineare semplice (mix_sm controlla wet, dry resta a\n// (1-mix_sm)): per crossfade percettivamente costante in potenza\n// servirebbe sqrt(mix)/sqrt(1-mix), omesso qui perché il riverbero è\n// additivo (non sostitutivo) e la somma di energia decorrelata dry+wet\n// non genera il dip di loudness tipico del crossfade tra segnali\n// correlati — quindi mix lineare è la scelta corretta, non un'omissione.\nout1 = in1 * (1.0 - mix_sm) + apOut2_L * mix_sm;\nout2 = in2 * (1.0 - mix_sm) + apOut2_R * mix_sm;",
-														"expr" : "",
-														"safemath" : 1
+														"safemath" : 1,
+														"expr" : ""
 													}
 ,
 													"rnbo_serial" : 1,
@@ -29833,8 +30497,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 1,
@@ -29856,8 +30520,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 2,
@@ -29991,8 +30655,8 @@
 													"rnbo_classname" : "codebox~",
 													"rnbo_extra_attributes" : 													{
 														"code" : "// =====================================================================\n// RNBOscript -- 4-operator FM pad, single mono noise excitation.\n// Topology: 2 serial 2-op chains, L = Op2(mod)->Op1(carrier),\n// R = Op4(mod)->Op3(carrier). fc:fm = 1:1 on both chains -> fully\n// harmonic spectrum (Chowning 1973). Chains share the same noise\n// input but are detuned in Hz for stereo width via slow beating.\n//\n// Excitation is 100% external: in1 drives an amplitude envelope\n// (feeds output amplitude) and, through a second slower-filtered\n// path, the FM modulation index. Output is not noise itself -- the\n// noise only feeds the envelope and the feedback tail, which decays\n// on its own once noise stops (Karplus-Strong-like tail behavior).\n//\n// Two separate one-pole envelope stages on purpose: ENV_TAU (15ms)\n// drives amplitude reactively; MODIDX_TAU (40ms) is a second, slower\n// stage feeding only the modulation index, to avoid audible PM index\n// jitter (phase modulation at a rate inside the roughness/flutter\n// band, Zwicker & Fastl ch.6) that a single fast envelope caused when\n// used directly for both amplitude and mod index.\n//\n// INLETS:\n//   in1 = noise excitation (mono, shared L/R)\n//   in2 = f0 in Hz\n//   in3 = feedback/decay [0..1]\n//   in4 = detune [0..1] -> 0..3 Hz split between carrier L/R\n// OUTLETS:\n//   out1 = L, out2 = R\n//\n// No oversampling here; mod index is clamped to stay well below the\n// Nyquist-adjacent foldover region at fc:fm=1:1 (see MOD_INDEX_*).\n// =====================================================================\n\nconst twopi = 6.283185307179586;\n\nconst RATIO_MOD_L = 1.0;\nconst RATIO_CAR_L = 1.0;\nconst RATIO_MOD_R = 1.0;\nconst RATIO_CAR_R = 1.0;\n\n// Mod index range tuned for a \"warm bell\" spectrum at fc:fm=1:1\n// (Chowning): too low = thin, too high (>~4-5) = dense buzz.\nconst MOD_INDEX_FLOOR = 0.35;\nconst MOD_INDEX_RANGE = 2.2;\n\nconst ENV_TAU = 0.015;\nconst MODIDX_TAU = 0.040;\n\n// 0-3 Hz detune: chorus-like beating, not perceived as mistuning.\nconst DETUNE_MAX_HZ = 3.0;\n\nconst DECAY_MIN = 0.0;\nconst DECAY_MAX = 0.998;\n\nconst F0_MIN = 20.0;\nconst F0_MAX = 5000.0;\n\n@state phase_op1 = 0.0;\n@state phase_op2 = 0.0;\n@state phase_op3 = 0.0;\n@state phase_op4 = 0.0;\n\n@state env_noise = 0.0;\n@state modidx_env = 0.0;\n\n@state fb_L = 0.0;\n@state fb_R = 0.0;\n\n// Control smoothing (anti zipper-noise), tau=5ms\n@state f0_sm = 220.0;\n@state decay_sm = 0.0;\n@state detune_sm = 0.0;\n\nlet sr = samplerate();\nconst smooth_tau = 0.005;\nlet smooth_g = exp(-1.0 / (smooth_tau * sr));\n\nf0_sm = f0_sm * smooth_g + in2 * (1.0 - smooth_g);\ndecay_sm = decay_sm * smooth_g + in3 * (1.0 - smooth_g);\ndetune_sm = detune_sm * smooth_g + in4 * (1.0 - smooth_g);\n\nif (f0_sm < F0_MIN) f0_sm = F0_MIN;\nif (f0_sm > F0_MAX) f0_sm = F0_MAX;\nif (decay_sm < 0.0) decay_sm = 0.0;\nif (decay_sm > 1.0) decay_sm = 1.0;\nif (detune_sm < 0.0) detune_sm = 0.0;\nif (detune_sm > 1.0) detune_sm = 1.0;\n\nlet feedback_coeff = DECAY_MIN + decay_sm * (DECAY_MAX - DECAY_MIN);\n\nlet detune_hz = detune_sm * DETUNE_MAX_HZ;\nlet f0_L = f0_sm + (detune_hz * 0.5);\nlet f0_R = f0_sm - (detune_hz * 0.5);\n\n// Envelope follower on the single noise input, one-pole full-wave.\nlet env_g = exp(-1.0 / (ENV_TAU * sr));\nlet abs_in = (in1 < 0.0) ? -in1 : in1;\nenv_noise = env_noise * env_g + abs_in * (1.0 - env_g);\n\n// Second, slower stage feeding only the modulation index.\nlet modidx_g = exp(-1.0 / (MODIDX_TAU * sr));\nmodidx_env = modidx_env * modidx_g + env_noise * (1.0 - modidx_g);\n\nlet modIndex = MOD_INDEX_FLOOR + (modidx_env * MOD_INDEX_RANGE);\nlet modIndexCeil = MOD_INDEX_FLOOR + MOD_INDEX_RANGE;\nif (modIndex > modIndexCeil) modIndex = modIndexCeil;\n\n// ---- Chain L: Op2 (mod) -> Op1 (carrier) ----\nlet phaseInc_op2 = (f0_L * RATIO_MOD_L) / sr;\nphase_op2 = phase_op2 + phaseInc_op2;\nif (phase_op2 >= 1.0) phase_op2 = phase_op2 - floor(phase_op2);\nlet mod_op2 = sin(phase_op2 * twopi);\n\nlet phaseInc_op1 = (f0_L * RATIO_CAR_L) / sr;\nphase_op1 = phase_op1 + phaseInc_op1;\nif (phase_op1 >= 1.0) phase_op1 = phase_op1 - floor(phase_op1);\nlet fm_phase_L = phase_op1 * twopi + (modIndex * mod_op2);\nlet carrier_L = sin(fm_phase_L);\n\n// ---- Chain R: Op4 (mod) -> Op3 (carrier) ----\nlet phaseInc_op4 = (f0_R * RATIO_MOD_R) / sr;\nphase_op4 = phase_op4 + phaseInc_op4;\nif (phase_op4 >= 1.0) phase_op4 = phase_op4 - floor(phase_op4);\nlet mod_op4 = sin(phase_op4 * twopi);\n\nlet phaseInc_op3 = (f0_R * RATIO_CAR_R) / sr;\nphase_op3 = phase_op3 + phaseInc_op3;\nif (phase_op3 >= 1.0) phase_op3 = phase_op3 - floor(phase_op3);\nlet fm_phase_R = phase_op3 * twopi + (modIndex * mod_op4);\nlet carrier_R = sin(fm_phase_R);\n\n// ---- Amplitude + feedback tail (Karplus-Strong-like decay) ----\nlet driven_L = carrier_L * env_noise;\nlet driven_R = carrier_R * env_noise;\n\nfb_L = (fb_L * feedback_coeff) + (driven_L * (1.0 - feedback_coeff));\nfb_R = (fb_R * feedback_coeff) + (driven_R * (1.0 - feedback_coeff));\n\nout1 = fb_L;\nout2 = fb_R;",
-														"expr" : "",
-														"safemath" : 1
+														"safemath" : 1,
+														"expr" : ""
 													}
 ,
 													"rnbo_serial" : 1,
@@ -30412,7 +31076,7 @@
 ,
 																	"rnbo_serial" : 3,
 																	"rnbo_uniqueid" : "message_obj-6",
-																	"text" : "523.25"
+																	"text" : "466.16"
 																}
 
 															}
@@ -30469,7 +31133,7 @@
 ,
 																	"rnbo_serial" : 6,
 																	"rnbo_uniqueid" : "message_obj-3",
-																	"text" : "261.63"
+																	"text" : "233.08"
 																}
 
 															}
@@ -30488,8 +31152,8 @@
 																		"maximum" : "<none>",
 																		"minimum" : "<none>",
 																		"preset" : 0,
-																		"initialFormat" : "integer",
-																		"order" : ""
+																		"order" : "",
+																		"initialFormat" : "integer"
 																	}
 ,
 																	"rnbo_serial" : 1,
@@ -30512,8 +31176,8 @@
 																	"rnbo_classname" : "codebox",
 																	"rnbo_extra_attributes" : 																	{
 																		"code" : "// in1  : counter value in ms (loop length 32000)\n// out1..out6 : frequencies in Hz -> [s note1] ... [s note6]\n// 16 chords = 4 sections x 4 chords, change times measured by hand\n// (non-uniform: 1929..2102 ms per chord)\n\n// Persistent across calls; -1 forces emission on the first message\n// after load or recompile (replaces the old [change -1]).\n@state lastChord = -1;\n\nlet loopLen = 32000;  // counter loop length in ms\nlet lead = 0;         // global anticipation in ms (>0 = chords change earlier)\n\n// Shifted time, wrapped into [0, loopLen) so any lead stays valid\nlet t = in1 + lead;\nt = t - loopLen * floor(t / loopLen);\n\n// Chord index from the measured change times: later thresholds\n// override earlier ones, so the last one satisfied wins.\n// To retune a change, edit only the number in its line.\nlet chord = 0;\nif (t >= 1900)  chord = 1;\nif (t >= 3821)  chord = 2;\nif (t >= 5813)  chord = 3;\nif (t >= 7800)  chord = 4;\nif (t >= 9780)  chord = 5;\nif (t >= 11820) chord = 6;\nif (t >= 13780) chord = 7;\nif (t >= 15900) chord = 8;\nif (t >= 17750) chord = 9;\nif (t >= 19750) chord = 10;\nif (t >= 21870) chord = 11;\nif (t >= 23750) chord = 12;\nif (t >= 25850) chord = 13;\nif (t >= 27820) chord = 14;\nif (t >= 29800) chord = 15;\n\n// Emit only on chord change (edge), not on every tick\nif (chord != lastChord) {\n    lastChord = chord;\n\n    // ---- Section 1 ----\n    if (chord == 0) {            // Ab/C\n        out1 = 261.63; out2 = 311.13; out3 = 415.30;\n        out4 = 523.25; out5 = 622.25; out6 = 830.61;\n    } else if (chord == 1) {     // Cm\n        out1 = 261.63; out2 = 311.13; out3 = 392.00;\n        out4 = 523.25; out5 = 622.25; out6 = 783.99;\n    } else if (chord == 2) {     // Eb/Bb\n        out1 = 233.08; out2 = 311.13; out3 = 392.00;\n        out4 = 466.16; out5 = 622.25; out6 = 783.99;\n    } else if (chord == 3) {     // Bb\n        out1 = 233.08; out2 = 293.66; out3 = 349.23;\n        out4 = 466.16; out5 = 587.33; out6 = 698.46;\n\n    // ---- Section 2 ----\n    } else if (chord == 4) {     // Bbm\n        out1 = 233.08; out2 = 277.18; out3 = 349.23;\n        out4 = 466.16; out5 = 554.37; out6 = 698.46;\n    } else if (chord == 5) {     // Fm\n        out1 = 207.65; out2 = 261.63; out3 = 349.23;\n        out4 = 415.30; out5 = 523.25; out6 = 698.46;\n    } else if (chord == 6) {     // Db\n        out1 = 207.65; out2 = 277.18; out3 = 349.23;\n        out4 = 415.30; out5 = 554.37; out6 = 698.46;\n    } else if (chord == 7) {     // Eb\n        out1 = 233.08; out2 = 311.13; out3 = 392.00;\n        out4 = 466.16; out5 = 622.25; out6 = 783.99;\n\n    // ---- Section 3 ----\n    } else if (chord == 8) {     // Ebsus2\n        out1 = 233.08; out2 = 311.13; out3 = 349.23;\n        out4 = 466.16; out5 = 622.25; out6 = 698.46;\n    } else if (chord == 9) {     // Cm7 (no root)\n        out1 = 233.08; out2 = 311.13; out3 = 392.00;\n        out4 = 466.16; out5 = 622.25; out6 = 783.99;\n    } else if (chord == 10) {    // Bbsus2\n        out1 = 261.63; out2 = 349.23; out3 = 466.16;\n        out4 = 523.25; out5 = 698.46; out6 = 932.33;\n    } else if (chord == 11) {    // Fsus2\n        out1 = 261.63; out2 = 349.23; out3 = 392.00;\n        out4 = 523.25; out5 = 698.46; out6 = 783.99;\n\n    // ---- Section 4 ----\n    } else if (chord == 12) {    // C7b5 (no Bb)\n        out1 = 261.63; out2 = 329.63; out3 = 369.99;\n        out4 = 523.25; out5 = 659.26; out6 = 739.99;\n    } else if (chord == 13) {    // E7b5 (no Bb)\n        out1 = 293.66; out2 = 329.63; out3 = 415.30;\n        out4 = 587.33; out5 = 659.26; out6 = 830.61;\n    } else if (chord == 14) {    // D7b5 (no C)\n        out1 = 293.66; out2 = 369.99; out3 = 415.30;\n        out4 = 587.33; out5 = 739.99; out6 = 830.61;\n    } else {                     // chord 15: Caug\n        out1 = 261.63; out2 = 329.63; out3 = 415.30;\n        out4 = 523.25; out5 = 659.26; out6 = 830.61;\n    }\n}",
-																		"hot" : 0,
-																		"safemath" : 1
+																		"safemath" : 1,
+																		"hot" : 0
 																	}
 ,
 																	"rnbo_serial" : 1,
@@ -30748,8 +31412,8 @@
 																		"maximum" : "<none>",
 																		"minimum" : "<none>",
 																		"preset" : 0,
-																		"initialFormat" : "integer",
-																		"order" : ""
+																		"order" : "",
+																		"initialFormat" : "integer"
 																	}
 ,
 																	"rnbo_serial" : 2,
@@ -31062,11 +31726,11 @@
 													"patching_rect" : [ 958.0, 1620.0, 90.0, 23.0 ],
 													"rnbo_classname" : "p",
 													"rnbo_extra_attributes" : 													{
-														"polyphony" : -1.0,
 														"args" : [  ],
 														"receivemode" : "local",
-														"notecontroller" : 0,
+														"polyphony" : -1.0,
 														"voicecontrol" : "simple",
+														"notecontroller" : 0,
 														"exposevoiceparams" : 0
 													}
 ,
@@ -31579,9 +32243,9 @@
 													"patching_rect" : [ 269.565219640731812, 1482.608708024024963, 20.0, 140.0 ],
 													"rnbo_classname" : "slider",
 													"rnbo_extra_attributes" : 													{
+														"floatoutput" : 1,
 														"mult" : 1.0,
 														"size" : 128.0,
-														"floatoutput" : 1,
 														"min" : 0.0,
 														"preset" : 0,
 														"value" : 0.0,
@@ -31638,8 +32302,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 3,
@@ -31842,8 +32506,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 4,
@@ -31895,8 +32559,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 5,
@@ -31918,8 +32582,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 6,
@@ -32053,8 +32717,8 @@
 													"rnbo_classname" : "codebox~",
 													"rnbo_extra_attributes" : 													{
 														"code" : "// =====================================================================\n// RNBOscript -- 4-operator FM pad, single mono noise excitation.\n// Topology: 2 serial 2-op chains, L = Op2(mod)->Op1(carrier),\n// R = Op4(mod)->Op3(carrier). fc:fm = 1:1 on both chains -> fully\n// harmonic spectrum (Chowning 1973). Chains share the same noise\n// input but are detuned in Hz for stereo width via slow beating.\n//\n// Excitation is 100% external: in1 drives an amplitude envelope\n// (feeds output amplitude) and, through a second slower-filtered\n// path, the FM modulation index. Output is not noise itself -- the\n// noise only feeds the envelope and the feedback tail, which decays\n// on its own once noise stops (Karplus-Strong-like tail behavior).\n//\n// Two separate one-pole envelope stages on purpose: ENV_TAU (15ms)\n// drives amplitude reactively; MODIDX_TAU (40ms) is a second, slower\n// stage feeding only the modulation index, to avoid audible PM index\n// jitter (phase modulation at a rate inside the roughness/flutter\n// band, Zwicker & Fastl ch.6) that a single fast envelope caused when\n// used directly for both amplitude and mod index.\n//\n// INLETS:\n//   in1 = noise excitation (mono, shared L/R)\n//   in2 = f0 in Hz\n//   in3 = feedback/decay [0..1]\n//   in4 = detune [0..1] -> 0..3 Hz split between carrier L/R\n// OUTLETS:\n//   out1 = L, out2 = R\n//\n// No oversampling here; mod index is clamped to stay well below the\n// Nyquist-adjacent foldover region at fc:fm=1:1 (see MOD_INDEX_*).\n// =====================================================================\n\nconst twopi = 6.283185307179586;\n\nconst RATIO_MOD_L = 1.0;\nconst RATIO_CAR_L = 1.0;\nconst RATIO_MOD_R = 1.0;\nconst RATIO_CAR_R = 1.0;\n\n// Mod index range tuned for a \"warm bell\" spectrum at fc:fm=1:1\n// (Chowning): too low = thin, too high (>~4-5) = dense buzz.\nconst MOD_INDEX_FLOOR = 0.35;\nconst MOD_INDEX_RANGE = 2.2;\n\nconst ENV_TAU = 0.015;\nconst MODIDX_TAU = 0.040;\n\n// 0-3 Hz detune: chorus-like beating, not perceived as mistuning.\nconst DETUNE_MAX_HZ = 3.0;\n\nconst DECAY_MIN = 0.0;\nconst DECAY_MAX = 0.998;\n\nconst F0_MIN = 20.0;\nconst F0_MAX = 5000.0;\n\n@state phase_op1 = 0.0;\n@state phase_op2 = 0.0;\n@state phase_op3 = 0.0;\n@state phase_op4 = 0.0;\n\n@state env_noise = 0.0;\n@state modidx_env = 0.0;\n\n@state fb_L = 0.0;\n@state fb_R = 0.0;\n\n// Control smoothing (anti zipper-noise), tau=5ms\n@state f0_sm = 220.0;\n@state decay_sm = 0.0;\n@state detune_sm = 0.0;\n\nlet sr = samplerate();\nconst smooth_tau = 0.005;\nlet smooth_g = exp(-1.0 / (smooth_tau * sr));\n\nf0_sm = f0_sm * smooth_g + in2 * (1.0 - smooth_g);\ndecay_sm = decay_sm * smooth_g + in3 * (1.0 - smooth_g);\ndetune_sm = detune_sm * smooth_g + in4 * (1.0 - smooth_g);\n\nif (f0_sm < F0_MIN) f0_sm = F0_MIN;\nif (f0_sm > F0_MAX) f0_sm = F0_MAX;\nif (decay_sm < 0.0) decay_sm = 0.0;\nif (decay_sm > 1.0) decay_sm = 1.0;\nif (detune_sm < 0.0) detune_sm = 0.0;\nif (detune_sm > 1.0) detune_sm = 1.0;\n\nlet feedback_coeff = DECAY_MIN + decay_sm * (DECAY_MAX - DECAY_MIN);\n\nlet detune_hz = detune_sm * DETUNE_MAX_HZ;\nlet f0_L = f0_sm + (detune_hz * 0.5);\nlet f0_R = f0_sm - (detune_hz * 0.5);\n\n// Envelope follower on the single noise input, one-pole full-wave.\nlet env_g = exp(-1.0 / (ENV_TAU * sr));\nlet abs_in = (in1 < 0.0) ? -in1 : in1;\nenv_noise = env_noise * env_g + abs_in * (1.0 - env_g);\n\n// Second, slower stage feeding only the modulation index.\nlet modidx_g = exp(-1.0 / (MODIDX_TAU * sr));\nmodidx_env = modidx_env * modidx_g + env_noise * (1.0 - modidx_g);\n\nlet modIndex = MOD_INDEX_FLOOR + (modidx_env * MOD_INDEX_RANGE);\nlet modIndexCeil = MOD_INDEX_FLOOR + MOD_INDEX_RANGE;\nif (modIndex > modIndexCeil) modIndex = modIndexCeil;\n\n// ---- Chain L: Op2 (mod) -> Op1 (carrier) ----\nlet phaseInc_op2 = (f0_L * RATIO_MOD_L) / sr;\nphase_op2 = phase_op2 + phaseInc_op2;\nif (phase_op2 >= 1.0) phase_op2 = phase_op2 - floor(phase_op2);\nlet mod_op2 = sin(phase_op2 * twopi);\n\nlet phaseInc_op1 = (f0_L * RATIO_CAR_L) / sr;\nphase_op1 = phase_op1 + phaseInc_op1;\nif (phase_op1 >= 1.0) phase_op1 = phase_op1 - floor(phase_op1);\nlet fm_phase_L = phase_op1 * twopi + (modIndex * mod_op2);\nlet carrier_L = sin(fm_phase_L);\n\n// ---- Chain R: Op4 (mod) -> Op3 (carrier) ----\nlet phaseInc_op4 = (f0_R * RATIO_MOD_R) / sr;\nphase_op4 = phase_op4 + phaseInc_op4;\nif (phase_op4 >= 1.0) phase_op4 = phase_op4 - floor(phase_op4);\nlet mod_op4 = sin(phase_op4 * twopi);\n\nlet phaseInc_op3 = (f0_R * RATIO_CAR_R) / sr;\nphase_op3 = phase_op3 + phaseInc_op3;\nif (phase_op3 >= 1.0) phase_op3 = phase_op3 - floor(phase_op3);\nlet fm_phase_R = phase_op3 * twopi + (modIndex * mod_op4);\nlet carrier_R = sin(fm_phase_R);\n\n// ---- Amplitude + feedback tail (Karplus-Strong-like decay) ----\nlet driven_L = carrier_L * env_noise;\nlet driven_R = carrier_R * env_noise;\n\nfb_L = (fb_L * feedback_coeff) + (driven_L * (1.0 - feedback_coeff));\nfb_R = (fb_R * feedback_coeff) + (driven_R * (1.0 - feedback_coeff));\n\nout1 = fb_L;\nout2 = fb_R;",
-														"expr" : "",
-														"safemath" : 1
+														"safemath" : 1,
+														"expr" : ""
 													}
 ,
 													"rnbo_serial" : 2,
@@ -32271,8 +32935,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 7,
@@ -32294,8 +32958,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 8,
@@ -32429,8 +33093,8 @@
 													"rnbo_classname" : "codebox~",
 													"rnbo_extra_attributes" : 													{
 														"code" : "// =====================================================================\n// RNBOscript -- 4-operator FM pad, single mono noise excitation.\n// Topology: 2 serial 2-op chains, L = Op2(mod)->Op1(carrier),\n// R = Op4(mod)->Op3(carrier). fc:fm = 1:1 on both chains -> fully\n// harmonic spectrum (Chowning 1973). Chains share the same noise\n// input but are detuned in Hz for stereo width via slow beating.\n//\n// Excitation is 100% external: in1 drives an amplitude envelope\n// (feeds output amplitude) and, through a second slower-filtered\n// path, the FM modulation index. Output is not noise itself -- the\n// noise only feeds the envelope and the feedback tail, which decays\n// on its own once noise stops (Karplus-Strong-like tail behavior).\n//\n// Two separate one-pole envelope stages on purpose: ENV_TAU (15ms)\n// drives amplitude reactively; MODIDX_TAU (40ms) is a second, slower\n// stage feeding only the modulation index, to avoid audible PM index\n// jitter (phase modulation at a rate inside the roughness/flutter\n// band, Zwicker & Fastl ch.6) that a single fast envelope caused when\n// used directly for both amplitude and mod index.\n//\n// INLETS:\n//   in1 = noise excitation (mono, shared L/R)\n//   in2 = f0 in Hz\n//   in3 = feedback/decay [0..1]\n//   in4 = detune [0..1] -> 0..3 Hz split between carrier L/R\n// OUTLETS:\n//   out1 = L, out2 = R\n//\n// No oversampling here; mod index is clamped to stay well below the\n// Nyquist-adjacent foldover region at fc:fm=1:1 (see MOD_INDEX_*).\n// =====================================================================\n\nconst twopi = 6.283185307179586;\n\nconst RATIO_MOD_L = 1.0;\nconst RATIO_CAR_L = 1.0;\nconst RATIO_MOD_R = 1.0;\nconst RATIO_CAR_R = 1.0;\n\n// Mod index range tuned for a \"warm bell\" spectrum at fc:fm=1:1\n// (Chowning): too low = thin, too high (>~4-5) = dense buzz.\nconst MOD_INDEX_FLOOR = 0.35;\nconst MOD_INDEX_RANGE = 2.2;\n\nconst ENV_TAU = 0.015;\nconst MODIDX_TAU = 0.040;\n\n// 0-3 Hz detune: chorus-like beating, not perceived as mistuning.\nconst DETUNE_MAX_HZ = 3.0;\n\nconst DECAY_MIN = 0.0;\nconst DECAY_MAX = 0.998;\n\nconst F0_MIN = 20.0;\nconst F0_MAX = 5000.0;\n\n@state phase_op1 = 0.0;\n@state phase_op2 = 0.0;\n@state phase_op3 = 0.0;\n@state phase_op4 = 0.0;\n\n@state env_noise = 0.0;\n@state modidx_env = 0.0;\n\n@state fb_L = 0.0;\n@state fb_R = 0.0;\n\n// Control smoothing (anti zipper-noise), tau=5ms\n@state f0_sm = 220.0;\n@state decay_sm = 0.0;\n@state detune_sm = 0.0;\n\nlet sr = samplerate();\nconst smooth_tau = 0.005;\nlet smooth_g = exp(-1.0 / (smooth_tau * sr));\n\nf0_sm = f0_sm * smooth_g + in2 * (1.0 - smooth_g);\ndecay_sm = decay_sm * smooth_g + in3 * (1.0 - smooth_g);\ndetune_sm = detune_sm * smooth_g + in4 * (1.0 - smooth_g);\n\nif (f0_sm < F0_MIN) f0_sm = F0_MIN;\nif (f0_sm > F0_MAX) f0_sm = F0_MAX;\nif (decay_sm < 0.0) decay_sm = 0.0;\nif (decay_sm > 1.0) decay_sm = 1.0;\nif (detune_sm < 0.0) detune_sm = 0.0;\nif (detune_sm > 1.0) detune_sm = 1.0;\n\nlet feedback_coeff = DECAY_MIN + decay_sm * (DECAY_MAX - DECAY_MIN);\n\nlet detune_hz = detune_sm * DETUNE_MAX_HZ;\nlet f0_L = f0_sm + (detune_hz * 0.5);\nlet f0_R = f0_sm - (detune_hz * 0.5);\n\n// Envelope follower on the single noise input, one-pole full-wave.\nlet env_g = exp(-1.0 / (ENV_TAU * sr));\nlet abs_in = (in1 < 0.0) ? -in1 : in1;\nenv_noise = env_noise * env_g + abs_in * (1.0 - env_g);\n\n// Second, slower stage feeding only the modulation index.\nlet modidx_g = exp(-1.0 / (MODIDX_TAU * sr));\nmodidx_env = modidx_env * modidx_g + env_noise * (1.0 - modidx_g);\n\nlet modIndex = MOD_INDEX_FLOOR + (modidx_env * MOD_INDEX_RANGE);\nlet modIndexCeil = MOD_INDEX_FLOOR + MOD_INDEX_RANGE;\nif (modIndex > modIndexCeil) modIndex = modIndexCeil;\n\n// ---- Chain L: Op2 (mod) -> Op1 (carrier) ----\nlet phaseInc_op2 = (f0_L * RATIO_MOD_L) / sr;\nphase_op2 = phase_op2 + phaseInc_op2;\nif (phase_op2 >= 1.0) phase_op2 = phase_op2 - floor(phase_op2);\nlet mod_op2 = sin(phase_op2 * twopi);\n\nlet phaseInc_op1 = (f0_L * RATIO_CAR_L) / sr;\nphase_op1 = phase_op1 + phaseInc_op1;\nif (phase_op1 >= 1.0) phase_op1 = phase_op1 - floor(phase_op1);\nlet fm_phase_L = phase_op1 * twopi + (modIndex * mod_op2);\nlet carrier_L = sin(fm_phase_L);\n\n// ---- Chain R: Op4 (mod) -> Op3 (carrier) ----\nlet phaseInc_op4 = (f0_R * RATIO_MOD_R) / sr;\nphase_op4 = phase_op4 + phaseInc_op4;\nif (phase_op4 >= 1.0) phase_op4 = phase_op4 - floor(phase_op4);\nlet mod_op4 = sin(phase_op4 * twopi);\n\nlet phaseInc_op3 = (f0_R * RATIO_CAR_R) / sr;\nphase_op3 = phase_op3 + phaseInc_op3;\nif (phase_op3 >= 1.0) phase_op3 = phase_op3 - floor(phase_op3);\nlet fm_phase_R = phase_op3 * twopi + (modIndex * mod_op4);\nlet carrier_R = sin(fm_phase_R);\n\n// ---- Amplitude + feedback tail (Karplus-Strong-like decay) ----\nlet driven_L = carrier_L * env_noise;\nlet driven_R = carrier_R * env_noise;\n\nfb_L = (fb_L * feedback_coeff) + (driven_L * (1.0 - feedback_coeff));\nfb_R = (fb_R * feedback_coeff) + (driven_R * (1.0 - feedback_coeff));\n\nout1 = fb_L;\nout2 = fb_R;",
-														"expr" : "",
-														"safemath" : 1
+														"safemath" : 1,
+														"expr" : ""
 													}
 ,
 													"rnbo_serial" : 3,
@@ -32647,8 +33311,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 9,
@@ -32670,8 +33334,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 10,
@@ -32805,8 +33469,8 @@
 													"rnbo_classname" : "codebox~",
 													"rnbo_extra_attributes" : 													{
 														"code" : "// =====================================================================\n// RNBOscript -- 4-operator FM pad, single mono noise excitation.\n// Topology: 2 serial 2-op chains, L = Op2(mod)->Op1(carrier),\n// R = Op4(mod)->Op3(carrier). fc:fm = 1:1 on both chains -> fully\n// harmonic spectrum (Chowning 1973). Chains share the same noise\n// input but are detuned in Hz for stereo width via slow beating.\n//\n// Excitation is 100% external: in1 drives an amplitude envelope\n// (feeds output amplitude) and, through a second slower-filtered\n// path, the FM modulation index. Output is not noise itself -- the\n// noise only feeds the envelope and the feedback tail, which decays\n// on its own once noise stops (Karplus-Strong-like tail behavior).\n//\n// Two separate one-pole envelope stages on purpose: ENV_TAU (15ms)\n// drives amplitude reactively; MODIDX_TAU (40ms) is a second, slower\n// stage feeding only the modulation index, to avoid audible PM index\n// jitter (phase modulation at a rate inside the roughness/flutter\n// band, Zwicker & Fastl ch.6) that a single fast envelope caused when\n// used directly for both amplitude and mod index.\n//\n// INLETS:\n//   in1 = noise excitation (mono, shared L/R)\n//   in2 = f0 in Hz\n//   in3 = feedback/decay [0..1]\n//   in4 = detune [0..1] -> 0..3 Hz split between carrier L/R\n// OUTLETS:\n//   out1 = L, out2 = R\n//\n// No oversampling here; mod index is clamped to stay well below the\n// Nyquist-adjacent foldover region at fc:fm=1:1 (see MOD_INDEX_*).\n// =====================================================================\n\nconst twopi = 6.283185307179586;\n\nconst RATIO_MOD_L = 1.0;\nconst RATIO_CAR_L = 1.0;\nconst RATIO_MOD_R = 1.0;\nconst RATIO_CAR_R = 1.0;\n\n// Mod index range tuned for a \"warm bell\" spectrum at fc:fm=1:1\n// (Chowning): too low = thin, too high (>~4-5) = dense buzz.\nconst MOD_INDEX_FLOOR = 0.35;\nconst MOD_INDEX_RANGE = 2.2;\n\nconst ENV_TAU = 0.015;\nconst MODIDX_TAU = 0.040;\n\n// 0-3 Hz detune: chorus-like beating, not perceived as mistuning.\nconst DETUNE_MAX_HZ = 3.0;\n\nconst DECAY_MIN = 0.0;\nconst DECAY_MAX = 0.998;\n\nconst F0_MIN = 20.0;\nconst F0_MAX = 5000.0;\n\n@state phase_op1 = 0.0;\n@state phase_op2 = 0.0;\n@state phase_op3 = 0.0;\n@state phase_op4 = 0.0;\n\n@state env_noise = 0.0;\n@state modidx_env = 0.0;\n\n@state fb_L = 0.0;\n@state fb_R = 0.0;\n\n// Control smoothing (anti zipper-noise), tau=5ms\n@state f0_sm = 220.0;\n@state decay_sm = 0.0;\n@state detune_sm = 0.0;\n\nlet sr = samplerate();\nconst smooth_tau = 0.005;\nlet smooth_g = exp(-1.0 / (smooth_tau * sr));\n\nf0_sm = f0_sm * smooth_g + in2 * (1.0 - smooth_g);\ndecay_sm = decay_sm * smooth_g + in3 * (1.0 - smooth_g);\ndetune_sm = detune_sm * smooth_g + in4 * (1.0 - smooth_g);\n\nif (f0_sm < F0_MIN) f0_sm = F0_MIN;\nif (f0_sm > F0_MAX) f0_sm = F0_MAX;\nif (decay_sm < 0.0) decay_sm = 0.0;\nif (decay_sm > 1.0) decay_sm = 1.0;\nif (detune_sm < 0.0) detune_sm = 0.0;\nif (detune_sm > 1.0) detune_sm = 1.0;\n\nlet feedback_coeff = DECAY_MIN + decay_sm * (DECAY_MAX - DECAY_MIN);\n\nlet detune_hz = detune_sm * DETUNE_MAX_HZ;\nlet f0_L = f0_sm + (detune_hz * 0.5);\nlet f0_R = f0_sm - (detune_hz * 0.5);\n\n// Envelope follower on the single noise input, one-pole full-wave.\nlet env_g = exp(-1.0 / (ENV_TAU * sr));\nlet abs_in = (in1 < 0.0) ? -in1 : in1;\nenv_noise = env_noise * env_g + abs_in * (1.0 - env_g);\n\n// Second, slower stage feeding only the modulation index.\nlet modidx_g = exp(-1.0 / (MODIDX_TAU * sr));\nmodidx_env = modidx_env * modidx_g + env_noise * (1.0 - modidx_g);\n\nlet modIndex = MOD_INDEX_FLOOR + (modidx_env * MOD_INDEX_RANGE);\nlet modIndexCeil = MOD_INDEX_FLOOR + MOD_INDEX_RANGE;\nif (modIndex > modIndexCeil) modIndex = modIndexCeil;\n\n// ---- Chain L: Op2 (mod) -> Op1 (carrier) ----\nlet phaseInc_op2 = (f0_L * RATIO_MOD_L) / sr;\nphase_op2 = phase_op2 + phaseInc_op2;\nif (phase_op2 >= 1.0) phase_op2 = phase_op2 - floor(phase_op2);\nlet mod_op2 = sin(phase_op2 * twopi);\n\nlet phaseInc_op1 = (f0_L * RATIO_CAR_L) / sr;\nphase_op1 = phase_op1 + phaseInc_op1;\nif (phase_op1 >= 1.0) phase_op1 = phase_op1 - floor(phase_op1);\nlet fm_phase_L = phase_op1 * twopi + (modIndex * mod_op2);\nlet carrier_L = sin(fm_phase_L);\n\n// ---- Chain R: Op4 (mod) -> Op3 (carrier) ----\nlet phaseInc_op4 = (f0_R * RATIO_MOD_R) / sr;\nphase_op4 = phase_op4 + phaseInc_op4;\nif (phase_op4 >= 1.0) phase_op4 = phase_op4 - floor(phase_op4);\nlet mod_op4 = sin(phase_op4 * twopi);\n\nlet phaseInc_op3 = (f0_R * RATIO_CAR_R) / sr;\nphase_op3 = phase_op3 + phaseInc_op3;\nif (phase_op3 >= 1.0) phase_op3 = phase_op3 - floor(phase_op3);\nlet fm_phase_R = phase_op3 * twopi + (modIndex * mod_op4);\nlet carrier_R = sin(fm_phase_R);\n\n// ---- Amplitude + feedback tail (Karplus-Strong-like decay) ----\nlet driven_L = carrier_L * env_noise;\nlet driven_R = carrier_R * env_noise;\n\nfb_L = (fb_L * feedback_coeff) + (driven_L * (1.0 - feedback_coeff));\nfb_R = (fb_R * feedback_coeff) + (driven_R * (1.0 - feedback_coeff));\n\nout1 = fb_L;\nout2 = fb_R;",
-														"expr" : "",
-														"safemath" : 1
+														"safemath" : 1,
+														"expr" : ""
 													}
 ,
 													"rnbo_serial" : 4,
@@ -33023,8 +33687,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 11,
@@ -33046,8 +33710,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 12,
@@ -33181,8 +33845,8 @@
 													"rnbo_classname" : "codebox~",
 													"rnbo_extra_attributes" : 													{
 														"code" : "// =====================================================================\n// RNBOscript -- 4-operator FM pad, single mono noise excitation.\n// Topology: 2 serial 2-op chains, L = Op2(mod)->Op1(carrier),\n// R = Op4(mod)->Op3(carrier). fc:fm = 1:1 on both chains -> fully\n// harmonic spectrum (Chowning 1973). Chains share the same noise\n// input but are detuned in Hz for stereo width via slow beating.\n//\n// Excitation is 100% external: in1 drives an amplitude envelope\n// (feeds output amplitude) and, through a second slower-filtered\n// path, the FM modulation index. Output is not noise itself -- the\n// noise only feeds the envelope and the feedback tail, which decays\n// on its own once noise stops (Karplus-Strong-like tail behavior).\n//\n// Two separate one-pole envelope stages on purpose: ENV_TAU (15ms)\n// drives amplitude reactively; MODIDX_TAU (40ms) is a second, slower\n// stage feeding only the modulation index, to avoid audible PM index\n// jitter (phase modulation at a rate inside the roughness/flutter\n// band, Zwicker & Fastl ch.6) that a single fast envelope caused when\n// used directly for both amplitude and mod index.\n//\n// INLETS:\n//   in1 = noise excitation (mono, shared L/R)\n//   in2 = f0 in Hz\n//   in3 = feedback/decay [0..1]\n//   in4 = detune [0..1] -> 0..3 Hz split between carrier L/R\n// OUTLETS:\n//   out1 = L, out2 = R\n//\n// No oversampling here; mod index is clamped to stay well below the\n// Nyquist-adjacent foldover region at fc:fm=1:1 (see MOD_INDEX_*).\n// =====================================================================\n\nconst twopi = 6.283185307179586;\n\nconst RATIO_MOD_L = 1.0;\nconst RATIO_CAR_L = 1.0;\nconst RATIO_MOD_R = 1.0;\nconst RATIO_CAR_R = 1.0;\n\n// Mod index range tuned for a \"warm bell\" spectrum at fc:fm=1:1\n// (Chowning): too low = thin, too high (>~4-5) = dense buzz.\nconst MOD_INDEX_FLOOR = 0.35;\nconst MOD_INDEX_RANGE = 2.2;\n\nconst ENV_TAU = 0.015;\nconst MODIDX_TAU = 0.040;\n\n// 0-3 Hz detune: chorus-like beating, not perceived as mistuning.\nconst DETUNE_MAX_HZ = 3.0;\n\nconst DECAY_MIN = 0.0;\nconst DECAY_MAX = 0.998;\n\nconst F0_MIN = 20.0;\nconst F0_MAX = 5000.0;\n\n@state phase_op1 = 0.0;\n@state phase_op2 = 0.0;\n@state phase_op3 = 0.0;\n@state phase_op4 = 0.0;\n\n@state env_noise = 0.0;\n@state modidx_env = 0.0;\n\n@state fb_L = 0.0;\n@state fb_R = 0.0;\n\n// Control smoothing (anti zipper-noise), tau=5ms\n@state f0_sm = 220.0;\n@state decay_sm = 0.0;\n@state detune_sm = 0.0;\n\nlet sr = samplerate();\nconst smooth_tau = 0.005;\nlet smooth_g = exp(-1.0 / (smooth_tau * sr));\n\nf0_sm = f0_sm * smooth_g + in2 * (1.0 - smooth_g);\ndecay_sm = decay_sm * smooth_g + in3 * (1.0 - smooth_g);\ndetune_sm = detune_sm * smooth_g + in4 * (1.0 - smooth_g);\n\nif (f0_sm < F0_MIN) f0_sm = F0_MIN;\nif (f0_sm > F0_MAX) f0_sm = F0_MAX;\nif (decay_sm < 0.0) decay_sm = 0.0;\nif (decay_sm > 1.0) decay_sm = 1.0;\nif (detune_sm < 0.0) detune_sm = 0.0;\nif (detune_sm > 1.0) detune_sm = 1.0;\n\nlet feedback_coeff = DECAY_MIN + decay_sm * (DECAY_MAX - DECAY_MIN);\n\nlet detune_hz = detune_sm * DETUNE_MAX_HZ;\nlet f0_L = f0_sm + (detune_hz * 0.5);\nlet f0_R = f0_sm - (detune_hz * 0.5);\n\n// Envelope follower on the single noise input, one-pole full-wave.\nlet env_g = exp(-1.0 / (ENV_TAU * sr));\nlet abs_in = (in1 < 0.0) ? -in1 : in1;\nenv_noise = env_noise * env_g + abs_in * (1.0 - env_g);\n\n// Second, slower stage feeding only the modulation index.\nlet modidx_g = exp(-1.0 / (MODIDX_TAU * sr));\nmodidx_env = modidx_env * modidx_g + env_noise * (1.0 - modidx_g);\n\nlet modIndex = MOD_INDEX_FLOOR + (modidx_env * MOD_INDEX_RANGE);\nlet modIndexCeil = MOD_INDEX_FLOOR + MOD_INDEX_RANGE;\nif (modIndex > modIndexCeil) modIndex = modIndexCeil;\n\n// ---- Chain L: Op2 (mod) -> Op1 (carrier) ----\nlet phaseInc_op2 = (f0_L * RATIO_MOD_L) / sr;\nphase_op2 = phase_op2 + phaseInc_op2;\nif (phase_op2 >= 1.0) phase_op2 = phase_op2 - floor(phase_op2);\nlet mod_op2 = sin(phase_op2 * twopi);\n\nlet phaseInc_op1 = (f0_L * RATIO_CAR_L) / sr;\nphase_op1 = phase_op1 + phaseInc_op1;\nif (phase_op1 >= 1.0) phase_op1 = phase_op1 - floor(phase_op1);\nlet fm_phase_L = phase_op1 * twopi + (modIndex * mod_op2);\nlet carrier_L = sin(fm_phase_L);\n\n// ---- Chain R: Op4 (mod) -> Op3 (carrier) ----\nlet phaseInc_op4 = (f0_R * RATIO_MOD_R) / sr;\nphase_op4 = phase_op4 + phaseInc_op4;\nif (phase_op4 >= 1.0) phase_op4 = phase_op4 - floor(phase_op4);\nlet mod_op4 = sin(phase_op4 * twopi);\n\nlet phaseInc_op3 = (f0_R * RATIO_CAR_R) / sr;\nphase_op3 = phase_op3 + phaseInc_op3;\nif (phase_op3 >= 1.0) phase_op3 = phase_op3 - floor(phase_op3);\nlet fm_phase_R = phase_op3 * twopi + (modIndex * mod_op4);\nlet carrier_R = sin(fm_phase_R);\n\n// ---- Amplitude + feedback tail (Karplus-Strong-like decay) ----\nlet driven_L = carrier_L * env_noise;\nlet driven_R = carrier_R * env_noise;\n\nfb_L = (fb_L * feedback_coeff) + (driven_L * (1.0 - feedback_coeff));\nfb_R = (fb_R * feedback_coeff) + (driven_R * (1.0 - feedback_coeff));\n\nout1 = fb_L;\nout2 = fb_R;",
-														"expr" : "",
-														"safemath" : 1
+														"safemath" : 1,
+														"expr" : ""
 													}
 ,
 													"rnbo_serial" : 5,
@@ -33399,8 +34063,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 13,
@@ -33422,8 +34086,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 14,
@@ -33557,8 +34221,8 @@
 													"rnbo_classname" : "codebox~",
 													"rnbo_extra_attributes" : 													{
 														"code" : "// =====================================================================\n// RNBOscript -- 4-operator FM pad, single mono noise excitation.\n// Topology: 2 serial 2-op chains, L = Op2(mod)->Op1(carrier),\n// R = Op4(mod)->Op3(carrier). fc:fm = 1:1 on both chains -> fully\n// harmonic spectrum (Chowning 1973). Chains share the same noise\n// input but are detuned in Hz for stereo width via slow beating.\n//\n// Excitation is 100% external: in1 drives an amplitude envelope\n// (feeds output amplitude) and, through a second slower-filtered\n// path, the FM modulation index. Output is not noise itself -- the\n// noise only feeds the envelope and the feedback tail, which decays\n// on its own once noise stops (Karplus-Strong-like tail behavior).\n//\n// Two separate one-pole envelope stages on purpose: ENV_TAU (15ms)\n// drives amplitude reactively; MODIDX_TAU (40ms) is a second, slower\n// stage feeding only the modulation index, to avoid audible PM index\n// jitter (phase modulation at a rate inside the roughness/flutter\n// band, Zwicker & Fastl ch.6) that a single fast envelope caused when\n// used directly for both amplitude and mod index.\n//\n// INLETS:\n//   in1 = noise excitation (mono, shared L/R)\n//   in2 = f0 in Hz\n//   in3 = feedback/decay [0..1]\n//   in4 = detune [0..1] -> 0..3 Hz split between carrier L/R\n// OUTLETS:\n//   out1 = L, out2 = R\n//\n// No oversampling here; mod index is clamped to stay well below the\n// Nyquist-adjacent foldover region at fc:fm=1:1 (see MOD_INDEX_*).\n// =====================================================================\n\nconst twopi = 6.283185307179586;\n\nconst RATIO_MOD_L = 1.0;\nconst RATIO_CAR_L = 1.0;\nconst RATIO_MOD_R = 1.0;\nconst RATIO_CAR_R = 1.0;\n\n// Mod index range tuned for a \"warm bell\" spectrum at fc:fm=1:1\n// (Chowning): too low = thin, too high (>~4-5) = dense buzz.\nconst MOD_INDEX_FLOOR = 0.35;\nconst MOD_INDEX_RANGE = 2.2;\n\nconst ENV_TAU = 0.015;\nconst MODIDX_TAU = 0.040;\n\n// 0-3 Hz detune: chorus-like beating, not perceived as mistuning.\nconst DETUNE_MAX_HZ = 3.0;\n\nconst DECAY_MIN = 0.0;\nconst DECAY_MAX = 0.998;\n\nconst F0_MIN = 20.0;\nconst F0_MAX = 5000.0;\n\n@state phase_op1 = 0.0;\n@state phase_op2 = 0.0;\n@state phase_op3 = 0.0;\n@state phase_op4 = 0.0;\n\n@state env_noise = 0.0;\n@state modidx_env = 0.0;\n\n@state fb_L = 0.0;\n@state fb_R = 0.0;\n\n// Control smoothing (anti zipper-noise), tau=5ms\n@state f0_sm = 220.0;\n@state decay_sm = 0.0;\n@state detune_sm = 0.0;\n\nlet sr = samplerate();\nconst smooth_tau = 0.005;\nlet smooth_g = exp(-1.0 / (smooth_tau * sr));\n\nf0_sm = f0_sm * smooth_g + in2 * (1.0 - smooth_g);\ndecay_sm = decay_sm * smooth_g + in3 * (1.0 - smooth_g);\ndetune_sm = detune_sm * smooth_g + in4 * (1.0 - smooth_g);\n\nif (f0_sm < F0_MIN) f0_sm = F0_MIN;\nif (f0_sm > F0_MAX) f0_sm = F0_MAX;\nif (decay_sm < 0.0) decay_sm = 0.0;\nif (decay_sm > 1.0) decay_sm = 1.0;\nif (detune_sm < 0.0) detune_sm = 0.0;\nif (detune_sm > 1.0) detune_sm = 1.0;\n\nlet feedback_coeff = DECAY_MIN + decay_sm * (DECAY_MAX - DECAY_MIN);\n\nlet detune_hz = detune_sm * DETUNE_MAX_HZ;\nlet f0_L = f0_sm + (detune_hz * 0.5);\nlet f0_R = f0_sm - (detune_hz * 0.5);\n\n// Envelope follower on the single noise input, one-pole full-wave.\nlet env_g = exp(-1.0 / (ENV_TAU * sr));\nlet abs_in = (in1 < 0.0) ? -in1 : in1;\nenv_noise = env_noise * env_g + abs_in * (1.0 - env_g);\n\n// Second, slower stage feeding only the modulation index.\nlet modidx_g = exp(-1.0 / (MODIDX_TAU * sr));\nmodidx_env = modidx_env * modidx_g + env_noise * (1.0 - modidx_g);\n\nlet modIndex = MOD_INDEX_FLOOR + (modidx_env * MOD_INDEX_RANGE);\nlet modIndexCeil = MOD_INDEX_FLOOR + MOD_INDEX_RANGE;\nif (modIndex > modIndexCeil) modIndex = modIndexCeil;\n\n// ---- Chain L: Op2 (mod) -> Op1 (carrier) ----\nlet phaseInc_op2 = (f0_L * RATIO_MOD_L) / sr;\nphase_op2 = phase_op2 + phaseInc_op2;\nif (phase_op2 >= 1.0) phase_op2 = phase_op2 - floor(phase_op2);\nlet mod_op2 = sin(phase_op2 * twopi);\n\nlet phaseInc_op1 = (f0_L * RATIO_CAR_L) / sr;\nphase_op1 = phase_op1 + phaseInc_op1;\nif (phase_op1 >= 1.0) phase_op1 = phase_op1 - floor(phase_op1);\nlet fm_phase_L = phase_op1 * twopi + (modIndex * mod_op2);\nlet carrier_L = sin(fm_phase_L);\n\n// ---- Chain R: Op4 (mod) -> Op3 (carrier) ----\nlet phaseInc_op4 = (f0_R * RATIO_MOD_R) / sr;\nphase_op4 = phase_op4 + phaseInc_op4;\nif (phase_op4 >= 1.0) phase_op4 = phase_op4 - floor(phase_op4);\nlet mod_op4 = sin(phase_op4 * twopi);\n\nlet phaseInc_op3 = (f0_R * RATIO_CAR_R) / sr;\nphase_op3 = phase_op3 + phaseInc_op3;\nif (phase_op3 >= 1.0) phase_op3 = phase_op3 - floor(phase_op3);\nlet fm_phase_R = phase_op3 * twopi + (modIndex * mod_op4);\nlet carrier_R = sin(fm_phase_R);\n\n// ---- Amplitude + feedback tail (Karplus-Strong-like decay) ----\nlet driven_L = carrier_L * env_noise;\nlet driven_R = carrier_R * env_noise;\n\nfb_L = (fb_L * feedback_coeff) + (driven_L * (1.0 - feedback_coeff));\nfb_R = (fb_R * feedback_coeff) + (driven_R * (1.0 - feedback_coeff));\n\nout1 = fb_L;\nout2 = fb_R;",
-														"expr" : "",
-														"safemath" : 1
+														"safemath" : 1,
+														"expr" : ""
 													}
 ,
 													"rnbo_serial" : 6,
@@ -33764,9 +34428,9 @@
 													"patching_rect" : [ 740.586962580680847, 1440.188416838645935, 20.0, 140.0 ],
 													"rnbo_classname" : "slider",
 													"rnbo_extra_attributes" : 													{
+														"floatoutput" : 1,
 														"mult" : 1.0,
 														"size" : 128.0,
-														"floatoutput" : 1,
 														"min" : 0.0,
 														"preset" : 0,
 														"value" : 0.0,
@@ -34142,8 +34806,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 15,
@@ -34165,8 +34829,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 16,
@@ -34189,8 +34853,8 @@
 													"rnbo_classname" : "codebox~",
 													"rnbo_extra_attributes" : 													{
 														"code" : "// SIGNAL FLOW:\n//   in1  = excitation (audio-rate noise)\n//   in2  = detune, [0,1], real-time controllable\n//   in3  = brightness, [0,1], real-time controllable\n//   in4  = f0 in Hz, real-time controllable\n//   out1 = L, out2 = R\n//\n// PARAMS (per instance, set once):\n//   damping -- [0,1], loop filter cutoff / feedback gain\n\nconst MAX_DELAY_SAMPS = 4096;\nconst DETUNE_MAX_HZ = 3.0;\nconst DC_R = 0.995;\n\n@param({ min: 0, max: 1 }) damping = 0.5;\n\n@state buf_L = new FixedSampleArray(MAX_DELAY_SAMPS);\n@state buf_R = new FixedSampleArray(MAX_DELAY_SAMPS);\n@state writeIdx: Int = 0;\n\n@state thiran_a1_L = 0.0;\n@state thiran_x1_L = 0.0;\n@state thiran_y1_L = 0.0;\n@state thiran_a1_R = 0.0;\n@state thiran_x1_R = 0.0;\n@state thiran_y1_R = 0.0;\n\n@state loop_y1_L = 0.0;\n@state loop_y1_R = 0.0;\n\n@state dc_x1_L = 0.0;\n@state dc_y1_L = 0.0;\n@state dc_x1_R = 0.0;\n@state dc_y1_R = 0.0;\n\n@state exc_y1 = 0.0;\n\n@state delaySamps_int_L: Int = 100;\n@state delaySamps_int_R: Int = 100;\n@state cached_f0 = -1.0;\n@state cached_detune = -1.0;\n\nconst FB_MIN = 0.90;\nconst FB_MAX = 0.999;\n\nfunction init() {\n  for (let i = 0; i < MAX_DELAY_SAMPS; i++) {\n    buf_L[i] = 0.0;\n    buf_R[i] = 0.0;\n  }\n}\n\nlet sr = samplerate();\n\n// ---- Recompute delay params only when f0 (in4) or detune (in2) changes ----\nif (in4 != cached_f0 || in2 != cached_detune) {\n  cached_f0 = in4;\n  cached_detune = in2;\n\n  let f0_c = in4;\n  if (f0_c < 20.0) f0_c = 20.0;\n  if (f0_c > 2000.0) f0_c = 2000.0;\n\n  let detune_c = in2;\n  if (detune_c < 0.0) detune_c = 0.0;\n  if (detune_c > 1.0) detune_c = 1.0;\n\n  let detune_hz = detune_c * DETUNE_MAX_HZ;\n  let f0_L = f0_c + (detune_hz * 0.5);\n  let f0_R = f0_c - (detune_hz * 0.5);\n\n  let totalDelay_L = (sr / f0_L) - 1.0;\n  let totalDelay_R = (sr / f0_R) - 1.0;\n  if (totalDelay_L < 2.0) totalDelay_L = 2.0;\n  if (totalDelay_R < 2.0) totalDelay_R = 2.0;\n  if (totalDelay_L > MAX_DELAY_SAMPS - 2) totalDelay_L = MAX_DELAY_SAMPS - 2;\n  if (totalDelay_R > MAX_DELAY_SAMPS - 2) totalDelay_R = MAX_DELAY_SAMPS - 2;\n\n  let dInt_L = floor(totalDelay_L);\n  let dInt_R = floor(totalDelay_R);\n  delaySamps_int_L = dInt_L;\n  delaySamps_int_R = dInt_R;\n\n  let frac_L = totalDelay_L - dInt_L;\n  let frac_R = totalDelay_R - dInt_R;\n\n  thiran_a1_L = (1.0 - frac_L) / (1.0 + frac_L);\n  thiran_a1_R = (1.0 - frac_R) / (1.0 + frac_R);\n}\n\n// ---- Damping -> loop filter coefficient and feedback gain ----\nlet damping_c = damping;\nif (damping_c < 0.0) damping_c = 0.0;\nif (damping_c > 1.0) damping_c = 1.0;\n\nlet fb_gain = FB_MIN + damping_c * (FB_MAX - FB_MIN);\nlet filt_g = 0.05 + damping_c * 0.90;\n\n// ---- Excitation pre-filter, brightness from in3 ----\nlet bright_c = in3;\nif (bright_c < 0.0) bright_c = 0.0;\nif (bright_c > 1.0) bright_c = 1.0;\n\nlet exc_g = 0.95 - bright_c * 0.85;\nexc_y1 = (1.0 - exc_g) * in1 + exc_g * exc_y1;\nlet excite = exc_y1;\n\n// ================= LEFT CHANNEL =================\nlet readIdx_L: Int = writeIdx - delaySamps_int_L;\nif (readIdx_L < 0) readIdx_L = readIdx_L + MAX_DELAY_SAMPS;\nlet delayed_L = buf_L[readIdx_L];\n\nlet ap_out_L = thiran_a1_L * delayed_L + thiran_x1_L - thiran_a1_L * thiran_y1_L;\nthiran_x1_L = delayed_L;\nthiran_y1_L = ap_out_L;\n\nloop_y1_L = (1.0 - filt_g) * ap_out_L + filt_g * loop_y1_L;\n\nlet dcOut_L = loop_y1_L - dc_x1_L + DC_R * dc_y1_L;\ndc_x1_L = loop_y1_L;\ndc_y1_L = dcOut_L;\n\nlet fed_back_L = dcOut_L * fb_gain;\nbuf_L[writeIdx] = fed_back_L + excite;\n\n// ================= RIGHT CHANNEL =================\nlet readIdx_R: Int = writeIdx - delaySamps_int_R;\nif (readIdx_R < 0) readIdx_R = readIdx_R + MAX_DELAY_SAMPS;\nlet delayed_R = buf_R[readIdx_R];\n\nlet ap_out_R = thiran_a1_R * delayed_R + thiran_x1_R - thiran_a1_R * thiran_y1_R;\nthiran_x1_R = delayed_R;\nthiran_y1_R = ap_out_R;\n\nloop_y1_R = (1.0 - filt_g) * ap_out_R + filt_g * loop_y1_R;\n\nlet dcOut_R = loop_y1_R - dc_x1_R + DC_R * dc_y1_R;\ndc_x1_R = loop_y1_R;\ndc_y1_R = dcOut_R;\n\nlet fed_back_R = dcOut_R * fb_gain;\nbuf_R[writeIdx] = fed_back_R + excite;\n\n// ---- Advance shared write pointer ----\nwriteIdx = writeIdx + 1;\nif (writeIdx >= MAX_DELAY_SAMPS) writeIdx = 0;\n\nout1 = dcOut_L;\nout2 = dcOut_R;",
-														"expr" : "",
-														"safemath" : 1
+														"safemath" : 1,
+														"expr" : ""
 													}
 ,
 													"rnbo_serial" : 7,
@@ -34516,8 +35180,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 17,
@@ -34539,8 +35203,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 18,
@@ -34563,8 +35227,8 @@
 													"rnbo_classname" : "codebox~",
 													"rnbo_extra_attributes" : 													{
 														"code" : "// SIGNAL FLOW:\n//   in1  = excitation (audio-rate noise)\n//   in2  = detune, [0,1], real-time controllable\n//   in3  = brightness, [0,1], real-time controllable\n//   in4  = f0 in Hz, real-time controllable\n//   out1 = L, out2 = R\n//\n// PARAMS (per instance, set once):\n//   damping -- [0,1], loop filter cutoff / feedback gain\n\nconst MAX_DELAY_SAMPS = 4096;\nconst DETUNE_MAX_HZ = 3.0;\nconst DC_R = 0.995;\n\n@param({ min: 0, max: 1 }) damping = 0.5;\n\n@state buf_L = new FixedSampleArray(MAX_DELAY_SAMPS);\n@state buf_R = new FixedSampleArray(MAX_DELAY_SAMPS);\n@state writeIdx: Int = 0;\n\n@state thiran_a1_L = 0.0;\n@state thiran_x1_L = 0.0;\n@state thiran_y1_L = 0.0;\n@state thiran_a1_R = 0.0;\n@state thiran_x1_R = 0.0;\n@state thiran_y1_R = 0.0;\n\n@state loop_y1_L = 0.0;\n@state loop_y1_R = 0.0;\n\n@state dc_x1_L = 0.0;\n@state dc_y1_L = 0.0;\n@state dc_x1_R = 0.0;\n@state dc_y1_R = 0.0;\n\n@state exc_y1 = 0.0;\n\n@state delaySamps_int_L: Int = 100;\n@state delaySamps_int_R: Int = 100;\n@state cached_f0 = -1.0;\n@state cached_detune = -1.0;\n\nconst FB_MIN = 0.90;\nconst FB_MAX = 0.999;\n\nfunction init() {\n  for (let i = 0; i < MAX_DELAY_SAMPS; i++) {\n    buf_L[i] = 0.0;\n    buf_R[i] = 0.0;\n  }\n}\n\nlet sr = samplerate();\n\n// ---- Recompute delay params only when f0 (in4) or detune (in2) changes ----\nif (in4 != cached_f0 || in2 != cached_detune) {\n  cached_f0 = in4;\n  cached_detune = in2;\n\n  let f0_c = in4;\n  if (f0_c < 20.0) f0_c = 20.0;\n  if (f0_c > 2000.0) f0_c = 2000.0;\n\n  let detune_c = in2;\n  if (detune_c < 0.0) detune_c = 0.0;\n  if (detune_c > 1.0) detune_c = 1.0;\n\n  let detune_hz = detune_c * DETUNE_MAX_HZ;\n  let f0_L = f0_c + (detune_hz * 0.5);\n  let f0_R = f0_c - (detune_hz * 0.5);\n\n  let totalDelay_L = (sr / f0_L) - 1.0;\n  let totalDelay_R = (sr / f0_R) - 1.0;\n  if (totalDelay_L < 2.0) totalDelay_L = 2.0;\n  if (totalDelay_R < 2.0) totalDelay_R = 2.0;\n  if (totalDelay_L > MAX_DELAY_SAMPS - 2) totalDelay_L = MAX_DELAY_SAMPS - 2;\n  if (totalDelay_R > MAX_DELAY_SAMPS - 2) totalDelay_R = MAX_DELAY_SAMPS - 2;\n\n  let dInt_L = floor(totalDelay_L);\n  let dInt_R = floor(totalDelay_R);\n  delaySamps_int_L = dInt_L;\n  delaySamps_int_R = dInt_R;\n\n  let frac_L = totalDelay_L - dInt_L;\n  let frac_R = totalDelay_R - dInt_R;\n\n  thiran_a1_L = (1.0 - frac_L) / (1.0 + frac_L);\n  thiran_a1_R = (1.0 - frac_R) / (1.0 + frac_R);\n}\n\n// ---- Damping -> loop filter coefficient and feedback gain ----\nlet damping_c = damping;\nif (damping_c < 0.0) damping_c = 0.0;\nif (damping_c > 1.0) damping_c = 1.0;\n\nlet fb_gain = FB_MIN + damping_c * (FB_MAX - FB_MIN);\nlet filt_g = 0.05 + damping_c * 0.90;\n\n// ---- Excitation pre-filter, brightness from in3 ----\nlet bright_c = in3;\nif (bright_c < 0.0) bright_c = 0.0;\nif (bright_c > 1.0) bright_c = 1.0;\n\nlet exc_g = 0.95 - bright_c * 0.85;\nexc_y1 = (1.0 - exc_g) * in1 + exc_g * exc_y1;\nlet excite = exc_y1;\n\n// ================= LEFT CHANNEL =================\nlet readIdx_L: Int = writeIdx - delaySamps_int_L;\nif (readIdx_L < 0) readIdx_L = readIdx_L + MAX_DELAY_SAMPS;\nlet delayed_L = buf_L[readIdx_L];\n\nlet ap_out_L = thiran_a1_L * delayed_L + thiran_x1_L - thiran_a1_L * thiran_y1_L;\nthiran_x1_L = delayed_L;\nthiran_y1_L = ap_out_L;\n\nloop_y1_L = (1.0 - filt_g) * ap_out_L + filt_g * loop_y1_L;\n\nlet dcOut_L = loop_y1_L - dc_x1_L + DC_R * dc_y1_L;\ndc_x1_L = loop_y1_L;\ndc_y1_L = dcOut_L;\n\nlet fed_back_L = dcOut_L * fb_gain;\nbuf_L[writeIdx] = fed_back_L + excite;\n\n// ================= RIGHT CHANNEL =================\nlet readIdx_R: Int = writeIdx - delaySamps_int_R;\nif (readIdx_R < 0) readIdx_R = readIdx_R + MAX_DELAY_SAMPS;\nlet delayed_R = buf_R[readIdx_R];\n\nlet ap_out_R = thiran_a1_R * delayed_R + thiran_x1_R - thiran_a1_R * thiran_y1_R;\nthiran_x1_R = delayed_R;\nthiran_y1_R = ap_out_R;\n\nloop_y1_R = (1.0 - filt_g) * ap_out_R + filt_g * loop_y1_R;\n\nlet dcOut_R = loop_y1_R - dc_x1_R + DC_R * dc_y1_R;\ndc_x1_R = loop_y1_R;\ndc_y1_R = dcOut_R;\n\nlet fed_back_R = dcOut_R * fb_gain;\nbuf_R[writeIdx] = fed_back_R + excite;\n\n// ---- Advance shared write pointer ----\nwriteIdx = writeIdx + 1;\nif (writeIdx >= MAX_DELAY_SAMPS) writeIdx = 0;\n\nout1 = dcOut_L;\nout2 = dcOut_R;",
-														"expr" : "",
-														"safemath" : 1
+														"safemath" : 1,
+														"expr" : ""
 													}
 ,
 													"rnbo_serial" : 8,
@@ -34890,8 +35554,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 19,
@@ -34913,8 +35577,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 20,
@@ -34937,8 +35601,8 @@
 													"rnbo_classname" : "codebox~",
 													"rnbo_extra_attributes" : 													{
 														"code" : "// SIGNAL FLOW:\n//   in1  = excitation (audio-rate noise)\n//   in2  = detune, [0,1], real-time controllable\n//   in3  = brightness, [0,1], real-time controllable\n//   in4  = f0 in Hz, real-time controllable\n//   out1 = L, out2 = R\n//\n// PARAMS (per instance, set once):\n//   damping -- [0,1], loop filter cutoff / feedback gain\n\nconst MAX_DELAY_SAMPS = 4096;\nconst DETUNE_MAX_HZ = 3.0;\nconst DC_R = 0.995;\n\n@param({ min: 0, max: 1 }) damping = 0.5;\n\n@state buf_L = new FixedSampleArray(MAX_DELAY_SAMPS);\n@state buf_R = new FixedSampleArray(MAX_DELAY_SAMPS);\n@state writeIdx: Int = 0;\n\n@state thiran_a1_L = 0.0;\n@state thiran_x1_L = 0.0;\n@state thiran_y1_L = 0.0;\n@state thiran_a1_R = 0.0;\n@state thiran_x1_R = 0.0;\n@state thiran_y1_R = 0.0;\n\n@state loop_y1_L = 0.0;\n@state loop_y1_R = 0.0;\n\n@state dc_x1_L = 0.0;\n@state dc_y1_L = 0.0;\n@state dc_x1_R = 0.0;\n@state dc_y1_R = 0.0;\n\n@state exc_y1 = 0.0;\n\n@state delaySamps_int_L: Int = 100;\n@state delaySamps_int_R: Int = 100;\n@state cached_f0 = -1.0;\n@state cached_detune = -1.0;\n\nconst FB_MIN = 0.90;\nconst FB_MAX = 0.999;\n\nfunction init() {\n  for (let i = 0; i < MAX_DELAY_SAMPS; i++) {\n    buf_L[i] = 0.0;\n    buf_R[i] = 0.0;\n  }\n}\n\nlet sr = samplerate();\n\n// ---- Recompute delay params only when f0 (in4) or detune (in2) changes ----\nif (in4 != cached_f0 || in2 != cached_detune) {\n  cached_f0 = in4;\n  cached_detune = in2;\n\n  let f0_c = in4;\n  if (f0_c < 20.0) f0_c = 20.0;\n  if (f0_c > 2000.0) f0_c = 2000.0;\n\n  let detune_c = in2;\n  if (detune_c < 0.0) detune_c = 0.0;\n  if (detune_c > 1.0) detune_c = 1.0;\n\n  let detune_hz = detune_c * DETUNE_MAX_HZ;\n  let f0_L = f0_c + (detune_hz * 0.5);\n  let f0_R = f0_c - (detune_hz * 0.5);\n\n  let totalDelay_L = (sr / f0_L) - 1.0;\n  let totalDelay_R = (sr / f0_R) - 1.0;\n  if (totalDelay_L < 2.0) totalDelay_L = 2.0;\n  if (totalDelay_R < 2.0) totalDelay_R = 2.0;\n  if (totalDelay_L > MAX_DELAY_SAMPS - 2) totalDelay_L = MAX_DELAY_SAMPS - 2;\n  if (totalDelay_R > MAX_DELAY_SAMPS - 2) totalDelay_R = MAX_DELAY_SAMPS - 2;\n\n  let dInt_L = floor(totalDelay_L);\n  let dInt_R = floor(totalDelay_R);\n  delaySamps_int_L = dInt_L;\n  delaySamps_int_R = dInt_R;\n\n  let frac_L = totalDelay_L - dInt_L;\n  let frac_R = totalDelay_R - dInt_R;\n\n  thiran_a1_L = (1.0 - frac_L) / (1.0 + frac_L);\n  thiran_a1_R = (1.0 - frac_R) / (1.0 + frac_R);\n}\n\n// ---- Damping -> loop filter coefficient and feedback gain ----\nlet damping_c = damping;\nif (damping_c < 0.0) damping_c = 0.0;\nif (damping_c > 1.0) damping_c = 1.0;\n\nlet fb_gain = FB_MIN + damping_c * (FB_MAX - FB_MIN);\nlet filt_g = 0.05 + damping_c * 0.90;\n\n// ---- Excitation pre-filter, brightness from in3 ----\nlet bright_c = in3;\nif (bright_c < 0.0) bright_c = 0.0;\nif (bright_c > 1.0) bright_c = 1.0;\n\nlet exc_g = 0.95 - bright_c * 0.85;\nexc_y1 = (1.0 - exc_g) * in1 + exc_g * exc_y1;\nlet excite = exc_y1;\n\n// ================= LEFT CHANNEL =================\nlet readIdx_L: Int = writeIdx - delaySamps_int_L;\nif (readIdx_L < 0) readIdx_L = readIdx_L + MAX_DELAY_SAMPS;\nlet delayed_L = buf_L[readIdx_L];\n\nlet ap_out_L = thiran_a1_L * delayed_L + thiran_x1_L - thiran_a1_L * thiran_y1_L;\nthiran_x1_L = delayed_L;\nthiran_y1_L = ap_out_L;\n\nloop_y1_L = (1.0 - filt_g) * ap_out_L + filt_g * loop_y1_L;\n\nlet dcOut_L = loop_y1_L - dc_x1_L + DC_R * dc_y1_L;\ndc_x1_L = loop_y1_L;\ndc_y1_L = dcOut_L;\n\nlet fed_back_L = dcOut_L * fb_gain;\nbuf_L[writeIdx] = fed_back_L + excite;\n\n// ================= RIGHT CHANNEL =================\nlet readIdx_R: Int = writeIdx - delaySamps_int_R;\nif (readIdx_R < 0) readIdx_R = readIdx_R + MAX_DELAY_SAMPS;\nlet delayed_R = buf_R[readIdx_R];\n\nlet ap_out_R = thiran_a1_R * delayed_R + thiran_x1_R - thiran_a1_R * thiran_y1_R;\nthiran_x1_R = delayed_R;\nthiran_y1_R = ap_out_R;\n\nloop_y1_R = (1.0 - filt_g) * ap_out_R + filt_g * loop_y1_R;\n\nlet dcOut_R = loop_y1_R - dc_x1_R + DC_R * dc_y1_R;\ndc_x1_R = loop_y1_R;\ndc_y1_R = dcOut_R;\n\nlet fed_back_R = dcOut_R * fb_gain;\nbuf_R[writeIdx] = fed_back_R + excite;\n\n// ---- Advance shared write pointer ----\nwriteIdx = writeIdx + 1;\nif (writeIdx >= MAX_DELAY_SAMPS) writeIdx = 0;\n\nout1 = dcOut_L;\nout2 = dcOut_R;",
-														"expr" : "",
-														"safemath" : 1
+														"safemath" : 1,
+														"expr" : ""
 													}
 ,
 													"rnbo_serial" : 9,
@@ -35264,8 +35928,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 21,
@@ -35287,8 +35951,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 22,
@@ -35311,8 +35975,8 @@
 													"rnbo_classname" : "codebox~",
 													"rnbo_extra_attributes" : 													{
 														"code" : "// SIGNAL FLOW:\n//   in1  = excitation (audio-rate noise)\n//   in2  = detune, [0,1], real-time controllable\n//   in3  = brightness, [0,1], real-time controllable\n//   in4  = f0 in Hz, real-time controllable\n//   out1 = L, out2 = R\n//\n// PARAMS (per instance, set once):\n//   damping -- [0,1], loop filter cutoff / feedback gain\n\nconst MAX_DELAY_SAMPS = 4096;\nconst DETUNE_MAX_HZ = 3.0;\nconst DC_R = 0.995;\n\n@param({ min: 0, max: 1 }) damping = 0.5;\n\n@state buf_L = new FixedSampleArray(MAX_DELAY_SAMPS);\n@state buf_R = new FixedSampleArray(MAX_DELAY_SAMPS);\n@state writeIdx: Int = 0;\n\n@state thiran_a1_L = 0.0;\n@state thiran_x1_L = 0.0;\n@state thiran_y1_L = 0.0;\n@state thiran_a1_R = 0.0;\n@state thiran_x1_R = 0.0;\n@state thiran_y1_R = 0.0;\n\n@state loop_y1_L = 0.0;\n@state loop_y1_R = 0.0;\n\n@state dc_x1_L = 0.0;\n@state dc_y1_L = 0.0;\n@state dc_x1_R = 0.0;\n@state dc_y1_R = 0.0;\n\n@state exc_y1 = 0.0;\n\n@state delaySamps_int_L: Int = 100;\n@state delaySamps_int_R: Int = 100;\n@state cached_f0 = -1.0;\n@state cached_detune = -1.0;\n\nconst FB_MIN = 0.90;\nconst FB_MAX = 0.999;\n\nfunction init() {\n  for (let i = 0; i < MAX_DELAY_SAMPS; i++) {\n    buf_L[i] = 0.0;\n    buf_R[i] = 0.0;\n  }\n}\n\nlet sr = samplerate();\n\n// ---- Recompute delay params only when f0 (in4) or detune (in2) changes ----\nif (in4 != cached_f0 || in2 != cached_detune) {\n  cached_f0 = in4;\n  cached_detune = in2;\n\n  let f0_c = in4;\n  if (f0_c < 20.0) f0_c = 20.0;\n  if (f0_c > 2000.0) f0_c = 2000.0;\n\n  let detune_c = in2;\n  if (detune_c < 0.0) detune_c = 0.0;\n  if (detune_c > 1.0) detune_c = 1.0;\n\n  let detune_hz = detune_c * DETUNE_MAX_HZ;\n  let f0_L = f0_c + (detune_hz * 0.5);\n  let f0_R = f0_c - (detune_hz * 0.5);\n\n  let totalDelay_L = (sr / f0_L) - 1.0;\n  let totalDelay_R = (sr / f0_R) - 1.0;\n  if (totalDelay_L < 2.0) totalDelay_L = 2.0;\n  if (totalDelay_R < 2.0) totalDelay_R = 2.0;\n  if (totalDelay_L > MAX_DELAY_SAMPS - 2) totalDelay_L = MAX_DELAY_SAMPS - 2;\n  if (totalDelay_R > MAX_DELAY_SAMPS - 2) totalDelay_R = MAX_DELAY_SAMPS - 2;\n\n  let dInt_L = floor(totalDelay_L);\n  let dInt_R = floor(totalDelay_R);\n  delaySamps_int_L = dInt_L;\n  delaySamps_int_R = dInt_R;\n\n  let frac_L = totalDelay_L - dInt_L;\n  let frac_R = totalDelay_R - dInt_R;\n\n  thiran_a1_L = (1.0 - frac_L) / (1.0 + frac_L);\n  thiran_a1_R = (1.0 - frac_R) / (1.0 + frac_R);\n}\n\n// ---- Damping -> loop filter coefficient and feedback gain ----\nlet damping_c = damping;\nif (damping_c < 0.0) damping_c = 0.0;\nif (damping_c > 1.0) damping_c = 1.0;\n\nlet fb_gain = FB_MIN + damping_c * (FB_MAX - FB_MIN);\nlet filt_g = 0.05 + damping_c * 0.90;\n\n// ---- Excitation pre-filter, brightness from in3 ----\nlet bright_c = in3;\nif (bright_c < 0.0) bright_c = 0.0;\nif (bright_c > 1.0) bright_c = 1.0;\n\nlet exc_g = 0.95 - bright_c * 0.85;\nexc_y1 = (1.0 - exc_g) * in1 + exc_g * exc_y1;\nlet excite = exc_y1;\n\n// ================= LEFT CHANNEL =================\nlet readIdx_L: Int = writeIdx - delaySamps_int_L;\nif (readIdx_L < 0) readIdx_L = readIdx_L + MAX_DELAY_SAMPS;\nlet delayed_L = buf_L[readIdx_L];\n\nlet ap_out_L = thiran_a1_L * delayed_L + thiran_x1_L - thiran_a1_L * thiran_y1_L;\nthiran_x1_L = delayed_L;\nthiran_y1_L = ap_out_L;\n\nloop_y1_L = (1.0 - filt_g) * ap_out_L + filt_g * loop_y1_L;\n\nlet dcOut_L = loop_y1_L - dc_x1_L + DC_R * dc_y1_L;\ndc_x1_L = loop_y1_L;\ndc_y1_L = dcOut_L;\n\nlet fed_back_L = dcOut_L * fb_gain;\nbuf_L[writeIdx] = fed_back_L + excite;\n\n// ================= RIGHT CHANNEL =================\nlet readIdx_R: Int = writeIdx - delaySamps_int_R;\nif (readIdx_R < 0) readIdx_R = readIdx_R + MAX_DELAY_SAMPS;\nlet delayed_R = buf_R[readIdx_R];\n\nlet ap_out_R = thiran_a1_R * delayed_R + thiran_x1_R - thiran_a1_R * thiran_y1_R;\nthiran_x1_R = delayed_R;\nthiran_y1_R = ap_out_R;\n\nloop_y1_R = (1.0 - filt_g) * ap_out_R + filt_g * loop_y1_R;\n\nlet dcOut_R = loop_y1_R - dc_x1_R + DC_R * dc_y1_R;\ndc_x1_R = loop_y1_R;\ndc_y1_R = dcOut_R;\n\nlet fed_back_R = dcOut_R * fb_gain;\nbuf_R[writeIdx] = fed_back_R + excite;\n\n// ---- Advance shared write pointer ----\nwriteIdx = writeIdx + 1;\nif (writeIdx >= MAX_DELAY_SAMPS) writeIdx = 0;\n\nout1 = dcOut_L;\nout2 = dcOut_R;",
-														"expr" : "",
-														"safemath" : 1
+														"safemath" : 1,
+														"expr" : ""
 													}
 ,
 													"rnbo_serial" : 10,
@@ -35638,8 +36302,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 23,
@@ -35661,8 +36325,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 24,
@@ -35685,8 +36349,8 @@
 													"rnbo_classname" : "codebox~",
 													"rnbo_extra_attributes" : 													{
 														"code" : "// SIGNAL FLOW:\n//   in1  = excitation (audio-rate noise)\n//   in2  = detune, [0,1], real-time controllable\n//   in3  = brightness, [0,1], real-time controllable\n//   in4  = f0 in Hz, real-time controllable\n//   out1 = L, out2 = R\n//\n// PARAMS (per instance, set once):\n//   damping -- [0,1], loop filter cutoff / feedback gain\n\nconst MAX_DELAY_SAMPS = 4096;\nconst DETUNE_MAX_HZ = 3.0;\nconst DC_R = 0.995;\n\n@param({ min: 0, max: 1 }) damping = 0.5;\n\n@state buf_L = new FixedSampleArray(MAX_DELAY_SAMPS);\n@state buf_R = new FixedSampleArray(MAX_DELAY_SAMPS);\n@state writeIdx: Int = 0;\n\n@state thiran_a1_L = 0.0;\n@state thiran_x1_L = 0.0;\n@state thiran_y1_L = 0.0;\n@state thiran_a1_R = 0.0;\n@state thiran_x1_R = 0.0;\n@state thiran_y1_R = 0.0;\n\n@state loop_y1_L = 0.0;\n@state loop_y1_R = 0.0;\n\n@state dc_x1_L = 0.0;\n@state dc_y1_L = 0.0;\n@state dc_x1_R = 0.0;\n@state dc_y1_R = 0.0;\n\n@state exc_y1 = 0.0;\n\n@state delaySamps_int_L: Int = 100;\n@state delaySamps_int_R: Int = 100;\n@state cached_f0 = -1.0;\n@state cached_detune = -1.0;\n\nconst FB_MIN = 0.90;\nconst FB_MAX = 0.999;\n\nfunction init() {\n  for (let i = 0; i < MAX_DELAY_SAMPS; i++) {\n    buf_L[i] = 0.0;\n    buf_R[i] = 0.0;\n  }\n}\n\nlet sr = samplerate();\n\n// ---- Recompute delay params only when f0 (in4) or detune (in2) changes ----\nif (in4 != cached_f0 || in2 != cached_detune) {\n  cached_f0 = in4;\n  cached_detune = in2;\n\n  let f0_c = in4;\n  if (f0_c < 20.0) f0_c = 20.0;\n  if (f0_c > 2000.0) f0_c = 2000.0;\n\n  let detune_c = in2;\n  if (detune_c < 0.0) detune_c = 0.0;\n  if (detune_c > 1.0) detune_c = 1.0;\n\n  let detune_hz = detune_c * DETUNE_MAX_HZ;\n  let f0_L = f0_c + (detune_hz * 0.5);\n  let f0_R = f0_c - (detune_hz * 0.5);\n\n  let totalDelay_L = (sr / f0_L) - 1.0;\n  let totalDelay_R = (sr / f0_R) - 1.0;\n  if (totalDelay_L < 2.0) totalDelay_L = 2.0;\n  if (totalDelay_R < 2.0) totalDelay_R = 2.0;\n  if (totalDelay_L > MAX_DELAY_SAMPS - 2) totalDelay_L = MAX_DELAY_SAMPS - 2;\n  if (totalDelay_R > MAX_DELAY_SAMPS - 2) totalDelay_R = MAX_DELAY_SAMPS - 2;\n\n  let dInt_L = floor(totalDelay_L);\n  let dInt_R = floor(totalDelay_R);\n  delaySamps_int_L = dInt_L;\n  delaySamps_int_R = dInt_R;\n\n  let frac_L = totalDelay_L - dInt_L;\n  let frac_R = totalDelay_R - dInt_R;\n\n  thiran_a1_L = (1.0 - frac_L) / (1.0 + frac_L);\n  thiran_a1_R = (1.0 - frac_R) / (1.0 + frac_R);\n}\n\n// ---- Damping -> loop filter coefficient and feedback gain ----\nlet damping_c = damping;\nif (damping_c < 0.0) damping_c = 0.0;\nif (damping_c > 1.0) damping_c = 1.0;\n\nlet fb_gain = FB_MIN + damping_c * (FB_MAX - FB_MIN);\nlet filt_g = 0.05 + damping_c * 0.90;\n\n// ---- Excitation pre-filter, brightness from in3 ----\nlet bright_c = in3;\nif (bright_c < 0.0) bright_c = 0.0;\nif (bright_c > 1.0) bright_c = 1.0;\n\nlet exc_g = 0.95 - bright_c * 0.85;\nexc_y1 = (1.0 - exc_g) * in1 + exc_g * exc_y1;\nlet excite = exc_y1;\n\n// ================= LEFT CHANNEL =================\nlet readIdx_L: Int = writeIdx - delaySamps_int_L;\nif (readIdx_L < 0) readIdx_L = readIdx_L + MAX_DELAY_SAMPS;\nlet delayed_L = buf_L[readIdx_L];\n\nlet ap_out_L = thiran_a1_L * delayed_L + thiran_x1_L - thiran_a1_L * thiran_y1_L;\nthiran_x1_L = delayed_L;\nthiran_y1_L = ap_out_L;\n\nloop_y1_L = (1.0 - filt_g) * ap_out_L + filt_g * loop_y1_L;\n\nlet dcOut_L = loop_y1_L - dc_x1_L + DC_R * dc_y1_L;\ndc_x1_L = loop_y1_L;\ndc_y1_L = dcOut_L;\n\nlet fed_back_L = dcOut_L * fb_gain;\nbuf_L[writeIdx] = fed_back_L + excite;\n\n// ================= RIGHT CHANNEL =================\nlet readIdx_R: Int = writeIdx - delaySamps_int_R;\nif (readIdx_R < 0) readIdx_R = readIdx_R + MAX_DELAY_SAMPS;\nlet delayed_R = buf_R[readIdx_R];\n\nlet ap_out_R = thiran_a1_R * delayed_R + thiran_x1_R - thiran_a1_R * thiran_y1_R;\nthiran_x1_R = delayed_R;\nthiran_y1_R = ap_out_R;\n\nloop_y1_R = (1.0 - filt_g) * ap_out_R + filt_g * loop_y1_R;\n\nlet dcOut_R = loop_y1_R - dc_x1_R + DC_R * dc_y1_R;\ndc_x1_R = loop_y1_R;\ndc_y1_R = dcOut_R;\n\nlet fed_back_R = dcOut_R * fb_gain;\nbuf_R[writeIdx] = fed_back_R + excite;\n\n// ---- Advance shared write pointer ----\nwriteIdx = writeIdx + 1;\nif (writeIdx >= MAX_DELAY_SAMPS) writeIdx = 0;\n\nout1 = dcOut_L;\nout2 = dcOut_R;",
-														"expr" : "",
-														"safemath" : 1
+														"safemath" : 1,
+														"expr" : ""
 													}
 ,
 													"rnbo_serial" : 11,
@@ -36012,8 +36676,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 25,
@@ -36035,8 +36699,8 @@
 														"maximum" : "<none>",
 														"minimum" : "<none>",
 														"preset" : 0,
-														"initialFormat" : "float",
-														"order" : ""
+														"order" : "",
+														"initialFormat" : "float"
 													}
 ,
 													"rnbo_serial" : 26,
@@ -36074,8 +36738,8 @@
 													"rnbo_classname" : "codebox~",
 													"rnbo_extra_attributes" : 													{
 														"code" : "// SIGNAL FLOW:\n//   in1  = excitation (audio-rate noise)\n//   in2  = detune, [0,1], real-time controllable\n//   in3  = brightness, [0,1], real-time controllable\n//   in4  = f0 in Hz, real-time controllable\n//   out1 = L, out2 = R\n//\n// PARAMS (per instance, set once):\n//   damping -- [0,1], loop filter cutoff / feedback gain\n\nconst MAX_DELAY_SAMPS = 4096;\nconst DETUNE_MAX_HZ = 3.0;\nconst DC_R = 0.995;\n\n@param({ min: 0, max: 1 }) damping = 0.5;\n\n@state buf_L = new FixedSampleArray(MAX_DELAY_SAMPS);\n@state buf_R = new FixedSampleArray(MAX_DELAY_SAMPS);\n@state writeIdx: Int = 0;\n\n@state thiran_a1_L = 0.0;\n@state thiran_x1_L = 0.0;\n@state thiran_y1_L = 0.0;\n@state thiran_a1_R = 0.0;\n@state thiran_x1_R = 0.0;\n@state thiran_y1_R = 0.0;\n\n@state loop_y1_L = 0.0;\n@state loop_y1_R = 0.0;\n\n@state dc_x1_L = 0.0;\n@state dc_y1_L = 0.0;\n@state dc_x1_R = 0.0;\n@state dc_y1_R = 0.0;\n\n@state exc_y1 = 0.0;\n\n@state delaySamps_int_L: Int = 100;\n@state delaySamps_int_R: Int = 100;\n@state cached_f0 = -1.0;\n@state cached_detune = -1.0;\n\nconst FB_MIN = 0.90;\nconst FB_MAX = 0.999;\n\nfunction init() {\n  for (let i = 0; i < MAX_DELAY_SAMPS; i++) {\n    buf_L[i] = 0.0;\n    buf_R[i] = 0.0;\n  }\n}\n\nlet sr = samplerate();\n\n// ---- Recompute delay params only when f0 (in4) or detune (in2) changes ----\nif (in4 != cached_f0 || in2 != cached_detune) {\n  cached_f0 = in4;\n  cached_detune = in2;\n\n  let f0_c = in4;\n  if (f0_c < 20.0) f0_c = 20.0;\n  if (f0_c > 2000.0) f0_c = 2000.0;\n\n  let detune_c = in2;\n  if (detune_c < 0.0) detune_c = 0.0;\n  if (detune_c > 1.0) detune_c = 1.0;\n\n  let detune_hz = detune_c * DETUNE_MAX_HZ;\n  let f0_L = f0_c + (detune_hz * 0.5);\n  let f0_R = f0_c - (detune_hz * 0.5);\n\n  let totalDelay_L = (sr / f0_L) - 1.0;\n  let totalDelay_R = (sr / f0_R) - 1.0;\n  if (totalDelay_L < 2.0) totalDelay_L = 2.0;\n  if (totalDelay_R < 2.0) totalDelay_R = 2.0;\n  if (totalDelay_L > MAX_DELAY_SAMPS - 2) totalDelay_L = MAX_DELAY_SAMPS - 2;\n  if (totalDelay_R > MAX_DELAY_SAMPS - 2) totalDelay_R = MAX_DELAY_SAMPS - 2;\n\n  let dInt_L = floor(totalDelay_L);\n  let dInt_R = floor(totalDelay_R);\n  delaySamps_int_L = dInt_L;\n  delaySamps_int_R = dInt_R;\n\n  let frac_L = totalDelay_L - dInt_L;\n  let frac_R = totalDelay_R - dInt_R;\n\n  thiran_a1_L = (1.0 - frac_L) / (1.0 + frac_L);\n  thiran_a1_R = (1.0 - frac_R) / (1.0 + frac_R);\n}\n\n// ---- Damping -> loop filter coefficient and feedback gain ----\nlet damping_c = damping;\nif (damping_c < 0.0) damping_c = 0.0;\nif (damping_c > 1.0) damping_c = 1.0;\n\nlet fb_gain = FB_MIN + damping_c * (FB_MAX - FB_MIN);\nlet filt_g = 0.05 + damping_c * 0.90;\n\n// ---- Excitation pre-filter, brightness from in3 ----\nlet bright_c = in3;\nif (bright_c < 0.0) bright_c = 0.0;\nif (bright_c > 1.0) bright_c = 1.0;\n\nlet exc_g = 0.95 - bright_c * 0.85;\nexc_y1 = (1.0 - exc_g) * in1 + exc_g * exc_y1;\nlet excite = exc_y1;\n\n// ================= LEFT CHANNEL =================\nlet readIdx_L: Int = writeIdx - delaySamps_int_L;\nif (readIdx_L < 0) readIdx_L = readIdx_L + MAX_DELAY_SAMPS;\nlet delayed_L = buf_L[readIdx_L];\n\nlet ap_out_L = thiran_a1_L * delayed_L + thiran_x1_L - thiran_a1_L * thiran_y1_L;\nthiran_x1_L = delayed_L;\nthiran_y1_L = ap_out_L;\n\nloop_y1_L = (1.0 - filt_g) * ap_out_L + filt_g * loop_y1_L;\n\nlet dcOut_L = loop_y1_L - dc_x1_L + DC_R * dc_y1_L;\ndc_x1_L = loop_y1_L;\ndc_y1_L = dcOut_L;\n\nlet fed_back_L = dcOut_L * fb_gain;\nbuf_L[writeIdx] = fed_back_L + excite;\n\n// ================= RIGHT CHANNEL =================\nlet readIdx_R: Int = writeIdx - delaySamps_int_R;\nif (readIdx_R < 0) readIdx_R = readIdx_R + MAX_DELAY_SAMPS;\nlet delayed_R = buf_R[readIdx_R];\n\nlet ap_out_R = thiran_a1_R * delayed_R + thiran_x1_R - thiran_a1_R * thiran_y1_R;\nthiran_x1_R = delayed_R;\nthiran_y1_R = ap_out_R;\n\nloop_y1_R = (1.0 - filt_g) * ap_out_R + filt_g * loop_y1_R;\n\nlet dcOut_R = loop_y1_R - dc_x1_R + DC_R * dc_y1_R;\ndc_x1_R = loop_y1_R;\ndc_y1_R = dcOut_R;\n\nlet fed_back_R = dcOut_R * fb_gain;\nbuf_R[writeIdx] = fed_back_R + excite;\n\n// ---- Advance shared write pointer ----\nwriteIdx = writeIdx + 1;\nif (writeIdx >= MAX_DELAY_SAMPS) writeIdx = 0;\n\nout1 = dcOut_L;\nout2 = dcOut_R;",
-														"expr" : "",
-														"safemath" : 1
+														"safemath" : 1,
+														"expr" : ""
 													}
 ,
 													"rnbo_serial" : 12,
@@ -38233,7 +38897,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 530.0, 330.0, 50.0, 22.0 ],
-									"text" : "2355"
+									"text" : "17754"
 								}
 
 							}
@@ -39638,8 +40302,8 @@
 										"maximum" : "<none>",
 										"minimum" : "<none>",
 										"preset" : 0,
-										"initialFormat" : "float",
-										"order" : ""
+										"order" : "",
+										"initialFormat" : "float"
 									}
 ,
 									"rnbo_serial" : 1,
@@ -39661,8 +40325,8 @@
 										"maximum" : "<none>",
 										"minimum" : "<none>",
 										"preset" : 0,
-										"initialFormat" : "float",
-										"order" : ""
+										"order" : "",
+										"initialFormat" : "float"
 									}
 ,
 									"rnbo_serial" : 2,
@@ -39851,8 +40515,8 @@
 									"rnbo_classname" : "codebox~",
 									"rnbo_extra_attributes" : 									{
 										"code" : "// =====================================================================\n// RNBOscript — Riverbero Stereo Schroeder-Moorer (4 comb || + 2 allpass serie)\n// Topologia: comb filter decorrelati L/R con damping LPF nel loop di\n// feedback + sezione diffusiva allpass in cascata (Schroeder 1962,\n// Moorer 1979; ref. derivazione RT60->g in Smith, \"Physical Audio\n// Signal Processing\", CCRMA — stessa fonte già impiegata nel modulo\n// Karplus-Strong del progetto).\n//\n// I/O:\n//   in1  = audio L (dry)\n//   in2  = audio R (dry)\n//   in3  = RT60        [s]    PARAMETRO CHIAVE — durata di decadimento -60dB\n//   in4  = damping      [0..1] assorbimento HF nel loop (0=metallico, 1=cupo)\n//   in5  = predelay     [ms]   ritardo iniziale prima dell'ingresso in rete\n//   in6  = wet/dry mix  [0..1] \n//\n//   out1 = L (wet+dry secondo mix)\n//   out2 = R (wet+dry secondo mix)\n//\n// MODIFICA PARAMETRI: tutte le costanti strutturali (lunghezze comb/AP in\n// campioni, coefficienti allpass) sono raccolte nel blocco \"STRUCTURAL\n// PARAMETERS\" qui sotto. Sono valori in samples a 48kHz nativi: se il\n// samplerate del progetto differisce, vengono riscalati automaticamente\n// via sr/48000 per preservare i rapporti temporali e l'assenza di\n// coloriture comb correlate.\n//\n// DISCLOSURE: i delay times (combL/R, apL/R) seguono i rapporti\n// storicamente impiegati nell'implementazione Schroeder/Moorer-derived\n// (Dattorro 1997, \"Effect Design Part 1\", JAES vol.45) — non sono\n// arbitrari ma scelti coprimi tra loro per massimizzare la densità\n// dell'eco senza periodicità udibile. Variarli è sicuro PURCHÉ si\n// mantenga: (a) coprimalità reciproca approssimata, (b) AP gain in\n// [0.5, 0.7] per garanzia di stabilità allpass (|g|<1 condizione\n// necessaria, range scelto per densità senza colorazione metallica).\n// =====================================================================\n\n// ---- STRUCTURAL PARAMETERS (samples @ 48kHz, auto-riscalati su sr) ----\nconst REF_SR = 48000.0;\nlet sr = samplerate();\nlet srScale = sr / REF_SR;\n\n// 4 comb filters, lunghezze decorrelate L/R (Dattorro-derived, coprime)\nconst COMB1_L = 1687; const COMB1_R = 1601;\nconst COMB2_L = 1601; const COMB2_R = 1493;\nconst COMB3_L = 2053; const COMB3_R = 1973;\nconst COMB4_L = 2251; const COMB4_R = 2161;\n\n// 2 allpass diffusori in serie, coefficiente fisso entro range di stabilità\nconst AP1_L = 347;  const AP1_R = 313;\nconst AP2_L = 113;  const AP2_R = 97;\nconst AP_GAIN = 0.6;\n\n// Dimensionamento buffer con margine per predelay massimo (500ms) + srScale\nconst MAXCOMB: Int = 4096;\nconst MAXAP: Int = 512;\nconst MAXPRE: Int = 24000; // 500ms @ 48kHz, riscalato a runtime\n\n// ---- STATE: comb filter buffers (L) ----\n@state cbuf1_L = new FixedSampleArray(MAXCOMB);\n@state cbuf2_L = new FixedSampleArray(MAXCOMB);\n@state cbuf3_L = new FixedSampleArray(MAXCOMB);\n@state cbuf4_L = new FixedSampleArray(MAXCOMB);\n@state cidx1_L: Int = 0; @state cidx2_L: Int = 0;\n@state cidx3_L: Int = 0; @state cidx4_L: Int = 0;\n@state clp1_L = 0.0; @state clp2_L = 0.0; @state clp3_L = 0.0; @state clp4_L = 0.0;\n\n// ---- STATE: comb filter buffers (R) ----\n@state cbuf1_R = new FixedSampleArray(MAXCOMB);\n@state cbuf2_R = new FixedSampleArray(MAXCOMB);\n@state cbuf3_R = new FixedSampleArray(MAXCOMB);\n@state cbuf4_R = new FixedSampleArray(MAXCOMB);\n@state cidx1_R: Int = 0; @state cidx2_R: Int = 0;\n@state cidx3_R: Int = 0; @state cidx4_R: Int = 0;\n@state clp1_R = 0.0; @state clp2_R = 0.0; @state clp3_R = 0.0; @state clp4_R = 0.0;\n\n// ---- STATE: allpass diffusori (L/R) ----\n@state apbuf1_L = new FixedSampleArray(MAXAP);\n@state apbuf2_L = new FixedSampleArray(MAXAP);\n@state apidx1_L: Int = 0; @state apidx2_L: Int = 0;\n\n@state apbuf1_R = new FixedSampleArray(MAXAP);\n@state apbuf2_R = new FixedSampleArray(MAXAP);\n@state apidx1_R: Int = 0; @state apidx2_R: Int = 0;\n\n// ---- STATE: predelay line (condivisa, poi splittata L/R) ----\n@state prebuf_L = new FixedSampleArray(MAXPRE);\n@state prebuf_R = new FixedSampleArray(MAXPRE);\n@state preidx_L: Int = 0; @state preidx_R: Int = 0;\n\n// ---- STATE: smoothing parametri (one-pole, tau=10ms — evita zipper\n// noise su update discreti di RT60/damping/predelay/mix da UI/automazione)\n@state rt60_sm = 1.5;\n@state damping_sm = 0.3;\n@state predelay_sm = 0.0;\n@state mix_sm = 0.3;\n\nconst smooth_tau = 0.010;\nlet smooth_g = exp(-1.0 / (smooth_tau * sr));\n\n// ---- INPUT READ + SAFETY CLAMP ----\n// RT60 <= 0 produrrebbe g>=1 (instabilità/divergenza esponenziale) o\n// divisione per zero nella formula di Schroeder: clampato a un minimo\n// fisicamente sensato (50ms, ambiente estremamente smorzato/anecoico).\nlet rt60_in = in3;\nlet damping_in = in4;\nlet predelay_in = in5;\nlet mix_in = in6;\n\nconst RT60_MIN = 0.05;\nconst RT60_MAX = 30.0;\nif (rt60_in < RT60_MIN) rt60_in = RT60_MIN;\nif (rt60_in > RT60_MAX) rt60_in = RT60_MAX;\n\nif (damping_in < 0.0) damping_in = 0.0;\nif (damping_in > 1.0) damping_in = 1.0;\n\nconst PREDELAY_MAX_MS = 500.0;\nif (predelay_in < 0.0) predelay_in = 0.0;\nif (predelay_in > PREDELAY_MAX_MS) predelay_in = PREDELAY_MAX_MS;\n\nif (mix_in < 0.0) mix_in = 0.0;\nif (mix_in > 1.0) mix_in = 1.0;\n\nrt60_sm = rt60_sm * smooth_g + rt60_in * (1.0 - smooth_g);\ndamping_sm = damping_sm * smooth_g + damping_in * (1.0 - smooth_g);\npredelay_sm = predelay_sm * smooth_g + predelay_in * (1.0 - smooth_g);\nmix_sm = mix_sm * smooth_g + mix_in * (1.0 - smooth_g);\n\n// ---- PREDELAY: lunghezza in campioni, ricalcolata per-sample per\n// seguire eventuale automazione (overhead trascurabile: solo Int cast +\n// moltiplicazione) ----\nlet preSamples: Int = floor((predelay_sm * 0.001) * sr);\nif (preSamples < 0) preSamples = 0;\nif (preSamples > (MAXPRE - 1)) preSamples = MAXPRE - 1;\n\nlet preReadIdx_L: Int = preidx_L - preSamples;\nif (preReadIdx_L < 0) preReadIdx_L = preReadIdx_L + MAXPRE;\nlet preReadIdx_R: Int = preidx_R - preSamples;\nif (preReadIdx_R < 0) preReadIdx_R = preReadIdx_R + MAXPRE;\n\nprebuf_L[preidx_L] = in1;\nprebuf_R[preidx_R] = in2;\nlet predelayed_L = prebuf_L[preReadIdx_L];\nlet predelayed_R = prebuf_R[preReadIdx_R];\npreidx_L = preidx_L + 1; if (preidx_L >= MAXPRE) preidx_L = 0;\npreidx_R = preidx_R + 1; if (preidx_R >= MAXPRE) preidx_R = 0;\n\n// =====================================================================\n// COMB BANK — canale L\n// Formula RT60 (Schroeder 1962): g = 10^(-3*d / (RT60*sr))\n// d = delay length in samples, garantisce -60dB esattamente a t=RT60.\n// One-pole LPF nel loop (damping_sm) per assorbimento HF realistico\n// (materiali fonoassorbenti reali attenuano le alte frequenze più\n// rapidamente — coerente con risposta impulsiva di sale reali, Kuttruff\n// \"Room Acoustics\").\n// =====================================================================\n\nlet d1_L: Int = floor(COMB1_L * srScale);\nlet d2_L: Int = floor(COMB2_L * srScale);\nlet d3_L: Int = floor(COMB3_L * srScale);\nlet d4_L: Int = floor(COMB4_L * srScale);\nif (d1_L < 1) d1_L = 1; if (d1_L > (MAXCOMB-1)) d1_L = MAXCOMB-1;\nif (d2_L < 1) d2_L = 1; if (d2_L > (MAXCOMB-1)) d2_L = MAXCOMB-1;\nif (d3_L < 1) d3_L = 1; if (d3_L > (MAXCOMB-1)) d3_L = MAXCOMB-1;\nif (d4_L < 1) d4_L = 1; if (d4_L > (MAXCOMB-1)) d4_L = MAXCOMB-1;\n\nlet g1_L = pow(10.0, (-3.0 * d1_L) / (rt60_sm * sr));\nlet g2_L = pow(10.0, (-3.0 * d2_L) / (rt60_sm * sr));\nlet g3_L = pow(10.0, (-3.0 * d3_L) / (rt60_sm * sr));\nlet g4_L = pow(10.0, (-3.0 * d4_L) / (rt60_sm * sr));\n\n// Damping coefficient one-pole: range [0, 0.7] mappato da damping_sm,\n// 0.7 = forte assorbimento HF senza collassare il loop in DC puro\nlet dampCoeff = damping_sm * 0.7;\n\nlet rIdx1_L: Int = cidx1_L - d1_L; if (rIdx1_L < 0) rIdx1_L = rIdx1_L + MAXCOMB;\nlet c1_out_L = cbuf1_L[rIdx1_L];\nclp1_L = c1_out_L * (1.0 - dampCoeff) + clp1_L * dampCoeff;\ncbuf1_L[cidx1_L] = predelayed_L + clp1_L * g1_L;\ncidx1_L = cidx1_L + 1; if (cidx1_L >= MAXCOMB) cidx1_L = 0;\n\nlet rIdx2_L: Int = cidx2_L - d2_L; if (rIdx2_L < 0) rIdx2_L = rIdx2_L + MAXCOMB;\nlet c2_out_L = cbuf2_L[rIdx2_L];\nclp2_L = c2_out_L * (1.0 - dampCoeff) + clp2_L * dampCoeff;\ncbuf2_L[cidx2_L] = predelayed_L + clp2_L * g2_L;\ncidx2_L = cidx2_L + 1; if (cidx2_L >= MAXCOMB) cidx2_L = 0;\n\nlet rIdx3_L: Int = cidx3_L - d3_L; if (rIdx3_L < 0) rIdx3_L = rIdx3_L + MAXCOMB;\nlet c3_out_L = cbuf3_L[rIdx3_L];\nclp3_L = c3_out_L * (1.0 - dampCoeff) + clp3_L * dampCoeff;\ncbuf3_L[cidx3_L] = predelayed_L + clp3_L * g3_L;\ncidx3_L = cidx3_L + 1; if (cidx3_L >= MAXCOMB) cidx3_L = 0;\n\nlet rIdx4_L: Int = cidx4_L - d4_L; if (rIdx4_L < 0) rIdx4_L = rIdx4_L + MAXCOMB;\nlet c4_out_L = cbuf4_L[rIdx4_L];\nclp4_L = c4_out_L * (1.0 - dampCoeff) + clp4_L * dampCoeff;\ncbuf4_L[cidx4_L] = predelayed_L + clp4_L * g4_L;\ncidx4_L = cidx4_L + 1; if (cidx4_L >= MAXCOMB) cidx4_L = 0;\n\n// Somma comb bank, normalizzata 1/4 per evitare accumulo di gain con\n// 4 rami paralleli sommati (preserva unity-gain approssimativo in banda)\nlet combSum_L = (c1_out_L + c2_out_L + c3_out_L + c4_out_L) * 0.25;\n\n// =====================================================================\n// COMB BANK — canale R (analogo, lunghezze decorrelate)\n// =====================================================================\n\nlet d1_R: Int = floor(COMB1_R * srScale);\nlet d2_R: Int = floor(COMB2_R * srScale);\nlet d3_R: Int = floor(COMB3_R * srScale);\nlet d4_R: Int = floor(COMB4_R * srScale);\nif (d1_R < 1) d1_R = 1; if (d1_R > (MAXCOMB-1)) d1_R = MAXCOMB-1;\nif (d2_R < 1) d2_R = 1; if (d2_R > (MAXCOMB-1)) d2_R = MAXCOMB-1;\nif (d3_R < 1) d3_R = 1; if (d3_R > (MAXCOMB-1)) d3_R = MAXCOMB-1;\nif (d4_R < 1) d4_R = 1; if (d4_R > (MAXCOMB-1)) d4_R = MAXCOMB-1;\n\nlet g1_R = pow(10.0, (-3.0 * d1_R) / (rt60_sm * sr));\nlet g2_R = pow(10.0, (-3.0 * d2_R) / (rt60_sm * sr));\nlet g3_R = pow(10.0, (-3.0 * d3_R) / (rt60_sm * sr));\nlet g4_R = pow(10.0, (-3.0 * d4_R) / (rt60_sm * sr));\n\nlet rIdx1_R: Int = cidx1_R - d1_R; if (rIdx1_R < 0) rIdx1_R = rIdx1_R + MAXCOMB;\nlet c1_out_R = cbuf1_R[rIdx1_R];\nclp1_R = c1_out_R * (1.0 - dampCoeff) + clp1_R * dampCoeff;\ncbuf1_R[cidx1_R] = predelayed_R + clp1_R * g1_R;\ncidx1_R = cidx1_R + 1; if (cidx1_R >= MAXCOMB) cidx1_R = 0;\n\nlet rIdx2_R: Int = cidx2_R - d2_R; if (rIdx2_R < 0) rIdx2_R = rIdx2_R + MAXCOMB;\nlet c2_out_R = cbuf2_R[rIdx2_R];\nclp2_R = c2_out_R * (1.0 - dampCoeff) + clp2_R * dampCoeff;\ncbuf2_R[cidx2_R] = predelayed_R + clp2_R * g2_R;\ncidx2_R = cidx2_R + 1; if (cidx2_R >= MAXCOMB) cidx2_R = 0;\n\nlet rIdx3_R: Int = cidx3_R - d3_R; if (rIdx3_R < 0) rIdx3_R = rIdx3_R + MAXCOMB;\nlet c3_out_R = cbuf3_R[rIdx3_R];\nclp3_R = c3_out_R * (1.0 - dampCoeff) + clp3_R * dampCoeff;\ncbuf3_R[cidx3_R] = predelayed_R + clp3_R * g3_R;\ncidx3_R = cidx3_R + 1; if (cidx3_R >= MAXCOMB) cidx3_R = 0;\n\nlet rIdx4_R: Int = cidx4_R - d4_R; if (rIdx4_R < 0) rIdx4_R = rIdx4_R + MAXCOMB;\nlet c4_out_R = cbuf4_R[rIdx4_R];\nclp4_R = c4_out_R * (1.0 - dampCoeff) + clp4_R * dampCoeff;\ncbuf4_R[cidx4_R] = predelayed_R + clp4_R * g4_R;\ncidx4_R = cidx4_R + 1; if (cidx4_R >= MAXCOMB) cidx4_R = 0;\n\nlet combSum_R = (c1_out_R + c2_out_R + c3_out_R + c4_out_R) * 0.25;\n\n// =====================================================================\n// SEZIONE DIFFUSIVA — 2 allpass in serie per canale (Schroeder allpass:\n// y[n] = -g*x[n] + x[n-d] + g*y[n-d]). AP_GAIN=0.6 entro [0.5,0.7] per\n// stabilità garantita e densità di eco senza colorazione metallica\n// percepibile (soglia psicoacustica di fusione transienti ~50-80ms\n// densità di riflessioni, qui ottenuta in <20ms di catena AP).\n// =====================================================================\n\nlet dap1_L: Int = floor(AP1_L * srScale);\nlet dap2_L: Int = floor(AP2_L * srScale);\nif (dap1_L < 1) dap1_L = 1; if (dap1_L > (MAXAP-1)) dap1_L = MAXAP-1;\nif (dap2_L < 1) dap2_L = 1; if (dap2_L > (MAXAP-1)) dap2_L = MAXAP-1;\n\nlet apr1_L: Int = apidx1_L - dap1_L; if (apr1_L < 0) apr1_L = apr1_L + MAXAP;\nlet apDelayed1_L = apbuf1_L[apr1_L];\nlet apOut1_L = -AP_GAIN * combSum_L + apDelayed1_L;\napbuf1_L[apidx1_L] = combSum_L + AP_GAIN * apOut1_L;\napidx1_L = apidx1_L + 1; if (apidx1_L >= MAXAP) apidx1_L = 0;\n\nlet apr2_L: Int = apidx2_L - dap2_L; if (apr2_L < 0) apr2_L = apr2_L + MAXAP;\nlet apDelayed2_L = apbuf2_L[apr2_L];\nlet apOut2_L = -AP_GAIN * apOut1_L + apDelayed2_L;\napbuf2_L[apidx2_L] = apOut1_L + AP_GAIN * apOut2_L;\napidx2_L = apidx2_L + 1; if (apidx2_L >= MAXAP) apidx2_L = 0;\n\nlet dap1_R: Int = floor(AP1_R * srScale);\nlet dap2_R: Int = floor(AP2_R * srScale);\nif (dap1_R < 1) dap1_R = 1; if (dap1_R > (MAXAP-1)) dap1_R = MAXAP-1;\nif (dap2_R < 1) dap2_R = 1; if (dap2_R > (MAXAP-1)) dap2_R = MAXAP-1;\n\nlet apr1_R: Int = apidx1_R - dap1_R; if (apr1_R < 0) apr1_R = apr1_R + MAXAP;\nlet apDelayed1_R = apbuf1_R[apr1_R];\nlet apOut1_R = -AP_GAIN * combSum_R + apDelayed1_R;\napbuf1_R[apidx1_R] = combSum_R + AP_GAIN * apOut1_R;\napidx1_R = apidx1_R + 1; if (apidx1_R >= MAXAP) apidx1_R = 0;\n\nlet apr2_R: Int = apidx2_R - dap2_R; if (apr2_R < 0) apr2_R = apr2_R + MAXAP;\nlet apDelayed2_R = apbuf2_R[apr2_R];\nlet apOut2_R = -AP_GAIN * apOut1_R + apDelayed2_R;\napbuf2_R[apidx2_R] = apOut1_R + AP_GAIN * apOut2_R;\napidx2_R = apidx2_R + 1; if (apidx2_R >= MAXAP) apidx2_R = 0;\n\n// ---- WET/DRY MIX + OUTPUT ----\n// Equal-power-ish lineare semplice (mix_sm controlla wet, dry resta a\n// (1-mix_sm)): per crossfade percettivamente costante in potenza\n// servirebbe sqrt(mix)/sqrt(1-mix), omesso qui perché il riverbero è\n// additivo (non sostitutivo) e la somma di energia decorrelata dry+wet\n// non genera il dip di loudness tipico del crossfade tra segnali\n// correlati — quindi mix lineare è la scelta corretta, non un'omissione.\nout1 = in1 * (1.0 - mix_sm) + apOut2_L * mix_sm;\nout2 = in2 * (1.0 - mix_sm) + apOut2_R * mix_sm;",
-										"expr" : "",
-										"safemath" : 1
+										"safemath" : 1,
+										"expr" : ""
 									}
 ,
 									"rnbo_serial" : 1,
@@ -40730,7 +41394,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 95.0, 1444.0, 853.0 ],
+						"rect" : [ 312.0, 171.0, 1444.0, 787.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
@@ -42027,8 +42691,61 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-113", 0 ],
+					"order" : 1,
+					"source" : [ "obj-114", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-115", 0 ],
+					"order" : 0,
+					"source" : [ "obj-114", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-114", 0 ],
+					"source" : [ "obj-116", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-117", 0 ],
+					"order" : 1,
+					"source" : [ "obj-118", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-119", 0 ],
+					"order" : 0,
+					"source" : [ "obj-118", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-72", 0 ],
 					"source" : [ "obj-12", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-118", 0 ],
+					"source" : [ "obj-120", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-82", 0 ],
+					"source" : [ "obj-121", 0 ]
 				}
 
 			}
@@ -42161,29 +42878,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-170", 0 ],
-					"order" : 0,
-					"source" : [ "obj-172", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-171", 0 ],
-					"order" : 1,
-					"source" : [ "obj-172", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-172", 0 ],
-					"source" : [ "obj-173", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-168", 0 ],
 					"source" : [ "obj-174", 0 ]
 				}
@@ -42274,9 +42968,16 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-29", 0 ],
+					"destination" : [ "obj-32", 0 ],
+					"source" : [ "obj-31", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-33", 0 ],
 					"order" : 1,
-					"source" : [ "obj-30", 0 ]
+					"source" : [ "obj-32", 0 ]
 				}
 
 			}
@@ -42284,14 +42985,14 @@
 				"patchline" : 				{
 					"destination" : [ "obj-45", 0 ],
 					"order" : 0,
-					"source" : [ "obj-30", 0 ]
+					"source" : [ "obj-32", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-30", 0 ],
-					"source" : [ "obj-31", 0 ]
+					"destination" : [ "obj-29", 0 ],
+					"source" : [ "obj-34", 0 ]
 				}
 
 			}
@@ -42299,6 +43000,22 @@
 				"patchline" : 				{
 					"destination" : [ "obj-7", 1 ],
 					"source" : [ "obj-36", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-35", 0 ],
+					"order" : 1,
+					"source" : [ "obj-37", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-41", 0 ],
+					"order" : 0,
+					"source" : [ "obj-37", 0 ]
 				}
 
 			}
@@ -42355,6 +43072,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-37", 0 ],
+					"source" : [ "obj-42", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-38", 0 ],
 					"order" : 1,
 					"source" : [ "obj-43", 0 ]
@@ -42366,6 +43090,20 @@
 					"destination" : [ "obj-8", 0 ],
 					"order" : 0,
 					"source" : [ "obj-43", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-171", 0 ],
+					"source" : [ "obj-44", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-69", 0 ],
+					"source" : [ "obj-46", 0 ]
 				}
 
 			}
@@ -42478,7 +43216,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-69", 0 ],
+					"destination" : [ "obj-30", 0 ],
 					"source" : [ "obj-70", 0 ]
 				}
 
@@ -42548,13 +43286,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-83", 0 ],
-					"source" : [ "obj-80", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-77", 1 ],
 					"order" : 0,
 					"source" : [ "obj-82", 0 ]
@@ -42571,17 +43302,17 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-81", 0 ],
-					"order" : 0,
-					"source" : [ "obj-83", 0 ]
+					"destination" : [ "obj-85", 0 ],
+					"order" : 1,
+					"source" : [ "obj-86", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-82", 0 ],
-					"order" : 1,
-					"source" : [ "obj-83", 0 ]
+					"destination" : [ "obj-90", 0 ],
+					"order" : 0,
+					"source" : [ "obj-86", 0 ]
 				}
 
 			}
@@ -42672,6 +43403,36 @@
 				"patchline" : 				{
 					"destination" : [ "obj-12", 0 ],
 					"source" : [ "obj-94", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-86", 0 ],
+					"source" : [ "obj-95", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-122", 0 ],
+					"order" : 0,
+					"source" : [ "obj-98", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-97", 0 ],
+					"order" : 1,
+					"source" : [ "obj-98", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-98", 0 ],
+					"source" : [ "obj-99", 0 ]
 				}
 
 			}
