@@ -38,20 +38,8 @@
 , 			{
 				"box" : 				{
 					"comment" : "",
-					"id" : "obj-94",
-					"index" : 6,
-					"maxclass" : "outlet",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 994.0, 688.0, 30.0, 30.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"comment" : "",
 					"id" : "obj-95",
-					"index" : 5,
+					"index" : 4,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -63,23 +51,11 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-96",
-					"index" : 4,
-					"maxclass" : "outlet",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 919.0, 688.0, 30.0, 30.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"comment" : "",
-					"id" : "obj-92",
 					"index" : 3,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 776.5, 688.0, 30.0, 30.0 ]
+					"patching_rect" : [ 919.0, 688.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -1160,7 +1136,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 105.0, 845.0, 91.0, 22.0 ],
+					"patching_rect" : [ 105.0, 843.0, 91.0, 22.0 ],
 					"text" : "s mediadevices"
 				}
 
@@ -1186,17 +1162,6 @@
 					"outlettype" : [ "", "" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 38.0, 737.0, 39.0, 32.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-9",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 172.0, 814.0, 32.0, 22.0 ],
-					"text" : "print"
 				}
 
 			}
@@ -1371,7 +1336,7 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-16",
-					"items" : [ "Fotocamera di MacBook Pro (0000:0001)", ",", "OBSBOT Virtual Camera", ",", "Fotocamera di iPhone di Matteo" ],
+					"items" : [ "Fotocamera di MacBook Pro (0000:0001)", ",", "OBSBOT Virtual Camera", ",", "Fotocamera di iPhone di Matteo" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -2419,15 +2384,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-33", 0 ],
-					"order" : 1,
-					"source" : [ "obj-11", 2 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-9", 0 ],
-					"order" : 0,
 					"source" : [ "obj-11", 2 ]
 				}
 
@@ -2671,13 +2627,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-94", 0 ],
-					"source" : [ "obj-51", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-95", 0 ],
 					"source" : [ "obj-52", 0 ]
 				}
@@ -2736,13 +2685,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-71", 0 ],
 					"source" : [ "obj-60", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-92", 0 ],
-					"source" : [ "obj-62", 0 ]
 				}
 
 			}
