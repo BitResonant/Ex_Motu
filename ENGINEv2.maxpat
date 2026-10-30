@@ -326,10 +326,10 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1098.0, 54.0, 82.0, 22.0 ],
+					"patching_rect" : [ 1098.0, 54.0, 77.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 236.842103004455566, 12.280701637268066, 88.0, 22.0 ],
-					"text" : "loadmess 114"
+					"text" : "loadmess 57"
 				}
 
 			}
@@ -1415,6 +1415,18 @@
 						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-139",
+									"maxclass" : "newobj",
+									"numinlets" : 6,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 928.0, 913.0, 90.0, 22.0 ],
+									"text" : "scale 0. 1. 0. 2."
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-128",
 									"maxclass" : "comment",
 									"numinlets" : 1,
@@ -1584,7 +1596,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "float" ],
-									"patching_rect" : [ 928.0, 921.0, 39.0, 22.0 ],
+									"patching_rect" : [ 928.0, 880.0, 39.0, 22.0 ],
 									"text" : "/ 127."
 								}
 
@@ -1596,7 +1608,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 928.0, 886.0, 82.0, 22.0 ],
+									"patching_rect" : [ 928.0, 849.0, 82.0, 22.0 ],
 									"text" : "r volume_scifi"
 								}
 
@@ -19849,6 +19861,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-100", 1 ],
+									"midpoints" : [ 878.5, 873.0, 839.5, 873.0 ],
 									"source" : [ "obj-114", 1 ]
 								}
 
@@ -19856,6 +19869,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-100", 0 ],
+									"midpoints" : [ 818.5, 873.0, 818.5, 873.0 ],
 									"source" : [ "obj-114", 0 ]
 								}
 
@@ -19871,25 +19885,15 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-122", 0 ],
-									"midpoints" : [ 937.5, 909.0, 937.5, 909.0 ],
+									"midpoints" : [ 937.5, 873.0, 937.5, 873.0 ],
 									"source" : [ "obj-121", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-111", 1 ],
-									"midpoints" : [ 937.5, 945.0, 894.0, 945.0, 894.0, 921.0, 874.0, 921.0 ],
-									"order" : 0,
-									"source" : [ "obj-122", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-112", 1 ],
-									"midpoints" : [ 937.5, 945.0, 894.0, 945.0, 894.0, 921.0, 829.0, 921.0 ],
-									"order" : 1,
+									"destination" : [ "obj-139", 0 ],
+									"midpoints" : [ 937.5, 903.0, 937.5, 903.0 ],
 									"source" : [ "obj-122", 0 ]
 								}
 
@@ -19983,6 +19987,24 @@
 									"midpoints" : [ 497.13631272315979, 843.0, 462.0, 843.0, 462.0, 807.0, 395.13631272315979, 807.0 ],
 									"order" : 1,
 									"source" : [ "obj-138", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-111", 1 ],
+									"midpoints" : [ 937.5, 936.0, 894.0, 936.0, 894.0, 921.0, 874.0, 921.0 ],
+									"order" : 0,
+									"source" : [ "obj-139", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-112", 1 ],
+									"midpoints" : [ 937.5, 936.0, 894.0, 936.0, 894.0, 921.0, 829.0, 921.0 ],
+									"order" : 1,
+									"source" : [ "obj-139", 0 ]
 								}
 
 							}
@@ -21856,7 +21878,7 @@
 ,
 																	"rnbo_serial" : 1,
 																	"rnbo_uniqueid" : "message_obj-8",
-																	"text" : "783.99"
+																	"text" : "739.99"
 																}
 
 															}
@@ -21875,7 +21897,7 @@
 ,
 																	"rnbo_serial" : 2,
 																	"rnbo_uniqueid" : "message_obj-7",
-																	"text" : "622.25"
+																	"text" : "659.26"
 																}
 
 															}
@@ -21894,7 +21916,7 @@
 ,
 																	"rnbo_serial" : 3,
 																	"rnbo_uniqueid" : "message_obj-6",
-																	"text" : "466.16"
+																	"text" : "523.25"
 																}
 
 															}
@@ -21913,7 +21935,7 @@
 ,
 																	"rnbo_serial" : 4,
 																	"rnbo_uniqueid" : "message_obj-5",
-																	"text" : "392"
+																	"text" : "369.99"
 																}
 
 															}
@@ -21932,7 +21954,7 @@
 ,
 																	"rnbo_serial" : 5,
 																	"rnbo_uniqueid" : "message_obj-4",
-																	"text" : "311.13"
+																	"text" : "329.63"
 																}
 
 															}
@@ -21951,7 +21973,7 @@
 ,
 																	"rnbo_serial" : 6,
 																	"rnbo_uniqueid" : "message_obj-3",
-																	"text" : "233.08"
+																	"text" : "261.63"
 																}
 
 															}
@@ -32022,7 +32044,7 @@
 ,
 																	"rnbo_serial" : 1,
 																	"rnbo_uniqueid" : "message_obj-8",
-																	"text" : "783.99"
+																	"text" : "739.99"
 																}
 
 															}
@@ -32041,7 +32063,7 @@
 ,
 																	"rnbo_serial" : 2,
 																	"rnbo_uniqueid" : "message_obj-7",
-																	"text" : "622.25"
+																	"text" : "659.26"
 																}
 
 															}
@@ -32060,7 +32082,7 @@
 ,
 																	"rnbo_serial" : 3,
 																	"rnbo_uniqueid" : "message_obj-6",
-																	"text" : "466.16"
+																	"text" : "523.25"
 																}
 
 															}
@@ -32079,7 +32101,7 @@
 ,
 																	"rnbo_serial" : 4,
 																	"rnbo_uniqueid" : "message_obj-5",
-																	"text" : "392"
+																	"text" : "369.99"
 																}
 
 															}
@@ -32098,7 +32120,7 @@
 ,
 																	"rnbo_serial" : 5,
 																	"rnbo_uniqueid" : "message_obj-4",
-																	"text" : "311.13"
+																	"text" : "329.63"
 																}
 
 															}
@@ -32117,7 +32139,7 @@
 ,
 																	"rnbo_serial" : 6,
 																	"rnbo_uniqueid" : "message_obj-3",
-																	"text" : "233.08"
+																	"text" : "261.63"
 																}
 
 															}
