@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 33.0, 95.0, 689.0, 346.0 ],
+		"rect" : [ 34.0, 95.0, 688.0, 787.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
@@ -728,13 +728,15 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-16",
-					"items" : [ "Fotocamera di MacBook Pro (0000:0001)", ",", "OBSBOT Virtual Camera", ",", "Fotocamera di iPhone di Matteo" ],
+					"items" : [ "Fotocamera di MacBook Pro (0000:0001)", ",", "OBSBOT Tiny Camera (3564:fef0)", ",", "OBSBOT Virtual Camera", ",", "Fotocamera di iPhone di Matteo" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 329.0, 128.0, 234.0, 22.0 ]
+					"patching_rect" : [ 329.0, 128.0, 234.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 38.0, 166.0, 234.0, 22.0 ]
 				}
 
 			}
@@ -898,6 +900,8 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 38.0, 208.0, 640.0, 480.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 38.0, 208.0, 640.0, 480.0 ],
 					"rendermode" : 1,
 					"url" : "file://jweb-pose-landmarker.html"
 				}

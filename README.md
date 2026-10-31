@@ -1,14 +1,14 @@
-# jweb-pose-landmarker
+# Gestosynth
 
-A self contained example demonstrating how to use Mediapipe Pose Landmarker with Max's `jweb`
+Interactive sound installation *Ex motu* ("starting from movement"). A camera follows the visitor's hands and a Max/MSP engine turns the gestures into sound: any movement changes what is heard, with no gesture to learn.
 
-![Max example screenshot](jweb-pose-landmarker.png)
+Tracking runs in Max's `jweb` object with MediaPipe Pose Landmarker (`jweb-pose-landmarker.html`, `js/`, `css/`), restricted to a single subject at the plinth and to the two wrists. The audio engine is `ENGINEv2.maxpat`, which embeds `jweb-pose-landmarker.maxpat` and uses `granular.maxpat` as the grain voice. The tracking code started from the example by Rob Ramirez credited below.
+
+Audio files (`audio/`) are not tracked in this repository.
 
 ## Pose landmarker model
 
-The pose landmarker model tracks 33 body landmark locations, representing the approximate location of the following body parts:
-
-![Pose landmarks image](pose_landmarks_index.png)
+The pose landmarker model tracks 33 body landmark locations, representing the approximate location of the following body parts (the installation uses the wrists, 15 and 16):
 
 ```
 0 - nose

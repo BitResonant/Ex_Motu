@@ -1412,7 +1412,6 @@
 						"classnamespace" : "box",
 						"rect" : [ 790.0, 95.0, 688.0, 787.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-139",
@@ -21878,7 +21877,7 @@
 ,
 																	"rnbo_serial" : 1,
 																	"rnbo_uniqueid" : "message_obj-8",
-																	"text" : "739.99"
+																	"text" : "698.46"
 																}
 
 															}
@@ -21897,7 +21896,7 @@
 ,
 																	"rnbo_serial" : 2,
 																	"rnbo_uniqueid" : "message_obj-7",
-																	"text" : "659.26"
+																	"text" : "622.25"
 																}
 
 															}
@@ -21916,7 +21915,7 @@
 ,
 																	"rnbo_serial" : 3,
 																	"rnbo_uniqueid" : "message_obj-6",
-																	"text" : "523.25"
+																	"text" : "466.16"
 																}
 
 															}
@@ -21935,7 +21934,7 @@
 ,
 																	"rnbo_serial" : 4,
 																	"rnbo_uniqueid" : "message_obj-5",
-																	"text" : "369.99"
+																	"text" : "349.23"
 																}
 
 															}
@@ -21954,7 +21953,7 @@
 ,
 																	"rnbo_serial" : 5,
 																	"rnbo_uniqueid" : "message_obj-4",
-																	"text" : "329.63"
+																	"text" : "311.13"
 																}
 
 															}
@@ -21973,7 +21972,7 @@
 ,
 																	"rnbo_serial" : 6,
 																	"rnbo_uniqueid" : "message_obj-3",
-																	"text" : "261.63"
+																	"text" : "233.08"
 																}
 
 															}
@@ -32044,7 +32043,7 @@
 ,
 																	"rnbo_serial" : 1,
 																	"rnbo_uniqueid" : "message_obj-8",
-																	"text" : "739.99"
+																	"text" : "698.46"
 																}
 
 															}
@@ -32063,7 +32062,7 @@
 ,
 																	"rnbo_serial" : 2,
 																	"rnbo_uniqueid" : "message_obj-7",
-																	"text" : "659.26"
+																	"text" : "622.25"
 																}
 
 															}
@@ -32082,7 +32081,7 @@
 ,
 																	"rnbo_serial" : 3,
 																	"rnbo_uniqueid" : "message_obj-6",
-																	"text" : "523.25"
+																	"text" : "466.16"
 																}
 
 															}
@@ -32101,7 +32100,7 @@
 ,
 																	"rnbo_serial" : 4,
 																	"rnbo_uniqueid" : "message_obj-5",
-																	"text" : "369.99"
+																	"text" : "349.23"
 																}
 
 															}
@@ -32120,7 +32119,7 @@
 ,
 																	"rnbo_serial" : 5,
 																	"rnbo_uniqueid" : "message_obj-4",
-																	"text" : "329.63"
+																	"text" : "311.13"
 																}
 
 															}
@@ -32139,7 +32138,7 @@
 ,
 																	"rnbo_serial" : 6,
 																	"rnbo_uniqueid" : "message_obj-3",
-																	"text" : "261.63"
+																	"text" : "233.08"
 																}
 
 															}
@@ -44339,7 +44338,6 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-1::obj-2" : [ "live.text", "live.text", 0 ],
 			"obj-56::obj-100" : [ "rnbo~[5]", "rnbo~[1]", 0 ],
 			"obj-8::obj-14" : [ "rnbo~", "rnbo~", 0 ],
 			"obj-8::obj-20" : [ "rnbo~[4]", "rnbo~", 0 ],
@@ -44369,13 +44367,6 @@
 				"bootpath" : "~/Desktop/Audio_UX/Gestosynth",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "pose_landmarks_index.png",
-				"bootpath" : "~/Desktop/Audio_UX/Gestosynth",
-				"patcherrelativepath" : ".",
-				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
