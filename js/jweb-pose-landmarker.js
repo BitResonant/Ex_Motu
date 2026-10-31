@@ -937,29 +937,20 @@ const fitOverlayToSource = (source) => {
 
 function onResultsPose(results) {
 
-  fitOverlayToSource(results.image);
-  canvas.save();
-  canvas.clearRect(0, 0, overlay.width, overlay.height);
-
-  if(drawImage && results.image) {
-    canvas.drawImage(
-      results.image, 0, 0, overlay.width, overlay.height);
-  }
-
+  // Everything Max needs is computed and sent first; the overlay is drawn after,
+  // so drawing never adds to the gesture-to-sound latency.
   updateMetricBasis(results.image);
   const subjectIndex = selectSubject(results.landmarks || []);
   reportOccupancy();
   telemetryPoses = (results.landmarks || []).length;
   telemetrySubject = subjectIndex;
-  const loggedSubject = subjectIndex >= 0
+  // What Max receives, and what the overlay shows, is the filtered skeleton
+  // computed once here.
+  const subject = subjectIndex >= 0
     ? sanitizeArms(results.landmarks[subjectIndex])
     : (resetArmFilter(), null);
-  queueLogSample(telemetryPoses, subjectIndex, loggedSubject);
 
-  if (subjectIndex >= 0) {
-    // What Max receives, and what the overlay shows, is the filtered skeleton
-    // computed once above.
-    const subject = loggedSubject;
+  if (subject) {
     const output = {
       "left":{},
       "right":{},
@@ -970,41 +961,56 @@ function onResultsPose(results) {
     Object.values(POSE_LANDMARKS_RIGHT).forEach(([landmark, index]) => { output["right"][landmark] = subject[index] });
     Object.values(POSE_LANDMARKS_NEUTRAL).forEach(([landmark, index]) => { output["neutral"][landmark] = subject[index] });
     setMaxDict(output);
-  
-    // Only the locked subject is drawn, so the overlay shows exactly the one body
-    // that is driving the engine.
-    if (drawLandmarks || drawConnectors) {
-      const landmark = subject;
-      if (drawLandmarks) {
-        drawingUtils.drawLandmarks(landmark, {
-          radius: (data) => DrawingUtils.lerp(data.from.z, -0.15, 0.1, 1, 0.5),
-          color: zColor, fillColor: '#FF0000'
-        });
-      }
-      if (drawConnectors) {
-        drawingUtils.drawConnectors(landmark, PoseLandmarker.POSE_CONNECTIONS, {
-          color: (data) => {
-            const x0 = overlay.width * data.from.x;
-            const y0 = overlay.height * data.from.y;
-            const x1 = overlay.width * data.to.x;
-            const y1 = overlay.height * data.to.y;
-  
-            const z0 = clamp(data.from.z + 0.5, 0, 1);
-            const z1 = clamp(data.to.z + 0.5, 0, 1);
-  
-            const gradient = canvas.createLinearGradient(x0, y0, x1, y1);
-            gradient.addColorStop(
-                0, `rgba(0, ${255 * z0}, ${255 * (1 - z0)}, 1)`);
-            gradient.addColorStop(
-                1.0, `rgba(0, ${255 * z1}, ${255 * (1 - z1)}, 1)`);
-            return gradient;
-          }}
-        );
-      }
-    }
   }
 
   outputMax("update");
+
+  queueLogSample(telemetryPoses, subjectIndex, subject);
+  drawOverlay(results.image, subject);
+}
+
+function drawOverlay(image, subject) {
+
+  fitOverlayToSource(image);
+  canvas.save();
+  canvas.clearRect(0, 0, overlay.width, overlay.height);
+
+  if(drawImage && image) {
+    canvas.drawImage(
+      image, 0, 0, overlay.width, overlay.height);
+  }
+
+  // Only the locked subject is drawn, so the overlay shows exactly the one body
+  // that is driving the engine.
+  if (subject && (drawLandmarks || drawConnectors)) {
+    const landmark = subject;
+    if (drawLandmarks) {
+      drawingUtils.drawLandmarks(landmark, {
+        radius: (data) => DrawingUtils.lerp(data.from.z, -0.15, 0.1, 1, 0.5),
+        color: zColor, fillColor: '#FF0000'
+      });
+    }
+    if (drawConnectors) {
+      drawingUtils.drawConnectors(landmark, PoseLandmarker.POSE_CONNECTIONS, {
+        color: (data) => {
+          const x0 = overlay.width * data.from.x;
+          const y0 = overlay.height * data.from.y;
+          const x1 = overlay.width * data.to.x;
+          const y1 = overlay.height * data.to.y;
+
+          const z0 = clamp(data.from.z + 0.5, 0, 1);
+          const z1 = clamp(data.to.z + 0.5, 0, 1);
+
+          const gradient = canvas.createLinearGradient(x0, y0, x1, y1);
+          gradient.addColorStop(
+              0, `rgba(0, ${255 * z0}, ${255 * (1 - z0)}, 1)`);
+          gradient.addColorStop(
+              1.0, `rgba(0, ${255 * z1}, ${255 * (1 - z1)}, 1)`);
+          return gradient;
+        }}
+      );
+    }
+  }
 
   if (showTelemetry) drawTelemetry();
 
