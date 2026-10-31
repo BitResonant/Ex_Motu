@@ -37,10 +37,13 @@ const NUM_POSES = 4;
 
 // Capture format requested from the camera, instead of the browser default of
 // 640x480. On the OBSBOT Tiny 640x480 exists only as uncompressed YUY2 - about
-// 147 Mbit/s of its USB 2.0 link - and is a 4:3 crop of the 16:9 sensor; 1280x720 is
-// MJPEG, uses the full sensor width and is offered by the built-in camera as well.
-// Resolution costs nothing in inference (the model resizes internally) and the metric
-// basis below keeps every px threshold on the same vertical scale.
+// 147 Mbit/s of its USB 2.0 link - and is a 4:3 crop of the 16:9 sensor; 640x360 is
+// MJPEG at up to 60 fps and uses the full sensor width. 640x360 rather than 1280x720
+// (used until 2026-10-31): the model resizes every frame to ~256 px and the overlay is
+// 640x360, so the extra pixels only cost time in the camera's encoder, on USB and in
+// decoding. The metric basis below keeps every px threshold on the same vertical
+// scale whatever the resolution. The built-in camera has no 640x360 mode, so the
+// browser picks its nearest one: check the `camera` telemetry line when using it.
 //
 // Capture runs at 60 fps but detection stays at 30 Hz (DETECT_INTERVAL_MS), because
 // every frame-counted constant in this file is calibrated at 30. The OBSBOT delivers
@@ -50,8 +53,8 @@ const NUM_POSES = 4;
 // 67 ms hole. At 720p60 the longest gap is 34 ms, so a fresh frame is always there
 // when the 30 Hz detection asks for one. Cameras without a 60 fps mode (the built-in
 // one) settle on 30 and behave exactly as before. Cost: exposure capped at 1/60 s.
-const CAPTURE_WIDTH = 1280;
-const CAPTURE_HEIGHT = 720;
+const CAPTURE_WIDTH = 640;
+const CAPTURE_HEIGHT = 360;
 const CAPTURE_FPS = 60;
 const DETECT_INTERVAL_MS = 1000 / 30;
 // requestAnimationFrame ticks in steps of 8.3 ms (120 Hz panel) or 16.7 ms (60 Hz), so

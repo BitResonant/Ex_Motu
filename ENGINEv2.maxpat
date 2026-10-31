@@ -55,7 +55,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 150.0, 480.0, 92.0, 22.0 ],
+					"patching_rect" : [ 150.0, 480.0, 94.0, 22.0 ],
 					"text" : "slide~ 441 7938"
 				}
 
@@ -103,7 +103,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 600.0, 480.0, 92.0, 22.0 ],
+					"patching_rect" : [ 600.0, 480.0, 94.0, 22.0 ],
 					"text" : "slide~ 441 7938"
 				}
 
@@ -21703,7 +21703,7 @@
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-107",
-									"linecount" : 2,
+									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
@@ -22082,7 +22082,7 @@
 ,
 																	"rnbo_serial" : 1,
 																	"rnbo_uniqueid" : "message_obj-8",
-																	"text" : "830.61"
+																	"text" : "783.99"
 																}
 
 															}
@@ -22101,7 +22101,7 @@
 ,
 																	"rnbo_serial" : 2,
 																	"rnbo_uniqueid" : "message_obj-7",
-																	"text" : "739.99"
+																	"text" : "622.25"
 																}
 
 															}
@@ -22120,7 +22120,7 @@
 ,
 																	"rnbo_serial" : 3,
 																	"rnbo_uniqueid" : "message_obj-6",
-																	"text" : "587.33"
+																	"text" : "523.25"
 																}
 
 															}
@@ -22139,7 +22139,7 @@
 ,
 																	"rnbo_serial" : 4,
 																	"rnbo_uniqueid" : "message_obj-5",
-																	"text" : "415.3"
+																	"text" : "392"
 																}
 
 															}
@@ -22158,7 +22158,7 @@
 ,
 																	"rnbo_serial" : 5,
 																	"rnbo_uniqueid" : "message_obj-4",
-																	"text" : "369.99"
+																	"text" : "311.13"
 																}
 
 															}
@@ -22177,7 +22177,7 @@
 ,
 																	"rnbo_serial" : 6,
 																	"rnbo_uniqueid" : "message_obj-3",
-																	"text" : "293.66"
+																	"text" : "261.63"
 																}
 
 															}
@@ -32158,7 +32158,7 @@
 ,
 																	"rnbo_serial" : 1,
 																	"rnbo_uniqueid" : "message_obj-8",
-																	"text" : "830.61"
+																	"text" : "783.99"
 																}
 
 															}
@@ -32177,7 +32177,7 @@
 ,
 																	"rnbo_serial" : 2,
 																	"rnbo_uniqueid" : "message_obj-7",
-																	"text" : "739.99"
+																	"text" : "622.25"
 																}
 
 															}
@@ -32196,7 +32196,7 @@
 ,
 																	"rnbo_serial" : 3,
 																	"rnbo_uniqueid" : "message_obj-6",
-																	"text" : "587.33"
+																	"text" : "523.25"
 																}
 
 															}
@@ -32215,7 +32215,7 @@
 ,
 																	"rnbo_serial" : 4,
 																	"rnbo_uniqueid" : "message_obj-5",
-																	"text" : "415.3"
+																	"text" : "392"
 																}
 
 															}
@@ -32234,7 +32234,7 @@
 ,
 																	"rnbo_serial" : 5,
 																	"rnbo_uniqueid" : "message_obj-4",
-																	"text" : "369.99"
+																	"text" : "311.13"
 																}
 
 															}
@@ -32253,7 +32253,7 @@
 ,
 																	"rnbo_serial" : 6,
 																	"rnbo_uniqueid" : "message_obj-3",
-																	"text" : "293.66"
+																	"text" : "261.63"
 																}
 
 															}
@@ -39538,7 +39538,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-14", 7 ],
 									"midpoints" : [ 278.5, 144.0, 255.0, 144.0, 255.0, 369.0, 270.0, 369.0, 270.0, 450.0, 297.0, 450.0, 297.0, 561.0, 276.0, 561.0, 276.0, 606.0, 332.501562499999977, 606.0 ],
-									"order" : 0,
 									"source" : [ "obj-43", 0 ]
 								}
 
@@ -39795,7 +39794,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-20", 7 ],
 									"midpoints" : [ 1038.5, 180.0, 900.0, 180.0, 900.0, 450.0, 945.0, 450.0, 945.0, 561.0, 924.0, 561.0, 924.0, 606.0, 980.501562499999864, 606.0 ],
-									"order" : 1,
 									"source" : [ "obj-89", 0 ]
 								}
 
@@ -42786,7 +42784,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 500.0, 351.0, 190.0, 47.0 ],
-									"presentation_linecount" : 2,
 									"text" : "movement = new - previous, computed on arrival \n"
 								}
 
@@ -43747,6 +43744,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-178", 0 ],
+					"order" : 1,
 					"source" : [ "obj-177", 0 ]
 				}
 
@@ -43754,6 +43752,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-8", 2 ],
+					"order" : 0,
 					"source" : [ "obj-177", 0 ]
 				}
 
@@ -43782,6 +43781,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-183", 0 ],
+					"order" : 1,
 					"source" : [ "obj-182", 0 ]
 				}
 
@@ -43789,6 +43789,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-8", 3 ],
+					"order" : 0,
 					"source" : [ "obj-182", 0 ]
 				}
 
@@ -43938,6 +43939,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-176", 0 ],
+					"order" : 0,
 					"source" : [ "obj-39", 0 ]
 				}
 
@@ -43945,6 +43947,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-181", 0 ],
+					"order" : 0,
 					"source" : [ "obj-39", 1 ]
 				}
 
@@ -43953,6 +43956,7 @@
 				"patchline" : 				{
 					"destination" : [ "obj-80", 0 ],
 					"midpoints" : [ 79.5, 438.0, 80.231709003448486, 438.0 ],
+					"order" : 1,
 					"source" : [ "obj-39", 0 ]
 				}
 
@@ -43961,6 +43965,7 @@
 				"patchline" : 				{
 					"destination" : [ "obj-81", 0 ],
 					"midpoints" : [ 518.5, 426.0, 518.036597490310669, 426.0 ],
+					"order" : 1,
 					"source" : [ "obj-39", 1 ]
 				}
 
@@ -44009,7 +44014,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-8", 0 ],
 					"midpoints" : [ 80.231709003448486, 567.0, 376.5, 567.0 ],
-					"order" : 0,
 					"source" : [ "obj-43", 0 ]
 				}
 
@@ -44291,8 +44295,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-8", 1 ],
-					"midpoints" : [ 518.036597490310669, 633.0, 422.5, 633.0 ],
-					"order" : 0,
+					"midpoints" : [ 518.036597490310669, 633.0, 391.833333333333314, 633.0 ],
 					"source" : [ "obj-89", 0 ]
 				}
 
