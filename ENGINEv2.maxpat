@@ -14,6 +14,114 @@
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-180",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 150.0, 520.0, 300.0, 33.0 ],
+					"text" : "signal-rate smoothing of intensity: slide~ 441 7938 = 10 ms up, 180 ms down at 44.1 kHz"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-176",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 150.0, 441.0, 33.0, 22.0 ],
+					"text" : "sig~"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-177",
+					"maxclass" : "newobj",
+					"numinlets" : 3,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 150.0, 480.0, 92.0, 22.0 ],
+					"text" : "slide~ 441 7938"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-178",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 72.0, 581.0, 47.0, 22.0 ],
+					"text" : "*~ -0.6"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-179",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 72.0, 612.0, 37.0, 22.0 ],
+					"text" : "+~ 1."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-181",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 600.0, 441.0, 33.0, 22.0 ],
+					"text" : "sig~"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-182",
+					"maxclass" : "newobj",
+					"numinlets" : 3,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 600.0, 480.0, 92.0, 22.0 ],
+					"text" : "slide~ 441 7938"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-183",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 181.0, 581.0, 47.0, 22.0 ],
+					"text" : "*~ -0.6"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-184",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 181.0, 612.0, 37.0, 22.0 ],
+					"text" : "+~ 1."
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-130",
 					"maxclass" : "comment",
 					"numinlets" : 1,
@@ -1420,18 +1528,6 @@
 					"outlettype" : [ "", "bang" ],
 					"patching_rect" : [ 70.731709003448486, 508.536597490310669, 57.0, 22.0 ],
 					"text" : "line 0. 10"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-100",
-					"maxclass" : "newobj",
-					"numinlets" : 6,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 181.0, 581.0, 97.0, 22.0 ],
-					"text" : "scale 0. 1. 1. 0.4"
 				}
 
 			}
@@ -21510,18 +21606,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-38",
-					"maxclass" : "newobj",
-					"numinlets" : 6,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 72.0, 581.0, 97.0, 22.0 ],
-					"text" : "scale 0. 1. 1. 0.4"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-45",
 					"maxclass" : "number",
 					"numinlets" : 1,
@@ -21545,32 +21629,6 @@
 					"presentation" : 1,
 					"presentation_rect" : [ -152.631577491760254, -312.280698776245117, 83.0, 22.0 ],
 					"text" : "loadmess 60"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-25",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 181.0, 612.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-36",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 72.0, 612.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -21614,7 +21672,7 @@
 				"box" : 				{
 					"id" : "obj-8",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
+					"numinlets" : 4,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "signal" ],
 					"patcher" : 					{
@@ -21632,24 +21690,80 @@
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-107",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 269.0, 200.0, 330.0, 33.0 ],
+									"text" : "intensity arrives as a smoothed signal; gen.codebox~ = threshold 0.0025 + log taper k=3, as the former control gen.codebox"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"comment" : "",
+									"id" : "obj-103",
+									"index" : 3,
+									"maxclass" : "inlet",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 1100.0, 75.0, 30.0, 30.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"comment" : "",
+									"id" : "obj-104",
+									"index" : 4,
+									"maxclass" : "inlet",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 1180.0, 75.0, 30.0, 30.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"code" : "// gen~ codebox — guadagno dell'eccitazione del lead dall'intensità smussata\n// (segnale 0.-1., già passato da slide~ al livello principale).\n// Soglia 0.0025, poi log-taper y = log(1 + k*x) / log(1 + k):\n// y(0)=0, y(1)=1, salita rapida iniziale e poi plateau.\n// Stessa mappatura del vecchio gen.codebox di controllo (k = 3, prima impostato da [curve 3]).\n\nParam curve(3., min=0.0001, max=200);   // fattore di curvatura k, esposto come attributo dell'oggetto\n\nx = clamp(in1, 0., 1.);                 // clamp difensivo: evita log(negativo)\nout1 = (x >= 0.0025) * log(1. + curve * x) / log(1. + curve);",
+									"fontface" : 0,
+									"fontname" : "<Monospaced>",
+									"fontsize" : 12.0,
+									"id" : "obj-105",
+									"maxclass" : "gen.codebox~",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 269.0, 270.0, 330.0, 160.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"code" : "// gen~ codebox — guadagno dell'eccitazione del lead dall'intensità smussata\n// (segnale 0.-1., già passato da slide~ al livello principale).\n// Soglia 0.0025, poi log-taper y = log(1 + k*x) / log(1 + k):\n// y(0)=0, y(1)=1, salita rapida iniziale e poi plateau.\n// Stessa mappatura del vecchio gen.codebox di controllo (k = 3, prima impostato da [curve 3]).\n\nParam curve(3., min=0.0001, max=200);   // fattore di curvatura k, esposto come attributo dell'oggetto\n\nx = clamp(in1, 0., 1.);                 // clamp difensivo: evita log(negativo)\nout1 = (x >= 0.0025) * log(1. + curve * x) / log(1. + curve);",
+									"fontface" : 0,
+									"fontname" : "<Monospaced>",
+									"fontsize" : 12.0,
+									"id" : "obj-106",
+									"maxclass" : "gen.codebox~",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 915.0, 270.0, 330.0, 160.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-16",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 520.5, 833.0, 150.0, 20.0 ],
 									"text" : "<---  pan position --->"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-9",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 954.0, 194.0, 58.0, 22.0 ],
-									"text" : "loadbang"
 								}
 
 							}
@@ -29771,18 +29885,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-102",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 291.0, 195.0, 58.0, 22.0 ],
-									"text" : "loadbang"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-99",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -31040,45 +31142,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-76",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 954.0, 230.0, 48.0, 22.0 ],
-									"text" : "curve 3"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-77",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 1029.0, 194.0, 171.0, 22.0 ],
-									"text" : "if $f1 < 0.0025 then 0 else $f1"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"code" : "// gen.codebox — mappatura logaritmica di in1 (atteso in range 0.-1.) su out1\n// formula log-taper: y = log(1 + k*x) / log(1 + k)\n// proprietà: y(0)=0, y(1)=1 per ogni k>0; k->0 la risposta tende al lineare,\n// k grande accentua la curvatura (salita rapida iniziale, poi plateau)\n\nParam curve(4., min=0.0001, max=200);   // fattore di curvatura k, esposto come attributo dell'oggetto\n\nx = clamp(in1, 0., 1.);                 // clamp difensivo: evita log(negativo) se in1 esce dal range atteso\nout1 = log(1. + curve * x) / log(1. + curve);",
-									"fontface" : 0,
-									"fontname" : "<Monospaced>",
-									"fontsize" : 12.0,
-									"id" : "obj-78",
-									"maxclass" : "gen.codebox",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "float" ],
-									"patching_rect" : [ 915.0, 265.0, 255.0, 100.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-79",
 									"maxclass" : "message",
 									"numinlets" : 2,
@@ -31195,45 +31258,6 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 300.0, 367.0, 150.0, 47.0 ],
 									"text" : "logarithmic scale because the input numbers are skewed towards 0"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-64",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 291.0, 230.0, 48.0, 22.0 ],
-									"text" : "curve 3"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-38",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 269.0, 162.0, 171.0, 22.0 ],
-									"text" : "if $f1 < 0.0025 then 0 else $f1"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"code" : "// gen.codebox — mappatura logaritmica di in1 (atteso in range 0.-1.) su out1\n// formula log-taper: y = log(1 + k*x) / log(1 + k)\n// proprietà: y(0)=0, y(1)=1 per ogni k>0; k->0 la risposta tende al lineare,\n// k grande accentua la curvatura (salita rapida iniziale, poi plateau)\n\nParam curve(4., min=0.0001, max=200);   // fattore di curvatura k, esposto come attributo dell'oggetto\n\nx = clamp(in1, 0., 1.);                 // clamp difensivo: evita log(negativo) se in1 esce dal range atteso\nout1 = log(1. + curve * x) / log(1. + curve);",
-									"fontface" : 0,
-									"fontname" : "<Monospaced>",
-									"fontsize" : 12.0,
-									"id" : "obj-36",
-									"maxclass" : "gen.codebox",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "float" ],
-									"patching_rect" : [ 269.0, 265.0, 255.0, 100.0 ]
 								}
 
 							}
@@ -39284,9 +39308,29 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-64", 0 ],
-									"midpoints" : [ 300.5, 219.0, 300.5, 219.0 ],
-									"source" : [ "obj-102", 0 ]
+									"destination" : [ "obj-105", 0 ],
+									"source" : [ "obj-103", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-106", 0 ],
+									"source" : [ "obj-104", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-7", 1 ],
+									"source" : [ "obj-105", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-91", 1 ],
+									"source" : [ "obj-106", 0 ]
 								}
 
 							}
@@ -39446,25 +39490,9 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-7", 1 ],
-									"midpoints" : [ 278.5, 366.0, 278.0, 366.0 ],
-									"source" : [ "obj-36", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-74", 0 ],
 									"midpoints" : [ 106.5, 372.0, 106.5, 372.0 ],
 									"source" : [ "obj-37", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-36", 0 ],
-									"midpoints" : [ 278.5, 186.0, 278.5, 186.0 ],
-									"source" : [ "obj-38", 0 ]
 								}
 
 							}
@@ -39499,15 +39527,6 @@
 									"destination" : [ "obj-14", 7 ],
 									"midpoints" : [ 278.5, 144.0, 255.0, 144.0, 255.0, 369.0, 270.0, 369.0, 270.0, 450.0, 297.0, 450.0, 297.0, 561.0, 276.0, 561.0, 276.0, 606.0, 332.501562499999977, 606.0 ],
 									"order" : 0,
-									"source" : [ "obj-43", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-38", 0 ],
-									"midpoints" : [ 278.5, 144.0, 278.5, 144.0 ],
-									"order" : 1,
 									"source" : [ "obj-43", 0 ]
 								}
 
@@ -39642,14 +39661,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-36", 0 ],
-									"midpoints" : [ 300.5, 255.0, 279.0, 255.0, 279.0, 261.0, 278.5, 261.0 ],
-									"source" : [ "obj-64", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-59", 1 ],
 									"midpoints" : [ 267.5, 486.0, 267.9296875, 486.0 ],
 									"source" : [ "obj-7", 0 ]
@@ -39661,30 +39672,6 @@
 									"destination" : [ "obj-30", 0 ],
 									"midpoints" : [ 106.5, 420.0, 106.5, 420.0 ],
 									"source" : [ "obj-74", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-78", 0 ],
-									"midpoints" : [ 963.5, 255.0, 927.0, 255.0, 927.0, 261.0, 924.5, 261.0 ],
-									"source" : [ "obj-76", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-78", 0 ],
-									"midpoints" : [ 1038.5, 252.0, 924.5, 252.0 ],
-									"source" : [ "obj-77", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-91", 1 ],
-									"midpoints" : [ 924.5, 366.0, 924.0, 366.0 ],
-									"source" : [ "obj-78", 0 ]
 								}
 
 							}
@@ -39798,23 +39785,6 @@
 									"midpoints" : [ 1038.5, 180.0, 900.0, 180.0, 900.0, 450.0, 945.0, 450.0, 945.0, 561.0, 924.0, 561.0, 924.0, 606.0, 980.501562499999864, 606.0 ],
 									"order" : 1,
 									"source" : [ "obj-89", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-77", 0 ],
-									"midpoints" : [ 1038.5, 180.0, 1038.5, 180.0 ],
-									"order" : 0,
-									"source" : [ "obj-89", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-76", 0 ],
-									"midpoints" : [ 963.5, 219.0, 963.5, 219.0 ],
-									"source" : [ "obj-9", 0 ]
 								}
 
 							}
@@ -43376,14 +43346,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-25", 0 ],
-					"midpoints" : [ 190.5, 606.0, 190.5, 606.0 ],
-					"source" : [ "obj-100", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-109", 0 ],
 					"midpoints" : [ 80.231709003448486, 504.487816333770752, 80.231709003448486, 504.487816333770752 ],
 					"source" : [ "obj-101", 0 ]
@@ -43765,6 +43727,76 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-177", 0 ],
+					"source" : [ "obj-176", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-178", 0 ],
+					"source" : [ "obj-177", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-8", 2 ],
+					"source" : [ "obj-177", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-179", 0 ],
+					"source" : [ "obj-178", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-7", 1 ],
+					"source" : [ "obj-179", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-182", 0 ],
+					"source" : [ "obj-181", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-183", 0 ],
+					"source" : [ "obj-182", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-8", 3 ],
+					"source" : [ "obj-182", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-184", 0 ],
+					"source" : [ "obj-183", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-91", 1 ],
+					"source" : [ "obj-184", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-13", 1 ],
 					"midpoints" : [ 526.5, 1230.0, 524.5, 1230.0 ],
 					"source" : [ "obj-19", 0 ]
@@ -43804,14 +43836,6 @@
 					"midpoints" : [ 79.5, 342.0, 57.0, 342.0, 57.0, 399.0, 79.5, 399.0 ],
 					"order" : 0,
 					"source" : [ "obj-22", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-91", 1 ],
-					"midpoints" : [ 190.5, 669.0, 136.0, 669.0 ],
-					"source" : [ "obj-25", 0 ]
 				}
 
 			}
@@ -43883,14 +43907,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-7", 1 ],
-					"midpoints" : [ 81.5, 642.0, 69.0, 642.0, 69.0, 678.0, 92.0, 678.0 ],
-					"source" : [ "obj-36", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-35", 0 ],
 					"midpoints" : [ 942.5, 237.0, 942.5, 237.0 ],
 					"order" : 1,
@@ -43909,9 +43925,15 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-36", 0 ],
-					"midpoints" : [ 81.5, 606.0, 81.5, 606.0 ],
-					"source" : [ "obj-38", 0 ]
+					"destination" : [ "obj-176", 0 ],
+					"source" : [ "obj-39", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-181", 0 ],
+					"source" : [ "obj-39", 1 ]
 				}
 
 			}
@@ -43970,15 +43992,6 @@
 					"destination" : [ "obj-37", 0 ],
 					"midpoints" : [ 942.5, 75.0, 942.5, 75.0 ],
 					"source" : [ "obj-42", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-38", 0 ],
-					"midpoints" : [ 80.231709003448486, 534.0, 81.5, 534.0 ],
-					"order" : 1,
-					"source" : [ "obj-43", 0 ]
 				}
 
 			}
@@ -44263,15 +44276,6 @@
 					"destination" : [ "obj-89", 0 ],
 					"midpoints" : [ 518.036597490310669, 531.487816333770752, 518.036597490310669, 531.487816333770752 ],
 					"source" : [ "obj-88", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-100", 0 ],
-					"midpoints" : [ 518.036597490310669, 567.0, 190.5, 567.0 ],
-					"order" : 1,
-					"source" : [ "obj-89", 0 ]
 				}
 
 			}
