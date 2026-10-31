@@ -9,7 +9,6 @@ const overlay = document.getElementById('overlay');
 const canvas = overlay.getContext('2d');
 
 let poseLandmarker;
-let camera;
 
 let drawImage = true;
 let drawLandmarks = true;
@@ -41,11 +40,24 @@ const NUM_POSES = 4;
 // 147 Mbit/s of its USB 2.0 link - and is a 4:3 crop of the 16:9 sensor; 1280x720 is
 // MJPEG, uses the full sensor width and is offered by the built-in camera as well.
 // Resolution costs nothing in inference (the model resizes internally) and the metric
-// basis below keeps every px threshold on the same vertical scale. 30 fps because
-// every frame-counted constant in this file is calibrated at 30.
+// basis below keeps every px threshold on the same vertical scale.
+//
+// Capture runs at 60 fps but detection stays at 30 Hz (DETECT_INTERVAL_MS), because
+// every frame-counted constant in this file is calibrated at 30. The OBSBOT delivers
+// its frames in bursts: measured through AVFoundation on 2026-10-31, at 720p30 about
+// once a second a frame arrives 67 ms after the previous one and the next follows it
+// within 1 ms, so the video element only ever shows the second and detection sees a
+// 67 ms hole. At 720p60 the longest gap is 34 ms, so a fresh frame is always there
+// when the 30 Hz detection asks for one. Cameras without a 60 fps mode (the built-in
+// one) settle on 30 and behave exactly as before. Cost: exposure capped at 1/60 s.
 const CAPTURE_WIDTH = 1280;
 const CAPTURE_HEIGHT = 720;
-const CAPTURE_FPS = 30;
+const CAPTURE_FPS = 60;
+const DETECT_INTERVAL_MS = 1000 / 30;
+// requestAnimationFrame ticks in steps of 8.3 ms (120 Hz panel) or 16.7 ms (60 Hz), so
+// the elapsed time at the intended tick can read a hair under 33.3 ms; the slack keeps
+// that tick from being skipped while staying above the previous one (25 ms).
+const DETECT_SLACK_MS = 4;
 
 function outputMax(mess) {
   window.max.outlet(mess);
@@ -96,25 +108,7 @@ window.max.bindInlet('set_mediadevice', async function (deviceLabel) {
     return
   }
   const device = devices.shift();
-  let stream;
-  try {
-    stream = await navigator.mediaDevices.getUserMedia({video: {
-      deviceId: {exact: device.deviceId},
-      width: {ideal: CAPTURE_WIDTH},
-      height: {ideal: CAPTURE_HEIGHT},
-      frameRate: {ideal: CAPTURE_FPS}
-    }});
-  } catch (err) {
-    window.max.outlet("error", `${err.name}: ${err.message}`);
-    return
-  }
-  // camera_utils opens the default device at startup and nothing else ever closes it,
-  // so without this the previous camera keeps running alongside the new one.
-  stopVideoTracks();
-  // camera_utils' polling loop is already running on this element; its own
-  // loadedmetadata handler would start a second loop on every switch.
-  video.onloadedmetadata = () => video.play();
-  video.srcObject = stream;
+  if (!(await openCamera(device.deviceId))) return;
   await setRunningMode("VIDEO");
 });
 
@@ -152,26 +146,85 @@ const getVideoDevicesForMax = () => {
 }
 
 
-const startVideo = () => {
-  camera = new Camera(video, {
-    onFrame: async () => {
-      if (video && runningMode === "VIDEO") {
-        let nowInMs = Date.now();
-        if (noteCaptureSource()) startLogTake();
-        if (lastVideoTime !== video.currentTime) {
-          lastVideoTime = video.currentTime;
-          const detectStart = performance.now();
-          results = poseLandmarker.detectForVideo(video, nowInMs);
-          noteDetection(detectStart, performance.now());
-          results.image = video;
-          onResultsPose(results);
-        }
-      }
-    },
-    width: CAPTURE_WIDTH,
-    height: CAPTURE_HEIGHT
-  });
-  camera.start();
+/* Opens a camera - the given device, or the default one at startup - and replaces
+ * the current stream, closing the previous camera. Replaces camera_utils, whose loop
+ * only fires when a new frame arrives: a frame skipped for arriving before
+ * DETECT_INTERVAL_MS would never be picked up once the interval had elapsed.
+ * Returns false on failure. A request overtaken by a newer one (the default camera at
+ * startup still opening when Max selects another) is discarded, not left running. */
+let cameraRequest = 0;
+
+const openCamera = async (deviceId) => {
+  const request = ++cameraRequest;
+  const constraints = {
+    width: {ideal: CAPTURE_WIDTH},
+    height: {ideal: CAPTURE_HEIGHT},
+    frameRate: {ideal: CAPTURE_FPS}
+  };
+  if (deviceId) constraints.deviceId = {exact: deviceId};
+  else constraints.facingMode = "user";
+  let stream;
+  try {
+    stream = await navigator.mediaDevices.getUserMedia({video: constraints});
+  } catch (err) {
+    window.max.outlet("error", `${err.name}: ${err.message}`);
+    return false
+  }
+  if (request !== cameraRequest) {
+    stream.getTracks().forEach((track) => track.stop());
+    return false
+  }
+  stopVideoTracks();
+  video.srcObject = stream;
+  try {
+    await video.play();
+  } catch (err) {
+    // A newer request replaced the stream before playback started.
+  }
+  return true
+};
+
+/* Polls every animation frame, detects at most every DETECT_INTERVAL_MS. Unlike the
+ * camera_utils loop it keeps looking at a frame that arrived too early, so the newest
+ * frame is processed as soon as the interval has elapsed. Rescheduled first so an
+ * exception in detection cannot stop it. */
+const pollVideo = () => {
+  requestAnimationFrame(pollVideo);
+  if (runningMode !== "VIDEO" || video.paused || video.readyState < 2) return;
+  if (noteCaptureSource()) startLogTake();
+  const detectStart = performance.now();
+  if (lastVideoTime === video.currentTime) return;
+  if (detectStart - lastDetectStart < DETECT_INTERVAL_MS - DETECT_SLACK_MS) return;
+  lastVideoTime = video.currentTime;
+  results = poseLandmarker.detectForVideo(video, Date.now());
+  noteDetection(detectStart, performance.now());
+  results.image = video;
+  onResultsPose(results);
+};
+
+/* The startup camera is chosen explicitly. Left to the browser, a 60 fps request
+ * picks whichever device fits it best, which here is the iPhone through Continuity
+ * Camera - and that asks for confirmation on the phone. Preference by label
+ * substring, in order; excluded devices can still be chosen from the Max menu. */
+const STARTUP_CAMERAS = ["OBSBOT Tiny Camera", "MacBook"];
+const EXCLUDED_STARTUP_CAMERAS = /iphone|ipad|virtual/i;
+
+const pickStartupCamera = async () => {
+  const cameras = (await getMediaDevices()).filter((device) =>
+    device.kind === "videoinput" && !EXCLUDED_STARTUP_CAMERAS.test(device.label));
+  for (const name of STARTUP_CAMERAS) {
+    const match = cameras.find((device) => device.label.includes(name));
+    if (match) return match.deviceId;
+  }
+  return cameras.length ? cameras[0].deviceId : undefined;
+};
+
+const startVideo = async () => {
+  const request = cameraRequest;
+  const deviceId = await pickStartupCamera();
+  // Max selected a camera while the devices were being listed: that choice wins.
+  if (request !== cameraRequest) return;
+  await openCamera(deviceId);
 }
 
 const stopVideoTracks = () => {
@@ -199,7 +252,7 @@ const noteCaptureSource = () => {
 
 
 function stopBothVideoAndAudio() {
-  camera = undefined;
+  if (!video.srcObject) return;
   video.srcObject.getTracks().forEach((track) => {
       if (track.readyState == 'live') {
           track.stop();
@@ -220,7 +273,9 @@ const setRunningMode = async (running_mode) => {
     case "VIDEO":
       runningMode = running_mode; 
       await poseLandmarker.setOptions({ runningMode: running_mode }); 
-      startVideo();
+      // set_mediadevice has already opened its camera; only fall back to the default
+      // one when coming back from IMAGE mode with no stream at all.
+      if (!video.srcObject || !video.srcObject.active) startVideo();
       return      
     default:
       window.max.outlet("error", `No running mode: "${running_mode}" exists.`); return
@@ -971,5 +1026,6 @@ poseLandmarker = await PoseLandmarker.createFromOptions(vision, {
 getVideoDevicesForMax();
 initLogging();
 startVideo();
+requestAnimationFrame(pollVideo);
 
 })(); // end IIF
