@@ -14,6 +14,161 @@
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-186",
+					"linecount" : 7,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 66.0, 5.0, 580.0, 100.0 ],
+					"text" : "ENGINEv2 - main audio engine. The pose tracker (jweb) gives left/right wrist x,y (0-1) and an occupied flag; s LX / LY / RX / RY broadcast the wrists to the layers. Wrist movement goes through p intensity (0-1 per hand): it ducks the granular layer (gain = 1 - 0.6 * intensity, after its reverb) and excites the lead. Wrist x picks and pans the lead notes, wrist y sets the loop speeds. Layers: p granular (trimmed per chord by p section_leveler), p lead, p audio_samples (loops, crash, sci-fi). Granular + lead go through the occupancy gain (-9 dB idle); the samples fade with their own curve. Then master volume, idle low-pass, limi~ and dac~."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-187",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 66.0, 137.0, 620.0, 20.0 ],
+					"text" : "Pose tracker (MediaPipe in jweb). Outlets: left x, left y, right x, right y, normalised 0-1."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-188",
+					"linecount" : 5,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 442.0, 586.0, 205.0, 74.0 ],
+					"text" : "Lead voices. Inlets: 1 / 3 = brightness + detune (left / right hand), 2 / 4 = smoothed intensity as a signal (excitation gain). Outlets: L / R."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-189",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 120.0, 788.0, 240.0, 33.0 ],
+					"text" : "Granular reverb, loaded fully wet (decay and damping are set inside)."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-190",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 678.0, 590.0, 288.0, 47.0 ],
+					"text" : "Sample layers: one loop per section, crash cymbals at the section ends and the sci-fi layer. Outlets: L / R."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-191",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 16.0, 1094.0, 266.0, 47.0 ],
+					"text" : "Occupancy gain: dbtoa~ of a line~ in dB (-9 dB idle, 0 dB active). Applies to granular + lead only."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-192",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 16.0, 1148.0, 300.0, 33.0 ],
+					"text" : "Master volume. The sample layers join here, bypassing the occupancy gain."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-193",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 16.0, 1190.0, 300.0, 47.0 ],
+					"text" : "Idle low-pass (onepole~, ramped by the line at the right): 1 kHz in 3 s on presence_off, 20 kHz in 4 s on presence_on."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-194",
+					"linecount" : 5,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 489.0, 765.0, 282.0, 74.0 ],
+					"text" : "occupied 1/0 comes from the subject lock in the JS. Debounce: a state is accepted only after holding for 1500 ms (to become active) or 2000 ms (to become idle); every new message restarts the delay."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-195",
+					"linecount" : 4,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1050.0, 1005.0, 242.0, 60.0 ],
+					"text" : "presence_on / presence_off pulses: used by p lead (excitation gate), p audio_samples (fade) and the idle low-pass."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-196",
+					"linecount" : 6,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1248.0, 197.0, 115.0, 87.0 ],
+					"text" : "Current peak intensity (after gain): monitor for setting the threshold just above the rest jitter."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-197",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1484.0, 65.0, 260.0, 33.0 ],
+					"text" : "Gain applied to the raw wrist displacement inside p intensity."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-198",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1404.0, 250.0, 230.0, 47.0 ],
+					"text" : "Ceiling of the lead's brightness-to-level scale (top_layer, inlet 9 of the lead rnbo~)."
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-123",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -826,6 +981,54 @@
 						"rect" : [ 789.0, 95.0, 689.0, 787.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-96",
+									"linecount" : 3,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 15.0, 5.0, 540.0, 60.0 ],
+									"text" : "Per-chord loudness trim for the granular layer. The master clock (to_note_changer, 0-32000 ms) is compared with the 15 chord-change times; each boundary bangs the message holding that chord's gain, and a line ramps to it in 1 s. Output: one float, used as the right input of the granular *~ stages."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-97",
+									"linecount" : 3,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 819.123519897460938, 232.0, 330.0, 47.0 ],
+									"text" : "Chord-change times in ms, measured by hand on the 32 s source file (the same thresholds as in p note_changer). Outlets 0-15 = chords 1-16."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-98",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 64.098767995834351, 374.444471955299377, 330.0, 47.0 ],
+									"text" : "Gain per chord, left to right = chords 1-16. Section 1: 0.5-0.6, section 2: 1, section 3: 0.5-0.6, section 4: 0.7."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-99",
+									"linecount" : 3,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 253.5, 535.0, 200.0, 47.0 ],
+									"text" : "Ramp to the new gain in 1000 ms, to avoid steps at the chord boundaries."
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-94",
 									"maxclass" : "message",
@@ -1734,9 +1937,152 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 790.0, 95.0, 688.0, 787.0 ],
+						"rect" : [ 34.0, 95.0, 1444.0, 853.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-1130",
+									"linecount" : 5,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 13.63631272315979, -75.090909481048584, 750.0, 74.0 ],
+									"text" : "Sample layers, all driven by the master clock (to_note_changer, 0-32000 ms). 1) Four section loops (groove~): alien 0-7800, heartbeat 7800-15700, triangle 15900-23800, perc 23800-32000. Each plays only inside its window and its speed follows the hands' heights (LY / RY). 2) A crash cymbal fires just before each section change. 3) p scifi_maker: random sci-fi one-shots whose rate follows the distance between the wrists. Loops and sci-fi fade with presence (exponential curve, 4 s in / 3 s out) and have their own levels and reverb. Outlets: L / R."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1131",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 337.63631272315979, 466.0, 200.0, 20.0 ],
+									"text" : "Master clock in ms (0-32000)."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1132",
+									"linecount" : 4,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 25.0, 243.0, 224.0, 60.0 ],
+									"text" : "Each buffer~ is filled at load: loadmess path -> thispatcher -> combine builds the absolute path of the wav -> replace $1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1133",
+									"linecount" : 4,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 14.63631272315979, 400.0, 266.0, 60.0 ],
+									"text" : "Fires one bang when the clock hits exactly 7700, 15800, 23700 or 31900 ms, just before each section change, and starts the crash sample."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1134",
+									"linecount" : 7,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 1744.63631272315979, 421.0, 206.0, 100.0 ],
+									"text" : "Alien loop: active only while the clock is in 0-7800 ms. 'change' lets only the transitions through: loop $1 switches looping, and the speed (0.8-1.2x from the hand heights) is 0 outside the window, so the loop is paused."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1135",
+									"linecount" : 3,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 343.63631272315979, 380.0, 260.0, 47.0 ],
+									"text" : "Heartbeat loop: active in 7800-15700 ms. Speed 0.5-4x from the higher of the two hands (1 - y)."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1136",
+									"linecount" : 3,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 1263.63631272315979, 475.0, 224.0, 47.0 ],
+									"text" : "Triangle loop: active in 15900-23800 ms. Speed 0.95-1.05x from the hand heights."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1137",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 769.63631272315979, 488.0, 260.0, 33.0 ],
+									"text" : "Perc loop: active in 23800-32000 ms. Speed 0.8-1.2x from the hand heights."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1138",
+									"linecount" : 5,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 615.0, 959.0, 216.0, 74.0 ],
+									"text" : "Presence fade curve (2^(3x) - 1) / 7, applied to the loops and the sci-fi layer: line 0 -> 1 in 4000 ms on presence_on, 1 -> 0 in 3000 ms on presence_off."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1139",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 477.63631272315979, 850.0, 132.0, 33.0 ],
+									"text" : "Slider 0-127 -> gain 0-2 (linear)."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1140",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 108.63631272315979, 845.0, 214.0, 33.0 ],
+									"text" : "Crash volume: slider 0-127 -> gain 0-2."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1141",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 1028.0, 913.0, 196.0, 33.0 ],
+									"text" : "Sci-fi volume: slider 0-1 -> gain 0-2."
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-139",
 									"maxclass" : "newobj",
@@ -2027,6 +2373,30 @@
 										"gridsize" : [ 15.0, 15.0 ],
 										"title" : "untitled",
 										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-112",
+													"linecount" : 4,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 724.0, 5.0, 520.0, 74.0 ],
+													"text" : "SCI-FI REVERB. Stereo Schroeder-Moorer reverb: 4 parallel comb filters with a damping low-pass in the feedback loop, followed by 2 series allpass diffusers per channel. Inputs: in~ 1/2 = dry L/R. Parameters (set by the loadmess boxes): decay = RT60 in seconds (in3), damping (in4), predelay in ms (in5), mix (in6, 1 = fully wet, no dry path). Outputs: out~ 1/2 = L/R."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-113",
+													"linecount" : 3,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 1060.71875, 348.1171875, 230.0, 60.0 ],
+													"text" : "Note: this value feeds the damping input (in4) of the reverb, so higher = duller, not brighter."
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"id" : "obj-6",
 													"maxclass" : "comment",
@@ -3199,9 +3569,80 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 34.0, 95.0, 1444.0, 787.0 ],
+										"rect" : [ 34.0, 95.0, 1444.0, 853.0 ],
 										"gridsize" : [ 15.0, 15.0 ],
 										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-2902",
+													"linecount" : 4,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 209.890120148658752, -33.0, 800.0, 60.0 ],
+													"text" : "Sci-fi one-shot generator, 26 identical voices (scifi0-25). Rate: the larger of the x and y distance between the two wrists sets a metro period of 100-200 ms (hands close = faster). On each tick random 20 lets only 0 or 1 through, so about 10% of the ticks fire, and random 26 picks the voice (s scifimetro). The metro is off during section 2 (clock 7800-15700). The sum of all voices goes through the high-pass outlet of svf~ 1000 to outlets L / R."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-2903",
+													"linecount" : 2,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 898.241795301437378, 253.0, 230.0, 33.0 ],
+													"text" : "Wrist distance 0-1 -> metro period 100-200 ms."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-2904",
+													"linecount" : 3,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 828.241795301437378, 363.0, 230.0, 47.0 ],
+													"text" : "Lets only 0 or 1 of random 20 through (~10% of the ticks); the others are dropped."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-2905",
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 834.241795301437378, 338.0, 230.0, 20.0 ],
+													"text" : "Picks the voice, 0-25."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-2906",
+													"linecount" : 10,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 20.0, 440.0, 158.0, 141.0 ],
+													"text" : "Voice 0 (the other 25 columns are identical). Starts when its index arrives on scifimetro. Playback speed = hand heights (1 - y, higher hand = faster) + a random 0-0.2; the gain follows the speed, so slower playback is quieter."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-2907",
+													"linecount" : 2,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 451.219798803329468, 1722.7473384141922, 284.0, 33.0 ],
+													"text" : "High-pass outlet of svf~ 1000: keeps the sci-fi layer above 1 kHz."
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"id" : "obj-7",
 													"maxclass" : "newobj",
@@ -21835,9 +22276,129 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 95.0, 1444.0, 787.0 ],
+						"rect" : [ 34.0, 95.0, 1444.0, 853.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-107",
+									"linecount" : 5,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 97.0, 5.0, 821.0, 74.0 ],
+									"text" : "Lead instrument, one bank of 6 voices per hand (waveguide + FM, inside the rnbo~ DSP engines). Wrist x is inverted and split into 6 equal zones: the zone picks which voice receives the excitation (white noise, equal-power crossfade, window set by loadmess 0.75) and x also pans the bank (equal-power, 20 ms smoothing). The excitation level comes from that hand's smoothed intensity (signal inlet, log taper, threshold 0.0025) and is gated by presence (line~: 1 in 20 ms, 0 in 200 ms). Notes come from the master clock via p note_changer. Both banks go through a shared reverb to outlets L / R."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-108",
+									"linecount" : 3,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 430.0, 100.0, 298.0, 47.0 ],
+									"text" : "Inlets 1-2 (left hand): 1 = brightness + detune (control), 2 = smoothed intensity (signal, excitation gain)."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-109",
+									"linecount" : 3,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 1010.0, 100.0, 304.0, 47.0 ],
+									"text" : "Inlets 3-4 (right hand): 3 = brightness + detune (control), 4 = smoothed intensity (signal, excitation gain)."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-110",
+									"linecount" : 3,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 17.0, 429.0, 230.0, 47.0 ],
+									"text" : "Wrist x is inverted (scale 0. 1. 1. 0.) and split into zones 1-6: this is the voice index."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-111",
+									"linecount" : 3,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 684.5, 570.0, 220.0, 47.0 ],
+									"text" : "Crossfade window 0.75 -> 2 * 200^0.75, about 106 ms, between voices."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-112",
+									"linecount" : 4,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 498.0, 629.0, 190.0, 60.0 ],
+									"text" : "White-noise excitation, gated by presence (line~) and scaled by the intensity gain; one copy per hand."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-113",
+									"linecount" : 3,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 97.0, 827.0, 234.0, 47.0 ],
+									"text" : "Voice selector with equal-power crossfade: routes the excitation to one of 6 outputs."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-114",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 97.0, 1221.0, 232.0, 33.0 ],
+									"text" : "Equal-power pan from the left wrist x (LX)."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-115",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 738.0, 1221.0, 240.0, 33.0 ],
+									"text" : "Equal-power pan from the right wrist x (RX)."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-116",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 665.0, 827.0, 200.0, 33.0 ],
+									"text" : "top_layer: lead brightness ceiling, from the main patch."
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-26",
 									"maxclass" : "newobj",
@@ -22253,11 +22814,117 @@
 										}
 ,
 										"classnamespace" : "rnbo",
-										"rect" : [ 34.0, 95.0, 1444.0, 787.0 ],
+										"rect" : [ 34.0, 95.0, 1444.0, 853.0 ],
 										"default_fontname" : "Lato",
 										"gridsize" : [ 15.0, 15.0 ],
 										"title" : "untitled",
 										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-152",
+													"linecount" : 6,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 89.0, 5.0, 530.0, 93.0 ],
+													"text" : "LEAD VOICE BANK (right hand). 12 voices in two rows: the top row is 6 waveguide (Karplus-Strong) voices and the bottom row 6 FM pad voices. Voice n is excited by in~ n (white noise gated by the voice selector) and tuned by r note n, sent by p note_changer when the chord changes. in 7 = master clock for p note_changer, in 8 = hand control, broadcast to all voices as both brightness and detune, in 9 = top_layer (ceiling of the brightness-to-level scale). Outlets: out~ 1/2 = L/R."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-153",
+													"linecount" : 2,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 113.0, 143.0, 208.0, 35.0 ],
+													"text" : "Excitation inlets in~ 1-6, one per note."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-154",
+													"linecount" : 2,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 409.028988361358643, 144.643838405609131, 200.0, 35.0 ],
+													"text" : "Note frequencies from p note_changer (r note1-6)."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-155",
+													"linecount" : 4,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 5.0, 272.0, 100.0, 64.0 ],
+													"text" : "Row 1: waveguide (Karplus-Strong) voices"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-156",
+													"linecount" : 3,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 372.101453423500061, 1010.724645614624023, 115.0, 50.0 ],
+													"text" : "Row 2: FM pad voices (4-operator FM)"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-157",
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 299.565219640731812, 1482.608708024024963, 200.0, 21.0 ],
+													"text" : "Level of the waveguide row."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-158",
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 770.586962580680847, 1440.188416838645935, 200.0, 21.0 ],
+													"text" : "Level of the FM row."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-159",
+													"linecount" : 3,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 916.0, 1520.0, 174.0, 50.0 ],
+													"text" : "in 8: hand control, sent to every voice as brightness and detune."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-160",
+													"linecount" : 2,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 996.0, 1580.0, 200.0, 35.0 ],
+													"text" : "in 7: master clock (ms) for p note_changer."
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"id" : "obj-15",
 													"maxclass" : "newobj",
@@ -22363,6 +23030,18 @@
 														"title" : "note_changer",
 														"boxes" : [ 															{
 																"box" : 																{
+																	"id" : "obj-58",
+																	"linecount" : 3,
+																	"maxclass" : "comment",
+																	"numinlets" : 1,
+																	"numoutlets" : 0,
+																	"patching_rect" : [ 291.0, 5.0, 820.0, 47.0 ],
+																	"text" : "CHORD SELECTOR. Takes the master clock (ms, 32 s loop) and works out which of the 16 chords (4 sections x 4) is playing, from hand-measured change times. Only when the chord changes, it sends six frequencies (a triad plus the same triad one octave up) to s note1-6, which the voices read with r note1-6. The message boxes just display the current values."
+																}
+
+															}
+, 															{
+																"box" : 																{
 																	"id" : "obj-8",
 																	"maxclass" : "message",
 																	"numinlets" : 2,
@@ -22376,7 +23055,7 @@
 ,
 																	"rnbo_serial" : 1,
 																	"rnbo_uniqueid" : "message_obj-8",
-																	"text" : "783.99"
+																	"text" : "698.46"
 																}
 
 															}
@@ -22395,7 +23074,7 @@
 ,
 																	"rnbo_serial" : 2,
 																	"rnbo_uniqueid" : "message_obj-7",
-																	"text" : "622.25"
+																	"text" : "523.25"
 																}
 
 															}
@@ -22414,7 +23093,7 @@
 ,
 																	"rnbo_serial" : 3,
 																	"rnbo_uniqueid" : "message_obj-6",
-																	"text" : "466.16"
+																	"text" : "415.3"
 																}
 
 															}
@@ -22433,7 +23112,7 @@
 ,
 																	"rnbo_serial" : 4,
 																	"rnbo_uniqueid" : "message_obj-5",
-																	"text" : "392"
+																	"text" : "349.23"
 																}
 
 															}
@@ -22452,7 +23131,7 @@
 ,
 																	"rnbo_serial" : 5,
 																	"rnbo_uniqueid" : "message_obj-4",
-																	"text" : "311.13"
+																	"text" : "261.63"
 																}
 
 															}
@@ -22471,7 +23150,7 @@
 ,
 																	"rnbo_serial" : 6,
 																	"rnbo_uniqueid" : "message_obj-3",
-																	"text" : "233.08"
+																	"text" : "207.65"
 																}
 
 															}
@@ -30288,6 +30967,30 @@
 										"title" : "untitled",
 										"boxes" : [ 											{
 												"box" : 												{
+													"id" : "obj-112",
+													"linecount" : 5,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 207.0, 5.0, 520.0, 88.0 ],
+													"text" : "LEAD REVERB. Stereo Schroeder-Moorer reverb: 4 parallel comb filters with a damping low-pass in the feedback loop, followed by 2 series allpass diffusers per channel. Inputs: in~ 1/2 = dry L/R. Parameters (set by the loadmess boxes): decay = RT60 in seconds (in3), damping (in4), predelay in ms (in5), mix (in6, 0.6 = 60% wet, 40% dry so the onsets stay immediate). Outputs: out~ 1/2 = L/R."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-113",
+													"linecount" : 3,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 671.600000000000023, 285.0, 230.0, 60.0 ],
+													"text" : "Note: this value feeds the damping input (in4) of the reverb, so higher = duller, not brighter."
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"id" : "obj-6",
 													"maxclass" : "comment",
 													"numinlets" : 1,
@@ -31461,7 +32164,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 741.0, 379.0, 150.0, 33.0 ],
-									"text" : "divide the range 0. 1. into 8 equal segments"
+									"text" : "divide the range 0. 1. into 6 equal segments"
 								}
 
 							}
@@ -31763,11 +32466,117 @@
 										}
 ,
 										"classnamespace" : "rnbo",
-										"rect" : [ 34.0, 95.0, 1444.0, 787.0 ],
+										"rect" : [ 34.0, 95.0, 1444.0, 853.0 ],
 										"default_fontname" : "Lato",
 										"gridsize" : [ 15.0, 15.0 ],
 										"title" : "untitled",
 										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-152",
+													"linecount" : 6,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 89.0, 5.0, 524.0, 93.0 ],
+													"text" : "LEAD VOICE BANK (left hand). 12 voices in two rows: the top row is 6 waveguide (Karplus-Strong) voices and the bottom row 6 FM pad voices. Voice n is excited by in~ n (white noise gated by the voice selector) and tuned by r note n, sent by p note_changer when the chord changes. in 7 = master clock for p note_changer, in 8 = hand control, broadcast to all voices as both brightness and detune, in 9 = top_layer (ceiling of the brightness-to-level scale). Outlets: out~ 1/2 = L/R."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-153",
+													"linecount" : 2,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 113.0, 143.0, 208.0, 35.0 ],
+													"text" : "Excitation inlets in~ 1-6, one per note."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-154",
+													"linecount" : 2,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 409.028988361358643, 144.643838405609131, 200.0, 35.0 ],
+													"text" : "Note frequencies from p note_changer (r note1-6)."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-155",
+													"linecount" : 4,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 5.0, 272.0, 100.0, 64.0 ],
+													"text" : "Row 1: waveguide (Karplus-Strong) voices"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-156",
+													"linecount" : 3,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 372.101453423500061, 1010.724645614624023, 115.0, 50.0 ],
+													"text" : "Row 2: FM pad voices (4-operator FM)"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-157",
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 299.565219640731812, 1482.608708024024963, 200.0, 21.0 ],
+													"text" : "Level of the waveguide row."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-158",
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 770.586962580680847, 1440.188416838645935, 200.0, 21.0 ],
+													"text" : "Level of the FM row."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-159",
+													"linecount" : 3,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 916.0, 1520.0, 174.0, 50.0 ],
+													"text" : "in 8: hand control, sent to every voice as brightness and detune."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-160",
+													"linecount" : 2,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 996.0, 1580.0, 200.0, 35.0 ],
+													"text" : "in 7: master clock (ms) for p note_changer."
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"id" : "obj-15",
 													"maxclass" : "newobj",
@@ -32451,6 +33260,18 @@
 														"title" : "note_changer",
 														"boxes" : [ 															{
 																"box" : 																{
+																	"id" : "obj-58",
+																	"linecount" : 3,
+																	"maxclass" : "comment",
+																	"numinlets" : 1,
+																	"numoutlets" : 0,
+																	"patching_rect" : [ 315.0, 5.0, 820.0, 47.0 ],
+																	"text" : "CHORD SELECTOR. Takes the master clock (ms, 32 s loop) and works out which of the 16 chords (4 sections x 4) is playing, from hand-measured change times. Only when the chord changes, it sends six frequencies (a triad plus the same triad one octave up) to s note1-6, which the voices read with r note1-6. The message boxes just display the current values."
+																}
+
+															}
+, 															{
+																"box" : 																{
 																	"id" : "obj-8",
 																	"maxclass" : "message",
 																	"numinlets" : 2,
@@ -32464,7 +33285,7 @@
 ,
 																	"rnbo_serial" : 1,
 																	"rnbo_uniqueid" : "message_obj-8",
-																	"text" : "783.99"
+																	"text" : "698.46"
 																}
 
 															}
@@ -32483,7 +33304,7 @@
 ,
 																	"rnbo_serial" : 2,
 																	"rnbo_uniqueid" : "message_obj-7",
-																	"text" : "622.25"
+																	"text" : "523.25"
 																}
 
 															}
@@ -32502,7 +33323,7 @@
 ,
 																	"rnbo_serial" : 3,
 																	"rnbo_uniqueid" : "message_obj-6",
-																	"text" : "466.16"
+																	"text" : "415.3"
 																}
 
 															}
@@ -32521,7 +33342,7 @@
 ,
 																	"rnbo_serial" : 4,
 																	"rnbo_uniqueid" : "message_obj-5",
-																	"text" : "392"
+																	"text" : "349.23"
 																}
 
 															}
@@ -32540,7 +33361,7 @@
 ,
 																	"rnbo_serial" : 5,
 																	"rnbo_uniqueid" : "message_obj-4",
-																	"text" : "311.13"
+																	"text" : "261.63"
 																}
 
 															}
@@ -32559,7 +33380,7 @@
 ,
 																	"rnbo_serial" : 6,
 																	"rnbo_uniqueid" : "message_obj-3",
-																	"text" : "233.08"
+																	"text" : "207.65"
 																}
 
 															}
@@ -40227,17 +41048,109 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 790.0, 95.0, 688.0, 787.0 ],
+						"rect" : [ 34.0, 95.0, 1444.0, 853.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
-									"id" : "obj-9",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 463.0, 824.0, 52.0, 22.0 ],
-									"text" : "open 48"
+									"id" : "obj-233",
+									"linecount" : 7,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 389.0, 5.0, 502.0, 100.0 ],
+									"text" : "Granular engine. A metro (20 ms) steps counter 0 32000 once per tick, so the read position in audio/granularv6.wav advances 1 ms per tick (a 20x time stretch) and wraps; the value is also sent as to_note_changer, the master clock that the chords, loops and sci-fi layer follow. A second metro launches one grain every 20 ms into poly~ granular. For each grain the start is the read position + 0-50 ms, the duration 300-320 ms and the pitch 1 (no transposition); the LOW / HIGH pairs are the limits of the random choice made inside each voice. Outlets: L / R."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-234",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 421.0, 291.0, 241.0, 33.0 ],
+									"text" : "Master clock / read position, 0-32000 ms, 1 ms per tick."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-235",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 150.0, 507.0, 230.0, 33.0 ],
+									"text" : "One grain every 20 ms (50 grains per second)."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-236",
+									"linecount" : 4,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 151.0, 604.0, 198.0, 60.0 ],
+									"text" : "makenote + pack build the 'target 0, midinote ...' message that triggers a grain on the next free voice."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-237",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 549.0, 609.0, 200.0, 20.0 ],
+									"text" : "Start LOW = read position."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-238",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 684.0, 539.0, 198.0, 33.0 ],
+									"text" : "Start HIGH = read position + 50 ms."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-239",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 753.0, 609.0, 200.0, 20.0 ],
+									"text" : "Duration LOW = 300 ms."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-240",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 808.0, 639.0, 200.0, 20.0 ],
+									"text" : "Duration HIGH = 300 + 20 ms."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-241",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 984.0, 519.0, 200.0, 20.0 ],
+									"text" : "Pitch 1 = no transposition."
 								}
 
 							}
@@ -40548,7 +41461,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 1013.0, 296.0, 150.0, 33.0 ],
-									"text" : "gaussian envelope generator"
+									"text" : "Hann envelope generator (512 points)"
 								}
 
 							}
@@ -41199,13 +42112,6 @@
 								}
 
 							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-112", 0 ],
-									"source" : [ "obj-9", 0 ]
-								}
-
-							}
  ]
 					}
 ,
@@ -41341,6 +42247,30 @@
 						"gridsize" : [ 15.0, 15.0 ],
 						"title" : "untitled",
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-112",
+									"linecount" : 4,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 724.0, 5.0, 520.0, 74.0 ],
+									"text" : "GRANULAR REVERB. Stereo Schroeder-Moorer reverb: 4 parallel comb filters with a damping low-pass in the feedback loop, followed by 2 series allpass diffusers per channel. Inputs: in~ 1/2 = dry L/R. Parameters (set by the loadmess boxes): decay = RT60 in seconds (in3), damping (in4), predelay in ms (in5), mix (in6, 1 = fully wet, no dry path). Outputs: out~ 1/2 = L/R."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-113",
+									"linecount" : 3,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 1060.71875, 348.1171875, 230.0, 60.0 ],
+									"text" : "Note: this value feeds the damping input (in4) of the reverb, so higher = duller, not brighter."
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-6",
 									"maxclass" : "comment",
@@ -42634,9 +43564,45 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 95.0, 1444.0, 787.0 ],
+						"rect" : [ 34.0, 95.0, 1444.0, 853.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-119",
+									"linecount" : 6,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 364.0, 5.0, 408.0, 87.0 ],
+									"text" : "Turns wrist movement into a 0-1 'intensity' per hand. Inlets: left x, left y, right x, right y. Each new coordinate is compared with the previous one on arrival ([t f f] -> [- 0.]); per hand the larger of |dx| and |dy| is taken, multiplied by the gain and passed through a soft threshold (v8 codebox: below T = 0, above it rescaled to 0-1), then clipped. Outlets: left / right intensity."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-120",
+									"linecount" : 5,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 432.0, 549.0, 100.0, 74.0 ],
+									"text" : "Gain from the main patch, multiplies the raw displacement."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-121",
+									"linecount" : 4,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 1005.0, 495.0, 188.0, 60.0 ],
+									"text" : "Larger of the two hands (monitor): shown on the main patch to help setting the threshold."
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-43",
 									"maxclass" : "newobj",
