@@ -36,6 +36,17 @@ const POSE_MODEL_URL = `https://storage.googleapis.com/mediapipe-models/pose_lan
 // if it climbs.
 const NUM_POSES = 4;
 
+// Capture format requested from the camera, instead of the browser default of
+// 640x480. On the OBSBOT Tiny 640x480 exists only as uncompressed YUY2 - about
+// 147 Mbit/s of its USB 2.0 link - and is a 4:3 crop of the 16:9 sensor; 1280x720 is
+// MJPEG, uses the full sensor width and is offered by the built-in camera as well.
+// Resolution costs nothing in inference (the model resizes internally) and the metric
+// basis below keeps every px threshold on the same vertical scale. 30 fps because
+// every frame-counted constant in this file is calibrated at 30.
+const CAPTURE_WIDTH = 1280;
+const CAPTURE_HEIGHT = 720;
+const CAPTURE_FPS = 30;
+
 function outputMax(mess) {
   window.max.outlet(mess);
 }
@@ -85,7 +96,25 @@ window.max.bindInlet('set_mediadevice', async function (deviceLabel) {
     return
   }
   const device = devices.shift();
-  video.srcObject = await navigator.mediaDevices.getUserMedia({video: {deviceId: device.deviceId}});
+  let stream;
+  try {
+    stream = await navigator.mediaDevices.getUserMedia({video: {
+      deviceId: {exact: device.deviceId},
+      width: {ideal: CAPTURE_WIDTH},
+      height: {ideal: CAPTURE_HEIGHT},
+      frameRate: {ideal: CAPTURE_FPS}
+    }});
+  } catch (err) {
+    window.max.outlet("error", `${err.name}: ${err.message}`);
+    return
+  }
+  // camera_utils opens the default device at startup and nothing else ever closes it,
+  // so without this the previous camera keeps running alongside the new one.
+  stopVideoTracks();
+  // camera_utils' polling loop is already running on this element; its own
+  // loadedmetadata handler would start a second loop on every switch.
+  video.onloadedmetadata = () => video.play();
+  video.srcObject = stream;
   await setRunningMode("VIDEO");
 });
 
@@ -128,6 +157,7 @@ const startVideo = () => {
     onFrame: async () => {
       if (video && runningMode === "VIDEO") {
         let nowInMs = Date.now();
+        if (noteCaptureSource()) startLogTake();
         if (lastVideoTime !== video.currentTime) {
           lastVideoTime = video.currentTime;
           const detectStart = performance.now();
@@ -138,11 +168,34 @@ const startVideo = () => {
         }
       }
     },
-    width: 640,
-    height: 480
+    width: CAPTURE_WIDTH,
+    height: CAPTURE_HEIGHT
   });
   camera.start();
 }
+
+const stopVideoTracks = () => {
+  if (!video.srcObject) return;
+  video.srcObject.getTracks().forEach((track) => track.stop());
+};
+
+/* What the camera actually delivers, as opposed to what was asked: getUserMedia
+ * constraints are only ideals, and the browser settles on the closest native format.
+ * Returns true the first time a new stream is seen, so the caller can open a new log
+ * take - one file per camera. */
+let captureStream = null;
+let captureInfo = null;   // { label, width, height, fps }
+
+const noteCaptureSource = () => {
+  const stream = video.srcObject;
+  if (!stream || stream === captureStream) return false;
+  const track = stream.getVideoTracks()[0];
+  if (!track) return false;
+  captureStream = stream;
+  const s = track.getSettings();
+  captureInfo = { label: track.label, width: s.width, height: s.height, fps: s.frameRate };
+  return true;
+};
 
 
 function stopBothVideoAndAudio() {
@@ -548,13 +601,21 @@ const noteDetection = (startMs, endMs) => {
   pushSample(detectTimes, lastDetectMs);
 };
 
+const maxOf = (buffer) => buffer.length ? Math.max(...buffer) : 0;
+
 const drawTelemetry = () => {
   const detectMs = meanOf(detectTimes);
   const intervalMs = meanOf(frameIntervals);
   const fps = intervalMs > 0 ? 1000 / intervalMs : 0;
   const lines = [
+    // What the camera actually delivers: constraints are ideals, not guarantees.
+    "camera  " + (captureInfo
+      ? captureInfo.width + "x" + captureInfo.height + " @" + Math.round(captureInfo.fps || 0)
+      : "-"),
     "detect  " + detectMs.toFixed(1) + " ms",
     "frame   " + intervalMs.toFixed(1) + " ms  (" + fps.toFixed(1) + " fps)",
+    // A mean over ~2 s hides an occasional stall; the worst interval shows it.
+    "worst   " + maxOf(frameIntervals).toFixed(1) + " ms",
     "poses   " + telemetryPoses,
     "arms    " + (armFrozenMask ? ((armFrozenMask & 1 ? "HOLD-L " : "ok ") +
                                    (armFrozenMask & 2 ? "HOLD-R" : "ok")) : "ok ok"),
@@ -596,7 +657,8 @@ const LOG_ENDPOINT = "http://127.0.0.1:8787";
 const LOG_FLUSH_MS = 1000;
 const LOG_MAX_FAILURES = 5;   // give up quietly if the server disappears mid-take
 
-let logEnabled = false;
+let logAvailable = false;   // the server answered the startup probe
+let logEnabled = false;     // a take is open and samples are being queued
 let logStartMs = 0;
 let logFailures = 0;
 const logQueue = [];
@@ -615,8 +677,37 @@ const flushLog = async () => {
   } catch (e) {
     if (++logFailures >= LOG_MAX_FAILURES) {
       logEnabled = false;
+      logAvailable = false;
       window.max.outlet("error", "log server unreachable, telemetry logging stopped");
     }
+  }
+};
+
+/* One take per camera stream: called when a new stream is first seen, so switching
+ * camera from the Max menu closes the current file and opens a new one whose header
+ * names the device and the format it actually delivers. The `resolution` header line
+ * is therefore the capture resolution, not the metric basis. */
+const startLogTake = async () => {
+  if (!logAvailable || !captureInfo) return;
+  await flushLog();        // close out the previous take with what it has queued
+  logEnabled = false;
+  logQueue.length = 0;     // frames queued during the flush belong to neither take
+  try {
+    await fetch(LOG_ENDPOINT + "/start", {
+      method: "POST",
+      headers: { "Content-Type": "text/plain" },
+      body: JSON.stringify({
+        model: POSE_MODEL_URL.split("/").pop(),
+        numPoses: NUM_POSES,
+        width: captureInfo.width,
+        height: captureInfo.height,
+        note: `${captureInfo.label} @${Math.round(captureInfo.fps || 0)} fps`
+      })
+    });
+    logStartMs = performance.now();
+    logEnabled = true;
+  } catch (e) {
+    logAvailable = false;
   }
 };
 
@@ -624,19 +715,10 @@ const initLogging = async () => {
   try {
     const ping = await fetch(LOG_ENDPOINT + "/ping");
     if (!ping.ok) return;
-    await fetch(LOG_ENDPOINT + "/start", {
-      method: "POST",
-      headers: { "Content-Type": "text/plain" },
-      body: JSON.stringify({
-        model: POSE_MODEL_URL.split("/").pop(),
-        numPoses: NUM_POSES,
-        width: Math.round(metricWidth),
-        height: Math.round(metricHeight)
-      })
-    });
-    logStartMs = performance.now();
-    logEnabled = true;
+    logAvailable = true;
     setInterval(flushLog, LOG_FLUSH_MS);
+    // The first stream may already have been seen while the probe was in flight.
+    startLogTake();
   } catch (e) {
     // No server listening: this is the normal case in performance. Stay silent.
   }
@@ -777,8 +859,30 @@ const queueLogSample = (poses, subject, landmarks) => {
 };
 
 
+/* The overlay is sized to the source's aspect ratio, fitted inside the 640x480 box the
+ * jweb object occupies in the patchers, so a 16:9 camera is shown letterboxed at
+ * 640x360 instead of squashed into 4:3. Display only: the geometry uses the metric
+ * basis. Resizing a canvas resets its context, so this runs before canvas.save(). */
+const OVERLAY_MAX_WIDTH = 640;
+const OVERLAY_MAX_HEIGHT = 480;
+
+const fitOverlayToSource = (source) => {
+  if (!source) return;
+  const w = source.videoWidth || source.naturalWidth || source.width;
+  const h = source.videoHeight || source.naturalHeight || source.height;
+  if (!(w > 0 && h > 0)) return;
+  const scale = Math.min(OVERLAY_MAX_WIDTH / w, OVERLAY_MAX_HEIGHT / h);
+  const width = Math.round(w * scale);
+  const height = Math.round(h * scale);
+  if (overlay.width !== width || overlay.height !== height) {
+    overlay.width = width;
+    overlay.height = height;
+  }
+};
+
 function onResultsPose(results) {
 
+  fitOverlayToSource(results.image);
   canvas.save();
   canvas.clearRect(0, 0, overlay.width, overlay.height);
 
