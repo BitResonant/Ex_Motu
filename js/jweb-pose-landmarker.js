@@ -394,8 +394,17 @@ const SUBJECT_MAX_MISS = 15;
  * plinth torso around 150 px that puts the floor near 105, which excludes people at
  * three metres (measured at 75-100 px here) without ever touching the visitor. Left low
  * in the repository because a floor tuned for one geometry silently breaks every test
- * recorded in another - which is the same mistake the 240 px ceiling made. */
-const SUBJECT_MIN_TORSO_PX = 60;
+ * recorded in another - which is the same mistake the 240 px ceiling made.
+ * Raised 60 -> 85 for the exhibition on 2026-11-04, from test 007 (OBSBOT, 640x360):
+ * torso x distance is about 300 px*m for an adult the author's size, the floor mark
+ * is at 2 m with play up to 2.5 m, so an adult visitor reads 120-150 px (never below
+ * 110 at the 1st percentile) and a smaller adult about 100. Not 0.7 of the visitor
+ * (105): a child of about two thirds of adult size (an estimate, not measured) reads
+ * about 98 px at 2 m, and the band is applied to the locked subject on every frame,
+ * so it needs margin. 85 excludes the false skeleton of a piece of furniture at
+ * 4.5 m (63-77 px) and an adult beyond about 3.5 m, i.e. the public kept 3 m behind
+ * the mark. Development takes at other distances need it lowered again. */
+const SUBJECT_MIN_TORSO_PX = 85;
 /* Raised 240 -> 380 after tests 004/005. 240 was read off test 003, where the visitor
  * stayed at the plinth; as soon as he worked the full range of distances his own torso
  * hit the ceiling and the tracker simply stopped - a 19.2 s dead zone at the start of
