@@ -31,3 +31,6 @@ Waveform_project/
 
 # audio — the file the granulator loads at runtime; excluded for now, add explicitly (git add -f) once a final version is ready to commit
 audio/
+
+# Davinci_Video — DaVinci Resolve project and media, not synced to GitHub
+Davinci_Video/
