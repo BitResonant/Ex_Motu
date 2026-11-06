@@ -1,3 +1,10 @@
+// jweb-pose-landmarker.js
+// Originally from jweb-pose-landmarker by lysdexic-audio
+// (https://github.com/lysdexic-audio/jweb-pose-landmarker), GPL v3.
+// Modified by Matteo Caruso Linardon, 12 August - 4 November 2026, for the
+// installation Ex motu (Gestosynth). Changes are listed in NOTICE.md.
+// This file is distributed under the GNU General Public License v3; see LICENSE.
+
 // IIFE for top level await
 (async () => { 
 const visbundle = await import("https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0/vision_bundle.js");
