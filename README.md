@@ -1,4 +1,4 @@
-# Gestosynth: *Ex motu*
+# *Ex Motu*
 
 An interactive sound installation in which a camera follows the visitor's hands and a Max/MSP engine turns their movement into sound. There is no gesture to learn: any movement, even a small one, changes what is heard. Pose tracking runs MediaPipe Pose Landmarker inside Max's `jweb` object, and the engine layers a granular texture, a waveguide/FM lead, sample loops and a probabilistic layer of one-shots.
 
@@ -25,7 +25,7 @@ A quick map of what's in here, and where the numbers come from:
 
 ## Design Intent
 
-Most of what we do makes a sound, and we stopped noticing long ago. *Ex motu* takes that link between a gesture and its sound and makes it audible again, turned into something unfamiliar: the visitor moves, and the room answers. The aim was a sound worthy of a science-fiction title that still speaks to people with no background in electroacoustic music, children included, and a moment of surprise when they realise the sound is following them.
+Most of what we do makes a sound, and we stopped noticing long ago. *Ex Motu* takes that link between a gesture and its sound and makes it audible again, turned into something unfamiliar: the visitor moves, and the room answers. The aim was a sound worthy of a science-fiction title that still speaks to people with no background in electroacoustic music, children included, and a moment of surprise when they realise the sound is following them.
 
 Accessibility shaped the sound. The harmony is tonal and recognisable, organised in four sonic environments that the piece moves through slowly, almost like places, from an open, floating Lydian colour to a whole-tone section that sounds the most alien. Next to the synthesised layers there are familiar timbres (a heartbeat, percussion, a crash cymbal) and a layer of science-fiction one-shots that appears at random moments while someone is playing. There are no rules to learn and no wrong notes: any gesture gives a coherent result, whether it comes from a musician or from someone moving their arms for the first time.
 
@@ -387,7 +387,7 @@ Test 007 also found eight pauses of 1.9-12.6 s in which detection stopped, five 
 
 ### Presented in public
 
-*Ex motu* was presented at Teatro Miela in Trieste on 5 November 2026, as part of the conservatory's exhibition of student work, and visitors were free to try it. The exhibition lasted one day and the author stayed in the room for its whole duration to answer visitors' questions, so the installation ran on the author's own MacBook Pro.
+*Ex Motu* was presented at Teatro Miela in Trieste on 5 November 2026, as part of the conservatory's exhibition of student work, and visitors were free to try it. The exhibition lasted one day and the author stayed in the room for its whole duration to answer visitors' questions, so the installation ran on the author's own MacBook Pro.
 
 The response was very positive, and the visitors who tried it showed strong interest. The system worked as expected throughout, with no issues beyond those already known. No log was recorded on the day, so what follows is the author's account.
 
