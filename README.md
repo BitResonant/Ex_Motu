@@ -6,7 +6,9 @@ An interactive sound installation. A camera follows the visitor's hands and a Ma
 
 [![Code license: GPL v3](https://img.shields.io/badge/tracking%20code-GPL%20v3-blue.svg)](LICENSE) [![License: CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)](LICENSE-CC-BY-NC-SA.md)
 
-[![Ex Motu, video of the installation](https://img.youtube.com/vi/jGxfdk77W8s/hqdefault.jpg)](https://youtu.be/jGxfdk77W8s)
+[▶ Presentation video on YouTube](https://youtu.be/jGxfdk77W8s): the installation in use, with the camera tracking the visitor's hands and the Max/MSP engine responding in real time.
+
+[![Ex Motu, video of the installation](https://img.youtube.com/vi/jGxfdk77W8s/mqdefault.jpg)](https://youtu.be/jGxfdk77W8s)
 
 MediaPipe returns up to four skeletons per frame, in no fixed order and with no track ID, and its landmark model assumes a single body inside each crop. The installation faces a space where other people walk past behind the visitor. Most of the engineering therefore went into two questions: how to make the sound follow one person consistently, and what the sound should do when the tracker makes a mistake. The thresholds in the pipeline come from seven logged test sessions, about 23 minutes of tracking in total, from a single performer alone up to four people in frame.
 
